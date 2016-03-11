@@ -8,7 +8,7 @@ FILES :=           \
     model.html		 \
     models.py			 \
     tests.py			 \
-    UML.pdf
+#    UML.pdf
 
 
 check:

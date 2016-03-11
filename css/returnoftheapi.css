@@ -1,5 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
+@font-face {
+    font-family: "Distant Galaxy";
+    src: url("../fonts/DISTGRG_.ttf");
+}
+
 body {
     background: url("../img/background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -46,6 +51,11 @@ body {
 
 #overlay h3 {
     padding-left: 20%;
+}
+
+#brand {
+    font-family: "Distant Galaxy", arial, verdana, sans-serif;
+    font-size: 2em;
 }
 
 p#start {

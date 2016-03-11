@@ -2,3 +2,4 @@ data
 postgresql.log
 whiteboard.txt
 __pycache__
+venv

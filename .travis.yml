@@ -1,2 +1,32 @@
+# http://docs.travis-ci.com/user/build-configuration/
+
 notifications:
     slack: cs373-downing:czYT0ckKXN0tR7YsxwdpjjWi
+
+language: python
+
+python:
+    - "3.4"
+
+sudo: false
+
+install:
+    - pip install --upgrade pip
+    - pip --version
+    - pip install -r requirements.txt
+
+before_script:
+    - uname -a
+    - printenv
+    - pip list
+
+script:
+    - date
+    - ls -al
+    - make model.html
+    - ls -al
+    - make IDB1.log
+    - ls -al
+    - make test
+    - ls -al
+    - make check

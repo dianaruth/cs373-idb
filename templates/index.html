@@ -46,19 +46,9 @@
                     </div>
                 </div>
             </nav>
-            <div ng-controller="MainController">
-                <div id="partial" ng-view>
-                    <!-- content -->
-                </div>
+            <div ng-view>
+                <!-- content -->
             </div>
-            
-            <pre>$location.path() = {{$location.path()}}</pre>
-            <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
-            <pre>$route.current.params = {{$route.current.params}}</pre>
-            <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
-            <pre>$routeParams = {{$routeParams}}</pre>
-            
-            
         </div>
         <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>

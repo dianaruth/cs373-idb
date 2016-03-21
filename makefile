@@ -1,14 +1,13 @@
-
 FILES :=           \
     .gitignore		 \
     .travis.yml    \
     makefile       \
     apiary.apib		 \
     IDB1.log			 \
-    models.html		 \
+    model.html		 \
     models.py			 \
     tests.py			 \
-#    UML.pdf
+    UML.pdf
 
 
 check:
@@ -40,7 +39,7 @@ config:
 
 scrub:
 	make clean
-	rm -f  models.html
+	rm -f  model.html
 	rm -f  IDB1.log
 
 status:
@@ -53,7 +52,7 @@ status:
 test: tests.py
 	python3 tests.py
 
-models.html: models.py
+model.html: models.py
 	pydoc3 -w models
 
 IDB1.log:

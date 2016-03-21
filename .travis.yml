@@ -1,8 +1,5 @@
 # http://docs.travis-ci.com/user/build-configuration/
 
-notifications:
-    slack: cs373-downing:czYT0ckKXN0tR7YsxwdpjjWi
-
 language: python
 
 python:
@@ -10,20 +7,23 @@ python:
 
 sudo: false
 
+notifications:
+  slack: cs373-downing:czYT0ckKXN0tR7YsxwdpjjWi
+
 install:
-    - pip3 install --upgrade pip
-    - pip3 --version
-    - pip3 install -r requirements.txt
+    - pip install --upgrade pip
+    - pip --version
+    - pip install -r requirements.txt
 
 before_script:
     - uname -a
     - printenv
-    - pip3 list
+    - pip list
 
 script:
     - date
     - ls -al
-    - make models.html
+    - make model.html
     - ls -al
     - make IDB1.log
     - ls -al

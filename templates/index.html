@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../static/css/returnoftheapi.css">
     </head>
-    <body>
+    <body ng-app="returnOfTheAPI">
         <div id="intro">
             <button id="continue" class="btn btn-default">Continue to Site</button>
             <p id="start">A long time ago in a galaxy far, far away&hellip;</p>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div id="content">
-            <nav class="navbar navbar-default navbar-fixed-top">
+            <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavController">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -31,9 +31,11 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="\">Home</a></li>
-                            <li><a href="\">About</a></li>
-                            <li><a href="\">Contact</a></li>
+                            <li ng-class="{ active : isActive('/home')}"><a href="home">Home</a></li>
+                            <li ng-class="{ active : isActive('/people')}"><a href="people">People</a></li>
+                            <li ng-class="{ active : isActive('/planets')}"><a href="planets">Planets</a></li>
+                            <li ng-class="{ active : isActive('/species')}"><a href="species">Species</a></li>
+                            <li ng-class="{ active : isActive('/about')}"><a href="about">About</a></li>
                         </ul>
                         <form id="search" class="navbar-form navbar-left" role="search">
                             <div class="form-group">
@@ -44,22 +46,24 @@
                     </div>
                 </div>
             </nav>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img src="../static/img/empire.svg">
-                    </div>
-                    <div class="col-sm-6">
-                        <img src="../static/img/rebel.svg">
-                    </div>
+            <div ng-controller="MainController">
+                <div id="partial" ng-view>
+                    <!-- content -->
                 </div>
             </div>
-            <div class="container" id="overlay">
-                <h1>"Do. Or do not. There is no try."</h1>
-                <h3>-Yoda</h3>
-            </div>
+            
+            <pre>$location.path() = {{$location.path()}}</pre>
+            <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+            <pre>$route.current.params = {{$route.current.params}}</pre>
+            <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+            <pre>$routeParams = {{$routeParams}}</pre>
+            
+            
         </div>
         <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+        <script src="../static/js/app.js"></script>
         <script src="../static/js/bootstrap.min.js"></script>
         <script src="../static/js/returnoftheapi.js"></script>
     </body>

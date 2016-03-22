@@ -1,6 +1,16 @@
-var returnOfTheAPI = angular.module('returnOfTheAPI', ['controllers', 'ngRoute']);
+'use strict';
 
-returnOfTheAPI.config(['$routeProvider', '$locationProvider',
+/* App Module */
+
+var returnOfTheAPIApp = angular.module('returnOfTheAPIApp', [
+    'ngRoute',
+    'returnOfTheAPIAnimations',
+    'returnOfTheAPIControllers',
+    'returnOfTheAPIFilters',
+    'returnOfTheAPIServices'
+]);
+
+returnOfTheAPIApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider){
         $routeProvider.
             when('/', {
@@ -8,19 +18,31 @@ returnOfTheAPI.config(['$routeProvider', '$locationProvider',
             }).
             when('/people', {
                 templateUrl : 'static/partials/people.html',
-                controller : 'PeopleController'
+                controller : 'PeopleListController'
             }).
             when('/planets', {
                 templateUrl : 'static/partials/planets.html',
-                controller : 'PlanetsController'
+                controller : 'PlanetsListController'
             }).
             when('/species', {
                 templateUrl : 'static/partials/species.html',
-                controller : 'SpeciesController'
+                controller : 'SpeciesListController'
             }).
             when('/about', {
                 templateUrl : 'static/partials/about.html',
                 controller : 'AboutController'
+            }).
+            when('/people/:personID', {
+                templateUrl: 'partials/person-detail.html',
+                controller: 'PersonDetailCtrl'
+            }).
+            when('/planets/:planetID', {
+                templateUrl: 'partials/planet-detail.html',
+                controller: 'PlanetDetailCtrl'
+            }).
+            when('/species/:speciesID', {
+                templateUrl: 'partials/species-detail.html',
+                controller: 'SpeciesDetailCtrl'
             }).
             otherwise({
                 redirectTo: '/'

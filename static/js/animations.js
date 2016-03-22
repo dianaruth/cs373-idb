@@ -1,0 +1,1 @@
+var returnOfTheAPIAnimations = angular.module('returnOfTheAPIAnimations', ['ngAnimate']);

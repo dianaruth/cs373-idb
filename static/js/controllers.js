@@ -1,15 +1,41 @@
+'use strict';
+
 /* Controllers */
-angular.module('controllers', [])
-    .controller('PeopleController', ['$scope' , function($scope) {
 
-    }])
-    .controller('PlanetsController', ['$scope' , function($scope) {
+var returnOfTheAPIControllers = angular.module('returnOfTheAPIControllers', []);
 
-    }])
-    .controller('SpeciesController', ['$scope' , function($scope) {
+returnOfTheAPIControllers.controller('PeopleListController', ['$scope',
+    function($scope) {
+        
+    }]);
 
-    }])
-    .controller('AboutController', ['$scope' , function($scope) {
+returnOfTheAPIControllers.controller('PlanetsListController', ['$scope',
+    function($scope) {
+        
+    }]);
+
+returnOfTheAPIControllers.controller('SpeciesListController', ['$scope',
+    function($scope) {
+        
+    }]);
+
+returnOfTheAPIControllers.controller('PersonDetailController', ['$scope',
+    function($scope) {
+        
+    }]);
+
+returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope',
+    function($scope) {
+        
+    }]);
+
+returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope',
+    function($scope) {
+        
+    }]);
+
+returnOfTheAPIControllers.controller('AboutController', ['$scope',
+    function($scope) {
         $scope.teamMembers = [
             {"name": "Diana Ruth"},
             {"name": "Clint Ascencio"},
@@ -17,8 +43,10 @@ angular.module('controllers', [])
             {"name": "Jamie Barbosa"},
             {"name": "Jon Lim"}
         ];
-    }])
-    .controller('NavController', ['$scope', '$location' , function($scope, $location) {
+    }]);
+
+returnOfTheAPIControllers.controller('NavController', ['$scope', '$location',
+    function($scope, $location) {
         $scope.isActive = function(viewLocation) {
             return $location.path().indexOf(viewLocation) == 0;
         }

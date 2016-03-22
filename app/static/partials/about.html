@@ -1,14 +1,4 @@
-<div id="about" ng-controller="AboutController">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="static/img/empire.svg">
-            </div>
-            <div class="col-sm-6">
-                <img src="static/img/rebel.svg">
-            </div>
-        </div>
-    </div>
+<div class="partial" id="about" ng-controller="AboutController">
     <div class="container" id="overlay">
         <div ng-repeat="member in teamMembers">
             <h1>{{member.name}}</h1>

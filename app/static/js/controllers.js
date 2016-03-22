@@ -4,9 +4,13 @@
 
 var returnOfTheAPIControllers = angular.module('returnOfTheAPIControllers', []);
 
-returnOfTheAPIControllers.controller('PeopleListController', ['$scope',
-    function($scope) {
-        
+returnOfTheAPIControllers.controller('PeopleListController', ['$scope', 'peopleService',
+    function($scope, peopleService) {
+        $scope.people = []
+        peopleService.getPeople().then(function(data) {
+            $scope.people = data;
+            $scope.sortReverse = false;
+        });
     }]);
 
 returnOfTheAPIControllers.controller('PlanetsListController', ['$scope',

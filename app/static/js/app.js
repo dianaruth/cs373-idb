@@ -14,22 +14,22 @@ returnOfTheAPIApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider){
         $routeProvider.
             when('/', {
-                templateUrl : 'static/partials/home.html'
+                templateUrl : 'partials/home.html'
             }).
             when('/people', {
-                templateUrl : 'static/partials/people.html',
+                templateUrl : 'partials/people.html',
                 controller : 'PeopleListController'
             }).
             when('/planets', {
-                templateUrl : 'static/partials/planets.html',
+                templateUrl : 'partials/planets.html',
                 controller : 'PlanetsListController'
             }).
             when('/species', {
-                templateUrl : 'static/partials/species.html',
+                templateUrl : 'partials/species.html',
                 controller : 'SpeciesListController'
             }).
             when('/about', {
-                templateUrl : 'static/partials/about.html',
+                templateUrl : 'partials/about.html',
                 controller : 'AboutController'
             }).
             when('/people/:personID', {

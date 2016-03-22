@@ -1,16 +1,68 @@
-<div id="people" ng-controller="PeopleListController">
+<div class="partial" id="people" ng-controller="PeopleListController">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="static/img/empire.svg">
-            </div>
-            <div class="col-sm-6">
-                <img src="static/img/rebel.svg">
-            </div>
-        </div>
-    </div>
-    <div class="container" id="overlay">
-        <h1>"People."</h1>
-        <h3>-Yoda</h3>
+        <table class="sw-table" id="people-table">
+            <th></th>
+            <th>
+                <a href="">Name</a>
+<!--
+                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
+-->
+            </th>
+            <th>
+                <a href="">Gender</a>
+<!--
+                <span ng-show="sortType == 'num_albums' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'num_albums' && !sortReverse" class="fa fa-caret-up"</span>
+-->
+            </th>
+            <th>
+                <a href="">Birth Year</a>
+<!--
+                <span ng-show="sortType == 'recent_album' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'recent_album' && !sortReverse" class="fa fa-caret-up"</span>
+-->
+            </th>
+            <th>
+                <a href="">Height</a>
+<!--
+                <span ng-show="sortType == 'top_track' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'top_track' && !sortReverse" class="fa fa-caret-up"</span>
+-->
+            </th>
+            <th>
+                <a href="">Mass</a>
+<!--
+                <span ng-show="sortType == 'popularity' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'popularity' && !sortReverse" class="fa fa-caret-up"</span>
+-->
+            </th>
+            <th>
+                <a href="">Hair Color</a>
+<!--
+                <span ng-show="sortType == 'popularity' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'popularity' && !sortReverse" class="fa fa-caret-up"</span>
+-->
+            </th>
+            <th>
+                <a href="">Eye Color</a>
+<!--
+                <span ng-show="sortType == 'popularity' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'popularity' && !sortReverse" class="fa fa-caret-up"</span>
+-->
+            </th>
+            <tr ng-repeat="person in people">
+                <td>
+<!--                    <a ng-href="#/artists/{{artist.id}}"><img class="artistImg" ng-src={{artist.col_img}}></a>-->
+                </td>
+                <td>{{person.name}}</td>
+                <td>{{person.gender}}</td>
+                <td>{{person.birth_year}}</td>
+                <td>{{person.height}}</td>
+                <td>{{person.mass}}</td>
+                <td>{{person.hair_color}}</td>
+                <td>{{person.eye_color}}</td>
+            </tr>
+        </table>
     </div>
 </div>

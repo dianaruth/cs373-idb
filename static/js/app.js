@@ -4,11 +4,11 @@ returnOfTheAPI.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider){
         $routeProvider.
             when('/', {
-                templateUrl : '/static/partials/home.html',
+                templateUrl : 'static/partials/home.html',
                 controller : 'HomeController'
             }).
             when('/about', {
-                templateUrl : '/static/partials/about.html',
+                templateUrl : 'static/partials/about.html',
                 controller : 'AboutController'
             }).
             otherwise({

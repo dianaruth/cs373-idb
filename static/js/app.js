@@ -4,8 +4,19 @@ returnOfTheAPI.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider){
         $routeProvider.
             when('/', {
-                templateUrl : 'static/partials/home.html',
-                controller : 'HomeController'
+                templateUrl : 'static/partials/home.html'
+            }).
+            when('/people', {
+                templateUrl : 'static/partials/people.html',
+                controller : 'PeopleController'
+            }).
+            when('/planets', {
+                templateUrl : 'static/partials/planets.html',
+                controller : 'PlanetsController'
+            }).
+            when('/species', {
+                templateUrl : 'static/partials/species.html',
+                controller : 'SpeciesController'
             }).
             when('/about', {
                 templateUrl : 'static/partials/about.html',
@@ -15,7 +26,6 @@ returnOfTheAPI.config(['$routeProvider', '$locationProvider',
                 redirectTo: '/'
             });
         $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
+            enabled: true
         });
 }]);

@@ -1,6 +1,47 @@
 <div class="partial" id="planets" ng-controller="PlanetsListController">
-    <div class="container" id="overlay">
-        <h1>"Planets."</h1>
-        <h3>-Yoda</h3>
+    <div class="container">
+        <table class="table sw-table">
+            <th>
+                <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
+                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'climate' ; sortReverse = !sortReverse">Climate</a>
+                <span ng-show="sortType == 'climate' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'climate' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'gravity' ; sortReverse = !sortReverse">Gravity</a>
+                <span ng-show="sortType == 'gravity' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'gravity' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'terrain' ; sortReverse = !sortReverse">Terrain</a>
+                <span ng-show="sortType == 'terrain' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'terrain' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'population' ; sortReverse = !sortReverse">Population</a>
+                <span ng-show="sortType == 'population' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'population' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <tr ng-repeat="planet in planets | orderBy:sortType:sortReverse">
+                <td>{{planet.name}}</td>
+                <td>{{planet.climate}}</td>
+                <td>{{planet.gravity}}</td>
+                <td>{{planet.terrain}}</td>
+                <td>{{planet.population}}</td>
+            </tr>
+        </table>
+        <ul class = "pagination sw-pagination">
+            <li><a href = "#">&laquo;</a></li>
+            <li class="active"><a href = "#">1</a></li>
+            <li><a href = "#">2</a></li>
+            <li><a href = "#">3</a></li>
+            <li><a href = "#">4</a></li>
+            <li><a href = "#">5</a></li>
+            <li><a href = "#">&raquo;</a></li>
+        </ul>
     </div>
 </div>

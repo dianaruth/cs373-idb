@@ -1,60 +1,42 @@
 <div class="partial" id="people" ng-controller="PeopleListController">
     <div class="container">
-        <table class="sw-table" id="people-table">
-            <th></th>
+        <table class="table sw-table">
             <th>
-                <a href="">Name</a>
-<!--
+                <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
                 <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
--->
             </th>
             <th>
-                <a href="">Gender</a>
-<!--
-                <span ng-show="sortType == 'num_albums' && sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'num_albums' && !sortReverse" class="fa fa-caret-up"</span>
--->
+                <a href="" ng-click="sortType = 'gender' ; sortReverse = !sortReverse">Gender</a>
+                <span ng-show="sortType == 'gender' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'gender' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <th>
-                <a href="">Birth Year</a>
-<!--
-                <span ng-show="sortType == 'recent_album' && sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'recent_album' && !sortReverse" class="fa fa-caret-up"</span>
--->
+                <a href="" ng-click="sortType = 'birth_year' ; sortReverse = !sortReverse">Birth Year</a>
+                <span ng-show="sortType == 'birth_year' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'birth_year' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <th>
-                <a href="">Height</a>
-<!--
-                <span ng-show="sortType == 'top_track' && sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'top_track' && !sortReverse" class="fa fa-caret-up"</span>
--->
+                <a href="" ng-click="sortType = 'height' ; sortReverse = !sortReverse">Height</a>
+                <span ng-show="sortType == 'height' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'height' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <th>
-                <a href="">Mass</a>
-<!--
-                <span ng-show="sortType == 'popularity' && sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'popularity' && !sortReverse" class="fa fa-caret-up"</span>
--->
+                <a href="" ng-click="sortType = 'mass' ; sortReverse = !sortReverse">Mass</a>
+                <span ng-show="sortType == 'mass' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'mass' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <th>
-                <a href="">Hair Color</a>
-<!--
-                <span ng-show="sortType == 'popularity' && sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'popularity' && !sortReverse" class="fa fa-caret-up"</span>
--->
+                <a href="" ng-click="sortType = 'hair_color' ; sortReverse = !sortReverse">Hair Color</a>
+                <span ng-show="sortType == 'hair_color' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'hair_color' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <th>
-                <a href="">Eye Color</a>
-<!--
-                <span ng-show="sortType == 'popularity' && sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'popularity' && !sortReverse" class="fa fa-caret-up"</span>
--->
+                <a href="" ng-click="sortType = 'eye_color' ; sortReverse = !sortReverse">Eye Color</a>
+                <span ng-show="sortType == 'eye_color' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'eye_color' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
-            <tr ng-repeat="person in people">
-                <td>
-<!--                    <a ng-href="#/artists/{{artist.id}}"><img class="artistImg" ng-src={{artist.col_img}}></a>-->
-                </td>
+            <tr ng-repeat="person in people | orderBy:sortType:sortReverse">
                 <td>{{person.name}}</td>
                 <td>{{person.gender}}</td>
                 <td>{{person.birth_year}}</td>
@@ -64,5 +46,14 @@
                 <td>{{person.eye_color}}</td>
             </tr>
         </table>
+        <ul class = "pagination sw-pagination">
+            <li><a href = "#">&laquo;</a></li>
+            <li class="active"><a href = "#">1</a></li>
+            <li><a href = "#">2</a></li>
+            <li><a href = "#">3</a></li>
+            <li><a href = "#">4</a></li>
+            <li><a href = "#">5</a></li>
+            <li><a href = "#">&raquo;</a></li>
+        </ul>
     </div>
 </div>

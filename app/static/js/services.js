@@ -13,3 +13,23 @@ returnOfTheAPIServices.factory('peopleService', function($http) {
         }
     }
 });
+
+returnOfTheAPIServices.factory('planetsService', function($http) {
+    return {
+        getPlanets: function() {
+            return $http.get('/get_planets').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
+returnOfTheAPIServices.factory('speciesService', function($http) {
+    return {
+        getSpecies: function() {
+            return $http.get('/get_species').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});

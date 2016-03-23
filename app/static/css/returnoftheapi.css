@@ -50,6 +50,28 @@ body {
     margin-top: 50px;
 }
 
+.sw-table {
+    margin-top: 50px;
+    border: 2px solid #ff6;
+    background-color: rgba(40, 40, 40, 0.7);
+}
+
+.sw-table td {
+    border: 2px solid #ff6;
+    text-align: center;
+    color: #f2f2f2
+}
+
+.sw-table th {
+    border: 2px solid #ff6;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.sw-table th a {
+    color: darkgray;
+}
+
 .navbar-default {
     background-color: #000000;
     border-color: #656565;

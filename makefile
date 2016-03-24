@@ -53,7 +53,11 @@ test: tests.py
 	python3 tests.py
 
 model.html: models.py
-	pydoc3 -w models
+	pip install sqlalchemy
+	pip install Flask-SQLAlchemy
+	pip3 install sqlalchemy
+	pip3 install Flask-SQLAlchemy
+	pydoc -w models
 
 IDB1.log:
 	git log > IDB1.log

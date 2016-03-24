@@ -17,9 +17,6 @@ install:
     - pip install Flask-Script
     - pip install Flask-SQLAlchemy
     - pip install requests
-    - pip install -r ./app/requirements.txt
-    - pip3 install Flask
-    - pip3 install flask
 
 before_script:
     - uname -a

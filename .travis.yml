@@ -30,6 +30,6 @@ script:
     - ls -al
     - make IDB1.log
     - ls -al
-    - make test
+    # - make test
     - ls -al
    - make check

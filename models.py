@@ -46,7 +46,8 @@ class Planets():
     films = Column(String)
     url = Column(String)
 
-    def __init__(self, climate, gravity, terrain, population): 
+    def __init__(self, name, climate, gravity, terrain, population): 
+        self.name = name
         self.climate = climate
         self.gravity = gravity
         self.terrain = terrain
@@ -70,7 +71,8 @@ class Species():
     films = Column(String)
     url = Column(String)
 
-    def __init__(self, classification, average_height, average_lifespan, language):
+    def __init__(self, name, classification, average_height, average_lifespan, language):
+        self.name = name
         self.classification = classification
         self.average_height = average_height
         self.average_lifespan = average_lifespan

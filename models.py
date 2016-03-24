@@ -1,25 +1,24 @@
 from flask import Flask
-from app import db
-from sqlalchemy import orm, ForeignKey
+from sqlalchemy import *
 
 class People():
     __tablename__ = 'people'
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    height = db.Column(db.Integer)
-    mass = db.Column(db.Integer)
-    hair_color = db.Column(db.String)
-    skin_color = db.Column(db.String)
-    eye_color = db.Column(db.String)
-    birth_year = db.Column(db.String)
-    gender = db.Column(db.String)
-    homeworld = db.Column(db.String)
-    films = db.Column(db.String)
-    species = db.Column(db.String)
-    vehicles = db.Column(db.String)
-    starships = db.Column(db.String)
-    url = db.Column(db.String)
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    height = Column(Integer)
+    mass = Column(Integer)
+    hair_color = Column(String)
+    skin_color = Column(String)
+    eye_color = Column(String)
+    birth_year = Column(String)
+    gender = Column(String)
+    homeworld = Column(String)
+    films = Column(String)
+    species = Column(String)
+    vehicles = Column(String)
+    starships = Column(String)
+    url = Column(String)
 
     def __init__(self, name, gender, birth_year, height, mass, hair_color, eye_color):
         self.name = name
@@ -34,18 +33,18 @@ class People():
 class Planets():
     __tablename__ = 'planets'
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    rotation_period = db.Column(db.String)
-    diameter = db.Column(db.String)
-    climate = db.Column(db.String)
-    gravity = db.Column(db.String)
-    terrain = db.Column(db.String)
-    surface_water = db.Column(db.String)
-    population = db.Column(db.Integer)
-    residents = db.Column(db.String)
-    films = db.Column(db.String)
-    url = db.Column(db.String)
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    rotation_period = Column(String)
+    diameter = Column(String)
+    climate = Column(String)
+    gravity = Column(String)
+    terrain = Column(String)
+    surface_water = Column(String)
+    population = Column(Integer)
+    residents = Column(String)
+    films = Column(String)
+    url = Column(String)
 
     def __init__(self, climate, gravity, terrain, population): 
         self.climate = climate
@@ -56,20 +55,20 @@ class Planets():
 class Species():
     __tablename__ = 'species'
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    classification = db.Column(db.String)
-    designation = db.Column(db.String)
-    average_height = db.Column(db.String)
-    skin_colors = db.Column(db.String)
-    hair_colors = db.Column(db.String)
-    eye_colors = db.Column(db.String)
-    average_lifespan = db.Column(db.String)
-    homeworld = db.Column(db.String)
-    language = db.Column(db.String)
-    people = db.Column(db.String)
-    films = db.Column(db.String)
-    url = db.Column(db.String)
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    classification = Column(String)
+    designation = Column(String)
+    average_height = Column(String)
+    skin_colors = Column(String)
+    hair_colors = Column(String)
+    eye_colors = Column(String)
+    average_lifespan = Column(String)
+    homeworld = Column(String)
+    language = Column(String)
+    people = Column(String)
+    films = Column(String)
+    url = Column(String)
 
     def __init__(self, classification, average_height, average_lifespan, language):
         self.classification = classification

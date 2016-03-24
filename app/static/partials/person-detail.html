@@ -1,2 +1,20 @@
 <div class="partial" ng-controller="PersonDetailController">
+    <div class="container">
+        <div class="row detail">
+            <div class="col-md-4 text-center">
+                <img class="detail-img" src="img/{{img}}">
+            </div>
+            <div class="col-md-4 text-center">
+                <h1 class="title-md">{{person.name}}</h1>
+            </div>
+            <div class="col-md-4 detail-info">
+                <h3>Gender: {{person.gender}}</h3>
+                <h3>Birth Year: {{person.birth_year}}</h3>
+                <h3>Height: {{person.height}}</h3>
+                <h3>Mass: {{person.mass}}</h3>
+                <h3>Hair Color: {{person.hair_color}}</h3>
+                <h3>Eye Color: {{person.eye_color}}</h3>
+            </div>
+        </div>
+    </div>
 </div>

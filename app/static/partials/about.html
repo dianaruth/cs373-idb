@@ -1,7 +1,126 @@
 <div class="partial" id="about" ng-controller="AboutController">
-    <div class="container" id="overlay">
-        <div ng-repeat="member in teamMembers">
-            <h1>{{member.name}}</h1>
+    <div class="container text-center">
+        <h1 class="title-lg">SWEWars</h1>
+        <hr>
+        <h1 class="title-md">Members</h1>
+        <div id="about-container">
+            <div class="row">
+                <div class="col-md-4" ng-repeat="member in members | limitTo: 3">
+                    <div class="col-md-12 member">
+                        <img class="about-img" src="img/{{member.photo}}">
+                        <h1>{{member.name}}</h1>
+                        <h4>{{member.bio}}</h4>
+                        <ul ng-repeat="r in member.responsibilities">
+                            <li>{{r}}</li>
+                        </ul>
+                        <h5>Number of Commits: {{member.commits}}</h5>
+                        <h5>Number of Issues: {{member.issues}}</h5>
+                        <h5>Number of Unit Tests: {{member.unit_tests}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row" class="about-container">
+                <div class="col-md-offset-1 col-md-4 col-md-offset-1" ng-repeat="member in members" ng-show="$index > 2">
+                    <div class="col-md-12 member">
+                        <img class="about-img" src="img/{{member.photo}}">
+                        <h1>{{member.name}}</h1>
+                        <h4>{{member.bio}}</h4>
+                        <ul ng-repeat="r in member.responsibilities">
+                            <li>{{r}}</li>
+                        </ul>
+                        <h5>Number of Commits: {{member.commits}}</h5>
+                        <h5>Number of Issues: {{member.issues}}</h5>
+                        <h5>Number of Unit Tests: {{member.unit_tests}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="title-md">Team Statistics</h1>
+        <div class="row team-stats">
+            <div class="col-md-4">
+                <div class="panel panel-default sw-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Number of Commits</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h1>0</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default sw-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Number of Issues</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h1>0</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default sw-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Number of Unit Tests</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h1>0</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center team-stats">
+            <div class="col-md-3">
+                <a href="" class="btn btn-default">Apiary API</a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://github.com/dianaruth/cs373-idb/issues" class="btn btn-default">GitHub Issue Tracker</a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://github.com/dianaruth/cs373-idb" class="btn btn-default">GitHub Repo</a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://github.com/dianaruth/cs373-idb/wiki" class="btn btn-default">GitHub Wiki</a>
+            </div>
+        </div>
+        <h1 class="title-md">Data Sources</h1>
+        <div class="row" id="data-sources">
+            <div class="col-md-offset-1 col-md-4">
+                <div class="well well-lg data-source-well">
+                    <a href="https://www.swapi.co/"><h1>www.swapi.co</h1></a>
+                    <p>We used the Star Wars API, or swapi, to scrape basic data about each person, planet, and species. Swapi gives us miscellaneous information such as climate, hair color, height, classification, gravity, and other fields taht are useful when describing a person, planet, or species.</p>
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-md-4">
+                <div class="well well-lg data-source-well">
+                    <a href="http://starwars.wikia.com/wiki/Wookieepedia:API"><h1>Wookieepedia</h1></a>
+                    <p>We used Wookieepedia to gather images for each person, planet, and species we documented. These images are loaded on the detail pages.</p>
+                </div>
+            </div>
+        </div>
+        <h1 class="title-md">Tools</h1>
+        <div class="row" id="tools">
+            <h1>Front End</h1>
+            <ul>
+                <li><a href="http://getbootstrap.com/">Twitter Bootstrap</a></li>
+                <li><a href="https://angularjs.org/">AngularJS</a></li>
+            </ul>
+            <h1>Back End</h1>
+            <ul>
+                <li><a href="https://www.python.org/">Python</a></li>
+                <li><a href="http://flask.pocoo.org/">Flask</a></li>
+                <li><a href="https://www.docker.com/">Docker</a></li>
+            </ul>
+            <h1>Collaboration</h1>
+            <ul>
+                <li><a href="https://github.com/">GitHub</a></li>
+                <li><a href="https://slack.com/">Slack</a></li>
+            </ul>
+            <h1>API</h1>
+            <ul>
+                <li><a href="https://apiary.io/">Apiary</a></li>
+                <li><a href="https://www.swapi.co/">www.swapi.co</a></li>
+                <li><a href="http://starwars.wikia.com/wiki/Wookieepedia:API">Wookieepedia</a></li>
+            </ul>
         </div>
     </div>
 </div>

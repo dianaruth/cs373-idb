@@ -1,6 +1,49 @@
 <div class="partial" id="species" ng-controller="SpeciesListController">
-    <div class="container" id="overlay">
-        <h1>"Species."</h1>
-        <h3>-Yoda</h3>
+    <div class="container">
+        <table class="table sw-table">
+            <th>
+                <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
+                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'classification' ; sortReverse = !sortReverse">Classification</a>
+                <span ng-show="sortType == 'classification' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'classification' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'average_height' ; sortReverse = !sortReverse">Average Height</a>
+                <span ng-show="sortType == 'average_height' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'average_height' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'average_lifespan' ; sortReverse = !sortReverse">Average Lifespan</a>
+                <span ng-show="sortType == 'average_lifespan' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'average_lifespan' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <th>
+                <a href="" ng-click="sortType = 'language' ; sortReverse = !sortReverse">Language</a>
+                <span ng-show="sortType == 'language' && sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'language' && !sortReverse" class="fa fa-caret-up"</span>
+            </th>
+            <tr ng-repeat="s in species | orderBy:sortType:sortReverse">
+                <td><a ng-href="/species/{{s.id}}">{{s.name}}</a></td>
+                <td>{{s.classification}}</td>
+                <td>{{s.average_height}}</td>
+                <td>{{s.average_lifespan}}</td>
+                <td>{{s.language}}</td>
+            </tr>
+        </table>
+        <div class="text-center">
+            <ul class = "pagination sw-pagination">
+                <li><a href = "#">&laquo;</a></li>
+                <li class="active"><a href = "#">1</a></li>
+                <li><a href = "#">2</a></li>
+                <li><a href = "#">3</a></li>
+                <li><a href = "#">4</a></li>
+                <li><a href = "#">5</a></li>
+                <li><a href = "#">&raquo;</a></li>
+            </ul>
+        </div>
     </div>
 </div>

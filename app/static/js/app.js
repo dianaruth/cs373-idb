@@ -34,15 +34,15 @@ returnOfTheAPIApp.config(['$routeProvider', '$locationProvider',
             }).
             when('/people/:personID', {
                 templateUrl: 'partials/person-detail.html',
-                controller: 'PersonDetailCtrl'
+                controller: 'PersonDetailController'
             }).
             when('/planets/:planetID', {
                 templateUrl: 'partials/planet-detail.html',
-                controller: 'PlanetDetailCtrl'
+                controller: 'PlanetDetailController'
             }).
             when('/species/:speciesID', {
                 templateUrl: 'partials/species-detail.html',
-                controller: 'SpeciesDetailCtrl'
+                controller: 'SpeciesDetailController'
             }).
             otherwise({
                 redirectTo: '/'

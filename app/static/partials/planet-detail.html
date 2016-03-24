@@ -1,2 +1,18 @@
 <div class="partial" ng-controller="PlanetDetailController">
+    <div class="container">
+        <div class="row detail">
+            <div class="col-md-4 text-center">
+                <img class="detail-img" src="img/{{img}}">
+            </div>
+            <div class="col-md-4 text-center">
+                <h1 class="title-md">{{planet.name}}</h1>
+            </div>
+            <div class="col-md-4 detail-info">
+                <h3>Climate: {{planet.climate}}</h3>
+                <h3>Gravity: {{planet.gravity}}</h3>
+                <h3>Terrain: {{planet.terrain}}</h3>
+                <h3>Population: {{planet.population}}</h3>
+            </div>
+        </div>
+    </div>
 </div>

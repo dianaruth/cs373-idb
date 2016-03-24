@@ -52,11 +52,7 @@ status:
 test: tests.py
 	python3 tests.py
 
-model.html: models.py
-	pip install sqlalchemy
-	pip install Flask-SQLAlchemy
-	pip3 install sqlalchemy
-	pip3 install Flask-SQLAlchemy
+model.html:
 	pydoc -w models
 
 IDB1.log:

@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/Ccencio-MBA15/Desktop/cs373-idb/models.py">/Users/Ccencio-MBA15/Desktop/cs373-idb/models.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="models.html#People">People</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Planets">Planets</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Species">Species</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="People">class <strong>People</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>"<a href="#People">People</a>&nbsp;Model<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="People-__init__"><strong>__init__</strong></a>(self, name, gender, birth_year, height, mass, hair_color, eye_color)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+self&nbsp;:&nbsp;<a href="#Planets">Planets</a><br>
+name&nbsp;:&nbsp;Column(String)<br>
+gender&nbsp;:&nbsp;Column(String)<br>
+birth_year&nbsp;:&nbsp;Column(String)<br>
+height:&nbsp;Column(Integer)<br>
+mass&nbsp;:&nbsp;Column(Integer)<br>
+hair_color&nbsp;:&nbsp;Column(String)<br>
+eye_color&nbsp;:&nbsp;Column(String)<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+<a href="#People">People</a></tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__tablename__</strong> = 'people'</dl>
+
+<dl><dt><strong>birth_year</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>eye_color</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>gender</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>hair_color</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>height</strong> = Column(None, Integer(), table=None)</dl>
+
+<dl><dt><strong>id</strong> = Column(None, Integer(), table=None, primary_key=True, nullable=False)</dl>
+
+<dl><dt><strong>mass</strong> = Column(None, Integer(), table=None)</dl>
+
+<dl><dt><strong>name</strong> = Column(None, String(), table=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Planets">class <strong>Planets</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Planets">Planets</a>&nbsp;Model<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Planets-__init__"><strong>__init__</strong></a>(self, name, climate, gravity, terrain, population)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+self&nbsp;:&nbsp;<a href="#Planets">Planets</a><br>
+name&nbsp;:&nbsp;Column(String)<br>
+climate&nbsp;:&nbsp;Column(String)<br>
+gravity&nbsp;:&nbsp;Column(String)<br>
+terrain&nbsp;:&nbsp;Column(String)<br>
+population&nbsp;:&nbsp;Column(Integer)<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+<a href="#Planets">Planets</a></tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__tablename__</strong> = 'planets'</dl>
+
+<dl><dt><strong>climate</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>gravity</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>id</strong> = Column(None, Integer(), table=None, primary_key=True, nullable=False)</dl>
+
+<dl><dt><strong>name</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>population</strong> = Column(None, Integer(), table=None)</dl>
+
+<dl><dt><strong>terrain</strong> = Column(None, String(), table=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Species">class <strong>Species</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Species">Species</a>&nbsp;Model<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Species-__init__"><strong>__init__</strong></a>(self, name, classification, average_height, average_lifespan, language)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+self&nbsp;:&nbsp;<a href="#Planets">Planets</a><br>
+name&nbsp;:&nbsp;Column(String)<br>
+classification&nbsp;:&nbsp;Column(String)<br>
+average_height&nbsp;:&nbsp;Column(String)<br>
+average_lifespan&nbsp;:&nbsp;Column(String)<br>
+language&nbsp;:&nbsp;Column(String)<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+<a href="#People">People</a></tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__tablename__</strong> = 'species'</dl>
+
+<dl><dt><strong>average_height</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>average_lifespan</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>classification</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>id</strong> = Column(None, Integer(), table=None, primary_key=True, nullable=False)</dl>
+
+<dl><dt><strong>language</strong> = Column(None, String(), table=None)</dl>
+
+<dl><dt><strong>name</strong> = Column(None, String(), table=None)</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>func</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;<br>
+<strong>modifier</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;</td></tr></table>
+</body></html>

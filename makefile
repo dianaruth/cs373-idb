@@ -4,7 +4,7 @@ FILES :=           \
     makefile       \
     apiary.apib		 \
     IDB1.log			 \
-    model.html		 \
+    models.html		 \
     models.py			 \
     tests.py			 \
     UML.pdf
@@ -39,7 +39,7 @@ config:
 
 scrub:
 	make clean
-	rm -f  model.html
+	# rm -f  model.html
 	rm -f  IDB1.log
 
 status:
@@ -53,7 +53,7 @@ test: tests.py
 	python3 tests.py
 
 model.html: models.py
-	pydoc3 -w models
+	pydoc -w models
 
 IDB1.log:
 	git log > IDB1.log

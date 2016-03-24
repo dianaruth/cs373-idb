@@ -16,8 +16,10 @@ install:
     - pip install Flask
     - pip install Flask-Script
     - pip install Flask-SQLAlchemy
+    - pip install sqlalchemy
+    - pip install gunicorn
     - pip install requests
-
+    
 before_script:
     - uname -a
     - printenv
@@ -32,4 +34,4 @@ script:
     - ls -al
     - make test
     - ls -al
-   - make check
+    - make check

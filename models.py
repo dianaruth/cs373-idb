@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import *
 from sqlalchemy import *
 
 class People():

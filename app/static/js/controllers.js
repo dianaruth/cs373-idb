@@ -164,6 +164,11 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "unit_tests": 9
             }
         ];
+        $scope.teamStats = {
+            "commits": 0,
+            "issues": 0,
+            "unit_tests": 0
+        };
     }]);
 
 returnOfTheAPIControllers.controller('NavController', ['$scope', '$location',

@@ -132,7 +132,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "photo": "clint.jpg",
                 "bio": "#3 in Forbe’s 'Top 20 Teen Fashion Writers Gone Tech Journalist' in 2018. Leading thought leader™ of the millennials. Avid fan of Hamilton-themed SoulCycle and Avocado Toast with pink himalayan salt. Accounting and computer science major. Year long software engineer intern and, after graduation, full-time employee at DataStax.", 
                 "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker"],
-                "commits": 3,
+                "commits": 4,
                 "issues": 0,
                 "unit_tests": 0
             },

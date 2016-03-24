@@ -4,16 +4,33 @@
             <div class="col-md-4 text-center">
                 <img class="detail-img" src="img/{{img}}">
             </div>
-            <div class="col-md-4 text-center">
-                <h1 class="title-md">{{person.name}}</h1>
-            </div>
-            <div class="col-md-4 detail-info">
-                <h3>Gender: {{person.gender}}</h3>
-                <h3>Birth Year: {{person.birth_year}}</h3>
-                <h3>Height: {{person.height}}</h3>
-                <h3>Mass: {{person.mass}}</h3>
-                <h3>Hair Color: {{person.hair_color}}</h3>
-                <h3>Eye Color: {{person.eye_color}}</h3>
+            <div class="col-md-8 detail-info">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="title-md">{{person.name}}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>{{person.description}}</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><strong>Gender: </strong>{{person.gender}}</h3>
+                        <h3><strong>Birth Year: </strong>{{person.birth_year}}</h3>
+                        <h3><strong>Height: </strong>{{person.height}}</h3>
+                        <h3><strong>Mass: </strong>{{person.mass}}</h3>
+                        <h3><strong>Hair Color: </strong>{{person.hair_color}}</h3>
+                        <h3><strong>Eye Color: </strong>{{person.eye_color}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 ng-repeat="s in person.species"><strong>Species: </strong><a href="/species/{{s}}">{{species}}</a></h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3><strong>Homeworld: </strong><a href="/planets/{{person.homeworld}}">{{homeworld}}</a></h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

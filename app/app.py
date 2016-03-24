@@ -13,7 +13,7 @@ def get_people_data():
     Gets information about each person from the API and returns a JSON object
     """
     
-    # construct a dictionary of json objects
+    # construct a list of json objects
     people = []
     # only get first three people for this phase
     for index in range(1, 4) :
@@ -34,7 +34,7 @@ def get_people_data():
             i = person["homeworld"].rfind("/", 0, len(person["homeworld"]) - 1)
             person["homeworld"] = int(person["homeworld"][i+1:-1])
         people.append(person)
-    return {"people": people}
+    return jsonify({"people": people})
 
     """
     response:
@@ -138,7 +138,7 @@ def get_planets_data():
             a.append(int(r[i+1:-1]))
         planet["residents"] = a
         planets.append(planet)
-    return {"planets": planets}
+    return jsonify({"planets": planets})
 
     """
     response: 
@@ -239,7 +239,7 @@ def get_species_data():
             i = s["homeworld"].rfind("/", 0, len(s["homeworld"]) - 1)
             s["homeworld"] = int(s["homeworld"][i+1:-1])
         species.append(s)
-    return {"species": species}
+    return jsonify({"species": species})
 
     """
     response:

@@ -4,14 +4,28 @@
             <div class="col-md-4 text-center">
                 <img class="detail-img" src="img/{{img}}">
             </div>
-            <div class="col-md-4 text-center">
-                <h1 class="title-md">{{planet.name}}</h1>
-            </div>
-            <div class="col-md-4 detail-info">
-                <h3>Climate: {{planet.climate}}</h3>
-                <h3>Gravity: {{planet.gravity}}</h3>
-                <h3>Terrain: {{planet.terrain}}</h3>
-                <h3>Population: {{planet.population}}</h3>
+            <div class="col-md-8 detail-info">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="title-md">{{planet.name}}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>{{planet.description}}</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><strong>Climate: </strong>{{planet.climate}}</h3>
+                        <h3><strong>Gravity: </strong>{{planet.gravity}}</h3>
+                        <h3><strong>Terrain: </strong>{{planet.terrain}}</h3>
+                        <h3><strong>Population: </strong>{{planet.population}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3><strong>Residents: </strong><a href="/people/{{planet.residents[$index]}}" ng-repeat="r in residents">{{r}} </a></h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -53,7 +53,7 @@ test: tests.py
 	python3 tests.py
 
 model.html: models.py
-	pydoc -w models
+	pydoc3 -w models
 
 IDB1.log:
 	git log > IDB1.log

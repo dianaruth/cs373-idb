@@ -34,8 +34,8 @@ returnOfTheAPIControllers.controller('SpeciesListController', ['$scope', 'specie
         });
     }]);
 
-returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'peopleService',
-    function($scope, $routeParams, peopleService) {
+returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'personDetailService',
+    function($scope, $routeParams, personDetailService) {
         var id = parseInt($routeParams.personID);
         $scope.id = id;
         switch(id) {
@@ -57,13 +57,13 @@ returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$rout
             default:
                 break;
         }
-        peopleService.getPeople().then(function(data) {
-            $scope.person = data["people"][id - 1];
+        personDetailService.getPerson(id).then(function(data) {
+            $scope.person = data["person"];
         });
     }]);
 
-returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetsService',
-    function($scope, $routeParams, planetsService) {
+returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetDetailService',
+    function($scope, $routeParams, planetDetailService) {
         var id = parseInt($routeParams.planetID);
         $scope.id = id;
         switch(id) {
@@ -82,13 +82,13 @@ returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$rout
             default:
                 break;
         }
-        planetsService.getPlanets().then(function(data) {
-            $scope.planet = data["planets"][id - 1];
+        planetDetailService.getPlanet(id).then(function(data) {
+            $scope.planet = data["planet"];
         });
     }]);
 
-returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesService',
-    function($scope, $routeParams, speciesService) {
+returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesDetailService',
+    function($scope, $routeParams, speciesDetailService) {
         var id = parseInt($routeParams.speciesID);
         $scope.id = id;
         switch(id) {
@@ -110,8 +110,8 @@ returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$rou
             default:
                 break;
         }
-        speciesService.getSpecies().then(function(data) {
-            $scope.species = data["species"][id - 1];
+        speciesDetailService.getSpecies(id).then(function(data) {
+            $scope.species = data["species"];
         });
     }]);
 
@@ -132,7 +132,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "photo": "clint.jpg",
                 "bio": "#3 in Forbe’s 'Top 20 Teen Fashion Writers Gone Tech Journalist' in 2018. Leading thought leader™ of the millennials. Avid fan of Hamilton-themed SoulCycle and Avocado Toast with pink himalayan salt. Accounting and computer science major. Year long software engineer intern and, after graduation, full-time employee at DataStax.", 
                 "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker"],
-                "commits": 3,
+                "commits": 4,
                 "issues": 0,
                 "unit_tests": 0
             },

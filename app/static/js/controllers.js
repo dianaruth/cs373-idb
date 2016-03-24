@@ -34,8 +34,8 @@ returnOfTheAPIControllers.controller('SpeciesListController', ['$scope', 'specie
         });
     }]);
 
-returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'peopleService',
-    function($scope, $routeParams, peopleService) {
+returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'personDetailService',
+    function($scope, $routeParams, personDetailService) {
         var id = parseInt($routeParams.personID);
         $scope.id = id;
         switch(id) {
@@ -57,13 +57,13 @@ returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$rout
             default:
                 break;
         }
-        peopleService.getPeople().then(function(data) {
-            $scope.person = data["people"][id - 1];
+        personDetailService.getPerson(id).then(function(data) {
+            $scope.person = data["person"];
         });
     }]);
 
-returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetsService',
-    function($scope, $routeParams, planetsService) {
+returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetDetailService',
+    function($scope, $routeParams, planetDetailService) {
         var id = parseInt($routeParams.planetID);
         $scope.id = id;
         switch(id) {
@@ -82,13 +82,13 @@ returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$rout
             default:
                 break;
         }
-        planetsService.getPlanets().then(function(data) {
-            $scope.planet = data["planets"][id - 1];
+        planetDetailService.getPlanet(id).then(function(data) {
+            $scope.planet = data["planet"];
         });
     }]);
 
-returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesService',
-    function($scope, $routeParams, speciesService) {
+returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesDetailService',
+    function($scope, $routeParams, speciesDetailService) {
         var id = parseInt($routeParams.speciesID);
         $scope.id = id;
         switch(id) {
@@ -110,8 +110,8 @@ returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$rou
             default:
                 break;
         }
-        speciesService.getSpecies().then(function(data) {
-            $scope.species = data["species"][id - 1];
+        speciesDetailService.getSpecies(id).then(function(data) {
+            $scope.species = data["species"];
         });
     }]);
 

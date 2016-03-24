@@ -37,7 +37,7 @@
                 <span ng-show="sortType == 'eye_color' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <tr ng-repeat="person in people | orderBy:sortType:sortReverse">
-                <td>{{person.name}}</td>
+                <td><a ng-href="/people/{{person.id}}">{{person.name}}</a></td>
                 <td>{{person.gender}}</td>
                 <td>{{person.birth_year}}</td>
                 <td>{{person.height}}</td>
@@ -46,14 +46,16 @@
                 <td>{{person.eye_color}}</td>
             </tr>
         </table>
-        <ul class = "pagination sw-pagination">
-            <li><a href = "#">&laquo;</a></li>
-            <li class="active"><a href = "#">1</a></li>
-            <li><a href = "#">2</a></li>
-            <li><a href = "#">3</a></li>
-            <li><a href = "#">4</a></li>
-            <li><a href = "#">5</a></li>
-            <li><a href = "#">&raquo;</a></li>
-        </ul>
+        <div class="text-center">
+            <ul class = "pagination sw-pagination">
+                <li><a href = "#">&laquo;</a></li>
+                <li class="active"><a href = "#">1</a></li>
+                <li><a href = "#">2</a></li>
+                <li><a href = "#">3</a></li>
+                <li><a href = "#">4</a></li>
+                <li><a href = "#">5</a></li>
+                <li><a href = "#">&raquo;</a></li>
+            </ul>
+        </div>
     </div>
 </div>

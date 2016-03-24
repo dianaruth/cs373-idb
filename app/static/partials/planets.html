@@ -27,21 +27,23 @@
                 <span ng-show="sortType == 'population' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <tr ng-repeat="planet in planets | orderBy:sortType:sortReverse">
-                <td>{{planet.name}}</td>
+                <td><a ng-href="/planets/{{planet.id}}">{{planet.name}}</a></td>
                 <td>{{planet.climate}}</td>
                 <td>{{planet.gravity}}</td>
                 <td>{{planet.terrain}}</td>
                 <td>{{planet.population}}</td>
             </tr>
         </table>
-        <ul class = "pagination sw-pagination">
-            <li><a href = "#">&laquo;</a></li>
-            <li class="active"><a href = "#">1</a></li>
-            <li><a href = "#">2</a></li>
-            <li><a href = "#">3</a></li>
-            <li><a href = "#">4</a></li>
-            <li><a href = "#">5</a></li>
-            <li><a href = "#">&raquo;</a></li>
-        </ul>
+        <div class="text-center">
+            <ul class = "pagination sw-pagination">
+                <li><a href = "#">&laquo;</a></li>
+                <li class="active"><a href = "#">1</a></li>
+                <li><a href = "#">2</a></li>
+                <li><a href = "#">3</a></li>
+                <li><a href = "#">4</a></li>
+                <li><a href = "#">5</a></li>
+                <li><a href = "#">&raquo;</a></li>
+            </ul>
+        </div>
     </div>
 </div>

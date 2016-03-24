@@ -27,21 +27,23 @@
                 <span ng-show="sortType == 'language' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
             <tr ng-repeat="s in species | orderBy:sortType:sortReverse">
-                <td>{{s.name}}</td>
+                <td><a ng-href="/species/{{s.id}}">{{s.name}}</a></td>
                 <td>{{s.classification}}</td>
                 <td>{{s.average_height}}</td>
                 <td>{{s.average_lifespan}}</td>
                 <td>{{s.language}}</td>
             </tr>
         </table>
-        <ul class = "pagination sw-pagination">
-            <li><a href = "#">&laquo;</a></li>
-            <li class="active"><a href = "#">1</a></li>
-            <li><a href = "#">2</a></li>
-            <li><a href = "#">3</a></li>
-            <li><a href = "#">4</a></li>
-            <li><a href = "#">5</a></li>
-            <li><a href = "#">&raquo;</a></li>
-        </ul>
+        <div class="text-center">
+            <ul class = "pagination sw-pagination">
+                <li><a href = "#">&laquo;</a></li>
+                <li class="active"><a href = "#">1</a></li>
+                <li><a href = "#">2</a></li>
+                <li><a href = "#">3</a></li>
+                <li><a href = "#">4</a></li>
+                <li><a href = "#">5</a></li>
+                <li><a href = "#">&raquo;</a></li>
+            </ul>
+        </div>
     </div>
 </div>

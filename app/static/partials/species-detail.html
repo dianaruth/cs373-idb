@@ -1,2 +1,18 @@
 <div class="partial" ng-controller="SpeciesDetailController">
+    <div class="container">
+        <div class="row detail">
+            <div class="col-md-4 text-center">
+                <img class="detail-img" src="img/{{img}}">
+            </div>
+            <div class="col-md-4 text-center">
+                <h1 class="title-md">{{species.name}}</h1>
+            </div>
+            <div class="col-md-4 detail-info">
+                <h3>Classification: {{species.classification}}</h3>
+                <h3>Average Height: {{species.average_height}}</h3>
+                <h3>Average Lifespan: {{species.average_lifespan}}</h3>
+                <h3>Language: {{species.language}}</h3>
+            </div>
+        </div>
+    </div>
 </div>

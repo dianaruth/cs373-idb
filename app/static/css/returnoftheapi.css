@@ -16,6 +16,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     font-family: "Droid Sans", arial, verdana, sans-serif;
+    color: #ff6;
 }
 
 * { padding: 0; margin: 0; }
@@ -50,16 +51,20 @@ body {
     margin-top: 50px;
 }
 
+.partial span {
+    color: white;
+}
+
 .sw-table {
     margin-top: 50px;
     border: 2px solid #ff6;
-    background-color: rgba(40, 40, 40, 0.7);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .sw-table td {
     border: 2px solid #ff6;
     text-align: center;
-    color: #f2f2f2
+    color: #f2f2f2;
 }
 
 .sw-table th {
@@ -70,6 +75,86 @@ body {
 
 .sw-table th a {
     color: darkgray;
+}
+
+.sw-pagination li a {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #ff6;
+    color: white;
+}
+
+.sw-pagination li a:hover {
+    border: 1px solid #ff6;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sw-pagination>.active>a {
+    background-color: black;
+    border: 1px solid #ff6;
+    color: white;
+}
+
+.sw-pagination>.active>a:hover {
+    background-color: black;
+    border: 1px solid #ff6;
+    color: white;
+}
+
+.title-lg {
+    font-family: "Distant Galaxy", arial, verdana, sans-serif;
+    font-size: 5em;
+    color: #ff6;
+}
+
+.title-md {
+    font-family: "Distant Galaxy", arial, verdana, sans-serif;
+    font-size: 3em;
+    color: #ff6;
+}
+
+.about-img {
+    border-radius: 50%;
+    width: 50%;
+    border: 3px solid black;
+}
+
+.member {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 60px;
+    margin-top: 20px;
+}
+
+.sw-panel {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid#ff6;
+}
+
+.team-stats {
+    margin: 40px;
+}
+
+.data-source-well {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.data-source-well p {
+    text-align: justify;
+}
+
+.detail-img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.detail-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-default {
@@ -156,7 +241,6 @@ body {
 }
 
 #content img {
-    width: 100%;
     margin-top: 80px;
 }
 
@@ -281,6 +365,51 @@ p#start {
 
 #search {
     float: right !important;
+}
+
+#about-container {
+    margin-bottom: 50px;
+}
+
+#about-container h4 {
+    text-align: justify;
+}
+
+#about-container ul {
+    text-align: justify;
+    margin-left: 10%;
+}
+
+#home img {
+    width: 100%;
+}
+
+#data-sources {
+    margin: 40px;
+}
+
+#tools {
+    text-align: left;
+    margin-left: 30%;
+    margin-bottom: 40px;
+}
+
+#tools li {
+    font-size: 1em;
+}
+
+#tools h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#tools li a {
+    color: #ff6;
+    text-decoration: underline;
+}
+
+#tools li a:hover {
+    color: #b3b300;
 }
 
 /* Keyframes */

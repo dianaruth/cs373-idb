@@ -39,7 +39,7 @@ config:
 
 scrub:
 	make clean
-	rm -f  model.html
+	# rm -f  model.html
 	rm -f  IDB1.log
 
 status:
@@ -52,7 +52,7 @@ status:
 test: tests.py
 	python3 tests.py
 
-model.html:
+model.html: models.py
 	pydoc -w models
 
 IDB1.log:

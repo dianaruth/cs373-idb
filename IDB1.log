@@ -1,0 +1,480 @@
+commit e6562466139b541629a09c2d343b15f1ee49f607
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 18:55:10 2016 -0500
+
+    updated makefile, waiting on UML
+
+commit 1663644360e9745f0bbd0e76da4c33cb8ca2fbbb
+Merge: f57aa28 cf8e6fc
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 18:50:15 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit f57aa28552aa68222304381f10224768c8e35742
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 18:50:03 2016 -0500
+
+    added coverage output, small changes to partial files
+
+commit cf8e6fc32150570a5b4054acd96cd9fab75fc5dc
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 18:31:07 2016 -0500
+
+    Fixed models.html check
+
+commit 988aa62fcb474a82616b0f70bdc00c277a1f1947
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 18:28:26 2016 -0500
+
+    added pip install sqlalchemy:
+
+commit c544d9c73221d9f5b1001b6a380d98dcf47842a9
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 18:27:42 2016 -0500
+
+    Changed back config, added models.html
+
+commit 09db1987af37c4aaf37d0192feda21fa4aeeb02b
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 18:08:21 2016 -0500
+
+    Lets give this another go
+
+commit 5da12c51572acb662ba6effd1e51ba96cef20499
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 18:05:16 2016 -0500
+
+    fuck it all
+
+commit ba660fa5cec1d723d807202b2604185074ccd74c
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 18:02:34 2016 -0500
+
+    Diana likes frontend
+
+commit d7aa8865c6b91ef2d329dcbdd96cabd485bb80c5
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:59:25 2016 -0500
+
+    i
+
+commit 861cca64a603e9b5320afc035db26db6e133ba34
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:56:43 2016 -0500
+
+    threw the kitchen sink
+
+commit edc5c3d0c8de2a3e9beb5bf11ef6e73c025cb3fe
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:50:30 2016 -0500
+
+    hopefully this works
+
+commit 64a6dce997f028cd95df5a0e0911f4ea70893193
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:47:18 2016 -0500
+
+    going backt o last sucessful travis build config
+
+commit e8702e58b958a4ee30d0fbaadc89a997ba5b2a11
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:40:34 2016 -0500
+
+    hopefully fixed makefile
+
+commit 705930298de9687e96aa754ab5bd7f30e0731a18
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:35:19 2016 -0500
+
+    Changing makefile
+
+commit ed3fe2ef51c9432a6b46be212c17bdda2cd87955
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:33:17 2016 -0500
+
+    we'll try again next time.
+
+commit de4bf7e31feaa363bf5323e5fb1aa60efae4ea4f
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:30:00 2016 -0500
+
+    ¯\_(ツ)_/¯¯\_(ツ)_/¯
+
+commit 30e909e1b9b77364594e59056461254d50623d82
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:25:37 2016 -0500
+
+    ¯\_(ツ)_/¯
+
+commit ac55e203a25915cdac05afaf8476921b1546a6b1
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:22:25 2016 -0500
+
+    Fixing/ed make test
+
+commit d4fac9e3a1545bdb5c4d08389b932acfd26cc883
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:17:52 2016 -0500
+
+    Added pip3. Idk if itll fix it but heeeeereee we gooOoOooOo
+
+commit 04f6596c11923c7dea6e6b0a45d507a9c25b8268
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:15:42 2016 -0500
+
+    Fixed requirements directory:
+
+commit 460c17597cbecab81046e034f51176a8d4de001d
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:13:53 2016 -0500
+
+    have travis.yml install requirements.txt
+
+commit dab13a62fe55a9b7da40352f927aa3db53771ded
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:05:47 2016 -0500
+
+    Added pip install flask
+
+commit c1a42e2e8dcd1a5b088b6a187b1228070253919a
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 17:03:26 2016 -0500
+
+    Fixed travis yaml
+
+commit dfe42f305eb1d9bbbd9d77480684f2c2bf27c36f
+Merge: f075caf 2e3fd10
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 16:55:46 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit f075cafb165bc4ed7d6b66845d506b33789c6223
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 16:55:12 2016 -0500
+
+    travis sucks and this is Tony
+
+commit 2e3fd1099964851f23f4a9f9ab901b1ef0df3f3f
+Merge: 95b3805 06e064b
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 16:53:53 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 95b3805f9fafeaf069c039822488abaafe49a9e8
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 16:53:42 2016 -0500
+
+    updated README and added info to about controller
+
+commit 06e064b37f961ec21a068d6fbed40cd445d672d0
+Merge: b22a90d 7824561
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 16:41:25 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit b22a90d1ecf883a978ddacf7fbedf031315eb376
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 16:41:01 2016 -0500
+
+    Added models.py documentation
+
+commit 782456136ab05c7e52e424464c23dada58e51cf0
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Mar 24 16:29:26 2016 -0500
+
+    work travis
+
+commit dbaaeb5f6c0c0bc2258c38c3af9ad9517505ada0
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Mar 24 16:27:13 2016 -0500
+
+    git is trolling hard on me right now
+
+commit 8bf58c544b6f157065ea4ff61433e555665347d1
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Mar 24 16:23:41 2016 -0500
+
+    quick fix to get flask module working in travis
+
+commit c848611948c27d2fade883fcda3b38d33f652aa5
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Mar 24 16:21:30 2016 -0500
+
+    hopefully fixed commit issue
+
+commit 445bffad04c2a8ecf2a839ce26b55f413e385305
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Mar 24 16:15:29 2016 -0500
+
+    undoing last push
+
+commit c1566502811ffa7e09ce0a0851b3eb6ae22a94aa
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Mar 24 16:12:54 2016 -0500
+
+    attempting another push
+
+commit 7c3eb706aab757a1d3a98fabef0a163baff8b82a
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 16:04:25 2016 -0500
+
+    added API call to get single instances of each model, updated apiary.apib
+
+commit 31d676a5885b99f88854025a25a8ab4a9fec864b
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Mar 24 16:01:32 2016 -0500
+
+    attempt to import all needed modules from flask dev branch
+
+commit 71b8286ff0ab53b6b96cbd4a2ec9a1395387cdfa
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 14:27:07 2016 -0500
+
+    Added UTF annotation for app.py and updated information
+
+commit 5fbfcce136c3710202c08cb5c76b178238486510
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 13:42:18 2016 -0500
+
+    relationships added between models
+
+commit 93a455eecd18c979c28adfc06de6e8445601b254
+Merge: 4565976 c554cb5
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 12:30:57 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 45659762e876c62a49f9a62d2e13a0caf4bf1f8c
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 12:30:29 2016 -0500
+
+    descriptions now included in api data
+
+commit c554cb55a6753f1fc0475eacc6a2688d1d07d303
+Merge: 60b5a81 433c74b
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 11:00:03 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 60b5a8131a7d3144ae2ed83110c5c9cc0de3b933
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Mar 24 10:59:54 2016 -0500
+
+    Necessary files for docker and carina
+
+commit 433c74b21d50ed2b60d4e35f24f8a3a70a77a6b7
+Author: Jong Hoon Lim <jhlim84@hotmail.com>
+Date:   Thu Mar 24 10:48:34 2016 -0500
+
+    This closes #6. Added model init tests only since we are not yet required to set up a database.
+
+commit 74238fceeda72e2edc61861d58f848957b0bf298
+Author: Jong Hoon Lim <jhlim84@hotmail.com>
+Date:   Thu Mar 24 10:28:18 2016 -0500
+
+    Added unit tests to check __init__ of Model.py.
+
+commit 1714bd7eb6de26886414bcd95342fe7f7becc4a8
+Author: Jong Hoon Lim <jhlim84@hotmail.com>
+Date:   Thu Mar 24 09:57:56 2016 -0500
+
+    Modified models.py to represent database columns.
+
+commit dc7dd43e63c19344e65d9eec816d3b6571c21dfd
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 02:04:24 2016 -0500
+
+    front end done for phase 1 besides a few additions to about page, response json from each call in app.py is included in comments for transfer to apiary.apib
+
+commit cd71fcd20d89bbc2587ce5bc8d2cc62744c5a758
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Wed Mar 23 14:13:42 2016 -0500
+
+    tables displaying data correctly and are sortable
+
+commit 668116a650fb368e6cddd1ad009d12e47e1d37d7
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Tue Mar 22 18:09:22 2016 -0500
+
+    people page is pulling data from flask and the swapi api, now need to add for planets and species and make things look pretty
+
+commit 26eaa7b182accb01968e11dc7722c9a0bf0508ab
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Tue Mar 22 16:40:47 2016 -0500
+
+    app.py scrapes data from swapi.co to be used by angular on the frontend
+
+commit be64a0eb943ad186606009c77123101c90735dcb
+Author: Diana Ruth <dr26284@cs.utexas.edu>
+Date:   Tue Mar 22 16:01:30 2016 -0500
+
+    working on integrating flask and angular
+
+commit ad93cfc8a8f52e00aaa0e3840e152cbafeffdb93
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Tue Mar 22 15:02:49 2016 -0500
+
+    changed angular file structure to better reflect tutorials from angular website
+
+commit c06a26bf9126d8b34c3a6043f914362a47032521
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Tue Mar 22 11:20:28 2016 -0500
+
+    attempting to get travis build passing
+
+commit 7ac4b679f296914cfaa8ccb0459ccc17c8def6aa
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 21:25:53 2016 -0500
+
+    partials loading correctly
+
+commit 09647823295d8c84f91a2b88a3647a19fe6615da
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 20:09:29 2016 -0500
+
+    homepage loading, but links not loading partials
+
+commit eac62ba3de577eab3d0ea25c718c86b52bd31a5c
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 18:47:27 2016 -0500
+
+    almost getting partials loading
+
+commit 72b7ff6d3ce55842ebd20ee88c7823e110530c3a
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 17:29:43 2016 -0500
+
+    still attempting to get partials working
+
+commit 7564737672be5a39f32403b263c3ed51b3eb90c2
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 17:01:21 2016 -0500
+
+    Update home.html
+
+commit a9c87b2ad2d0f0cff2e8b5935f9dcf6c62c3d678
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 17:00:20 2016 -0500
+
+    Update index.html
+
+commit f49a4125c3a5eda409f52ab57640efb73be78fea
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 16:57:55 2016 -0500
+
+    having issues with angular routing
+
+commit fa0a9148dc0bde01e0c7af88454b6c2b414d875e
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Mon Mar 21 14:52:24 2016 -0500
+
+    attempting to add angular stuff
+
+commit 0954e74f3e4e4008cffa273488604d372fafb7d8
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 18:15:35 2016 -0600
+
+    changed travis file from pip to pip3
+
+commit 542e52b3d8bc4dcac27d034199c41127c13b9fff
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Fri Mar 11 14:08:03 2016 -0600
+
+    Generic Models
+
+commit 089c4dc517376853475691a22b4c19ba7e3a7a93
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Fri Mar 11 13:39:43 2016 -0600
+
+    created flask project, moved frontend to static and templates folder
+
+commit 0f4bab140ef2f0b8b0046e9ce5a1c117754d4250
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 11:02:17 2016 -0600
+
+    changed font of brand
+
+commit 591d517f9eb3555078616bdbde8ce86e7881ae3c
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:47:31 2016 -0600
+
+    added travis build status
+    to readme
+
+commit 43dc7e97b947ae369067585cab1deefea21196d5
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:38:40 2016 -0600
+
+    changed travis from model.html to models.html
+
+commit b5a060aa7995864def37ed79a44a0c0ef9c57eb7
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:36:06 2016 -0600
+
+    changed from model.html to models.html (hopefully we won't get in trouble
+
+commit ac1377754f91db3d82072aa53fc954e3e4d428cd
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:22:30 2016 -0600
+
+    added basic code to models.py
+
+commit 0cf42df4f5297f500cf99e8d4ef7226f93b3ece8
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:09:58 2016 -0600
+
+    temporarily commented out uml.pdf from makefile
+
+commit b9e18b1cb171a6db5b1305d725eaa44981720924
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:07:25 2016 -0600
+
+    added tests.py
+
+commit 254fba0f001d7a57bc5110aa23160c3bec369539
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:05:36 2016 -0600
+
+    added all required files and now attempting clean build on travis, closes #11, closes #12
+
+commit 40e034b4da804e256c61800c52e0de9e4c1605f0
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Mar 11 00:00:51 2016 -0600
+
+    added some travis files, attempting build
+
+commit f355809dcc95b847e0021f3903f027b84f8df510
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 10 21:12:04 2016 -0600
+
+    added travis file
+
+commit 6ede2400c078a3aab86e9ccaadbdc0f43a8ab56d
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 10 21:05:02 2016 -0600
+
+    splash page complete
+
+commit 188527f3bf8bdee2a8baf366487f313a51295da2
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 10 18:39:43 2016 -0600
+
+    intro page, needs content
+
+commit 554c687d8e7722f9757f50efca1a74a5ef1e4156
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Wed Mar 9 15:08:15 2016 -0600
+
+    Transferring API Description file from Apiary.io
+
+commit e66fa138ad7037a30a499337f56615b340305868
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Wed Mar 9 14:57:32 2016 -0600
+
+    Initial commit

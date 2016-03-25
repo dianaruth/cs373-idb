@@ -123,7 +123,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "photo": "diana.jpg",
                 "bio": "Fourth year student studying electrical engineering and computer science. Loves web development and horses. Getting ready to spend a semester down under in Melbourne, Australia. Thank god I'm not graduating yet.",
                 "responsibilities": ["Front-end development with AngularJS", "UI Design", "External API data compilation", "Apiary API"], 
-                "commits": 36,
+                "commits": 37,
                 "issues": 17,
                 "unit_tests": 0
             },
@@ -165,7 +165,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
             }
         ];
         $scope.teamStats = {
-            "commits": 83,
+            "commits": 85,
             "issues": 18,
             "unit_tests": 9
         };

@@ -39,6 +39,7 @@ def get_people_data():
         j["gender"] = person["gender"]
         j["birth_year"] = person["birth_year"]
         j["height"] = person["height"]
+        j["mass"] = person["mass"]
         j["hair_color"] = person["hair_color"]
         j["eye_color"] = person["eye_color"]
         people.append(j)
@@ -148,6 +149,7 @@ def get_person_data(path):
     j["gender"] = person["gender"]
     j["birth_year"] = person["birth_year"]
     j["height"] = person["height"]
+    j["mass"] = person["mass"]
     j["hair_color"] = person["hair_color"]
     j["eye_color"] = person["eye_color"]
     return jsonify({"person": j})

@@ -122,8 +122,8 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "name": "Diana Ruth",
                 "photo": "diana.jpg",
                 "bio": "Fourth year student studying electrical engineering and computer science. Loves web development and horses. Getting ready to spend a semester down under in Melbourne, Australia. Thank god I'm not graduating yet.",
-                "responsibilities": ["Front-end development with AngularJS", "UI Design", "External API data compilation"], 
-                "commits": 30,
+                "responsibilities": ["Front-end development with AngularJS", "UI Design", "External API data compilation", "Apiary API"], 
+                "commits": 37,
                 "issues": 17,
                 "unit_tests": 0
             },
@@ -132,7 +132,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "photo": "clint.jpg",
                 "bio": "#3 in Forbe’s 'Top 20 Teen Fashion Writers Gone Tech Journalist' in 2018. Leading thought leader™ of the millennials. Avid fan of Hamilton-themed SoulCycle and Avocado Toast with pink himalayan salt. Accounting and computer science major. Year long software engineer intern and, after graduation, full-time employee at DataStax.", 
                 "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker"],
-                "commits": 4,
+                "commits": 26,
                 "issues": 0,
                 "unit_tests": 0
             },
@@ -141,7 +141,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "photo": "tony.jpg",
                 "bio": "Computer Science student from Austin. Hobbies are video games and martial arts. 4x collegiate state judo champion. After graduation I will working as a software developer at Spiceworks.",
                 "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker"],
-                "commits": 1,
+                "commits": 18,
                 "issues": 0,
                 "unit_tests": 0
             },
@@ -149,7 +149,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "name": "Jamie Barbosa",
                 "photo": "jamie.jpg",
                 "bio": "Senior CS student from Schertz, Tx. Loves travel and adventure. Hoping to move to NYC after graduation. Puppies are the best animals.",
-                "responsibilities": ["UML Design", "GitHub Wiki", "Apiary"],
+                "responsibilities": ["UML Design", "GitHub Wiki"],
                 "commits": 0,
                 "issues": 0,
                 "unit_tests": 0
@@ -160,14 +160,14 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "bio": "A computer science student originally from Seoul, South Korea. Interests include bodybuilding and Texas hold'em. Once quadrupled his money playing poker for 15 minutes... then lost it all the next day.",
                 "responsibilities": ["GitHub Wiki", "Unit Testing", "Docker Setup"],
                 "commits": 3,
-                "issues": 2,
+                "issues": 1,
                 "unit_tests": 9
             }
         ];
         $scope.teamStats = {
-            "commits": 0,
-            "issues": 0,
-            "unit_tests": 0
+            "commits": 85,
+            "issues": 18,
+            "unit_tests": 9
         };
     }]);
 

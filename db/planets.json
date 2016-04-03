@@ -1,0 +1,544 @@
+{
+	"planets": [
+		{
+			"name": "Tatooine", 
+		    "climate": "arid", 
+		    "gravity": "1 standard", 
+		    "terrain": "desert", 
+		    "population": "200000",
+		    "description": "Tatooine was a desert planet located in the Outer Rim Territories. The planet was part of a binary star system. Due to the lack of surface water, many residents of the planet instead drew water from the atmosphere via moisture farms. Tatooine was the homeworld of Anakin Skywalker, the Chosen One, and his son Luke Skywalker. Anakin's former master, Obi-Wan Kenobi, also resided on the planet after the Clone Wars ended, going by the name Ben Kenobi. The Hutt Clan maintained a presence on Tatooine as well, with Jabba the Hutt owning a palace in the desert. Tatooine gained the notice of the Empire during the Galactic Civil War when an escape pod carrying two droids in possession of top-secret information launched from the starship Tantive IV and landed on the sandy Outer Rim world.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/b/b0/Tatooine_TPM.png/revision/latest?cb=20131019121937"
+		},
+		{
+			"name": "Alderaan", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "grasslands, mountains", 
+		    "population": "2000000000",
+		    "description": "Alderaan, located in the Core Worlds, was the second planet in the Alderaan system, and the home of many famous heroes, including Leia Organa Solo, Bail Organa, and Ulic Qel-Droma. Renowned galaxy-wide for their planet's unspoiled beauty, refined culture, and commitment to peace, Alderaanians worked with and around the land to preserve as much of the natural surroundings as they could. Originally the home of the Killiks, Alderaan was later conquered by Humans. Despite a battle during the Great Galactic War and a civil war during the subsequent Cold War, Alderaan remained peaceful during much of galactic history. However, in 0 BBY, Grand Moff Tarkin and the Galactic Empire wanted to intimidate the galaxy into submission, and destroyed the unarmed and peaceful planet using the first Death Star's superlaser.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20061211013805"
+		},
+		{
+			"name": "Yavin IV", 
+		    "climate": "temperate, tropical", 
+		    "gravity": "1 standard", 
+		    "terrain": "jungle, rainforests", 
+		    "population": "1000",
+		    "description": "Yavin 4 was one of three habitable moons orbiting the gas giant Yavin. It was mainly covered in jungle and rainforest, and despite being remote and unheard of, it would play an important role in galactic events, including the seduction of Jedi Knight Exar Kun to the dark side and the destruction of Sith Lord Freedon Nadd during the Great Sith War, the site of the eventual final death of the maddened Jedi Revan in the waning days of the Galactic War, a ferocious duel between Jedi and Sith during the Clone Wars, and serving as the base of the Alliance to Restore the Republic during the Battle of Yavin and as a battlefield in other battles of the Galactic Civil War. An attack was launched on the Death Star from this moon. It also became the base for a Jedi Academy after the war ended.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/a/a0/Eaw_Yavin4.jpg/revision/latest?cb=20060418114439"
+		},
+		{
+			"name": "Hoth", 
+		    "climate": "frozen", 
+		    "gravity": "1.1 standard", 
+		    "terrain": "tundra, ice caves, mountain ranges", 
+		    "population": "unknown",
+		    "description": "Hoth was the sixth planet of the remote Hoth system. A desolate world covered with ice and snow, located in the Anoat sector, a rarely-traveled portion of the Outer Rim Territories, it became famous as the one-time location of the Alliance to Restore the Republic's Echo Base during the Galactic Civil War. The base was discovered by the Empire in 3 ABY, precipitating the Battle of Hoth, a major engagement during which the Rebels suffered heavy casualties and lost Echo Base.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/d/d1/Hoth.jpg/revision/latest?cb=20071019040631"
+		},
+		{
+			"name": "Dagobah",  
+		    "climate": "murky", 
+		    "gravity": "N/A", 
+		    "terrain": "swamp, jungles", 
+		    "population": "unknown",
+		    "description": "Dagobah was an Outer Rim planet in the Dagobah system. A remote world of swamps and forests, it served as a refuge for Jedi Grand Master Yoda during his exile after the events of Order 66 had taken place, but otherwise had no notable intelligent life.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/4/48/Dagobah_ep3.jpg/revision/latest?cb=20100122163146"
+		},
+		{
+			"name": "Bespin", 
+		    "climate": "temperate", 
+		    "gravity": "1.5 (surface), 1 standard (Cloud City)", 
+		    "terrain": "gas giant", 
+		    "population": "6000000",
+		    "description": "Bespin was a gas giant in the Bespin system of the Anoat sector on the Ison Corridor in the Greater Javin region of the Outer Rim Territories. It was also a major source of tibanna gas, which was refined for production and transport in numerous mining operations including Cloud City and Tibannopolis. It was home to several million individuals, including Humans, Ugnaughts, and Lutrillians.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/2/2c/Bespin_EotECR.png/revision/latest?cb=20151017214807"
+		},
+		{
+			"name": "Endor",  
+		    "climate": "temperate", 
+		    "gravity": "0.85 standard", 
+		    "terrain": "forests, mountains, lakes", 
+		    "population": "30000000",
+		    "description": "Endor (also known as the Forest Moon of Endor and the Sanctuary Moon) was a small forested moon orbiting the gas giant planet of Endor and was the farthest moon away from it. An enchanted world, Endor was notable for being the native home of the Ewoks, and being the location of the Battle of Endor, which would result in the downfall of the Empire and the first death of the Emperor Palpatine. Due to its proximity to the Unknown Regions, Endor was a relatively quiet planetoid both prior to and after the battle. Endor was also known for the vast amount of sentient species it supported, from baseline to exotic. This was largely due to the unusually large number of shipwrecks Endor experienced; it has been compared to a 'desert island' in space.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/1/1f/Endor.jpg/revision/latest?cb=20130731183030"
+		},
+		{
+			"name": "Naboo", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "grassy hills, swamps, forests, mountains", 
+		    "population": "4500000000",
+		    "description": "Naboo (pronounced /nə'bu/) was a planet that was the sector capital of the Chommell sector near the Outer Rim territories. It was a largely unspoiled world with large plains, swamps and seas. It was mostly known as the homeworld of notable historical figures who played major roles in the downfall of the Galactic Republic and the rise of the Galactic Empire, namely Padmé Amidala, Emperor Palpatine and Jar Jar Binks.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/5/50/Naboo.jpg/revision/latest?cb=20080723001712"
+		},
+		{
+			"name": "Coruscant", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "cityscape, mountains", 
+		    "population": "1000000000000",
+		    "description": "Coruscant (pronounced /'kɔɹəsɑnt/ or, more rarely, /kəˈɹʌskənt/), originally called Notron, also known as Imperial Center or the Queen of the Core, was a planet located in the Galactic Core. It was generally agreed that Coruscant was, during most of galactic history, the most politically important world in the galaxy. At various times, it was the capital of the Galactic Republic, the Galactic Empire, the New Republic, the Yuuzhan Vong empire, the Galactic Alliance, very briefly the Fel Empire, Darth Krayt's Galactic Empire, and the Galactic Federation Triumvirate. In controlling Coruscant, these governments controlled most of the galaxy in the process. Over the centuries, Coruscant had developed into an ecumenopolis, with a total of 5,127 levels of city built up from the crust by the time of the Clone Wars. The actual planet-wide metropolis of Coruscant was called Galactic City. Under the Galactic Republic, the names Republic City or the City of Spires were also used to reference the city. It was also called Imperial City under the Galactic Empire, and New Republic City under the New Republic. However, in practice, Galactic City and its other names were sometimes applied to the Senate District, the central government center and de facto capital of Coruscant. Under the Yuuzhan Vong, the city and planet were both referred to as Yuuzhan'tar.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/1/17/Coruscant-AoTCW.jpg/revision/latest?cb=20100115192302"
+		},
+		{
+			"name": "Kamino",  
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "ocean",  
+		    "population": "1000000000",
+		    "description": "Kamino (pronounced /kə'minoʊ/), also known as the Planet of Storms, was the watery world where the Clone Army of the Galactic Republic was created, as well as the Kamino Home Fleet. It was inhabited by a race of tall, elegant beings called the Kaminoans, who kept to themselves and were known for their cloning technology. Kamino was located just south of the Rishi Maze, and was governed by the Ruling Council, headed by the Prime Minister.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/a/a9/Eaw_Kamino.jpg/revision/latest?cb=20090527045541"
+		},
+		{
+			"name": "Geonosis", 
+		    "climate": "temperate, arid", 
+		    "gravity": "0.9 standard", 
+		    "terrain": "rock, desert, mountain, barren", 
+		    "population": "100000000000",
+		    "description": "Geonosis, called Geonosia by some natives, was the home planet of the Geonosians. The desert world was the Confederacy's first capital, hosting its major droid foundries. It was the site of the Battle of Geonosis, the opening conflict of the Clone Wars, in 22 BBY.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/6/6d/Geonosis_AotC.png/revision/latest?cb=20121231120327"
+		},
+		{
+			"name": "Utapau", 
+		    "climate": "temperate, arid, windy", 
+		    "gravity": "1 standard", 
+		    "terrain": "scrublands, savanna, canyons, sinkholes",  
+		    "population": "95000000",
+		    "description": "Utapau (pronounced /'jutəpaʊ/) was an arid sinkhole world in the Utapau system of the Tarabba sector in the Outer Rim Territories. Utapau was the homeworld of the Pau'ans and the Utai, more commonly referred to collectively as Utapauns. These species lived in the many giant sinkholes that dotted the planet's scrub-covered surface.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/c/ce/UtapauRotS.png/revision/latest?cb=20160118063015"
+		},
+		{
+			"name": "Mustafar", 
+		    "climate": "hot", 
+		    "gravity": "1 standard", 
+		    "terrain": "volcanoes, lava rivers, mountains, caves", 
+		    "population": "20000",
+		    "description": "Mustafar was a small planet located in the Mustafar system of the Outer Rim Territories, coreward of Rutan, between the Hydian Way and the Ninth Quadrant. A fiery volcanic world where lava was mined like a precious natural resource, Mustafar often served as a place to dispose of unwanted evidence, a quality which drew Black Sun to the planet. During the Clone Wars, when Darth Sidious hired Cad Bane to kidnap Force-sensitive children so he could conduct Sith experiments, Anakin Skywalker and his Padawan, Ahsoka Tano went to recover the 2 children already kidnapped by Bane. When nurse droids noticed the Twilight, Anakin's personal ship incoming, Darth Sidious ordered the droids to let the building sink into the lava river. They complied and hid in the dark building with the children. When the Jedi entered the doomed facility, the droids attacked the Jedi, but to no avail. In the end, Skywalker and Tano freed the children, returned them to their homes, and the facility was no more as it sank beneath the fiery waves. It also drew the Sith: it was on Mustafar that Darth Maul began his Sith training. Mustafar also served as the last capital of the Confederacy of Independent Systems, and was the site of the Separatists' downfall, an event that shaped galactic history. In a duel that followed, Darth Vader fought his former master, Obi-Wan Kenobi, and lost, as a result of which he was forced to wear dark armor for the rest of his life.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/4/46/Mustafar.png/revision/latest?cb=20140321174124"
+		},
+		{
+			"name": "Kashyyyk", 
+		    "climate": "tropical", 
+		    "gravity": "1 standard", 
+		    "terrain": "jungle, forests, lakes, rivers", 
+		    "population": "45000000", 
+		    "description": "Kashyyyk, also known as Wookiee Planet C, Edean, G5-623, and Wookiee World, was a Mid Rim planet. It was the lush, wroshyr tree-filled home world of the Wookiees. It was a member of the Galactic Republic, endured enslavement under the Galactic Empire, and later joined the New Republic.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/6/69/Kasyyykunleashed.jpg/revision/latest?cb=20090327122712"
+		},
+		{
+			"name": "Polis Massa", 
+		    "climate": "artificial temperate ", 
+		    "gravity": "0.56 standard", 
+		    "terrain": "airless asteroid", 
+		    "population": "1000000", 
+		    "description": "Polis Massa was once an arid, habitable, barren planetoid and originally the homeworld of the origin of the little-known Eellayin civilization, which dwelt in underground cities such as Wiyentaah. Polis Massa was later struck by a mysterious cataclysm. This natural disaster destroyed the planet and formed a field of asteroids which remained known as Polis Massa, especially the largest of them. The Eellayin civilization disappeared.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/d/dc/PolisMassa-BFII.jpg/revision/latest?cb=20090923124714"
+		},
+		{
+			"name": "Mygeeto", 
+		    "climate": "frigid", 
+		    "gravity": "1 standard", 
+		    "terrain": "glaciers, mountains, ice canyons", 
+		    "population": "19000000", 
+		    "description": "Mygeeto was a frigid crystalline planet located in the Outer Rim Territories that was the homeworld of the Lurmen species. During the Outer Rim Sieges Mygeeto was aligned with the Confederacy of Independent Systems and hosted the site of a battle between the Galactic Republic and Separatists as the war drew to an end. Following the end of the war, the Empire took over the planet and had a battle sometime before the Battle of Yavin involving the Rebel Alliance's Sixty-First Mobile Infantry during the early stages of the Galactic Civil War.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/e/eb/MygeetoFromSpace.jpg/revision/latest?cb=20051104084715"
+		},
+		{
+			"name": "Felucia",  
+		    "climate": "hot, humid", 
+		    "gravity": "0.75 standard", 
+		    "terrain": "fungus forests", 
+		    "population": "8500000", 
+		    "description": "Felucia was a colorful, humid jungle planet located in the Felucia system of the Outer Rim. Being a key planet for control of the Perlemian Trade Route, it was the location of several battles between the Galactic Republic and Confederacy of Independent Systems during the Clone Wars, and later at least one Imperial outpost. After the execution of Order 66, Jedi Knight Aayla Secura was executed by Commander Bly and the 327th Star Corps on Felucia.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/d/dc/Felucia_tcw.jpg/revision/latest?cb=20090904232410"
+		},
+		{
+			"name": "Cato Neimoidia", 
+		    "climate": "temperate, moist", 
+		    "gravity": "1 standard", 
+		    "terrain": "mountains, fields, forests, rock arches", 
+		    "population": "10000000", 
+		    "description": "The oldest of the Neimoidian purse worlds, Cato Neimoidia was the location of Nute Gunray's secret redoubt. The planet was near the Neimoidian homeworld of Neimoidia, also in the Colonies region. Only the richest of the Neimoidians were allowed to live on the planet. Their treasures were protected in vaults located in difficult landscape and protected by B1 battle droids. The cities of Cato Neimoidia were built on large bridges spanning massive rock arches. Cato Neimoidia featured vast forests rich in flora and fauna. Notable species included the Neimoidian kreehawk, a dangerous but beautiful avian found in some aviaries.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/c/c0/CatoNeimoidia-SS.png/revision/latest?cb=20120830233305"
+		},
+		{
+			"name": "Saleucami", 
+		    "climate": "hot", 
+		    "gravity": "unknown", 
+		    "terrain": "caves, desert, mountains, volcanoes", 
+		    "population": "1400000000", 
+		    "description": "Saleucami (pronounced /sʌ'lukəˌmaɪ/) was a dim, arid Techno Union world with scattered caldera oases filled with vegetation. Its plant life included unusual bulbous trees. It was located between Kegan and Handooine. The planet sat on the Talcene Transit which supplied cargo from the Perlemian Trade Route to the Kuthic Worlds.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/7/75/Saleucami.jpg/revision/latest?cb=20110322135512"
+		},
+		{
+			"name": "Stewjon", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "grass", 
+		    "population": "unknown", 
+		    "description": "Stewjon was a terrestrial planet located in the Stewjon system. It had an atmosphere that allowed Humans to breathe oxygen comfortably. Stewjon was the homeworld of Jedi Master Obi-Wan Kenobi and his family, though he was taken from the planet at a young age for training to become a Jedi.",
+		    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+		},
+		{
+			"name": "Eriadu", 
+		    "climate": "polluted", 
+		    "gravity": "1 standard", 
+		    "terrain": "cityscape", 
+		    "population": "22000000000", 
+		    "description": "Eriadu was the primary world in the Seswenna sector, and one of the Outer Rim's most active trade centers. It sat on the intersection of several hyperspace routes, including the Rimma Trade Route, the Hydian Way, the Lipsec Run, and the Yankirk Route. The planet had originally been on the Eriadu Bypass until the Hydian Way was remapped to run through Eriadu (reflecting economic realities) rather than Seswenna. It was an important launch point for ships headed to the Moddell sector, such as the colony ship Free Enterprise in 130 BBY.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/58/Eriadu.jpg/revision/latest?cb=20071219212015"
+		},
+		{
+			"name": "Corellia", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "plains, urban, hills, forests", 
+		    "population": "3000000000", 
+		    "description": "Corellia was the capital planet of the Corellian system, which included Selonia, Drall, Tralus, and Talus. It was also the birthplace of smuggler and New Republic General Han Solo as well as Rogue Squadron pilot and New Republic hero Wedge Antilles, along with many other humans who played important roles in the histories of the Rebel Alliance, New Republic, and Galactic Alliance. Collectively, the planets of the system were known as the Five Brothers. As the largest planet and the closest to Corell, Corellia was often called the 'Eldest Brother' or the 'Eldest.' Historians believed the Celestials assembled the system artificially, the worlds brought from other parts of the galaxy for unknown reasons. Some believed that these Celestials populated Corellia with Humans from Coruscant.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/7/7f/Corellia_SOF.png/revision/latest?cb=20160308053946"
+		},
+		{
+			"name": "Rodia", 
+		    "climate": "hot", 
+		    "gravity": "1 standard", 
+		    "terrain": "jungles, oceans, urban, swamps", 
+		    "population": "1300000000", 
+		    "description": "Rodia was a remote swampy, jungle planet and the homeworld of the Rodians. Cities on Rodia were encased with domed environmental shields that allowed entry and exit for vehicles and vessels.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/c/c3/Rodia_canon.png/revision/latest?cb=20150817013106"
+		},
+		{
+			"name": "Nal Hutta", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "urban, oceans, swamps, bogs",  
+		    "population": "7000000000", 
+		    "description": "Nal Hutta (Glorious Jewel in Huttese), also known simply as Hutta, was the capital of Hutt Space and was located in the Y'Toub system. It was formerly known as Evocar and was the original home world of the Evocii, who were ousted by the Hutts in 15,000 BBY, who migrated from their original home world of Varl along with their servants the t'landa Til. The planet was controlled by the ancient ruling Hutt families, who also ruled its moon Nar Shaddaa from Nal Hutta.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/8/8d/Nal-hutta.png/revision/latest?cb=20130810013943"
+		},
+		{
+			"name": "Dantooine", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "oceans, savannas, mountains, grasslands", 
+		    "population": "1000", 
+		    "description": "Dantooine (pronounced /'dæntuin/) was a pleasant world of grasslands, rivers and lakes. The planet was located in the Raioballo sector of the Outer Rim at an endpoint of Myto's Arrow, the other endpoint of which was in the Obtrexta sector, though Dantooine itself was still far removed from most galactic traffic. It hosted a small population spread amongst single-family settlements and small communities with large land holdings. Its sentient population consisted primarily of simple Human farmers, though Dantooine was also home to the primitive Dantari race. Native wildlife included the kath hound, the iriaz, the kinrath, and the graul. The planet had no industrial settlements or advanced technology by the time of the Galactic Civil War, save for a temporary Rebel base there.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/3/34/Dantooine2.jpg/revision/latest?cb=20070111045323"
+		},
+		{
+			"name": "Bestine IV", 
+		    "climate": "temperate", 
+		    "gravity": "unknown", 
+		    "terrain": "rocky islands, oceans", 
+		    "population": "62000000", 
+		    "description": "Bestine IV, or simply Bestine, was an aquacultural planet in the Inner Rim, along the Corellian Trade Spine. Nearly all of its surface was covered by a vast ocean, but there were many rugged islands spread across the planet. The original population struggled for years atop the planet's Island Spires to create an island paradise. As time passed, the planet was more widely known for its ship repair and construction industry, which eventually caught on with the Galactic Empire, who constructed large naval shipyards.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/d/d2/Bestine_eaw.jpg/revision/latest?cb=20070706033018"
+		},
+		{
+			"name": "Ord Mantell", 
+		    "climate": "temperate", 
+		    "gravity": "1 standard", 
+		    "terrain": "plains, seas, mesas", 
+		    "population": "4000000000", 
+		    "description": "Ord Mantell was a planet in the Bright Jewel Cluster. It was located near Anobis in the Mid Rim and was originally settled in 12,000 BBY as an Ordnance/Regional Depot. Due to its acquainted location on the Celanon Spur between the Expansion Region and the Outer Rim Territories, the planet gradually became the leading financial hub and trading post not only of the Bright Jewel sector, but of the Dohu sector and Qiilura sector aswell.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/3/36/Ord_Mantell_EotECR.png/revision/latest?cb=20151017214538"
+		},
+		{
+			"name": "Trandosha", 
+		    "climate": "arid", 
+		    "gravity": "0.62 standard", 
+		    "terrain": "mountains, seas, grasslands, deserts", 
+		    "population": "42000000", 
+		    "description": "Trandosha, also known as Dosha, was an arboreal planet located in the galaxy's Mid Rim and the homeworld of the Trandoshan species. It was orbited by Wasskah, a verdant moon, and was positioned in the same star system as Kashyyyk, the homeworld of the Wookiees, a species with whom the Trandoshans had a fierce rivalry.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/4/40/Trandosha-PL.png/revision/latest?cb=20130530013144"
+		},
+		{
+			"name": "Socorro", 
+		    "climate": "arid", 
+		    "gravity": "1 standard", 
+		    "terrain": "deserts, mountains", 
+		    "population": "300000000", 
+		    "description": "Socorro was a planet in the Outer Rim Territories with a reputation as a smuggler haven.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/a/a2/The_Black_Sands_of_Socorro.jpg/revision/latest?cb=20060410141728"
+		},
+		{
+			"name": "Mon Cala", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "oceans, reefs, islands", 
+		    "population": "27000000000", 
+		    "description": "Dac, as it was called in Mon Calamarian, Quarrenese, and Basic, also known as Mon Calamari and sometimes simply called Calamari or Mon Cala, was a planet in the Calamari system of the Calamari sector, located in the Outer Rim. It was home to a wealth of sentient species: the Mon Calamari, the Quarren, the Moappa, the Amphi-Hydrus, and the Whaladons. Mon Calamari was the name given to the planet by Human explorers from the Galactic Republic who first discovered and revealed the world to the rest of the galaxy. The native species referred to the planet as Dac. The planet was a shining bluish-white orb from space, due to its ocean-covered surface. It was home to 27.5 billion Mon Calamarians and Quarren, as well as surrounded by the impressive Mon Calamari Shipyards. In 137 ABY, all life on the planet was wiped out in accordance with the Final Protocol ordered by Darth Wyyrlok of the One Sith with the use of Viral spores to punish the Mon Calamari for rendering aid to the remnants of the Galactic Alliance. Nearly 20% of the planet's population was saved during the Evacuation of Dac.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/0/04/Dac-AORCR.png/revision/latest?cb=20151016044024"
+		},
+		{
+			"name": "Chandrila", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "plains, forests", 
+		    "population": "1200000000", 
+		    "description": "Chandrila was a planet in the Core Worlds of the galaxy. The female human Mon Mothma hailed from Chandrila, and represented her homeworld in the Galactic Republic's Senate. Chandrila was one of the planets targeted for destruction by the Emperor's Death Star II, who planned to use the station's planet-shattering capabilities to end the Rebellion through sheer terror. Following the Battle of Endor, Chandrila became the capital of the New Republic and the seat of the newly formed Galactic Senate as a tribute to the Republic of old. It was not permanent, however, as the Republic chose to rotate its capital world based on elections.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/c/c0/Chandrila_JA.png/revision/latest?cb=20050812141320"
+		},
+		{
+			"name": "Sullust", 
+		    "climate": "superheated", 
+		    "gravity": "1", 
+		    "terrain": "mountains, volcanoes, rocky deserts", 
+		    "population": "18500000000", 
+		    "description": "Sullust was a barren, obsidian world of lava streams and turquoise lakes. Native fauna such as ash angels foraged during the day and returned to nest at night, while rockrenders and sullustan worms prowled the planets underground. Native Sullustans lived in vast, underground cities and commuted to work by lifts and shuttles which carried them to the factories on the planets surface, alternating between day and night shifts. The SoroSuub Corporation employed roughly half the population of Sullust.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/2/2d/SullustAoR.png/revision/latest?cb=20150526042939"
+		},
+		{
+			"name": "Toydaria", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "swamps, lakes", 
+		    "population": "11000000", 
+		    "description": "Toydaria was the homeworld of the Toydarian species located in Hutt Space. In the last decades of the Galactic Republic, the planet was governed by a monarchy. During the Clone Wars, King Katuunko of Toydaria refused to support either the Galactic Republic or the Confederacy of Independent Systems, which made his planet a strategic interest for the two warring sides. However, after a diplomatic mission headed by Bail Organa and Jar Jar Binks, Katuunko committed his world to support the Republic.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/d/d6/Toydaria-TCW.png/revision/latest?cb=20130506235119"
+		},
+		{
+			"name": "Malastare", 
+		    "climate": "arid, temperate, tropical", 
+		    "gravity": "1.56", 
+		    "terrain": "swamps, deserts, jungles, mountains", 
+		    "population": "2000000000", 
+		    "description": "Malastare was a forested planet located in the Malastare system of the Mid Rim. Its core was home to large reserves of Malastarian fuel, a toxic fuel found only on Malastare. It was the homeworld of the Dug species, though it was represented by the Gran species in the Galactic Senate. Ainlee Teem, the senator of Malastare, was nominated in the election for Supreme Chancellor during the Invasion of Naboo. During the Clone Wars, Malastare was the location of a battle between the Galactic Republic and the Confederacy of Independent Systems over the planet's fuel reserves. The battle awoke a creature known as the Zillo Beast, which the Republic successfully neutralized, leading the Malastarian council to sign a treaty with the Republic allowing them access to their fuel reserves.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/d/df/MalastareNEGAS.jpg/revision/latest?cb=20061119155609"
+		},
+		{
+			"name": "Dathomir", 
+		    "climate": "temperate", 
+		    "gravity": "0.9", 
+		    "terrain": "forests, deserts, savannas", 
+		    "population": "5200", 
+		    "description": "Dathomir was an obscure planet in the Outer Rim Territories, located in the Quelii sector. It was somewhat smaller than Coruscant in size and thus a slightly-below-standard gravity. The planetary day was close to standard though the planetary year was 491 days. Dathomir had four moons. Dathomir was considered a temperate and beautiful planet by Human standards, with a varied terrain that included coastal lakes and tar-pits, thick forests and snow-capped mountain peaks, powerful rivers and broad savannas, small icecaps and dramatic rift valleys. Even under the New Republic, however, nine-tenths of the planet remained unexplored and uninhabited, with the population limited to a relatively small area along the edge of one of the three main continents, a zone of uplands and river plains bordered on one side by the unsailed ocean and on the other by vast expanses of desert.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/4/49/Dathomir.jpg/revision/latest?cb=20110208032408"
+		},
+		{
+			"name": "Ryloth", 
+		    "climate": "temperate, arid, subartic", 
+		    "gravity": "1", 
+		    "terrain": "mountains, valleys, deserts, tundra", 
+		    "population": "1500000000", 
+		    "description": "Ryloth, also known as Twi'lek, and Twi'lek Prime, was the harsh, rocky homeworld of the Twi'leks, an Outer Rim Territories world located on the Corellian Run and forming one endpoint of the Death Wind Corridor. One side of the planet perpetually faced its sun and the other remained in darkness, a phenomenon known as tidal locking. The dayside was referred to as the Bright Lands and the night-side was known as the Nightlands.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/d/d3/Ryloth_EotECR.png/revision/latest?cb=20151017214247"
+		},
+		{
+			"name": "Aleen Minor", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "unknown", 
+		    "population": "unknown", 
+		    "description": "Aleen Minor, also known as Aleen, was the temperate homeworld of the Aleena, located in the Inner Rim Territories. The Aleen Classic, a popular podracing event, was held annually on the planet. Famous Aleena podracer Ratts Tyerell and Jedi Master Kazdan Paratus were natives of Aleen.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/f/f6/Aleen_NEGAS.jpg/revision/latest?cb=20070630172856"
+		},
+		{
+			"name": "Vulpter", 
+		    "climate": "temperate, artic", 
+		    "gravity": "1", 
+		    "terrain": "urban, barren", 
+		    "population": "421000000", 
+		    "description": "Vulpter was the third planet of the Vulpter system in the Deep Core, and the homeworld of the sentient Vulptereen species. Originally an unspoiled world with a wide array of flora and fauna, Vulpter was transformed over the millennia into a massively polluted globe covered in waste and factories. This meant that the planet was unable to sustain itself in terms of agriculture, and was thus entirely reliant on importing foodstuffs from other worlds. Vulpter was a noted producer of starships, and was home to one of the galaxy's largest podracer factories. Several corporations, such as Viper Sensor Intelligence Systems and Arakyd Industries, operated facilities on the planet.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/b/be/Vulpter_FF7.jpg/revision/latest?cb=20070628190912"
+		},
+		{
+			"name": "Troiken", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "desert, tundra, rainforests, mountains", 
+		    "population": "unknown", 
+		    "description": "Troiken was a planet located in the Troiken system of the Outer Rim Territories, and the homeworld of the Xexto.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/3/3a/TroikenQuermia.jpg/revision/latest?cb=20061111014525"
+		},
+		{
+			"name": "Tund", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "barren, ash", 
+		    "population": "0", 
+		    "description": "Tund was a planet in the Tund system of the Centrality, located on the Outer Rim of the galaxy. It was formerly a beautiful world awash in life, with terrain including rainforests and prairies.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/2/27/Tundatlas.jpg/revision/latest?cb=20100515115645"
+		},
+		{
+			"name": "Haruun Kal", 
+		    "climate": "temperate", 
+		    "gravity": "0.98", 
+		    "terrain": "toxic cloudsea, plateaus, volcanoes", 
+		    "population": "705300", 
+		    "description": "The planet Haruun Kal (Above the Clouds in Basic, also known as Haruun Kul or Al'Har I), located in the Dustig sector of the Mid Rim on the Gevarno Loop, was the homeworld of the famed Jedi Master Mace Windu. Its capital was Pelek Baw.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/9/92/HaruunKalCSWE.JPG/revision/latest?cb=20120821183509"
+		},
+		{
+			"name": "Cerea", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "verdant", 
+		    "population": "450000000", 
+		    "description": "Cerea was a planet located in the Mid Rim region of the galaxy. The homeworld of the Cerean species, Cerea was notable for its inhabitants' harmonious relationship with nature. Technology and pollution were frowned upon by the conservative government, a major point in the planet's decision not to join the Galactic Republic. The Cerean population mainly lived in giant buildings that took up a minimum of space, allowing the remainder of the planet's area to be employed as farmland. Foreign immigrants and visitors were, with a few exceptions, only allowed in Cerea's Outsider Citadels, enormous buildings erected to let non-Cereans practice their technological ways. This ensured that the foreigners' technology did not contaminate Cerea's nature, but also led to a concentration of criminal elements within the Citadels.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/c/cc/Cerea-FDCR.png/revision/latest?cb=20160304045551"
+		},
+		{
+			"name": "Glee Anselm", 
+		    "climate": "tropical, temperate", 
+		    "gravity": "1", 
+		    "terrain": "lakes, islands, swamps, seas", 
+		    "population": "500000000", 
+		    "description": "Glee Anselm was a peaceful water planet in the Mid Rim. The planet's surface was largely covered in water or swamps, with only a few clear landmasses dotting its surface. The planet had very frequent season changes, causing it to be ravaged by intense storms with some of them turning cyclonic. The climate was moderate most of the standard year round.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/e/e0/Glee_Anselm_NEGAS.jpg/revision/latest?cb=20061111162334"
+		},
+		{
+			"name": "Iridonia", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "rocky canyons, acid pools", 
+		    "population": "unknown", 
+		    "description": "Iridonia was the homeworld of the Zabrak species. Due to the harsh living conditions, the Zabrak were a hardy species. They took to flight and then space travel as soon as they could develop the technology, and by the time the Duros encountered them, they had already colonized five systems. Notable Iridonians included Agen Kolar, Bao-Dur, Drell Kahmf, Sirak, and Maris Brood.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/c/c5/Iridonia.jpg/revision/latest?cb=20061118121317"
+		},
+		{
+			"name": "Tholoth",  
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "unknown", 
+		    "population": "unknown", 
+		    "description": "Tholoth was a planet located within the Tholoth system of the Colonies.",
+		    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+		},
+		{
+			"name": "Iktotch", 
+		    "climate": "arid, rocky, windy", 
+		    "gravity": "1", 
+		    "terrain": "rocky", 
+		    "population": "unknown", 
+		    "description": "Iktotch was the homeworld of the Iktotchi. It was the third moon of Iktotchon.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/4/4b/Iktotchon_NEGAS.jpg/revision/latest?cb=20061115194635"
+		},
+		{
+			"name": "Quermia", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "unknown", 
+		    "population": "unknown", 
+		    "description": "Quermia was the home planet of the Quermian species. It was located near the end of the Perlemian Trade Route.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/2/29/Quermia_NEGAS.jpg/revision/latest?cb=20070701083603"
+		},
+		{
+			"name": "Dorin", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "unknown", 
+		    "population": "unknown",
+		    "description": "Dorin was a dark and dusty planet in the Expansion Region. It was the homeworld of the Kel Dors, with an atmosphere of a unique gas and helium.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/9/9b/Dorin-FDCR.png/revision/latest?cb=20160304050545"
+		},
+		{
+			"name": "Champala", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "oceans, rainforests, plateaus", 
+		    "population": "3500000000", 
+		    "description": "Champala, also called 'Chagria,' was a planet in the Inner Rim. Most of its starports were high and dry on plateaus, but its cities were submerged at high tide. It was a popular resort world.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/d/d7/Champala_NEGAS.jpg/revision/latest?cb=20061114221731"
+		},
+		{
+			"name": "Mirial", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "deserts", 
+		    "population": "unknown", 
+		    "description": "Mirial was the homeworld of the Mirialans, including Luminara Unduli and Barriss Offee, and is a cold, dry planet located near the Hydian Way. The Mirialans joined the galactic community prior to 3951 BBY. During the Jedi Civil War, Mirial aligned with the Sith Empire, returning to the Republic after Darth Malak's death. The planet later fought in a war against a neighboring planet, and triumphed, thanks in part to Arwen Cohl. During the Clone Wars, the planet was located within Separatist space.",
+		    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+		},
+		{
+			"name": "Serenno", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "rainforests, rivers, mountains", 
+		    "population": "unknown", 
+		    "description": "Serenno was a planet in the Outer Rim Territories. It was known for its aristocratic Counts, the most famous of them being Dooku. It was also well known for its long history of resisting authority.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/b/b2/Serenno-Massacre.png/revision/latest?cb=20130607043719"
+		},
+		{
+			"name": "Concord Dawn", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "jungles, forests, deserts", 
+		    "population": "unknown", 
+		    "description": "Concord Dawn was the homeworld of notorious bounty hunters Jango Fett and Rako Hardeen, with the latter being nicknamed the 'Marksman of Concord Dawn'. At some point, the planet was devastated during a war with a large chunk of its southern hemisphere being wiped out. During the Age of the Empire, Concord Dawn was ruled by the Protectors. Under the leadership of Fenn Rau, the Protectors aligned themselves with the Galactic Empire. Three years before the Battle of Yavin, they attacked members of the Phoenix rebel cell, who had traveled to the planet seeking free passage to the Lothal sector. In retaliation, the rebels Kanan Jarrus and Sabine Wren attacked their camp and kidnapped Rau, who agreed to allow the rebels free passage through Concord Dawn.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/8/84/Concord_Dawn_system.png/revision/latest?cb=20160128214904"
+		},
+		{
+			"name": "Zolan", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "unknown", 
+		    "population": "unknown", 
+		    "description": "Zolan was the homeworld of the Zolander species and its Clawdite offshoot. The Zolanders were loyal to the Galactic Republic, but the Clawdites were loyal to the Confederacy of Independent Systems, with the false hope the Confederacy would liberate them from Zolander oppression.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/6/66/Zolan.jpg/revision/latest?cb=20070701111500"
+		},
+		{
+			"name": "Ojom", 
+		    "climate": "frigid", 
+		    "gravity": "unknown", 
+		    "terrain": "oceans, glaciers", 
+		    "population": "500000000", 
+		    "description": "Ojom was a frozen ocean planet located within the Deep Core and the homeworld of the Besalisk. Largely inhospitable, several space stations hung in orbit so as to accommodate other species less acclimated to the cold.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/9/9f/Ojom.jpg/revision/latest?cb=20061119201000"
+		},
+		{
+			"name": "Skako", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "urban, vines", 
+		    "population": "500000000000", 
+		    "description": "Skako was an ecumenopolis on the Hydian Way in the galactic core and homeworld to the Skakoan species. Though most of Skako was covered by urban sprawl, some examples of the planet's original ecosystem had been preserved in the form of vast fields of sprawling vines.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/c/cd/Skako.jpg/revision/latest?cb=20100706044200"
+		},
+		{
+			"name": "Muunilinst", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "plains, forests, hills, mountains", 
+		    "population": "5000000000", 
+		    "description": "Muunilinst (pronounced 'MYOON-il-ist', with a silent 'n' near the end in Galactic Basic), nicknamed Moneylend, was the temperate, mineral-rich Muun homeworld and the headquarters of the InterGalactic Banking Clan. It was located on the Braxant Run. It was a member of the Confederacy of Independent Systems under Chairman San Hill.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/1/19/Muunilinst.jpg/revision/latest?cb=20071221131608"
+		},
+		{
+			"name": "Shili", 
+		    "climate": "temperate", 
+		    "gravity": "1", 
+		    "terrain": "cities, savannahs, seas, plains", 
+		    "population": "unknown", 
+		    "description": "Shili was the homeworld of the Togrutas located in the Ehosiq sector.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/b/b8/ShiliNEGAS.jpg/revision/latest?cb=20061126102716"
+		},
+		{
+			"name": "Kalee", 
+		    "climate": "arid, temperate, tropical", 
+		    "gravity": "1", 
+		    "terrain": "rainforests, cliffs, canyons, seas", 
+		    "population": "4000000000", 
+		    "description": "Kalee was the home planet of the Kaleesh, including General Grievous. It was located on the border of the Kadok Regions.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/0/08/KaleePlanet.jpg/revision/latest?cb=20061118121433"
+		},
+		{
+			"name": "Umbara", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "unknown", 
+		    "population": "unknown", 
+		    "description": "The planet Umbara, informally known as the Shadow World due to the rays of its sun never completely reaching its surface, was a perpetually dark planet within the reaches of the Ghost Nebula. It was home to the Umbarans, a species of pale Near-Humans. It was also the site of a large battle during the Clone Wars.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/a/a1/UmbaraNEGAS.jpg/revision/latest?cb=20070701075316"
+		},
+		{
+			"name": "Jakku", 
+		    "climate": "unknown", 
+		    "gravity": "unknown", 
+		    "terrain": "deserts", 
+		    "population": "unknown", 
+		    "description": "Jakku was a desert planet located in a remote section of the Western Reaches. Though considered by many within the galaxy to be distant and relatively worthless, the planet became home to important events that would shape galactic history.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/5/59/Jakku_view.jpg/revision/latest?cb=20160402051953"
+		}
+	]
+}

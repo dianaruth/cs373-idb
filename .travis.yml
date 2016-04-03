@@ -34,4 +34,4 @@ script:
     - ls -al
     - make test
     - ls -al
-    - make check
+#    - make check

@@ -11,16 +11,30 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <h4>{{person.description}}</h4>
                     </div>
-                    <div class="col-md-4">
-                        <h3><strong>Gender: </strong>{{person.gender}}</h3>
-                        <h3><strong>Birth Year: </strong>{{person.birth_year}}</h3>
-                        <h3><strong>Height: </strong>{{person.height}}</h3>
-                        <h3><strong>Mass: </strong>{{person.mass}}</h3>
-                        <h3><strong>Hair Color: </strong>{{person.hair_color}}</h3>
-                        <h3><strong>Eye Color: </strong>{{person.eye_color}}</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table sw-table">
+                            <tr>
+                                <th>Gender</th>
+                                <th>Birth Year</th>
+                                <th>Height</th>
+                                <th>Mass</th>
+                                <th>Hair Color</th>
+                                <th>Eye Color</th>
+                            </tr>
+                            <tr>
+                                <td>{{person.gender}}</td>
+                                <td>{{person.birth_year}}</td>
+                                <td>{{person.height}} cm</td>
+                                <td>{{person.mass}} kg</td>
+                                <td>{{person.hair_color}}</td>
+                                <td>{{person.eye_color}}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div class="row">

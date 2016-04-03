@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, send_file, jsonify
 import requests
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_url_path='')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://guestbook-admin:my-guestbook-admin-password@pythonwebapp_db/guestbook'
+
+db = SQLAlchemy(app)
+
+if db == None:
+    print("nope")
 
 @app.route('/get_people')
 def get_people_data():
@@ -39,6 +47,7 @@ def get_people_data():
         j["gender"] = person["gender"]
         j["birth_year"] = person["birth_year"]
         j["height"] = person["height"]
+        j["mass"] = person["mass"]
         j["hair_color"] = person["hair_color"]
         j["eye_color"] = person["eye_color"]
         people.append(j)
@@ -148,6 +157,7 @@ def get_person_data(path):
     j["gender"] = person["gender"]
     j["birth_year"] = person["birth_year"]
     j["height"] = person["height"]
+    j["mass"] = person["mass"]
     j["hair_color"] = person["hair_color"]
     j["eye_color"] = person["eye_color"]
     return jsonify({"person": j})

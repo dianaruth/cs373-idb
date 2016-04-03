@@ -11,14 +11,26 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <h4>{{species.description}}</h4>
                     </div>
-                    <div class="col-md-4">
-                        <h3><strong>Classification: </strong>{{species.classification}}</h3>
-                        <h3><strong>Average Height: </strong>{{species.average_height}}</h3>
-                        <h3><strong>Average Lifespan: </strong>{{species.average_lifespan}}</h3>
-                        <h3><strong>Language: </strong>{{species.language}}</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table sw-table">
+                            <tr>
+                                <th>Classification</th>
+                                <th>Average Height</th>
+                                <th>Average Lifespan</th>
+                                <th>Language</th>
+                            </tr>
+                            <tr>
+                                <td>{{species.classification}}</td>
+                                <td>{{species.average_height}} cm</td>
+                                <td>{{species.average_lifespan}} years</td>
+                                <td>{{species.language}}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div class="row">

@@ -1,8 +1,18 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, send_file, jsonify
+from flask import Flask, render_template, send_file, jsonify, sys
 import requests
+from flask_sqlalchemy import SQLAlchemy
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+from create_db import create_all
 
 app = Flask(__name__, static_url_path='')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://guestbook-admin:my-guestbook-admin-password@pythonwebapp_db/guestbook'
+
+db = SQLAlchemy(app)
+
+if db == None:
+    print("nope")
 
 @app.route('/get_people')
 def get_people_data():
@@ -241,4 +251,5 @@ def home():
     return send_file('templates/index.html')
 
 if __name__ == "__main__":
+    create_all()
     app.run(debug=True)

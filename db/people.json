@@ -1,5 +1,4 @@
-{
-	"people" : [
+[
 		{
 		    "name": "Luke Skywalker", 
 		    "height": "172", 
@@ -222,7 +221,7 @@
 		    "homeworld": "Corellia",
 		    "species": "Human", 
 		    "description": "Wedge Antilles, a Human male, was a famed Corellian pilot and general, known as a hero of the Rebel Alliance and New Republic. Orphaned at age seventeen, he joined the Rebellion after Imperial forces killed his girlfriend, Mala Tinero. A standout starfighter pilot, he was one of the few to survive the Battle of Yavin, after which he founded Rogue Squadron with his friend Luke Skywalker. Antilles and Skywalker built Rogue Squadron into a renowned unit, and after the Battle of Hoth, Antilles took command. He flew as Red Leader in the Battle of Endor, striking the blow that destroyed the second Death Star alongside Lando Calrissian and becoming the only pilot to survive both Death Star runs.",
-		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/6/60/WedgeHelmetless-ROTJHD.jpg/revision/latest?cb=20110916160227",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/6/60/WedgeHelmetless-ROTJHD.jpg/revision/latest?cb=20110916160227"
 		},
 		{
 			"name": "Jek Tono Porkins", 
@@ -1191,4 +1190,3 @@
 		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/6/68/BB8-Fathead.png/revision/latest?cb=20150908052432"
 		}
 	]
-}

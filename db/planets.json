@@ -1,5 +1,4 @@
-{
-	"planets": [
+[
 		{
 			"name": "Tatooine", 
 		    "climate": "arid", 
@@ -541,4 +540,3 @@
 		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/5/59/Jakku_view.jpg/revision/latest?cb=20160402051953"
 		}
 	]
-}

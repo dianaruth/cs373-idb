@@ -1,5 +1,4 @@
-{
-	"species": [
+[
 		{
 			"name": "Human", 
 		    "classification": "mammal", 
@@ -86,6 +85,7 @@
 		    "average_height": "100", 
 		    "average_lifespan": "unknown", 
 		    "homeworld": "Endor", 
+		    "language" : "Ewokese",
 		    "description": "Ewoks were sentient, diminutive, furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the second Death Star. Ewoks were curious individuals that stood about one meter tall; they were omnivorous and used spears, slings, and knives as weapons; they also used hang gliders, battle wagons, and bordoks as vehicles. Although extremely skilled in forest survival and the construction of primitive technology like gliders and catapults, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts. Some Ewoks were removed from their planet and taken as pets or slaves. Others left voluntarily out of a sense of curiosity, especially after the Battle of Endor led to the establishment of New Republic trading posts on the Forest Moon.",
 		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/52/Ewoks_SWSB.png/revision/latest?cb=20100917005427"
 		},
@@ -374,4 +374,3 @@
 		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/2/22/Pau%27an.jpg/revision/latest?cb=20070705042952"
 		}
 	]
-}

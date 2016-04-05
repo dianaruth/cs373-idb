@@ -2,7 +2,15 @@ import sys
 from sqlalchemy import *
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
-from app import db
+import create_db
+
+# app = Flask(__name__, static_url_path='')
+
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://Tony:S1m0n3tt1@localhost/testdataswe'
+# db = SQLAlchemy(app)
+
+def make_db():
+    create_db.create_all()
 
 # ----\
 # People

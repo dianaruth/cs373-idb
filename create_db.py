@@ -1,6 +1,6 @@
 import os, json
 import app
-from models import *
+from models import People, Species, Planets, db
 
 def load_json(filename):
     with open(filename) as file:
@@ -10,7 +10,7 @@ def load_json(filename):
     return jsn
 
 def create_people():
-    people = load_json('db/people.json')
+    people = load_json('../db/people.json')
 
     for person in people:
         name = person['name']
@@ -27,7 +27,7 @@ def create_people():
         db.session.commit()
 
 def create_planets():
-    planets = load_json('db/planets.json')
+    planets = load_json('../db/planets.json')
 
     for planet in planets:
         name = planet['name']
@@ -42,7 +42,7 @@ def create_planets():
         db.session.commit()
 
 def create_species():
-    speciess = load_json('db/species.json')
+    speciess = load_json('../db/species.json')
 
     for species in speciess:
         name = species['name']

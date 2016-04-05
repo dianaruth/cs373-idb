@@ -2,7 +2,7 @@ import sys
 from sqlalchemy import *
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
-from app.app import db
+from app import db
 
 # ----\
 # People

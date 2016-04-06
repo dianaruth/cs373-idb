@@ -1,5 +1,4 @@
-import os, json
-import app
+import json, logging
 from models import *
 
 def load_json(filename):
@@ -10,7 +9,7 @@ def load_json(filename):
     return jsn
 
 def create_people():
-    people = load_json('../db/people.json')
+    people = load_json('people.json')
 
     for person in people:
         name = person['name']
@@ -27,11 +26,11 @@ def create_people():
         db.session.commit()
 
 def create_planets():
-    planets = load_json('../db/planets.json')
+    planets = load_json('planets.json')
 
     for planet in planets:
         name = planet['name']
-        climate =  planet['climate']
+        climate = planet['climate']
         gravity = planet['gravity']
         terrain = planet['terrain']
         population = planet['population']
@@ -42,7 +41,7 @@ def create_planets():
         db.session.commit()
 
 def create_species():
-    speciess = load_json('../db/species.json')
+    speciess = load_json('species.json')
 
     for species in speciess:
         name = species['name']
@@ -56,19 +55,7 @@ def create_species():
         db.session.add(species)
         db.session.commit()
 
-def create_tables():
-    db.session.commit()
-    db.drop_all()
-    db.create_all()
+def populate_tables():
     create_people()
     create_planets()
     create_species()
-
-
-# if __name__ == '__main__':
-#     db.session.commit()
-#     db.drop_all()
-#     db.create_all()
-#     create_people()
-#     create_planets()
-#     create_species()

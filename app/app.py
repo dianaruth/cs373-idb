@@ -1,13 +1,27 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, send_file, jsonify
-import os, sys
+import os, time
 import requests
-from flask_sqlalchemy import SQLAlchemy
+from flask.ext.script import Manager
+from models import db
+from create_db import populate_tables
+
+time.sleep(5)
+
+SQLALCHEMY_DATABASE_URI = \
+    '{engine}://{username}:{password}@{hostname}/{database}'.format(
+        engine='mysql+pymysql',
+        username=os.getenv('MYSQL_USER'),
+        password=os.getenv('MYSQL_PASSWORD'),
+        hostname=os.getenv('MYSQL_HOST'),
+        database=os.getenv('MYSQL_DATABASE'))
 
 app = Flask(__name__, static_url_path='')
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://Tony:S1m0n3tt1@localhost/testdataswe'
-db = SQLAlchemy(app)
+manager = Manager(app)
 
 @app.route('/get_people')
 def get_people_data():
@@ -245,5 +259,27 @@ def catch_all(path):
 def home():
     return send_file('templates/index.html')
 
+db.init_app(app)
+
+with app.app_context():
+    app.config['SQLALCHEMY_ECHO'] = True
+    db.create_all()
+    populate_tables()
+
+@manager.command
+def create_db():
+    app.config['SQLALCHEMY_ECHO'] = True
+    db.create_all()
+
+@manager.command
+def create_data():
+    app.config['SQLALCHEMY_ECHO'] = True
+    populate_tables()
+
+@manager.command
+def drop_db():
+    app.config['SQLALCHEMY_ECHO'] = True
+    db.drop_all()
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    manager.run()

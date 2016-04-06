@@ -1,11 +1,6 @@
-import sys
-from sqlalchemy import *
-from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://guestbook-admin:my-guestbook-admin-password@pythonwebapp_db/guestbook'
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 # ----\
 # People
@@ -19,8 +14,8 @@ class People(db.Model):
     name = db.Column(db.String(256))
     gender = db.Column(db.String(256))
     birth_year = db.Column(db.String(256))
-    height = db.Column(db.Integer)
-    mass = db.Column(db.Integer)
+    height = db.Column(db.String(256))
+    mass = db.Column(db.String(256))
     hair_color = db.Column(db.String(256))
     eye_color = db.Column(db.String(256))
 
@@ -64,6 +59,7 @@ class People(db.Model):
             "eye color" : self.eye_color
         }
 
+
 # ----
 # Planets
 # ----
@@ -77,7 +73,7 @@ class Planets(db.Model):
     climate = db.Column(db.String(256))
     gravity = db.Column(db.String(256))
     terrain = db.Column(db.String(256))
-    population = db.Column(db.Integer)
+    population = db.Column(db.String(256))
     
     def __init__(self, name, climate, gravity, terrain, population): 
         """
@@ -123,7 +119,7 @@ class Species(db.Model):
     __tablename__ = 'species'
 
     id = db.Column(db.Integer, primary_key=True, unique=True, index=True)
-    name = db.Column(db.String)
+    name = db.Column(db.String(256))
     classification = db.Column(db.String(256))
     average_height = db.Column(db.String(256))
     average_lifespan = db.Column(db.String(256))
@@ -132,7 +128,7 @@ class Species(db.Model):
     def __init__(self, name, classification, average_height, average_lifespan, language):
         """
         Assigns variables to the class upon initialization.
-        
+
         Parameters
         ----------
         self : Planets
@@ -141,7 +137,7 @@ class Species(db.Model):
         average_height : Column(String)
         average_lifespan : Column(String)
         language : Column(String)
-        
+
         Returns
         -------
         People

@@ -1,6 +1,6 @@
 import os, json
 import app
-from models import People, Species, Planets, db
+from models import *
 
 def load_json(filename):
     with open(filename) as file:
@@ -56,10 +56,19 @@ def create_species():
         db.session.add(species)
         db.session.commit()
 
-def create_all():
+def create_tables():
+    db.session.commit()
+    db.drop_all()
+    db.create_all()
     create_people()
     create_planets()
     create_species()
 
-if __name__ == '__main__':
-    create_all()
+
+# if __name__ == '__main__':
+#     db.session.commit()
+#     db.drop_all()
+#     db.create_all()
+#     create_people()
+#     create_planets()
+#     create_species()

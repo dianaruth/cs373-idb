@@ -3,16 +3,11 @@ from flask import Flask, render_template, send_file, jsonify
 import os, sys
 import requests
 from flask_sqlalchemy import SQLAlchemy
-# from models import *
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
-import create_db
 
 app = Flask(__name__, static_url_path='')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://Tony:S1m0n3tt1@localhost/testdataswe'
 db = SQLAlchemy(app)
-# if db == None:
-#     print("nope")
 
 @app.route('/get_people')
 def get_people_data():
@@ -251,5 +246,4 @@ def home():
     return send_file('templates/index.html')
 
 if __name__ == "__main__":
-    create_db.create_all()
     app.run(debug=True)

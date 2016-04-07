@@ -217,15 +217,6 @@ class TestPlanets(TestCase):
         db.session.remove()
         db.drop_all()
 
-    """
-    Test our populate 'planets' table script.
-    """
-    def test_populate_script(self):
-        create_planets()
-        planets = Planets.query.all()
-        # for planet in planets: # uncomment if you want to see all planets that will be in our database
-        #     print(str(planet))
-        assert len(planets) == 62 # 2 from db init and 60 from adding entire populate script
 
     """
     Test emptying our 'planets' table.
@@ -329,7 +320,7 @@ class TestRESTfulAPI(TestCase):
     """
     def test_get_person_data_1(self):
         output = get_person_data(1)
-        # print(str(output))
+
         assert output is not None and str(output).__contains__("[200 OK]") # JSON response successful
 
     def test_get_person_data_2(self):
@@ -418,4 +409,4 @@ class TestRESTfulAPI(TestCase):
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()

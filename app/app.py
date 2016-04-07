@@ -202,7 +202,7 @@ def get_people_from_species(path):
 
 @app.route('/person/<path>/species')
 def get_species_from_person(path):
-
+    
     person = People.query.get(path)
     json_species = Species.query.filter_by(name = person.species)
 

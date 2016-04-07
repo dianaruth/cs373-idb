@@ -38,25 +38,6 @@ returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$rout
     function($scope, $routeParams, personDetailService) {
         var id = parseInt($routeParams.personID);
         $scope.id = id;
-        switch(id) {
-            case 1:
-                $scope.img = "luke_skywalker.jpg";
-                $scope.homeworld = "Tatooine";
-                $scope.species = "Human";
-                break;
-            case 2:
-                $scope.img = "c3po.png";
-                $scope.homeworld = "Tatooine";
-                $scope.species = "Droid";
-                break;
-            case 3:
-                $scope.img = "r2d2.png";
-                $scope.homeworld = "";
-                $scope.species = "Droid";
-                break;
-            default:
-                break;
-        }
         personDetailService.getPerson(id).then(function(data) {
             $scope.person = data["person"];
         });
@@ -66,22 +47,6 @@ returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$rout
     function($scope, $routeParams, planetDetailService) {
         var id = parseInt($routeParams.planetID);
         $scope.id = id;
-        switch(id) {
-            case 1:
-                $scope.img = "tattooine.png";
-                $scope.residents = ["Luke Skywalker", "C-3PO"];
-                break;
-            case 2:
-                $scope.img = "alderaan.jpg";
-                $scope.residents = [];
-                break;
-            case 3:
-                $scope.img = "yavin4.jpg";
-                $scope.residents = [];
-                break;
-            default:
-                break;
-        }
         planetDetailService.getPlanet(id).then(function(data) {
             $scope.planet = data["planet"];
         });
@@ -91,25 +56,6 @@ returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$rou
     function($scope, $routeParams, speciesDetailService) {
         var id = parseInt($routeParams.speciesID);
         $scope.id = id;
-        switch(id) {
-            case 1:
-                $scope.img = "human.jpg";
-                $scope.homeworld = "";
-                $scope.people = ["Luke Skywalker"];
-                break;
-            case 2:
-                $scope.img = "droid.jpg";
-                $scope.homeworld = "";
-                $scope.people = ["C-3P0", "R2-D2"];
-                break;
-            case 3:
-                $scope.img = "wookiee.jpg";
-                $scope.homeworld = "";
-                $scope.people = [];
-                break;
-            default:
-                break;
-        }
         speciesDetailService.getSpecies(id).then(function(data) {
             $scope.species = data["species"];
         });

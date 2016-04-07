@@ -201,7 +201,7 @@ def get_people_from_species(path):
     return jsonify({"people":json_people})
 
 @app.route('person/<path>/species')
-def get_speciecs_from_person
+def get_speciecs_from_person(path):
     
     person = People.query.get(path)
     species = Species.query.filter_by(name = person.species)
@@ -246,10 +246,10 @@ def home():
 
 db.init_app(app)
 
-with app.app_context():
-    app.config['SQLALCHEMY_ECHO'] = True
-    db.create_all()
-    populate_tables()
+# with app.app_context():
+#     app.config['SQLALCHEMY_ECHO'] = True
+#     db.create_all()
+#     populate_tables()
 
 @manager.command
 def create_db():

@@ -200,7 +200,7 @@ def get_people_from_species(path):
 
     return jsonify({"people":json_people})
 
-@app.route('person/<path>/species')
+@app.route('/person/<path>/species')
 def get_speciecs_from_person(path):
     
     person = People.query.get(path)

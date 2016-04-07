@@ -66,6 +66,14 @@ class People(db.Model):
             "image" : self.image
         }
 
+    """
+    Determine how the model object when converted to String. (str())
+    """
+    def __repr__(self):
+        return 'Name: %r' % self.name + ' Gender: %r' % self.gender + ' Birth year: %r' % self.birth_year + \
+               ' Height: %r' % self.height + ' Mass: %r' % self.mass + ' Hair Color: %r' % self.hair_color + \
+               'Eye Color: %r' % self.eye_color
+
 
 # ----
 # Planets

@@ -104,6 +104,11 @@ def get_s_data(path):
 
     return jsonify({"species": json_species})
 
+@app.route('/run_tests')
+def run_tests():
+    output = subprocess.getoutput("python3 tests.py")
+    return json.dumps({'output': str(output)})
+
 @app.route("/people")
 def render_people():
     return render_template('index.html')

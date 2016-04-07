@@ -2,7 +2,7 @@ import unittest
 from flask.ext.testing import TestCase
 from flask import Flask
 from models import *
-from create_db import create_people, create_planets, create_species
+from create_db import create_people, create_planets, create_species, populate_tables
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/swewars_test.db'  # set the database URI to a local database
@@ -245,6 +245,72 @@ class TestPlanets(TestCase):
     def test_planet_exists_3(self):
         planet = Planets.query.filter(Planets.name == "Alderaan").first()
         assert planet in db.session()
+
+"""
+Test our RESTful API
+"""
+import json
+from app import get_people_data, get_planets_data, get_species_data, get_person_data, \
+    get_planet_data, get_planet_data, get_planet_for_person_data, get_species_for_person, \
+    get_planet_for_species
+
+class TestRESTfulAPI(TestCase):
+    """
+    Initialize the app and database.
+    """
+    def create_app(self):
+        db.init_app(app)
+        with app.app_context():
+            db.create_all()
+        return app
+
+    """
+    Insert data into the database.
+    Run our populate species script.
+    Populate all three tables.
+    """
+    def setUp(self):
+        populate_tables()
+
+    """
+    Destroy the database and its tables after testing is complete.
+    """
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    def test_all_tables(self):
+        people = People.query.all()
+        species = Species.query.all()
+        planets = Planets.query.all()
+        # for person in people : # SEE THE 'people' TABLE
+        #     print(str(person))
+        # for s in species : # SEE THE 'species' TABLE
+        #     print(str(s))
+        # for planet in planets: # SEE THE 'planets' TABLE
+        #     print (str(planet))
+        assert len(people) > 0 and len(species) > 0 and len(planets) > 0
+
+    """
+    Test our get_people_data API call.
+    """
+    def test_get_people_data(self):
+        output = get_people_data()
+        assert str(output).__contains__("[200 OK]") # JSON response successful
+
+    """
+    Test our get_planets_data API call.
+    """
+    def test_get_planets_data(self):
+        output = get_planets_data()
+        assert str(output).__contains__("[200 OK]")  # JSON response successful
+
+    """
+    Test our get_planets_data API call.
+    """
+    def test_get_species_data(self):
+        output = get_species_data()
+        assert str(output).__contains__("[200 OK]")  # JSON response successful
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

@@ -203,7 +203,7 @@ class Species(db.Model):
             "language" : self.language,
             "description" : str(self.description),
             "image" : self.image,
- -          "homeworld" : self.homeworld
+            "homeworld" : self.homeworld
         }
 
     """

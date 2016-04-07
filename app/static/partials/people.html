@@ -36,7 +36,7 @@
                 <span ng-show="sortType == 'eye_color' && sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="sortType == 'eye_color' && !sortReverse" class="fa fa-caret-up"</span>
             </th>
-            <tr dir-paginate="person in people | itemsPerPage : pageSize | orderBy:sortType:sortReverse" current-page="currentPage">
+            <tr dir-paginate="person in people | orderBy:sortType:sortReverse | itemsPerPage : pageSize" current-page="currentPage">
                 <td><a ng-href="/people/{{person.id}}">{{person.name}}</a></td>
                 <td>{{person.gender}}</td>
                 <td>{{person.birth_year}}</td>

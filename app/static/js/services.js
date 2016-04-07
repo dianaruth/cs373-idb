@@ -63,3 +63,13 @@ returnOfTheAPIServices.factory('speciesDetailService', function($http) {
         }
     }
 });
+
+returnOfTheAPIServices.factory('runTestsService', function($http) {
+    return {
+        runTests: function() {
+            return $http.get('/run_tests').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});

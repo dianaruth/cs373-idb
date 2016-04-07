@@ -88,7 +88,7 @@ class TestPeople(TestCase):
     """
     Test completely emptying the People table.
     """
-    def test_empty_table_1(self):
+    def test_empty_table(self):
         num = People.query.delete()
         db.session.commit()
         people = People.query.all()
@@ -148,13 +148,34 @@ class TestPlanets(TestCase):
         planets = Planets.query.all()
         # for planet in planets: # uncomment if you want to see all planets that will be in our database
         #     print(str(planet))
-        assert len(planets) == 62
-        # now clear
-        num = Planets.query.delete()
+        assert len(planets) == 62 # 2 from db init and 60 from adding entire populate script
+
+    """
+    Test emptying our 'planets' table.
+    The number of entries in our table should always be 0 after this execution.
+    """
+    def test_empty_table(self):
+        Planets.query.delete()
         db.session.commit()
         planets = Planets.query.all()
-        assert num == 62 and len(planets) == 0  # rows to be deleted should be 61 and resulting table should have 0 entries
+        assert len(planets) == 0
 
+    """
+    Test selecting a planet by its name.
+    """
+    def test_planet_exists_1(self):
+        planet = Planets.query.filter(Planets.name == "Tatooine").first()
+        assert planet in db.session()
+
+    def test_planet_exists_2(self):
+        create_planets()
+        # query all Planets that possess a 'desert' terrain
+        desert_planets = Planets.query.filter(Planets.terrain.contains("desert")).all()
+        assert len(desert_planets) > 1 # there are other planets other than Tatooine which has a desert terrain
+
+    def test_planet_exists_3(self):
+        planet = Planets.query.filter(Planets.name == "Alderaan").first()
+        assert planet in db.session()
 
 if __name__ == '__main__':
 	unittest.main()

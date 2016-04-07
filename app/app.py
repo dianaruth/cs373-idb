@@ -187,6 +187,19 @@ def get_species_from_planet(path):
 
     return jsonify({"species": json_species})
 
+@app.route('/species/<path>/people')
+def get_people_from_species(path):
+
+    species = Species.query.get(path)
+    people = People.query.filter_by(species = species.name)
+
+    try:
+        json_people = [person.serialize for person in people]
+    except:
+        json_people = None
+
+    return jsonify({"people":json_people})
+
 
 @app.route('/run_tests')
 def run_tests():

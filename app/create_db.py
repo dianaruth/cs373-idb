@@ -23,8 +23,9 @@ def create_people():
         image = person['image']
         homeworld = person['homeworld']
         skin_color = person['skin_color']
+        species = person['species']
 
-        person = People(name, gender, birth_year, height, mass, hair_color, eye_color, description, image, homeworld, skin_color)
+        person = People(name, gender, birth_year, height, mass, hair_color, eye_color, description, image, homeworld, skin_color, species)
 
         db.session.add(person)
         db.session.commit()

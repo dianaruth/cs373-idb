@@ -22,8 +22,9 @@ class People(db.Model):
     image = db.Column(db.String(256))
     homeworld = db.Column(db.String(256))
     skin_color = db.Column(db.String(256))
+    species = db.Column(db.String(256))
 
-    def __init__(self, name, gender, birth_year, height, mass, hair_color, eye_color, description, image, homeworld, skin_color):
+    def __init__(self, name, gender, birth_year, height, mass, hair_color, eye_color, description, image, homeworld, skin_color, species):
         """
         Assigns variables to the class upon initialization.
 
@@ -53,6 +54,7 @@ class People(db.Model):
         self.image = image
         self.homeworld = homeworld
         self.skin_color = skin_color
+        self.species = species
 
 
     @property
@@ -69,7 +71,8 @@ class People(db.Model):
             "description" : str(self.description),
             "image" : self.image,
             "homeworld" : self.homeworld,
-            "skin_color" : self.skin_color
+            "skin_color" : self.skin_color,
+            "species" : self.species
         }
 
     """

@@ -105,6 +105,7 @@ def get_s_data(path):
 
     return jsonify({"species": json_species})
 
+
 @app.route('/get_planet_for_person/<path>')
 def get_planet_for_person_data(path):
     """
@@ -113,11 +114,46 @@ def get_planet_for_person_data(path):
 
     person = People.query.get(path)
     json_person = person.serialize
-    homeworld = Planets.query.filter_by(name=json_person['homeworld']).first()
-    json_homeworld = homeworld.serialize
 
-    return jsonify({"person": json_person,
-                    "homeworld": json_homeworld})
+    try:
+        homeworld = Planets.query.filter_by(name=json_person['homeworld']).first()
+        json_homeworld = homeworld.serialize
+
+    except:
+        json_homeworld = None
+
+    return jsonify({"homeworld": json_homeworld})
+
+
+@app.route('/get_species_for_person/<path>')
+def get_species_for_person(path):
+    person = People.query.get(path)
+    json_person = person.serialize
+
+    try:
+        species = Species.query.filter_by(name=json_person['species']).first()
+        json_species = species.serialize
+
+    except:
+        json_species = None
+
+    return jsonify({"person": json_person, "species": json_species})
+
+
+@app.route('/get_planet_for_species/<path>')
+def get_planet_for_species(path):
+    species = Species.query.get(path)
+    json_species = species.serialize
+
+    try:
+        planet = Planets.query.filter_by(name=json_species['homeworld']).first()
+        json_planet = planet.serialize
+
+    except:
+        json_planet = None
+
+    return jsonify({"species": json_species, "planet": json_planet})
+
 
 @app.route('/run_tests')
 def run_tests():

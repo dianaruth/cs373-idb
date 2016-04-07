@@ -137,7 +137,7 @@ def get_species_for_person(path):
     except:
         json_species = None
 
-    return jsonify({"person": json_person, "species": json_species})
+    return jsonify({"species": json_species})
 
 
 @app.route('/get_planet_for_species/<path>')
@@ -152,7 +152,7 @@ def get_planet_for_species(path):
     except:
         json_planet = None
 
-    return jsonify({"species": json_species, "planet": json_planet})
+    return jsonify({"planet": json_planet})
 
 
 @app.route('/run_tests')

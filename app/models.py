@@ -20,11 +20,8 @@ class People(db.Model):
     eye_color = db.Column(db.String(256))
     description = db.Column(db.Text())
     image = db.Column(db.String(256))
-    homeworld = db.Column(db.String(256))
-    skin_color = db.Column(db.String(256))
-    species = db.Column(db.String(256))
 
-    def __init__(self, name, gender, birth_year, height, mass, hair_color, eye_color, description, image, homeworld, skin_color, species):
+    def __init__(self, name, gender, birth_year, height, mass, hair_color, eye_color, description, image):
         """
         Assigns variables to the class upon initialization.
 
@@ -52,9 +49,6 @@ class People(db.Model):
         self.eye_color = eye_color
         self.description = description
         self.image = image
-        self.homeworld = homeworld
-        self.skin_color = skin_color
-        self.species = species
 
 
     @property
@@ -69,10 +63,7 @@ class People(db.Model):
             "hair_color" : self.hair_color,
             "eye_color" : self.eye_color,
             "description" : str(self.description),
-            "image" : self.image,
-            "homeworld" : self.homeworld,
-            "skin_color" : self.skin_color,
-            "species" : self.species
+            "image" : self.image
         }
 
     """
@@ -100,7 +91,7 @@ class Planets(db.Model):
     population = db.Column(db.String(256))
     description = db.Column(db.Text())
     image = db.Column(db.String(256))
-    
+
     def __init__(self, name, climate, gravity, terrain, population, description, image):
         """
         Assigns variables to the class upon initialization.
@@ -163,9 +154,8 @@ class Species(db.Model):
     language = db.Column(db.String(256))
     description = db.Column(db.Text())
     image = db.Column(db.String(256))
-    homeworld = db.Column(db.String(256))
 
-    def __init__(self, name, classification, average_height, average_lifespan, language, description, image, homeworld):
+    def __init__(self, name, classification, average_height, average_lifespan, language, description, image):
         """
         Assigns variables to the class upon initialization.
 
@@ -189,7 +179,6 @@ class Species(db.Model):
         self.language = language
         self.description = description
         self.image = image
-        self.homeworld = homeworld
 
 
     @property
@@ -202,8 +191,7 @@ class Species(db.Model):
             "average_lifespan" : self.average_lifespan,
             "language" : self.language,
             "description" : str(self.description),
-            "image" : self.image,
-            "homeworld" : self.homeworld
+            "image" : self.image
         }
 
     """

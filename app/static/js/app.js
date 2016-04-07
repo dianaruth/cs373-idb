@@ -4,6 +4,7 @@
 
 var returnOfTheAPIApp = angular.module('returnOfTheAPIApp', [
     'ngRoute',
+    'angularUtils.directives.dirPagination',
     'returnOfTheAPIAnimations',
     'returnOfTheAPIControllers',
     'returnOfTheAPIFilters',

@@ -11,6 +11,8 @@ returnOfTheAPIControllers.controller('PeopleListController', ['$scope', 'peopleS
             $scope.people = data.people;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 

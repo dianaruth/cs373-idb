@@ -137,10 +137,10 @@ def home():
 
 db.init_app(app)
 
-with app.app_context():
-    app.config['SQLALCHEMY_ECHO'] = True
-    db.create_all()
-    populate_tables()
+# with app.app_context():
+#     app.config['SQLALCHEMY_ECHO'] = True
+#     db.create_all()
+#     populate_tables()
 
 @manager.command
 def create_db():
@@ -155,6 +155,7 @@ def create_data():
 @manager.command
 def drop_db():
     app.config['SQLALCHEMY_ECHO'] = True
+    db.session.remove()
     db.drop_all()
 
 if __name__ == "__main__":

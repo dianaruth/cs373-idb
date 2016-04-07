@@ -1,7 +1,6 @@
 import unittest
 from flask.ext.testing import TestCase
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
 from models import *
 from create_db import create_people, create_planets, create_species
 
@@ -10,6 +9,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/swewars_test.db'  # set 
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+"""
+Test the People model.
+"""
 class TestPeople(TestCase):
 
     """
@@ -27,7 +29,6 @@ class TestPeople(TestCase):
     def setUp(self) :
         person1 = People(name="Luke Skywalker", gender="male", birth_year="19BBY",
                          height="172", mass="77", hair_color="blond", eye_color="blue", description="YAY", image="YAY")
-
         person2 = People(name="C-3PO", gender="n/a", birth_year="112BBY",
                      height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY")
         person3 = People(name="WHO", gender="n/a", birth_year="112BBY",
@@ -96,7 +97,7 @@ class TestPeople(TestCase):
 
     """
     Test our populate 'people' table script for initially filling the database.
-    The number of rows in the 'people' table should be 88.
+    The number of rows in the 'people' table should be 88 because 3 initial + 85 total.
     """
     def test_populate_script(self):
         create_people()
@@ -104,6 +105,56 @@ class TestPeople(TestCase):
         # for person in people : # uncomment if you want to see the list of rows (all people from our database)
         #     print(str(person))
         assert len(people) == 88 # there are a total of 88 rows in the People table
+
+"""
+Test the Planets model.
+"""
+class TestPlanets(TestCase):
+
+    """
+    Initialize the app and database.
+    """
+    def create_app(self):
+        db.init_app(app)
+        with app.app_context():
+            db.create_all()
+        return app
+
+    """
+    Insert data into the database.
+    """
+
+    def setUp(self):
+        planet1 = Planets(name = "Alderaan", climate = "temperate, tropical",
+            gravity = "1 standard", terrain = "jungle, rainforests", population = 1000, description="YAY", image="YAY")
+        planet2 = Planets(name = 'Tatooine', climate = "arid",
+            gravity = "1 standard", terrain = "desert", population = 200000, description="YAY", image="YAY")
+        db.session.add(planet1)
+        db.session.add(planet2)
+        db.session.commit()
+
+    """
+    Destroy the database and its tables after testing is complete.
+    """
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    """
+    Test our populate 'planets' table script.
+    """
+    def test_populate_script(self):
+        create_planets()
+        planets = Planets.query.all()
+        # for planet in planets: # uncomment if you want to see all planets that will be in our database
+        #     print(str(planet))
+        assert len(planets) == 62
+        # now clear
+        num = Planets.query.delete()
+        db.session.commit()
+        planets = Planets.query.all()
+        assert num == 62 and len(planets) == 0  # rows to be deleted should be 61 and resulting table should have 0 entries
+
 
 if __name__ == '__main__':
 	unittest.main()

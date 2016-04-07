@@ -67,7 +67,7 @@ class People(db.Model):
         }
 
     """
-    Determine how the model object when converted to String. (str())
+    Determine how the People model object looks when converted to String. (str())
     """
     def __repr__(self):
         return 'Name: %r' % self.name + ' Gender: %r' % self.gender + ' Birth year: %r' % self.birth_year + \
@@ -130,6 +130,13 @@ class Planets(db.Model):
             "image" : self.image
         }
 
+    """
+    Determine how the Planets model object looks when converted to String. (str())
+    """
+
+    def __repr__(self):
+        return 'Name: %r' % self.name + ' Climate: %r' % self.climate + ' Gravity: %r' % self.gravity + \
+               ' Terrain: %r' % self.terrain + ' Population: %r' % self.population
 
 # ----
 # Species
@@ -186,3 +193,11 @@ class Species(db.Model):
             "description" : str(self.description),
             "image" : self.image
         }
+
+    """
+    Determine how the Species model object looks when converted to String. (str())
+    """
+
+    def __repr__(self):
+        return 'Name: %r' % self.name + ' Classification: %r' % self.classification + ' Average Height: %r' % self.average_height + \
+               ' Average Lifespan: %r' % self.average_lifespan + ' Language: %r' % self.language

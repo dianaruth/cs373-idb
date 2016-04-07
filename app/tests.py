@@ -37,10 +37,41 @@ class TestSpecies(TestCase):
         db.session.remove()
         db.drop_all()
 
-    def test_specie_exists_1(self):
+    """
+    Run a where clause to get a query of all mammals.
+    """
+    def test_query_species_1(self):
+        # species = Species.query.all()
+        # for s in species:
+        #     print (str(s)) # uncomment to see all classifications
+        mammals = Species.query.filter(Species.classification == "mammal").all()
+        # for m in mammals :
+        #     print (str(m)) # uncomment to see all mammals
+        assert len(mammals) > 0
+
+    """
+    Select a specie by name then test to see if it's in the database.
+    """
+    def test_query_species_2(self):
+        specie = Species.query.filter(Species.name == "Pau'an").first()
+        assert specie in db.session()
+        assert specie.average_height == '190'
+
+    """
+    Select one specie and delete it.
+    This query should return 1 for the number of rows deleted.
+    """
+    def test_query_species_3(self):
+        specie = Species.query.filter(Species.name == "Pau'an").delete()
+        assert specie == 1
+
+    """
+    Test clearing the Species table.
+    """
+    def test_clear_table(self):
+        num = Species.query.delete()
         species = Species.query.all()
-        for s in species:
-            print (str(s))
+        assert len(species) == 0
 
 """
 Test the People model.

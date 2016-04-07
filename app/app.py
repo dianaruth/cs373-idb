@@ -201,10 +201,10 @@ def get_people_from_species(path):
     return jsonify({"people":json_people})
 
 @app.route('/person/<path>/species')
-def get_speciecs_from_person(path):
+def get_species_from_person(path):
     
     person = People.query.get(path)
-    species = Species.query.filter_by(name = person.species)
+    json_species = Species.query.filter_by(name = person.species)
 
     try:
         json_species.serialize
@@ -255,10 +255,6 @@ db.init_app(app)
 def create_db():
     app.config['SQLALCHEMY_ECHO'] = True
     db.create_all()
-
-@manager.command
-def create_data():
-    app.config['SQLALCHEMY_ECHO'] = True
     populate_tables()
 
 @manager.command

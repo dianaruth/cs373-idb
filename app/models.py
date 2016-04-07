@@ -18,8 +18,10 @@ class People(db.Model):
     mass = db.Column(db.String(256))
     hair_color = db.Column(db.String(256))
     eye_color = db.Column(db.String(256))
+    description = db.Column(db.Text())
+    image = db.Column(db.String(256))
 
-    def __init__(self, name, gender, birth_year, height, mass, hair_color, eye_color):
+    def __init__(self, name, gender, birth_year, height, mass, hair_color, eye_color, description, image):
         """
         Assigns variables to the class upon initialization.
 
@@ -45,6 +47,9 @@ class People(db.Model):
         self.mass = mass
         self.hair_color = hair_color
         self.eye_color = eye_color
+        self.description = description
+        self.image = image
+
 
     @property
     def serialize(self):
@@ -52,11 +57,13 @@ class People(db.Model):
             "id" : self.id,
             "name" : self.name,
             "gender" : self.gender,
-            "birth year" : self.birth_year,
+            "birth_year" : self.birth_year,
             "height" : self.height,
             "mass" : self.mass,
-            "hair color" : self.hair_color,
-            "eye color" : self.eye_color
+            "hair_color" : self.hair_color,
+            "eye_color" : self.eye_color,
+            "description" : str(self.description),
+            "image" : self.image
         }
 
 
@@ -74,8 +81,10 @@ class Planets(db.Model):
     gravity = db.Column(db.String(256))
     terrain = db.Column(db.String(256))
     population = db.Column(db.String(256))
+    description = db.Column(db.Text())
+    image = db.Column(db.String(256))
     
-    def __init__(self, name, climate, gravity, terrain, population): 
+    def __init__(self, name, climate, gravity, terrain, population, description, image):
         """
         Assigns variables to the class upon initialization.
 
@@ -97,6 +106,8 @@ class Planets(db.Model):
         self.gravity = gravity
         self.terrain = terrain
         self.population = population
+        self.description = description
+        self.image = image
 
     @property
     def serialize(self):
@@ -106,7 +117,9 @@ class Planets(db.Model):
             "climate" : self.climate,
             "gravity" : self.gravity,
             "terrain" : self.terrain,
-            "population" : self.population
+            "population" : self.population,
+            "description" : str(self.description),
+            "image" : self.image
         }
 
 
@@ -124,8 +137,10 @@ class Species(db.Model):
     average_height = db.Column(db.String(256))
     average_lifespan = db.Column(db.String(256))
     language = db.Column(db.String(256))
+    description = db.Column(db.Text())
+    image = db.Column(db.String(256))
 
-    def __init__(self, name, classification, average_height, average_lifespan, language):
+    def __init__(self, name, classification, average_height, average_lifespan, language, description, image):
         """
         Assigns variables to the class upon initialization.
 
@@ -147,6 +162,8 @@ class Species(db.Model):
         self.average_height = average_height
         self.average_lifespan = average_lifespan
         self.language = language
+        self.description = description
+        self.image = image
 
 
     @property
@@ -155,7 +172,9 @@ class Species(db.Model):
             "id" : self.id,
             "name" : self.name,
             "classification" : self.classification,
-            "average height" : self.average_height,
-            "average lifespan" : self.average_lifespan,
-            "language" : self.language
+            "average_height" : self.average_height,
+            "average_lifespan" : self.average_lifespan,
+            "language" : self.language,
+            "description" : str(self.description),
+            "image" : self.image
         }

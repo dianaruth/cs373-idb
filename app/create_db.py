@@ -19,8 +19,10 @@ def create_people():
         mass = person['mass']
         hair_color = person['hair_color']
         eye_color = person['eye_color']
+        description = person['description']
+        image = person['image']
 
-        person = People(name, gender, birth_year, height, mass, hair_color, eye_color)
+        person = People(name, gender, birth_year, height, mass, hair_color, eye_color, description, image)
 
         db.session.add(person)
         db.session.commit()
@@ -34,8 +36,10 @@ def create_planets():
         gravity = planet['gravity']
         terrain = planet['terrain']
         population = planet['population']
+        description = planet['description']
+        image = planet['image']
 
-        planet = Planets(name, climate, gravity, terrain, population)
+        planet = Planets(name, climate, gravity, terrain, population, description, image)
 
         db.session.add(planet)
         db.session.commit()
@@ -49,8 +53,10 @@ def create_species():
         average_height = species['average_height']
         average_lifespan = species['average_lifespan']
         language = species['language']
+        description = species['description']
+        image = species['image']
 
-        species = Species(name, classification, average_height, average_lifespan, language)
+        species = Species(name, classification, average_height, average_lifespan, language, description, image)
 
         db.session.add(species)
         db.session.commit()

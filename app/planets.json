@@ -68,7 +68,7 @@
 		    "gravity": "1 standard", 
 		    "terrain": "grassy hills, swamps, forests, mountains", 
 		    "population": "4500000000",
-		    "description": "Naboo (pronounced /nə'bu/) was a planet that was the sector capital of the Chommell sector near the Outer Rim territories. It was a largely unspoiled world with large plains, swamps and seas. It was mostly known as the homeworld of notable historical figures who played major roles in the downfall of the Galactic Republic and the rise of the Galactic Empire, namely Padmé Amidala, Emperor Palpatine and Jar Jar Binks.",
+		    "description": "Naboo was a planet that was the sector capital of the Chommell sector near the Outer Rim territories. It was a largely unspoiled world with large plains, swamps and seas. It was mostly known as the homeworld of notable historical figures who played major roles in the downfall of the Galactic Republic and the rise of the Galactic Empire, namely Padmé Amidala, Emperor Palpatine and Jar Jar Binks.",
 		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/5/50/Naboo.jpg/revision/latest?cb=20080723001712"
 		},
 		{
@@ -77,7 +77,7 @@
 		    "gravity": "1 standard", 
 		    "terrain": "cityscape, mountains", 
 		    "population": "1000000000000",
-		    "description": "Coruscant (pronounced /'kɔɹəsɑnt/ or, more rarely, /kəˈɹʌskənt/), originally called Notron, also known as Imperial Center or the Queen of the Core, was a planet located in the Galactic Core. It was generally agreed that Coruscant was, during most of galactic history, the most politically important world in the galaxy. At various times, it was the capital of the Galactic Republic, the Galactic Empire, the New Republic, the Yuuzhan Vong empire, the Galactic Alliance, very briefly the Fel Empire, Darth Krayt's Galactic Empire, and the Galactic Federation Triumvirate. In controlling Coruscant, these governments controlled most of the galaxy in the process. Over the centuries, Coruscant had developed into an ecumenopolis, with a total of 5,127 levels of city built up from the crust by the time of the Clone Wars. The actual planet-wide metropolis of Coruscant was called Galactic City. Under the Galactic Republic, the names Republic City or the City of Spires were also used to reference the city. It was also called Imperial City under the Galactic Empire, and New Republic City under the New Republic. However, in practice, Galactic City and its other names were sometimes applied to the Senate District, the central government center and de facto capital of Coruscant. Under the Yuuzhan Vong, the city and planet were both referred to as Yuuzhan'tar.",
+		    "description": "Coruscant, originally called Notron, also known as Imperial Center or the Queen of the Core, was a planet located in the Galactic Core. It was generally agreed that Coruscant was, during most of galactic history, the most politically important world in the galaxy. At various times, it was the capital of the Galactic Republic, the Galactic Empire, the New Republic, the Yuuzhan Vong empire, the Galactic Alliance, very briefly the Fel Empire, Darth Krayt's Galactic Empire, and the Galactic Federation Triumvirate. In controlling Coruscant, these governments controlled most of the galaxy in the process. Over the centuries, Coruscant had developed into an ecumenopolis, with a total of 5,127 levels of city built up from the crust by the time of the Clone Wars. The actual planet-wide metropolis of Coruscant was called Galactic City. Under the Galactic Republic, the names Republic City or the City of Spires were also used to reference the city. It was also called Imperial City under the Galactic Empire, and New Republic City under the New Republic. However, in practice, Galactic City and its other names were sometimes applied to the Senate District, the central government center and de facto capital of Coruscant. Under the Yuuzhan Vong, the city and planet were both referred to as Yuuzhan'tar.",
 		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/1/17/Coruscant-AoTCW.jpg/revision/latest?cb=20100115192302"
 		},
 		{
@@ -86,7 +86,7 @@
 		    "gravity": "1 standard", 
 		    "terrain": "ocean",  
 		    "population": "1000000000",
-		    "description": "Kamino (pronounced /kə'minoʊ/), also known as the Planet of Storms, was the watery world where the Clone Army of the Galactic Republic was created, as well as the Kamino Home Fleet. It was inhabited by a race of tall, elegant beings called the Kaminoans, who kept to themselves and were known for their cloning technology. Kamino was located just south of the Rishi Maze, and was governed by the Ruling Council, headed by the Prime Minister.",
+		    "description": "Kamino, also known as the Planet of Storms, was the watery world where the Clone Army of the Galactic Republic was created, as well as the Kamino Home Fleet. It was inhabited by a race of tall, elegant beings called the Kaminoans, who kept to themselves and were known for their cloning technology. Kamino was located just south of the Rishi Maze, and was governed by the Ruling Council, headed by the Prime Minister.",
 		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/a/a9/Eaw_Kamino.jpg/revision/latest?cb=20090527045541"
 		},
 		{
@@ -104,7 +104,7 @@
 		    "gravity": "1 standard", 
 		    "terrain": "scrublands, savanna, canyons, sinkholes",  
 		    "population": "95000000",
-		    "description": "Utapau (pronounced /'jutəpaʊ/) was an arid sinkhole world in the Utapau system of the Tarabba sector in the Outer Rim Territories. Utapau was the homeworld of the Pau'ans and the Utai, more commonly referred to collectively as Utapauns. These species lived in the many giant sinkholes that dotted the planet's scrub-covered surface.",
+		    "description": "Utapau was an arid sinkhole world in the Utapau system of the Tarabba sector in the Outer Rim Territories. Utapau was the homeworld of the Pau'ans and the Utai, more commonly referred to collectively as Utapauns. These species lived in the many giant sinkholes that dotted the planet's scrub-covered surface.",
 		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/c/ce/UtapauRotS.png/revision/latest?cb=20160118063015"
 		},
 		{
@@ -167,7 +167,7 @@
 		    "gravity": "unknown", 
 		    "terrain": "caves, desert, mountains, volcanoes", 
 		    "population": "1400000000", 
-		    "description": "Saleucami (pronounced /sʌ'lukəˌmaɪ/) was a dim, arid Techno Union world with scattered caldera oases filled with vegetation. Its plant life included unusual bulbous trees. It was located between Kegan and Handooine. The planet sat on the Talcene Transit which supplied cargo from the Perlemian Trade Route to the Kuthic Worlds.",
+		    "description": "Saleucami was a dim, arid Techno Union world with scattered caldera oases filled with vegetation. Its plant life included unusual bulbous trees. It was located between Kegan and Handooine. The planet sat on the Talcene Transit which supplied cargo from the Perlemian Trade Route to the Kuthic Worlds.",
 		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/7/75/Saleucami.jpg/revision/latest?cb=20110322135512"
 		},
 		{
@@ -221,7 +221,7 @@
 		    "gravity": "1 standard", 
 		    "terrain": "oceans, savannas, mountains, grasslands", 
 		    "population": "1000", 
-		    "description": "Dantooine (pronounced /'dæntuin/) was a pleasant world of grasslands, rivers and lakes. The planet was located in the Raioballo sector of the Outer Rim at an endpoint of Myto's Arrow, the other endpoint of which was in the Obtrexta sector, though Dantooine itself was still far removed from most galactic traffic. It hosted a small population spread amongst single-family settlements and small communities with large land holdings. Its sentient population consisted primarily of simple Human farmers, though Dantooine was also home to the primitive Dantari race. Native wildlife included the kath hound, the iriaz, the kinrath, and the graul. The planet had no industrial settlements or advanced technology by the time of the Galactic Civil War, save for a temporary Rebel base there.",
+		    "description": "Dantooine was a pleasant world of grasslands, rivers and lakes. The planet was located in the Raioballo sector of the Outer Rim at an endpoint of Myto's Arrow, the other endpoint of which was in the Obtrexta sector, though Dantooine itself was still far removed from most galactic traffic. It hosted a small population spread amongst single-family settlements and small communities with large land holdings. Its sentient population consisted primarily of simple Human farmers, though Dantooine was also home to the primitive Dantari race. Native wildlife included the kath hound, the iriaz, the kinrath, and the graul. The planet had no industrial settlements or advanced technology by the time of the Galactic Civil War, save for a temporary Rebel base there.",
 		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/3/34/Dantooine2.jpg/revision/latest?cb=20070111045323"
 		},
 		{

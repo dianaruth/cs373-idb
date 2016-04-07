@@ -92,11 +92,14 @@ class TestPeople(TestCase):
     """
     def setUp(self) :
         person1 = People(name="Luke Skywalker", gender="male", birth_year="19BBY",
-                         height="172", mass="77", hair_color="blond", eye_color="blue", description="YAY", image="YAY")
+                         height="172", mass="77", hair_color="blond", eye_color="blue", description="YAY", image="YAY",
+                         homeworld=" ", skin_color=" ", species=" ")
         person2 = People(name="C-3PO", gender="n/a", birth_year="112BBY",
-                     height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY")
+                     height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
+                         homeworld=" ", skin_color=" ", species=" ")
         person3 = People(name="WHO", gender="n/a", birth_year="112BBY",
-                         height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY")
+                         height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
+                         homeworld=" ", skin_color=" ", species=" ")
         db.session.add(person1)
         db.session.add(person2)
         db.session.add(person3)
@@ -121,7 +124,8 @@ class TestPeople(TestCase):
     """
     def test_delete_1(self):
         person4 = People(name="whoooooo", gender="n/a", birth_year="112BBY",
-                         height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY")
+                         height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
+                         homeworld=" ", skin_color=" ", species=" ")
         db.session.add(person4)
         db.session.commit()
         people = People.query.all()
@@ -142,7 +146,8 @@ class TestPeople(TestCase):
     """
     def test_person_exists_1(self):
         person = People(name="Jon", gender="male", birth_year="112BBY",
-                         height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY")
+                         height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
+                        homeworld = " ", skin_color = " ", species = " ")
         db.session.add(person)
         db.session.commit()
         assert person in db.session

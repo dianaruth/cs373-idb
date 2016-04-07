@@ -106,8 +106,8 @@ def get_s_data(path):
     return jsonify({"species": json_species})
 
 
-@app.route('/get_planet_for_person/<path>')
-def get_planet_for_person_data(path):
+@app.route('/person/<path>/planet')
+def get_planet_for_person(path):
     """
     Given a person id (denoted by "path"), return a JSON object for that person's home planet
     """
@@ -125,8 +125,11 @@ def get_planet_for_person_data(path):
     return jsonify({"homeworld": json_homeworld})
 
 
-@app.route('/get_species_for_person/<path>')
+@app.route('/species/<path>/people')
 def get_species_for_person(path):
+    """
+    Given species ID (path) return all people where speciesID == path
+    """
     person = People.query.get(path)
     json_person = person.serialize
 
@@ -140,8 +143,12 @@ def get_species_for_person(path):
     return jsonify({"species": json_species})
 
 
-@app.route('/get_planet_for_species/<path>')
+@app.route('/species/<path>/planet')
 def get_planet_for_species(path):
+    """
+    Given species ID (path) return homeworld
+    """
+
     species = Species.query.get(path)
     json_species = species.serialize
 
@@ -153,6 +160,20 @@ def get_planet_for_species(path):
         json_planet = None
 
     return jsonify({"planet": json_planet})
+
+@app.route('/planet/<path>/people')
+def get_people_from_planet(path):
+
+    planet = Planets.query.get(path)
+    people = People.query.filter_by(homeworld = planet.name)
+
+    try:
+        json_people = [person.serialize for person in people]
+    except:
+        json_people = None
+
+    return jsonify({"planet": json_people})
+
 
 
 @app.route('/run_tests')

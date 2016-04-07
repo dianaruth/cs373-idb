@@ -317,6 +317,7 @@ class TestRESTfulAPI(TestCase):
     """
     def test_get_person_data_1(self):
         output = get_person_data(1)
+        print(str(output))
         assert output is not None and str(output).__contains__("[200 OK]") # JSON response successful
 
     def test_get_person_data_2(self):
@@ -405,4 +406,4 @@ class TestRESTfulAPI(TestCase):
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 if __name__ == '__main__':
-	unittest.main(verbosity=2)
+	unittest.main(verbosity=1)

@@ -150,7 +150,7 @@ def get_planet_for_species(path):
     """
 
     species = Species.query.get(path)
-    json_species = species.serialize
+    # json_species = species.serialize
 
     try:
         planet = Planets.query.filter_by(name=json_species['homeworld']).first()
@@ -200,10 +200,23 @@ def get_people_from_species(path):
 
     return jsonify({"people":json_people})
 
+@app.route('person/<path>/species')
+def get_speciecs_from_person
+    
+    person = People.query.get(path)
+    species = Species.query.filter_by(name = person.species)
+
+    try:
+        json_species.serialize
+    except:
+        json_species = None
+
+    return jsonify({"species":json_species})
+
 
 @app.route('/run_tests')
 def run_tests():
-    output = subprocess.getoutput("python3 tests.py")
+    output = subprocess.getoutput("python tests.py")
     return json.dumps({'output': str(output)})
 
 @app.route("/people")

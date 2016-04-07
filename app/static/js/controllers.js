@@ -23,6 +23,8 @@ returnOfTheAPIControllers.controller('PlanetsListController', ['$scope', 'planet
             $scope.planets = data.planets;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 
@@ -33,6 +35,8 @@ returnOfTheAPIControllers.controller('SpeciesListController', ['$scope', 'specie
             $scope.species = data.species;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 
@@ -117,6 +121,17 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
             "issues": 18,
             "unit_tests": 9
         };
+    }]);
+
+returnOfTheAPIControllers.controller('RunTestsController', ['$scope', 'runTestsService',
+    function($scope, runTestsService) {
+        $scope.output = "Click the button above to run unit tests.";
+        $scope.runTests = function() {
+            $scope.output = "Running...";
+            runTestsService.runTests().then(function(data) {
+                $scope.output = data["output"];
+            });
+        }
     }]);
 
 returnOfTheAPIControllers.controller('NavController', ['$scope', '$location',

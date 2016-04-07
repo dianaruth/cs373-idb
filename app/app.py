@@ -113,7 +113,7 @@ def get_planet_for_person_data(path):
 
     person = People.query.get(path)
     json_person = person.serialize
-    homeworld = Planets.query.filter_by(name='Tatooine').first()
+    homeworld = Planets.query.filter_by(name=json_person['homeworld']).first()
     json_homeworld = homeworld.serialize
 
     return jsonify({"person": json_person,

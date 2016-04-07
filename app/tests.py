@@ -10,6 +10,39 @@ app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 """
+Test the Species model.
+"""
+class TestSpecies(TestCase):
+
+    """
+    Initialize the app and database.
+    """
+    def create_app(self):
+        db.init_app(app)
+        with app.app_context():
+            db.create_all()
+        return app
+
+    """
+    Insert data into the database.
+    Run our populate species script.
+    """
+    def setUp(self):
+        create_species()
+
+    """
+    Destroy the database and its tables after testing is complete.
+    """
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    def test_specie_exists_1(self):
+        species = Species.query.all()
+        for s in species:
+            print (str(s))
+
+"""
 Test the People model.
 """
 class TestPeople(TestCase):

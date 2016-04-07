@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, send_file, jsonify
-import os, time
+import os, time, subprocess
 import requests
 from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables
+import json
 
 time.sleep(5)
 
@@ -13,7 +14,7 @@ SQLALCHEMY_DATABASE_URI = \
         engine='mysql+pymysql',
         username=os.getenv('MYSQL_USER'),
         password=os.getenv('MYSQL_PASSWORD'),
-        hostname=os.getenv('MYSQL_HOST'),
+        hostname=os.getenv('MYSQL_HsOST'),
         database=os.getenv('MYSQL_DATABASE'))
 
 app = Flask(__name__, static_url_path='')

@@ -251,7 +251,7 @@ Test our RESTful API
 """
 import json
 from app import get_people_data, get_planets_data, get_species_data, get_person_data, \
-    get_planet_data, get_planet_data, get_planet_for_person, get_species_for_person, \
+    get_planet_data, get_s_data, get_planet_for_person, get_species_for_person, \
     get_planet_for_species
 
 class TestRESTfulAPI(TestCase):
@@ -324,7 +324,84 @@ class TestRESTfulAPI(TestCase):
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
     def test_get_person_data_3(self):
-        output = get_person_data(3)
+        output = get_person_data(15)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    """
+    Test the get_planet_data API call.
+    """
+    def test_get_planet_data_1(self):
+        output = get_planet_data(1)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_planet_data_2(self):
+        output = get_planet_data(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_planet_data_3(self):
+        output = get_planet_data(14)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    """
+    Test the get_s_data API call. (Single specie)
+    """
+    def test_get_s_data_1(self):
+        output = get_s_data(1)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_s_data_2(self):
+        output = get_s_data(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_s_data_3(self):
+        output = get_s_data(13)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+# get_planet_for_person, get_species_for_person, \
+#     get_planet_for_species
+    """
+    Test the get_planet_for_person API call.
+    """
+    def test_get_planet_for_person_1(self):
+        output = get_planet_for_person(1)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_planet_for_person_2(self):
+        output = get_planet_for_person(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_planet_for_person_3(self):
+        output = get_planet_for_person(15)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    """
+    Test the get_species_for_person API call.
+    """
+    def test_get_species_for_person_1(self):
+        output = get_species_for_person(1)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_species_for_person_2(self):
+        output = get_species_for_person(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_species_for_person_3(self):
+        output = get_species_for_person(14)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    """
+    Test the get_planet_for_species API call.
+    """
+    def test_get_planet_for_species_1(self):
+        output = get_planet_for_species(1)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_planet_for_species_2(self):
+        output = get_planet_for_species(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_planet_for_species_3(self):
+        output = get_planet_for_species(13)
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 if __name__ == '__main__':

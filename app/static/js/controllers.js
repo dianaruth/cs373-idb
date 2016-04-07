@@ -23,6 +23,8 @@ returnOfTheAPIControllers.controller('PlanetsListController', ['$scope', 'planet
             $scope.planets = data.planets;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 
@@ -33,6 +35,8 @@ returnOfTheAPIControllers.controller('SpeciesListController', ['$scope', 'specie
             $scope.species = data.species;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 

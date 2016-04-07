@@ -251,7 +251,7 @@ Test our RESTful API
 """
 import json
 from app import get_people_data, get_planets_data, get_species_data, get_person_data, \
-    get_planet_data, get_planet_data, get_planet_for_person_data, get_species_for_person, \
+    get_planet_data, get_planet_data, get_planet_for_person, get_species_for_person, \
     get_planet_for_species
 
 class TestRESTfulAPI(TestCase):
@@ -311,6 +311,21 @@ class TestRESTfulAPI(TestCase):
     def test_get_species_data(self):
         output = get_species_data()
         assert str(output).__contains__("[200 OK]")  # JSON response successful
+
+    """
+    Test the get_person_data API call.
+    """
+    def test_get_person_data_1(self):
+        output = get_person_data(1)
+        assert output is not None and str(output).__contains__("[200 OK]") # JSON response successful
+
+    def test_get_person_data_2(self):
+        output = get_person_data(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_person_data_3(self):
+        output = get_person_data(3)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

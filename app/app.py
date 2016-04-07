@@ -14,7 +14,7 @@ SQLALCHEMY_DATABASE_URI = \
         engine='mysql+pymysql',
         username=os.getenv('MYSQL_USER'),
         password=os.getenv('MYSQL_PASSWORD'),
-        hostname=os.getenv('MYSQL_HsOST'),
+        hostname=os.getenv('MYSQL_HOST'),
         database=os.getenv('MYSQL_DATABASE'))
 
 app = Flask(__name__, static_url_path='')

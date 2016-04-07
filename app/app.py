@@ -105,6 +105,20 @@ def get_s_data(path):
 
     return jsonify({"species": json_species})
 
+@app.route('/get_planet_for_person/<path>')
+def get_planet_for_person_data(path):
+    """
+    Given a person id (denoted by "path"), return a JSON object for that person's home planet
+    """
+
+    person = People.query.get(path)
+    json_person = person.serialize
+    homeworld = Planets.query.filter_by(name='Tatooine').first()
+    json_homeworld = homeworld.serialize
+
+    return jsonify({"person": json_person,
+                    "homeworld": json_homeworld})
+
 @app.route('/run_tests')
 def run_tests():
     output = subprocess.getoutput("python3 tests.py")

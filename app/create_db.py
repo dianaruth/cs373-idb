@@ -21,8 +21,10 @@ def create_people():
         eye_color = person['eye_color']
         description = person['description']
         image = person['image']
+        homeworld = person['homeworld']
+        skin_color = person['skin_color']
 
-        person = People(name, gender, birth_year, height, mass, hair_color, eye_color, description, image)
+        person = People(name, gender, birth_year, height, mass, hair_color, eye_color, description, image, homeworld, skin_color)
 
         db.session.add(person)
         db.session.commit()
@@ -55,8 +57,9 @@ def create_species():
         language = species['language']
         description = species['description']
         image = species['image']
+        homeworld = species['homeworld']
 
-        species = Species(name, classification, average_height, average_lifespan, language, description, image)
+        species = Species(name, classification, average_height, average_lifespan, language, description, image, homeworld)
 
         db.session.add(species)
         db.session.commit()

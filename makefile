@@ -53,8 +53,8 @@ test:
 	cd app && python3 tests.py
 	cd ..
 
-models.html: app/models.py
-	pydoc -w models
+models.html:
+	pydoc -w app/models.py
 
 IDB1.log:
 	git log > IDB1.log

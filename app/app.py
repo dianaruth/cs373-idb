@@ -216,7 +216,7 @@ def get_species_from_person(path):
 
 @app.route('/run_tests')
 def run_tests():
-    output = subprocess.getoutput("python tests.py")
+    output = subprocess.getoutput("python tests_web.py")
     return json.dumps({'output': str(output)})
 
 @app.route("/people")

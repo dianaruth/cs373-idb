@@ -92,8 +92,8 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "name": "Diana Ruth",
                 "photo": "diana.jpg",
                 "bio": "Fourth year student studying electrical engineering and computer science. Loves web development and horses. Getting ready to spend a semester down under in Melbourne, Australia. Thank god I'm not graduating yet.",
-                "responsibilities": ["Front-end development with AngularJS", "UI Design", "External API data compilation", "Apiary API"], 
-                "commits": 37,
+                "responsibilities": ["Front-end development with AngularJS", "UI Design", "Data Scraping", "Apiary API"], 
+                "commits": 66,
                 "issues": 17,
                 "unit_tests": 0
             },
@@ -101,17 +101,17 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "name": "Clint Ascencio",
                 "photo": "clint.jpg",
                 "bio": "#3 in Forbe’s 'Top 20 Teen Fashion Writers Gone Tech Journalist' in 2018. Leading thought leader™ of the millennials. Avid fan of Hamilton-themed SoulCycle and Avocado Toast with pink himalayan salt. Accounting and computer science major. Year long software engineer intern and, after graduation, full-time employee at DataStax.", 
-                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker"],
-                "commits": 26,
-                "issues": 0,
+                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker", "Database"],
+                "commits": 63,
+                "issues": 3,
                 "unit_tests": 0
             },
             {
                 "name": "Tony Serino",
                 "photo": "tony.jpg",
                 "bio": "Originally from the wastelands of Siberia. My mother lost her life fighting ninjas and ebola at the same time when I was baby, and my other mother who's life choices you should respect sacrificed herself using love magic to protect me from the evil lord Voldermort. Hobbies mostly include survival and hiding from the CIA. They aren't looking for me, but if they ever start they're gonna be in for a hell of a surprise. I am the last surviving heir to house Stark and am currently working on my next iron man suit to kill king Justin Beiber for starting the war in Westoros. HAIL HYDRA!",
-                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker"],
-                "commits": 18,
+                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker", "Database"],
+                "commits": 27,
                 "issues": 0,
                 "unit_tests": 0
             },
@@ -120,24 +120,24 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "photo": "jamie.jpg",
                 "bio": "Senior CS student from Schertz, Tx. Loves travel and adventure. Hoping to move to NYC after graduation. Puppies are the best animals.",
                 "responsibilities": ["UML Design", "GitHub Wiki"],
-                "commits": 0,
-                "issues": 0,
+                "commits": 2,
+                "issues": 10,
                 "unit_tests": 0
             },
             {
                 "name": "Jon Lim",
                 "photo": "jon.jpg",
                 "bio": "A computer science student originally from Seoul, South Korea. Interests include bodybuilding and Texas hold'em. Once quadrupled his money playing poker for 15 minutes... then lost it all the next day.",
-                "responsibilities": ["GitHub Wiki", "Unit Testing", "Docker Setup"],
-                "commits": 3,
-                "issues": 1,
-                "unit_tests": 9
+                "responsibilities": ["GitHub Wiki", "Unit Testing", "Docker Setup", "Database"],
+                "commits": 37,
+                "issues": 3,
+                "unit_tests": 37
             }
         ];
         $scope.teamStats = {
-            "commits": 85,
-            "issues": 18,
-            "unit_tests": 9
+            "commits": 198,
+            "issues": 33,
+            "unit_tests": 37
         };
     }]);
 

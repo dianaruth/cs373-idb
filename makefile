@@ -49,7 +49,7 @@ status:
 	git remote -v
 	git status
 
-test: tests.py
+test:
 	cd app
 	python3 app/tests.py
 	cd ..

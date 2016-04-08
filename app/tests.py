@@ -3,6 +3,10 @@ from flask.ext.testing import TestCase
 from flask import Flask
 from models import *
 from create_db import create_people, create_planets, create_species, populate_tables
+import json
+from app import get_people_data, get_planets_data, get_species_data, get_person_data, \
+    get_planet_data, get_s_data, get_planet_for_person, get_species_for_person, \
+    get_planet_for_species
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/swewars_test.db'  # set the database URI to a local database
@@ -28,14 +32,15 @@ class TestSpecies(TestCase):
     Run our populate species script.
     """
     def setUp(self):
-        # create_species()
-        s1 = Species(name = "Wookiee", classification = "mammal",
-            average_height = "210", average_lifespan = "400", language = "Shyriiwook", description = "", image = "", homeworld = "")
-        db.session.add(s1)
-        s2 = Species(name = "Human", classification = "mammal",
-            average_height = "180", average_lifespan = "120", language = "Galactic Basic", description = "", image = "", homeworld = "")
-        db.session.add(s2)
-        db.session.commit()
+        # # create_species()
+        # s1 = Species(name = "Wookiee", classification = "mammal",
+        #     average_height = "210", average_lifespan = "400", language = "Shyriiwook", description = "", image = "", homeworld = "")
+        # db.session.add(s1)
+        # s2 = Species(name = "Human", classification = "mammal",
+        #     average_height = "180", average_lifespan = "120", language = "Galactic Basic", description = "", image = "", homeworld = "")
+        # db.session.add(s2)
+        # db.session.commit()
+        create_species()
 
 
     """
@@ -81,6 +86,35 @@ class TestSpecies(TestCase):
         species = Species.query.all()
         assert len(species) == 0
 
+    """
+    Test our get_people_data API call.
+    """
+    def test_get_people_data(self):
+        output = get_people_data()
+        assert str(output).__contains__("[200 OK]") # JSON response successful
+
+    """
+    Test our get_species_data API call.
+    """
+    def test_get_species_data(self):
+        output = get_species_data()
+        assert str(output).__contains__("[200 OK]")  # JSON response successful
+
+    """
+    Test the get_s_data API call. (Single specie)
+    """
+    def test_get_s_data_1(self):
+        output = get_s_data(1)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_s_data_2(self):
+        output = get_s_data(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_s_data_3(self):
+        output = get_s_data(13)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
 """
 Test the People model.
 """
@@ -99,19 +133,20 @@ class TestPeople(TestCase):
     Insert data into the database.
     """
     def setUp(self) :
-        person1 = People(name="Luke Skywalker", gender="male", birth_year="19BBY",
-                         height="172", mass="77", hair_color="blond", eye_color="blue", description="YAY", image="YAY",
-                         homeworld=" ", skin_color=" ", species=" ")
-        person2 = People(name="C-3PO", gender="n/a", birth_year="112BBY",
-                     height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
-                         homeworld=" ", skin_color=" ", species=" ")
-        person3 = People(name="WHO", gender="n/a", birth_year="112BBY",
-                         height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
-                         homeworld=" ", skin_color=" ", species=" ")
-        db.session.add(person1)
-        db.session.add(person2)
-        db.session.add(person3)
-        db.session.commit()
+        # person1 = People(name="Luke Skywalker", gender="male", birth_year="19BBY",
+        #                  height="172", mass="77", hair_color="blond", eye_color="blue", description="YAY", image="YAY",
+        #                  homeworld=" ", skin_color=" ", species=" ")
+        # person2 = People(name="C-3PO", gender="n/a", birth_year="112BBY",
+        #              height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
+        #                  homeworld=" ", skin_color=" ", species=" ")
+        # person3 = People(name="WHO", gender="n/a", birth_year="112BBY",
+        #                  height="167", mass="77", hair_color="n/a", eye_color="yellow", description="YAY", image="YAY",
+        #                  homeworld=" ", skin_color=" ", species=" ")
+        # db.session.add(person1)
+        # db.session.add(person2)
+        # db.session.add(person3)
+        # db.session.commit()
+        create_people()
 
     """
     Destroy the database and its tables after testing is complete.
@@ -125,7 +160,7 @@ class TestPeople(TestCase):
     """
     def test_num_people_1(self):  # test the number of people on the table
         people = People.query.all()
-        assert len(people) == 3
+        assert len(people) > 0
 
     """
     Test adding and deleting from the People table.
@@ -137,17 +172,18 @@ class TestPeople(TestCase):
         db.session.add(person4)
         db.session.commit()
         people = People.query.all()
-        assert len(people) == 4
+        length = len(people)
+        assert length > 0
         People.query.filter(People.name == "whoooooo").delete() # that's an invalid person... delete
         db.session.commit()
-        assert len(People.query.all()) == 3
+        assert len(People.query.all()) == length - 1
 
     """
     Test selecting a person by their name.
     """
     def test_select_person_1(self):
-        person = People.query.filter(People.name == "WHO").first()
-        assert person.gender == "n/a" and person.height == "167"
+        person = People.query.filter(People.name == "Luke Skywalker").first()
+        assert person.gender == "male" and person.height == "172"
 
     """
     Test whether person exists in table.
@@ -169,8 +205,25 @@ class TestPeople(TestCase):
         num = People.query.delete()
         db.session.commit()
         people = People.query.all()
-        assert num == 3 # People.query.delete() returned the number of rows to be deleted
+        assert num > 0 # People.query.delete() returned the number of rows to be deleted
         assert len(people) == 0 # the number of rows in 'people' table should be zero
+
+    """
+    Test the get_person_data API call.
+    """
+
+    def test_get_person_data_1(self):
+        output = get_person_data(1)
+
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_person_data_2(self):
+        output = get_person_data(2)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_person_data_3(self):
+        output = get_person_data(15)
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
     # """
     # Test our populate 'people' table script for initially filling the database.
@@ -202,13 +255,14 @@ class TestPlanets(TestCase):
     """
 
     def setUp(self):
-        planet1 = Planets(name = "Alderaan", climate = "temperate, tropical",
-            gravity = "1 standard", terrain = "jungle, rainforests", population = 1000, description="YAY", image="YAY")
-        planet2 = Planets(name = 'Tatooine', climate = "arid",
-            gravity = "1 standard", terrain = "desert", population = 200000, description="YAY", image="YAY")
-        db.session.add(planet1)
-        db.session.add(planet2)
-        db.session.commit()
+        # planet1 = Planets(name = "Alderaan", climate = "temperate, tropical",
+        #     gravity = "1 standard", terrain = "jungle, rainforests", population = 1000, description="YAY", image="YAY")
+        # planet2 = Planets(name = 'Tatooine', climate = "arid",
+        #     gravity = "1 standard", terrain = "desert", population = 200000, description="YAY", image="YAY")
+        # db.session.add(planet1)
+        # db.session.add(planet2)
+        # db.session.commit()
+        create_planets()
 
     """
     Destroy the database and its tables after testing is complete.
@@ -249,59 +303,6 @@ class TestPlanets(TestCase):
         planet = Planets.query.filter(Planets.name == "Alderaan").first()
         assert planet in db.session()
 
-"""
-Test our RESTful API
-"""
-import json
-from app import get_people_data, get_planets_data, get_species_data, get_person_data, \
-    get_planet_data, get_s_data, get_planet_for_person, get_species_for_person, \
-    get_planet_for_species
-
-class TestRESTfulAPI(TestCase):
-    """
-    Initialize the app and database.
-    """
-    def create_app(self):
-        db.init_app(app)
-        with app.app_context():
-            db.create_all()
-        return app
-
-    """
-    Insert data into the database.
-    Run our populate species script.
-    Populate all three tables.
-    """
-    def setUp(self):
-        populate_tables()
-
-    """
-    Destroy the database and its tables after testing is complete.
-    """
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
-
-    def test_all_tables(self):
-        people = People.query.all()
-        #species = Species.query.all() # REMOVE BECAUSE IT'S TAKING TOO LONG
-        planets = Planets.query.all()
-        # for person in people : # SEE THE 'people' TABLE
-        #     print(str(person))
-        # for s in species : # SEE THE 'species' TABLE
-        #     print(str(s))
-        # for planet in planets: # SEE THE 'planets' TABLE
-        #     print (str(planet))
-        #assert len(people) > 0 and len(species) > 0 and len(planets) >
-        assert len(people) > 0 and len(planets)
-
-    """
-    Test our get_people_data API call.
-    """
-    def test_get_people_data(self):
-        output = get_people_data()
-        assert str(output).__contains__("[200 OK]") # JSON response successful
-
     """
     Test our get_planets_data API call.
     """
@@ -310,31 +311,9 @@ class TestRESTfulAPI(TestCase):
         assert str(output).__contains__("[200 OK]")  # JSON response successful
 
     """
-    Test our get_planets_data API call.
-    """
-    def test_get_species_data(self):
-        output = get_species_data()
-        assert str(output).__contains__("[200 OK]")  # JSON response successful
-
-    """
-    Test the get_person_data API call.
-    """
-    def test_get_person_data_1(self):
-        output = get_person_data(1)
-
-        assert output is not None and str(output).__contains__("[200 OK]") # JSON response successful
-
-    def test_get_person_data_2(self):
-        output = get_person_data(2)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    def test_get_person_data_3(self):
-        output = get_person_data(15)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    """
     Test the get_planet_data API call.
     """
+
     def test_get_planet_data_1(self):
         output = get_planet_data(1)
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
@@ -347,67 +326,91 @@ class TestRESTfulAPI(TestCase):
         output = get_planet_data(14)
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
-    # """
-    # Test the get_s_data API call. (Single specie)
-    # """
-    # def test_get_s_data_1(self):
-    #     output = get_s_data(1)
-    #     assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-    #
-    # def test_get_s_data_2(self):
-    #     output = get_s_data(2)
-    #     assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-    #
-    # def test_get_s_data_3(self):
-    #     output = get_s_data(13)
-    #     assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-# get_planet_for_person, get_species_for_person, \
-#     get_planet_for_species
-    """
-    Test the get_planet_for_person API call.
-    """
-    def test_get_planet_for_person_1(self):
-        output = get_planet_for_person(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    def test_get_planet_for_person_2(self):
-        output = get_planet_for_person(2)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    def test_get_planet_for_person_3(self):
-        output = get_planet_for_person(15)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    """
-    Test the get_species_for_person API call.
-    """
-    def test_get_species_for_person_1(self):
-        output = get_species_for_person(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    def test_get_species_for_person_2(self):
-        output = get_species_for_person(2)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    def test_get_species_for_person_3(self):
-        output = get_species_for_person(14)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-    #
-    # """
-    # Test the get_planet_for_species API call.
-    # """
-    # def test_get_planet_for_species_1(self):
-    #     output = get_planet_for_species(1)
-    #     assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-    #
-    # def test_get_planet_for_species_2(self):
-    #     output = get_planet_for_species(2)
-    #     assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-    #
-    # def test_get_planet_for_species_3(self):
-    #     output = get_planet_for_species(13)
-    #     assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+# """
+# Test our RESTful API
+# """
+# class TestRESTfulAPI(TestCase):
+#     """
+#     Initialize the app and database.
+#     """
+#     def create_app(self):
+#         db.init_app(app)
+#         with app.app_context():
+#             db.create_all()
+#         return app
+#
+#     """
+#     Insert data into the database.
+#     Run our populate species script.
+#     Populate all three tables.
+#     """
+#     def setUp(self):
+#         populate_tables()
+#
+#     """
+#     Destroy the database and its tables after testing is complete.
+#     """
+#     def tearDown(self):
+#         db.session.remove()
+#         db.drop_all()
+#
+#     def test_all_tables(self):
+#         people = People.query.all()
+#         species = Species.query.all() # REMOVE BECAUSE IT'S TAKING TOO LONG
+#         planets = Planets.query.all()
+#         for person in people : # SEE THE 'people' TABLE
+#             print(str(person))
+#         for s in species : # SEE THE 'species' TABLE
+#             print(str(s))
+#         for planet in planets: # SEE THE 'planets' TABLE
+#             print (str(planet))
+#         assert len(people) > 0 and len(species) > 0 and len(planets) > 0
+#
+#
+#     """
+#     Test the get_planet_for_person API call.
+#     """
+#     def test_get_planet_for_person_1(self):
+#         output = get_planet_for_person(1)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     def test_get_planet_for_person_2(self):
+#         output = get_planet_for_person(2)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     def test_get_planet_for_person_3(self):
+#         output = get_planet_for_person(15)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     """
+#     Test the get_species_for_person API call.
+#     """
+#     def test_get_species_for_person_1(self):
+#         output = get_species_for_person(1)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     def test_get_species_for_person_2(self):
+#         output = get_species_for_person(2)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     def test_get_species_for_person_3(self):
+#         output = get_species_for_person(14)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     """
+#     Test the get_planet_for_species API call.
+#     """
+#     def test_get_planet_for_species_1(self):
+#         output = get_planet_for_species(1)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     def test_get_planet_for_species_2(self):
+#         output = get_planet_for_species(2)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     def test_get_planet_for_species_3(self):
+#         output = get_planet_for_species(13)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

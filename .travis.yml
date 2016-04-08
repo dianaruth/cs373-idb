@@ -28,10 +28,10 @@ before_script:
 script:
     - date
     - ls -al
-   - make models.html
-   - ls -al
-   - make IDB2.log
-   - ls -al
+    - make models.html
+    - ls -al
+    - make IDB2.log
+    - ls -al
 #    - make test
 #    - ls -al
 #    - make check

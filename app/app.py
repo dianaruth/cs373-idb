@@ -9,13 +9,14 @@ import json
 
 time.sleep(5)
 
-SQLALCHEMY_DATABASE_URI = \
-    '{engine}://{username}:{password}@{hostname}/{database}'.format(
-        engine='mysql+pymysql',
-        username=os.getenv('MYSQL_USER'),
-        password=os.getenv('MYSQL_PASSWORD'),
-        hostname=os.getenv('MYSQL_HOST'),
-        database=os.getenv('MYSQL_DATABASE'))
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://Tony:S1m0n3tt1@localhost/testdataswe'
+# \
+#     '{engine}://{username}:{password}@{hostname}/{database}'.format(
+#         engine='mysql+pymysql',
+#         username=os.getenv('MYSQL_USER'),
+#         password=os.getenv('MYSQL_PASSWORD'),
+#         hostname=os.getenv('MYSQL_HOST'),
+#         database=os.getenv('MYSQL_DATABASE'))
 
 app = Flask(__name__, static_url_path='')
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
@@ -125,7 +126,7 @@ def get_planet_for_person(path):
     return jsonify({"homeworld": json_homeworld})
 
 
-@app.route('/species/<path>/people')
+@app.route('/person/<path>/species')
 def get_species_for_person(path):
     """
     Given species ID (path) return all people where speciesID == path
@@ -172,7 +173,7 @@ def get_people_from_planet(path):
     except:
         json_people = None
 
-    return jsonify({"planet": json_people})
+    return jsonify({"people": json_people})
 
 @app.route('/planet/<path>/species')
 def get_species_from_planet(path):
@@ -199,19 +200,6 @@ def get_people_from_species(path):
         json_people = None
 
     return jsonify({"people":json_people})
-
-@app.route('/person/<path>/species')
-def get_species_from_person(path):
-    
-    person = People.query.get(path)
-    json_species = Species.query.filter_by(name = person.species)
-
-    try:
-        json_species.serialize
-    except:
-        json_species = None
-
-    return jsonify({"species":json_species})
 
 
 @app.route('/run_tests')

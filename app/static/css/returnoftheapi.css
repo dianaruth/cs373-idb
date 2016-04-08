@@ -158,8 +158,6 @@ pre {
 
 .detail {
     margin: 50px;
-    display: flex;
-    align-items: center;
 }
 
 .navbar-default {
@@ -356,11 +354,11 @@ p#start {
     left: 0;
     right: 0;
     margin: 0 auto;
-	-webkit-animation: scroll 100s linear 4s infinite;
-	-moz-animation: scroll 100s linear 4s infinite;
-	-ms-animation: scroll 100s linear 4s infinite;
-	-o-animation: scroll 100s linear 4s infinite;
-	animation: scroll 100s linear 4s infinite;
+	-webkit-animation: scroll 120s linear 4s infinite;
+	-moz-animation: scroll 120s linear 4s infinite;
+	-ms-animation: scroll 120s linear 4s infinite;
+	-o-animation: scroll 120s linear 4s infinite;
+	animation: scroll 120s linear 4s infinite;
 }
 
 #continue {

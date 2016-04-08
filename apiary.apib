@@ -203,6 +203,8 @@ Returns a JSON object for the species specified by speciesID.
 
 Returns a JSON object for the homeworld of the person given by personID. If the person is not from any planet, a null JSON object is returned.
 
+### GET Planet for Person [GET]
+
 + Response 200 (application/json)
 
         {
@@ -222,6 +224,8 @@ Returns a JSON object for the homeworld of the person given by personID. If the 
 **/person/{personID}/species**
 
 Returns a JSON object for the species of the person given by personID. If the person does not have a species, a null JSON object is returned.
+
+### GET Species for Person [GET]
 
 + Response 200 (application/json)
 
@@ -243,6 +247,8 @@ Returns a JSON object for the species of the person given by personID. If the pe
 **/planet/{planetID}/people**
 
 Returns a list of JSON objects for the people that are from the planet given by planetID. If there are no people from the planet, a null JSON object is returned.
+
+### GET People for Planet [GET]
 
 + Response 200 (application/json)
 
@@ -287,6 +293,8 @@ Returns a list of JSON objects for the people that are from the planet given by 
 
 Returns a JSON object for the species that is native to the planet given by planetID. If the planet does not have a native species, a null JSON object is returned.
 
+### GET Species for Planet [GET]
+
 + Response 200 (application/json)
 
         {
@@ -307,6 +315,8 @@ Returns a JSON object for the species that is native to the planet given by plan
 **/species/{speciesID}/people**
 
 Returns a list of JSON objects for the people that are of the species given by speciesID. If no people are of the specified species, a null JSON object is returned.
+
+### GET People for Species [GET]
 
 + Response 200 (application/json)
 
@@ -350,6 +360,8 @@ Returns a list of JSON objects for the people that are of the species given by s
 **/species/{speciesID}/planet**
 
 Returns a JSON object for the native planet of the species given by speciesID. If the specified species does not have a native planet, a null JSON object is returned.
+
+### GET Planet for Species [GET]
 
 + Response 200 (application/json)
 

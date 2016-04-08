@@ -52,11 +52,11 @@ status:
 test: tests.py
 	python3 tests.py
 
-models.html: models.py
+models.html: app/models.py
 	pydoc -w models
 
 IDB1.log:
 	git log > IDB1.log
 
 IDB2.log:
-	git log > IDB1.log
+	git log > IDB2.log

@@ -9,7 +9,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/dianaruth/Desktop/github_repos/cs373/cs373-idb/models.py">/Users/dianaruth/Desktop/github_repos/cs373/cs373-idb/models.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/dianaruth/Desktop/github_repos/cs373/cs373-idb/app/models.py">/Users/dianaruth/Desktop/github_repos/cs373/cs373-idb/app/models.py</a></font></td></tr></table>
     <p></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -19,21 +19,33 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
+<dt><font face="helvetica, arial">flask_sqlalchemy.Model(<a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>)
+</font></dt><dd>
+<dl>
 <dt><font face="helvetica, arial"><a href="models.html#People">People</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Planets">Planets</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Species">Species</a>
 </font></dt></dl>
+</dd>
+</dl>
  <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="People">class <strong>People</strong></a></font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="People">class <strong>People</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>"<a href="#People">People</a>&nbsp;Model<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
-<td width="100%">Methods defined here:<br>
-<dl><dt><a name="People-__init__"><strong>__init__</strong></a>(self, name, gender, birth_year, height, mass, hair_color, eye_color)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#People">People</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="People-__init__"><strong>__init__</strong></a>(self, name, gender, birth_year, height, mass, hair_color, eye_color, description, image, homeworld, skin_color, species)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
 &nbsp;<br>
 Parameters<br>
 ----------<br>
@@ -50,37 +62,90 @@ Returns<br>
 -------<br>
 <a href="#People">People</a></tt></dd></dl>
 
+<dl><dt><a name="People-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>birth_year</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>eye_color</strong></dt>
+</dl>
+<dl><dt><strong>gender</strong></dt>
+</dl>
+<dl><dt><strong>hair_color</strong></dt>
+</dl>
+<dl><dt><strong>height</strong></dt>
+</dl>
+<dl><dt><strong>homeworld</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>mass</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>serialize</strong></dt>
+</dl>
+<dl><dt><strong>skin_color</strong></dt>
+</dl>
+<dl><dt><strong>species</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e8cd150; People&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('people', MetaData(bind=None), Column('id'...String(length=256), table=&lt;people&gt;), schema=None)</dl>
+
 <dl><dt><strong>__tablename__</strong> = 'people'</dl>
 
-<dl><dt><strong>birth_year</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
 
-<dl><dt><strong>eye_color</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
 
-<dl><dt><strong>gender</strong> = Column(None, String(), table=None)</dl>
-
-<dl><dt><strong>hair_color</strong> = Column(None, String(), table=None)</dl>
-
-<dl><dt><strong>height</strong> = Column(None, Integer(), table=None)</dl>
-
-<dl><dt><strong>id</strong> = Column(None, Integer(), table=None, primary_key=True, nullable=False)</dl>
-
-<dl><dt><strong>mass</strong> = Column(None, Integer(), table=None)</dl>
-
-<dl><dt><strong>name</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Planets">class <strong>Planets</strong></a></font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Planets">class <strong>Planets</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt><a href="#Planets">Planets</a>&nbsp;Model<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
-<td width="100%">Methods defined here:<br>
-<dl><dt><a name="Planets-__init__"><strong>__init__</strong></a>(self, name, climate, gravity, terrain, population)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Planets">Planets</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Planets-__init__"><strong>__init__</strong></a>(self, name, climate, gravity, terrain, population, description, image)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
 &nbsp;<br>
 Parameters<br>
 ----------<br>
@@ -95,33 +160,80 @@ Returns<br>
 -------<br>
 <a href="#Planets">Planets</a></tt></dd></dl>
 
+<dl><dt><a name="Planets-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>climate</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>gravity</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>population</strong></dt>
+</dl>
+<dl><dt><strong>serialize</strong></dt>
+</dl>
+<dl><dt><strong>terrain</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e8cd890; Planets&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('planets', MetaData(bind=None), Column('id...tring(length=256), table=&lt;planets&gt;), schema=None)</dl>
+
 <dl><dt><strong>__tablename__</strong> = 'planets'</dl>
 
-<dl><dt><strong>climate</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
 
-<dl><dt><strong>gravity</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
 
-<dl><dt><strong>id</strong> = Column(None, Integer(), table=None, primary_key=True, nullable=False)</dl>
-
-<dl><dt><strong>name</strong> = Column(None, String(), table=None)</dl>
-
-<dl><dt><strong>population</strong> = Column(None, Integer(), table=None)</dl>
-
-<dl><dt><strong>terrain</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Species">class <strong>Species</strong></a></font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Species">class <strong>Species</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt><a href="#Species">Species</a>&nbsp;Model<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
-<td width="100%">Methods defined here:<br>
-<dl><dt><a name="Species-__init__"><strong>__init__</strong></a>(self, name, classification, average_height, average_lifespan, language)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Species">Species</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Species-__init__"><strong>__init__</strong></a>(self, name, classification, average_height, average_lifespan, language, description, image, homeworld)</dt><dd><tt>Assigns&nbsp;variables&nbsp;to&nbsp;the&nbsp;class&nbsp;upon&nbsp;initialization.<br>
 &nbsp;<br>
 Parameters<br>
 ----------<br>
@@ -136,21 +248,63 @@ Returns<br>
 -------<br>
 <a href="#People">People</a></tt></dd></dl>
 
+<dl><dt><a name="Species-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>average_height</strong></dt>
+</dl>
+<dl><dt><strong>average_lifespan</strong></dt>
+</dl>
+<dl><dt><strong>classification</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>homeworld</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>language</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>serialize</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e8cdfd0; Species&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('species', MetaData(bind=None), Column('id...tring(length=256), table=&lt;species&gt;), schema=None)</dl>
+
 <dl><dt><strong>__tablename__</strong> = 'species'</dl>
 
-<dl><dt><strong>average_height</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
 
-<dl><dt><strong>average_lifespan</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
 
-<dl><dt><strong>classification</strong> = Column(None, String(), table=None)</dl>
-
-<dl><dt><strong>id</strong> = Column(None, Integer(), table=None, primary_key=True, nullable=False)</dl>
-
-<dl><dt><strong>language</strong> = Column(None, String(), table=None)</dl>
-
-<dl><dt><strong>name</strong> = Column(None, String(), table=None)</dl>
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -159,6 +313,5 @@ Data and other attributes defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>func</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;<br>
-<strong>modifier</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;</td></tr></table>
+<td width="100%"><strong>db</strong> = &lt;SQLAlchemy engine=None&gt;</td></tr></table>
 </body></html>

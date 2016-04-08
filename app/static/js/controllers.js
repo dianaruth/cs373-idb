@@ -11,6 +11,8 @@ returnOfTheAPIControllers.controller('PeopleListController', ['$scope', 'peopleS
             $scope.people = data.people;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 
@@ -21,6 +23,8 @@ returnOfTheAPIControllers.controller('PlanetsListController', ['$scope', 'planet
             $scope.planets = data.planets;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 
@@ -31,87 +35,53 @@ returnOfTheAPIControllers.controller('SpeciesListController', ['$scope', 'specie
             $scope.species = data.species;
             $scope.sortType = 'name';
             $scope.sortReverse = false;
+            $scope.currentPage = 1;
+            $scope.pageSize = 10;
         });
     }]);
 
-returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'personDetailService',
-    function($scope, $routeParams, personDetailService) {
+returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'personDetailService', 'planetForPersonService', 'speciesForPersonService',
+    function($scope, $routeParams, personDetailService, planetForPersonService, speciesForPersonService) {
         var id = parseInt($routeParams.personID);
         $scope.id = id;
-        switch(id) {
-            case 1:
-                $scope.img = "luke_skywalker.jpg";
-                $scope.homeworld = "Tatooine";
-                $scope.species = "Human";
-                break;
-            case 2:
-                $scope.img = "c3po.png";
-                $scope.homeworld = "Tatooine";
-                $scope.species = "Droid";
-                break;
-            case 3:
-                $scope.img = "r2d2.png";
-                $scope.homeworld = "";
-                $scope.species = "Droid";
-                break;
-            default:
-                break;
-        }
         personDetailService.getPerson(id).then(function(data) {
             $scope.person = data["person"];
         });
-    }]);
-
-returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetDetailService',
-    function($scope, $routeParams, planetDetailService) {
-        var id = parseInt($routeParams.planetID);
-        $scope.id = id;
-        switch(id) {
-            case 1:
-                $scope.img = "tattooine.png";
-                $scope.residents = ["Luke Skywalker", "C-3PO"];
-                break;
-            case 2:
-                $scope.img = "alderaan.jpg";
-                $scope.residents = [];
-                break;
-            case 3:
-                $scope.img = "yavin4.jpg";
-                $scope.residents = [];
-                break;
-            default:
-                break;
-        }
-        planetDetailService.getPlanet(id).then(function(data) {
-            $scope.planet = data["planet"];
+        planetForPersonService.getPlanetForPerson(id).then(function(data) {
+            $scope.homeworld = data["homeworld"];
+        });
+        speciesForPersonService.getSpeciesForPerson(id).then(function(data) {
+            $scope.species = data["species"];
         });
     }]);
 
-returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesDetailService',
-    function($scope, $routeParams, speciesDetailService) {
+returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetDetailService', 'peopleForPlanetService', 'speciesForPlanetService',
+    function($scope, $routeParams, planetDetailService, peopleForPlanetService, speciesForPlanetService) {
+        var id = parseInt($routeParams.planetID);
+        $scope.id = id;
+        planetDetailService.getPlanet(id).then(function(data) {
+            $scope.planet = data["planet"];
+        });
+        peopleForPlanetService.getPeopleForPlanet(id).then(function(data) {
+            $scope.residents = data["residents"];
+        });
+        speciesForPlanetService.getSpeciesForPlanet(id).then(function(data) {
+            $scope.native_species = data["native_species"];
+        });
+    }]);
+
+returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesDetailService', 'peopleForSpeciesService', 'planetForSpeciesService',
+    function($scope, $routeParams, speciesDetailService, peopleForSpeciesService, planetForSpeciesService) {
         var id = parseInt($routeParams.speciesID);
         $scope.id = id;
-        switch(id) {
-            case 1:
-                $scope.img = "human.jpg";
-                $scope.homeworld = "";
-                $scope.people = ["Luke Skywalker"];
-                break;
-            case 2:
-                $scope.img = "droid.jpg";
-                $scope.homeworld = "";
-                $scope.people = ["C-3P0", "R2-D2"];
-                break;
-            case 3:
-                $scope.img = "wookiee.jpg";
-                $scope.homeworld = "";
-                $scope.people = [];
-                break;
-            default:
-                break;
-        }
         speciesDetailService.getSpecies(id).then(function(data) {
             $scope.species = data["species"];
+        });
+        peopleForSpeciesService.getPeopleForSpecies(id).then(function(data) {
+            $scope.people = data["people"];
+        });
+        planetForSpeciesService.getPlanetForSpecies(id).then(function(data) {
+            $scope.native_planet = data["native_planet"];
         });
     }]);
 
@@ -139,7 +109,7 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
             {
                 "name": "Tony Serino",
                 "photo": "tony.jpg",
-                "bio": "Computer Science student from Austin. Hobbies are video games and martial arts. 4x collegiate state judo champion. After graduation I will working as a software developer at Spiceworks.",
+                "bio": "Originally from the wastelands of Siberia. My mother lost her life fighting ninjas and ebola at the same time when I was baby, and my other mother who's life choices you should respect sacrificed herself using love magic to protect me from the evil lord Voldermort. Hobbies mostly include survival and hiding from the CIA. They aren't looking for me, but if they ever start they're gonna be in for a hell of a surprise. I am the last surviving heir to house Stark and am currently working on my next iron man suit to kill king Justin Beiber for starting the war in Westoros. HAIL HYDRA!",
                 "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker"],
                 "commits": 18,
                 "issues": 0,
@@ -169,6 +139,17 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
             "issues": 18,
             "unit_tests": 9
         };
+    }]);
+
+returnOfTheAPIControllers.controller('RunTestsController', ['$scope', 'runTestsService',
+    function($scope, runTestsService) {
+        $scope.output = "Click the button above to run unit tests.";
+        $scope.runTests = function() {
+            $scope.output = "Running...";
+            runTestsService.runTests().then(function(data) {
+                $scope.output = data["output"];
+            });
+        }
     }]);
 
 returnOfTheAPIControllers.controller('NavController', ['$scope', '$location',

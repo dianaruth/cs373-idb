@@ -3,10 +3,9 @@ FILES :=           \
     .travis.yml    \
     makefile       \
     apiary.apib		 \
-    IDB1.log			 \
-    models.html		 \
-    models.py			 \
-    tests.py			 \
+    IDB2.log			 \
+    app/models.py			 \
+    app/tests.py			 \
     UML.pdf
 
 
@@ -49,11 +48,15 @@ status:
 	git remote -v
 	git status
 
-test: tests.py
-	python3 tests.py
+test:
+	cd app && python3 tests.py
+	cd ..
 
-models.html: models.py
-	pydoc -w models
+models.html:
+	pydoc -w app/models.py
 
 IDB1.log:
 	git log > IDB1.log
+
+IDB2.log:
+	git log > IDB2.log

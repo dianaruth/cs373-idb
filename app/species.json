@@ -1,0 +1,376 @@
+[
+		{
+			"name": "Human", 
+		    "classification": "mammal", 
+		    "average_height": "180", 
+		    "average_lifespan": "120", 
+		    "homeworld": "Coruscant", 
+		    "language": "Galactic Basic", 
+		    "description": "Humans, taxonomically referred to as Homo sapiens, were the galaxy's most numerous and politically dominant sentient species with millions of major and minor colonies galaxywide. Believed to have originated on the galactic capital of Coruscant, they could be found anywhere, engaged in many different pursuits: spacers, mercenaries, smugglers, merchants, soldiers, assassins, farmers, crime lords, laborers, slaves, slavers, and many others, including Jedi and Sith. Since Humans were the most common sentient species, they were often considered to be a standard or average to which the biology, psychology, and culture of other species were compared.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/5d/Humans-TESB30.jpg/revision/latest?cb=20100628191857"
+		},
+		{
+			"name": "Droid", 
+		    "classification": "artificial", 
+		    "average_height": "n/a", 
+		    "average_lifespan": "indefinite", 
+		    "homeworld": "n/a", 
+		    "language": "n/a", 
+		    "description": "Droids, short for androids, or also called robots, were mechanical beings, often possessing artificial intelligence. They were used in a variety of roles and environments, often those considered too menial or too dangerous for humans and other species. Droids were also used in fields that required extensive specialization and knowledge, such as medical droids and astromech droids. Droids designed for combat were battle droids. Depending on the model and its corresponding purpose, droids were totally obedient, rugged, expendable, capable of vast memory recall, and mathematically precise. These characteristics made them well suited for many jobs, though the lack of independent thought in the cheaper, less advanced models limited their capability. This lack of autonomy was simultaneously a vast asset and a glaring weakness—an asset in terms of obedience and control but a massive drawback in terms of effectiveness. Designers faced a fundamental paradox—make the droids overly intelligent, and they might rebel; yet make the droids not intelligent enough and they would be ineffectual. Customarily, droid names were an arrangement of numbers and letters.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/c/c8/Counterparts.jpg/revision/latest?cb=20070608122549"
+		},
+		{
+			"name": "Wookiee", 
+		    "classification": "mammal", 
+		    "average_height": "210", 
+		    "average_lifespan": "400", 
+		    "homeworld": "Kashyyyk", 
+		    "language": "Shyriiwook", 
+		    "description": "The Wookiees, whose name for themselves translated to the People of the Trees, were a species of tall, hairy humanoids that were inhabitants of the planet Kashyyyk. One of the most noteworthy members of the species was Chewbacca, Han Solo's best friend and co-pilot, who played a vital role in the Galactic Civil War and afterwards. A race of arboreal mammals, the Wookiees lived in treehouses nestled in the canopy of the towering wroshyr trees. Despite their fearsome appearance, they were usually gentle, although they were prone to devastating fits of rage when provoked.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/57/ThreeWookieeAmigos-ROTSVD.jpg/revision/latest?cb=20061128184734"
+		},
+		{
+			"name": "Rodian", 
+		    "classification": "sentient", 
+		    "average_height": "170", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Rodia", 
+		    "language": "Galatic Basic", 
+		    "description": "Rodians were a reptilian humanoid species native to Rodia in the Tyrius system. Highly recognizable due to characteristics in facial structure and skin pigment, Rodians were infamous for their violent culture, which sprang from the difficulties of life in the jungles of their homeworld. Though they were often relegated to the fringes of galactic society as bounty hunters or criminal henchmen, Rodians were not merely simple-minded thugs. The Rodian people managed to produce artists, merchants, and politicians who were found even among the upper classes of the Core Worlds.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/2/23/Rodian_NEGAS.jpg/revision/latest?cb=20061127015745"
+		},
+		{
+			"name": "Hutt", 
+		    "classification": "gastropod", 
+		    "average_height": "300", 
+		    "average_lifespan": "1000", 
+		    "homeworld": "Nal Hutta", 
+		    "language": "Huttese", 
+		    "description": "The Hutts were a sentient species of large gastropods with short arms, wide cavernous mouths and huge eyes, who controlled a large space empire in Hutt Space. The species was said to originally hail from the planet Varl, but no planet by that name appeared on any Imperial star charts. Their adopted homeworld was Nal Hutta. Members of this species were often stereotyped as crime lords.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/a/a7/HuttNEGAS.png/revision/latest?cb=20130115030417"
+		},
+		{
+			"name": "Yoda's species", 
+		    "classification": "mammal", 
+		    "average_height": "66", 
+		    "average_lifespan": "900", 
+		    "homeworld": "unknown", 
+		    "language": "Galactic basic", 
+		    "description": "The species to which the legendary Jedi Master Yoda belonged was ancient and shrouded in mystery. The species had two sexes: male and female. Members of that species were small in size, with green skin and long pointed ears. Their three-fingered hands ended in claws. Their ears were expressive, curling and unfurling in accordance with their emotions. The species' life expectancy spanned several centuries.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/5a/YodaNEGAS.jpg/revision/latest?cb=20061129202540"
+		},
+		{
+			"name": "Trandoshan", 
+		    "classification": "reptile", 
+		    "average_height": "200", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Trandosha", 
+		    "language": "Dosh", 
+		    "description": "Trandoshans, or T'doshok in Dosh, were large, bipedal reptilian humanoids from the planet of Trandosha (or Dosha). They had sensitive eyes that could see into the infrared range and the ability to regenerate lost limbs—albeit slowly—and were anatomically built heavier and stronger than most humanoids, including Humans. They would also periodically shed their skin. Unlike some other reptilian humanoids, such as the Barabels and the Ssi-ruuk, Trandoshans had no tails. The Trandoshans were a warlike species who allied early with the Empire, taking Wookiees as slaves. A notable Trandoshan was Bossk, who was a longtime enemy of Han Solo, Chewbacca the Wookiee, and Boba Fett, as well as the infamous slaver Pekt. As a species, they were renowned across the galaxy for great strength. This is evidenced by several members of other species boasting physical prowess and power by having defeated a Trandoshan, either in battle or in a contest of strength.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/4/45/Trandoshan_NEGAS.png/revision/latest?cb=20130115031110"
+		},
+		{
+			"name": "Mon Calamari", 
+		    "classification": "amphibian", 
+		    "average_height": "160", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Mon Cala", 
+		    "language": "Mon Calamarian", 
+		    "description": "The Mon Calamari (also known as Calamari, Calamarians, Mon Cal, Mon Calamarians, or rarely Mon Cala) were one of the sentient species indigenous to the world of Dac.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/7/77/Mon_Calamari_NEGAS.jpg/revision/latest?cb=20081105205051"
+		},
+		{
+			"name": "Ewok", 
+		    "classification": "mammal", 
+		    "average_height": "100", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Endor", 
+		    "language" : "Ewokese",
+		    "description": "Ewoks were sentient, diminutive, furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the second Death Star. Ewoks were curious individuals that stood about one meter tall; they were omnivorous and used spears, slings, and knives as weapons; they also used hang gliders, battle wagons, and bordoks as vehicles. Although extremely skilled in forest survival and the construction of primitive technology like gliders and catapults, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts. Some Ewoks were removed from their planet and taken as pets or slaves. Others left voluntarily out of a sense of curiosity, especially after the Battle of Endor led to the establishment of New Republic trading posts on the Forest Moon.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/52/Ewoks_SWSB.png/revision/latest?cb=20100917005427"
+		},
+		{
+			"name": "Sullustan", 
+		    "classification": "mammal", 
+		    "average_height": "180", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Sullust", 
+		    "language": "Sullutese", 
+		    "description": "Sullustans were a species of Near-Humans from Sullust. As skilled pilots and navigators, Sullustans, also known as Bomewrights, were common sights for spacers and at busy spaceports. The Sullustans played an important role in the Galactic Civil War and were charter members of the New Republic. Notable members of the species include Nien Nunb and Ten Numb.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/f/f5/Sullustan_NEGAS.jpg/revision/latest?cb=20100810063353"
+		},
+		{
+			"name": "Neimodian", 
+		    "classification": "unknown", 
+		    "average_height": "180", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Cato Neimoidia", 
+		    "language": "Neimoidia", 
+		    "description": "Neimoidians were a species of humanoids that were distant genetic relatives of Duros. They were native to the planet of Neimoidia and also lived on colony worlds in the same sector like Cato Neimoidia, Deko Neimoidia, and Koru Neimoidia. They had a reputation for greed and cowardice. Neimoidians placed tremendous value on wealth and material possessions, and would go to great lengths to gain money and power; however, they were very easily intimidated, and hated combat. They were famous for running the Trade Federation, a massive corporate entity. Famous Neimoidians included Nute Gunray and Rune Haako, high ranking members of the Trade Federation who later joined the Confederacy of Independent Systems, a separatist movement which waged war on the Galactic Republic. They were killed by Anakin Skywalker, under the alias Darth Vader, on the eve of the establishment of the Galactic Empire.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/52/Neimoidian_NEGAS.jpg/revision/latest?cb=20061021200803"
+		},
+		{
+			"name": "Gungan", 
+		    "classification": "amphibian", 
+		    "average_height": "190", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Naboo", 
+		    "language": "Gungan basic", 
+		    "description": "The Gungans were a sentient, amphibious humanoid race native to the terrestrial planet known as Naboo. Prior to the Invasion of Naboo, an event that took place in 32 BBY, the Gungans were a largely isolationist society. They were able to combine machinery with biology. They lived in large bubble-like domes under water. Gungans had strong leg muscles for swimming and were aided by their long fin-like ears. Their somewhat lanky arms ended in four-fingered hands, and their feet had three stubby toes each. Females tended to be slightly smaller with sleeker faces. They often tied their long ears back. The long Gungan face had a tough yet flexible bill for burrowing and rooting out food. They also had long muscular tongues with which they scooped mollusks and lesser amphibians from the Naboo swamps. Their teeth were quite large and very blunt capable of cracking through shellfish. Their large nostrils completely sealed for underwater travel. While most spacefarers would dismiss Gungans as primitives, they developed an advanced, albeit unique, technology. They grew the basic structures of buildings, vehicles and technology and adorned them with artistic flourishes and organic lines. This gave Gungan technology a very fluid, non-rectilinear look. The power source for Gungan technology was a mysterious blue-white energy 'goo' that was mined in the depths of Naboo's oceans. The viscous plasmic material formed the basis of Gungan weaponry as well. The Gungans had mastered energy field technology for a number of uses. Their underwater cities employed hydrostatic fields to create large bubbles of atmosphere within which they dwell. Similarly, Gungan ground troops carried portable frames which generate a protective energy field capable of deflecting blaster fire. In large-scale combat, giant Gungan shield generators could create an immense umbrella of protective shield energy that could stop laser bolts and physical objects with great kinetic energy. Despite mastering this bizarre technology, Gungans still employed beasts of burden for transportation. Their most common mount was the kaadu, a wingless reptavian which Gungans adorned with feathers and rode into combat. Other favored Gungan mounts included the large, stubborn falumpaset. For truly heavy loads, the Gungans domesticated the fambaa, a nine-meter tall, quadrupedal amphibian. The Gungans maintained a large standing-armed force called the Gungan Grand Army. This huge collection of foot soldiers carried cestas, electropoles, and atlatls capable of hurling plasmic energy spheres (or boomers, as Gungans called them). Gungan catapults hurled even larger boomers over great distances. The Gungans were ruled by a Boss and his Rep Council from the High Tower Board Room of Otoh Gunga. The Gungans had an uneasy relationship with the Naboo, the human colonists on the planet. Many Naboo looked down upon the Gungans, thinking them as primitive. The Gungans in turn tried to avoid any contact with the surface-dwellers. Individuals were called a Gung (eg. Militiagung).",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/6/61/Gungans.png/revision/latest?cb=20130122235412"
+		},
+		{
+			"name": "Toydarian", 
+		    "classification": "mammal", 
+		    "average_height": "120", 
+		    "average_lifespan": "91", 
+		    "homeworld": "Toydaria", 
+		    "language": "Toydarian", 
+		    "description": "Toydarians were a race of winged mammalian beings from the planet Toydaria. Strong-willed, and resistant to manipulation of the mind through the Force, this species produced a body odor similar to sweetspice. With a reputation for being stingy and bad-tempered, many Toydarians were possessed of a strong sense of pride in their work.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/7/78/Watto_%28Toydarian%29.jpg/revision/latest?cb=20070523180740"
+		},
+		{
+			"name": "Dug", 
+		    "classification": "mammal", 
+		    "average_height": "100", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Malastare", 
+		    "language": "Dugese", 
+		    "description": "Dugs were sentient aliens from the planet of Malastare. Dugs were easily identified by their long snouts and the fact that they walk using their arms. On Malastare, the Dugs were ruled by a Dug Council, which during the Clone Wars was headed by Nakha Urus, who held the title of Doge. Some Dugs were known to travel off-world in order to seek lives off of Malastare. The pilot Sebulba became a well known and feared Podracer pilot, while a Dug named Preigo headed a popular circus. Dugs could also be found on the worlds of Coruscant and Tatooine.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/c/c4/Sebulbaprmo.jpg/revision/latest?cb=20071214151225"
+		},
+		{
+			"name": "Twi'lek", 
+		    "classification": "mammals", 
+		    "average_height": "200", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Ryloth", 
+		    "language": "Twi'leki", 
+		    "description": "Twi'leks, sometimes referred to disparagingly as 'Tail-heads', were an omnivorous humanoid species originating from the planet Ryloth. They tended to eat cultivated molds, fungi, and rycrit meat. Their distinctive features included colorful skin, which varied in pigment from individual to individual, and a pair of shapely prehensile tentacles that grew from the base of their skulls. The tentacles, called 'brain-tails', 'lekku', 'tchun-tchin', or 'head-tails' were advanced organs used for communication and cognitive functions. Twi'leks possessed a fairly standard humanoid vocal structure and were capable of learning most alien languages; however, they usually preferred their native language of Ryl, which incorporated subtle movement of the lekku. When they wished, they could even communicate in complete secrecy using their versatile brain-tails. Twi'lek females were often used as slaves or dancers because of their beauty.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/9/95/TwilekNEGAS.png/revision/latest?cb=20150523023715"
+		},
+		{
+			"name": "Aleena", 
+		    "classification": "reptile", 
+		    "average_height": "80", 
+		    "average_lifespan": "79", 
+		    "homeworld": "Aleen Minor", 
+		    "language": "Aleena", 
+		    "description": "The Aleena were a species of small, sentient aliens from the planet Aleen Minor.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/e/e3/Ratts.jpg/revision/latest?cb=20080508150745"
+		},
+		{
+			"name": "Vulptereen", 
+		    "classification": "unknown", 
+		    "average_height": "100", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Vulpter", 
+		    "language": "Vulpterish", 
+		    "description": "Vulptereens were a barrel-shaped sentient species with shovel-like mouths from the planet of Vulpter.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/c/cd/Dud_Bolt_FF_Scan.png/revision/latest?cb=20150414170315"
+		},
+		{
+			"name": "Xexto", 
+		    "classification": "unknown", 
+		    "average_height": "125", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Troiken", 
+		    "language": "Xextese", 
+		    "description": "Xexto were natives of the planet Troiken, where (like Ewoks and Wookiees) they lived in arboreal villages. Gasgano the podracer was a member of this species. Xexto should not be confused with the similarly long-necked and multi-limbed, but larger Quermian species (such as Yarael Poof), the genetic derivative by which Arkanian scienticists developed from the former species.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/3/30/Gasgano.jpg/revision/latest?cb=20150331133737"
+		},
+		{
+			"name": "Toong", 
+		    "classification": "unknown", 
+		    "average_height": "200", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Tund", 
+		    "language": "Tundan", 
+		    "description": "The Toong were an anti-social species of aliens from the planet Toong'L. In comparison with many other humanoids, their heads were disproportionately large for their bodies. Their home planet, Toong'l, was devastated by a collision with a poisonous comet shortly before 32 BBY, and the surviving Toong were forced to relocate to the neighboring planet of Tund.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/1/18/BenQuadinarosFull-SWE.png/revision/latest?cb=20120112024738"
+		},
+		{
+			"name": "Cerean", 
+		    "classification": "mammal", 
+		    "average_height": "200", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Cerea", 
+		    "language": "Cerean", 
+		    "description": "Cereans were a sophisticated and cultured humanoid mammalian species hailing from the planet Cerea in the Mid Rim. They were famed for their extraordinary thinking abilities, made possible by large binary brains housed in tall tapering heads, enabling them to focus on many things at the same time. Aside from this unique feature, Cereans were physically similar to Humans, although they each possessed two hearts, which supplied extra blood circulation to support their brains. Cerean males aged more quickly than the females, who had similar lifespans to Humans. Thus, there were fewer males than females. Polygamous marriage was a necessity in order for the species to survive. Each male usually had one primary 'bond-wife,' and between four and ten 'honor-wives.' Cereans were often found among the ranks of the Jedi Knights, but due to the species' low birth rates, Cerean Jedi were exempt from the Order's vow of non-attachment. One such Jedi, Ki-Adi-Mundi, served on the Jedi High Council during and prior to the outbreak of the Clone Wars.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/a/ae/Cerean_NEGAS.jpg/revision/latest?cb=20100615162146"
+		},
+		{
+			"name": "Nautolan", 
+		    "classification": "amphibian", 
+		    "average_height": "180", 
+		    "average_lifespan": "70", 
+		    "homeworld": "Glee Anselm", 
+		    "language": "Nautila", 
+		    "description": "The Nautolans, sometimes referred to as the Nautiloids, were an amphibious humanoid species from the planet Glee Anselm. Although they established settlements across their aquatic homeworld, most Nautolan civilization was found in the Sabilon region. The most well known Nautolan was Jedi Master Kit Fisto, a hero of the Clone Wars and member of the Jedi Council.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/4/4c/Nautolan_NEGAS.jpg/revision/latest?cb=20061205192252"
+		},
+		{
+			"name": "Zabrak", 
+		    "classification": "mammal", 
+		    "average_height": "180", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Iridonia", 
+		    "language": "Zabraki", 
+		    "description": "The Zabrak, also known as Iridonians when referring to the Zabrak who came from Iridonia, were a carnivorous Near-Human species native to Iridonia, a planet located in the Mid Rim known for its inhospitable terrain and fierce predatory life. They were a species known for having a fierce sense of self-determination and an equally dominant need for independence.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/e/ee/ZabrakNEGAS.jpg/revision/latest?cb=20070416170907"
+		},
+		{
+			"name": "Tholothian", 
+		    "classification": "mammal", 
+		    "average_height": "unknown", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Tholoth", 
+		    "language": "unknown", 
+		    "description": "Tholothians were a species of sentient humanoid in the galaxy. They could be distinguished from humans by their scaled craniums, and the fleshy white tendrils that sprouted from their skullcaps. Adi Gallia and Stass Allie were both members of that species.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/c/c8/AdiGallia2-SWE.jpg/revision/latest?cb=20111115045121"
+		},
+		{
+			"name": "Iktotchi", 
+		    "classification": "unknown", 
+		    "average_height": "180", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Iktotch", 
+		    "language": "Iktotchese", 
+		    "description": "Iktotchi were a species that originated on the harsh, windy moon of Iktotch, which orbited around the planet Iktotch in the Expansion Region.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/f/f0/Iktotchi_NEGAS.jpg/revision/latest?cb=20061202133616"
+		},
+		{
+			"name": "Quermian", 
+		    "classification": "mammal", 
+		    "designation": "sentient", 
+		    "average_height": "240", 
+		    "skin_colors": "white", 
+		    "hair_colors": "none", 
+		    "eye_colors": "yellow", 
+		    "average_lifespan": "86", 
+		    "homeworld": "Quermia", 
+		    "language": "Quermian", 
+		    "description": "Quermians were a mammalian species of sentients hailing from the planet Quermia after being genetically designed from Xexto DNA by the Arkanian race.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/5/5e/Movie_poof.jpg/revision/latest?cb=20060202173020"
+		},
+		{
+			"name": "Kel Dor", 
+		    "classification": "unknown", 
+		    "average_height": "180", 
+		    "average_lifespan": "70", 
+		    "homeworld": "Dorin", 
+		    "language": "Kel Dor", 
+		    "description": "The Kel Dors, sometimes referred to as Kel Dorians, were a species hailing from the technological planet Dorin. They required masks to protect them when in oxygen-rich atmospheres. They were also known for the unique Force-using traditions of the Baran Do Sages. One notable Kel Dor was the Jedi Master Plo Koon, who was a member of a famous Kel Dor Jedi family. Sha Koon, a Jedi Knight, was Plo Koon's niece.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/2/24/Kel_Dor_NEGAS.jpg/revision/latest?cb=20061130130943"
+		},
+		{
+			"name": "Chagrian", 
+		    "classification": "amphibian", 
+		    "average_height": "190", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Champala", 
+		    "language": "Chagria", 
+		    "description": "Chagrians were an amphibious species of tall, horned humanoids with blue skin. They were distinguished by two fleshy head tentacles protruding from the back side of their skull, wrapping down over their shoulders and ending in brownish-tipped horns. They also sported another pair of horns, standing straight above their heads. Chagrians also had very long black forked tongues they would sometimes flicker in a gesture of authority.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/1/1a/Mas_Amedda_%28Chagrian%29_FF81.jpg/revision/latest?cb=20070713214429"
+		},
+		{
+			"name": "Geonosian", 
+		    "classification": "insectoid", 
+		    "average_height": "178", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Geonosis", 
+		    "language": "Geonosian", 
+		    "description": "The Geonosian species, often called Geos or bugs in clone trooper slang, was an insectoid species native to the planet Geonosis. Geonosians resided in catacomb-like hive colonies beneath the organic-looking spires. Notable Geonosians included: Poggle the Lesser, Gizor Dellso, and Sun Fac, who all held important roles in the Confederacy of Independent Systems. The Geonosians, with their long snouts and spindly limbs, bore a certain resemblance to B1 battle droids, which they manufactured for some time before the outbreak of the Clone Wars.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/6/6d/Geonosian1.jpg/revision/latest?cb=20070204115951"
+		},
+		{
+			"name": "Mirialan", 
+		    "classification": "mammal", 
+		    "average_height": "180", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Mirial", 
+		    "language": "Mirialan", 
+		    "description": "Mirialans were a species of near-Humans native to the planet Mirial. Their appearance varied from yellow-green skin to paler skin very similar to many Humans. Mirialans were very flexible and agile, making them fast and formidable foes.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/e/eb/Luminara1.jpg/revision/latest?cb=20070322160411"
+		},
+		{
+			"name": "Clawdite", 
+		    "classification": "reptilian", 
+		    "average_height": "180", 
+		    "average_lifespan": "70", 
+		    "homeworld": "Zolan", 
+		    "language": "Clawdite", 
+		    "description": "Clawdites were a humanoid sentient species native to the planet of Zolan. They were one of the few shape-shifting species in the galaxy, and were sometimes referred to as Changelings.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/3/37/ClawditeNEGAS.jpg/revision/latest?cb=20090709061818"
+		},
+		{
+			"name": "Besalisk", 
+		    "classification": "amphibian", 
+		    "average_height": "178", 
+		    "average_lifespan": "75", 
+		    "homeworld": "Ojom", 
+		    "language": "Besalisk", 
+		    "description": "Besalisks were a race of multi-armed sentient humanoids from the cold ocean world of Ojom.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/8/83/Dexter_Jettster_%28Besalisk%29_FF44.jpg/revision/latest?cb=20070712205318"
+		},
+		{
+			"name": "Kaminoan", 
+		    "classification": "amphibian", 
+		    "average_height": "220", 
+		    "average_lifespan": "80", 
+		    "homeworld": "Kamino", 
+		    "language": "Kaminoan", 
+		    "description": "Kaminoans were a tall, thin species with pale skin from the isolated watery planet of Kamino. The Kaminoans lived in large stilted cities that rose above the ocean surface, such as Tipoca City. Many important or high ranked Kaminoans wore a large, pale collar around their necks. The Kaminoans are best known for their abilities as cloners. They are the creators of the Grand Army of the Republic that fights against the Separatist Droid Army during the Clone Wars - a galaxy-wide conflict named after the clone troopers the Kaminoans made for the Galactic Republic.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/0/03/KaminoanNEGAS.jpg/revision/latest?cb=20090709062442"
+		},
+		{
+			"name": "Skakoan", 
+		    "classification": "mammal", 
+		    "average_height": "unknown", 
+		    "average_lifespan": "unknown", 
+		    "homeworld": "Skako", 
+		    "language": "Skakoan", 
+		    "description": "The Skakoans were a sentient species of humanoid mammals distinguished by their dependence on a bulky pressurized suit to survive away from their homeworld, Skako. A highly xenophobic people, the Skakoans rarely departed their homeworld unless need drove them.",
+		    "image": "http://vignette1.wikia.nocookie.net/starwars/images/a/a0/Skakoan2.jpg/revision/latest?cb=20091012195839"
+		},
+		{
+			"name": "Muun", 
+		    "classification": "mammal", 
+		    "average_height": "190", 
+		    "average_lifespan": "100", 
+		    "homeworld": "Muunilinst", 
+		    "language": "Muun", 
+		    "description": "Muuns were a thin, tall humanoid species from the mineral-rich planet of Muunilinst, which was also the headquarters of the InterGalactic Banking Clan, the largest banking organization in the galaxy. Muuns were known throughout the galaxy for their excellent financial and mathematical skills, and, seeking economic stability, the Empire exempted Muuns from their wide-spread non-Human persecution, in order to utilize Muuns and their economic finesse.",
+		    "image": "http://vignette4.wikia.nocookie.net/starwars/images/4/4f/San_hill.jpg/revision/latest?cb=20071203213757"
+		},
+		{
+			"name": "Togruta", 
+		    "classification": "mammal", 
+		    "average_height": "180", 
+		    "average_lifespan": "94", 
+		    "homeworld": "Shili", 
+		    "language": "Togruti", 
+		    "description": "The Togruta were a carnivorous humanoid species from the planet Shili. The species exhibited head-tails which were similar to those of Twi'leks. Togruta were also distinguished by montrals, large hollow horn-like projections from the top of their heads, that gave the species a form of passive echolocation. In order to protect themselves from dangerous predators, and to hunt their own prey, Togruta banded together in tribes and relied on their natural pigmentation to disrupt and confuse slow-witted beasts. Togruta worked well in large groups, and individualism was seen as abnormal within their culture, although it was also a necessary quality in leaders.",
+		    "image": "http://vignette2.wikia.nocookie.net/starwars/images/b/b2/Togruta_NEGAS.jpg/revision/latest?cb=20100810070146"
+		},
+		{
+			"name": "Kaleesh", 
+		    "classification": "reptile", 
+		    "average_height": "170", 
+		    "average_lifespan": "80", 
+		    "homeworld": "Kalee", 
+		    "language": "Kaleesh", 
+		    "description": "Kaleesh were reptilian humanoids from the planet Kalee. They had scaly skin, tusks, and long nostrils, though few outsiders ever saw a Kaleesh face that wasn't obscured behind a traditional mask. Kaleesh culture was deeply spiritual and warlike. War was seen as an essential part of life, and wars between tribes were common.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/1/14/Kaleesh_NEGAS.jpg/revision/latest?cb=20061205191444"
+		},
+		{
+			"name": "Pau'an", 
+		    "classification": "mammal", 
+		    "average_height": "190", 
+		    "average_lifespan": "700", 
+		    "homeworld": "Utapau", 
+		    "language": "Utapese", 
+		    "description": "Pau'ans were gaunt near-Humans native to the planet Utapau. Also known as Utapauns and Ancients due to their long lifespans, they co-existed on Utapau with the Utai. The two species got along well, with the lanky Pau'ans assuming leadership roles on the planet. Though some viewed the Pau'ans as frightening, they were friendly, and were more than happy to welcome visitors to their little-known world. Due to Utapau's remoteness in the Outer Rim Territories, the Pau'ans were isolated for most of their history. However, they played a part in galactic events in 19 BBY, when the Confederacy of Independent Systems conquered Utapau. The Pau'ans opposed the Confederacy with the aid of the Republic, and later opposed the Empire, after Imperials took control of their planet following the Declaration of a New Order.",
+		    "image": "http://vignette3.wikia.nocookie.net/starwars/images/2/22/Pau%27an.jpg/revision/latest?cb=20070705042952"
+		}
+	]

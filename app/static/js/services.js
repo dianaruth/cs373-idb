@@ -63,3 +63,73 @@ returnOfTheAPIServices.factory('speciesDetailService', function($http) {
         }
     }
 });
+
+returnOfTheAPIServices.factory('planetForPersonService', function($http) {
+    return {
+        getPlanetForPerson: function(id) {
+            return $http.get('/person/' + id + '/planet').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
+returnOfTheAPIServices.factory('speciesForPersonService', function($http) {
+    return {
+        getSpeciesForPerson: function(id) {
+            return $http.get('/person/' + id + '/species').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
+returnOfTheAPIServices.factory('peopleForPlanetService', function($http) {
+    return {
+        getPeopleForPlanet: function(id) {
+            return $http.get('/planet/' + id + '/people').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
+returnOfTheAPIServices.factory('speciesForPlanetService', function($http) {
+    return {
+        getSpeciesForPlanet: function(id) {
+            return $http.get('/planet/' + id + '/species').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
+returnOfTheAPIServices.factory('peopleForSpeciesService', function($http) {
+    return {
+        getPeopleForSpecies: function(id) {
+            return $http.get('/species/' + id + '/people').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
+returnOfTheAPIServices.factory('planetForSpeciesService', function($http) {
+    return {
+        getPlanetForSpecies: function(id) {
+            return $http.get('/species/' + id + '/planet').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
+returnOfTheAPIServices.factory('runTestsService', function($http) {
+    return {
+        runTests: function() {
+            return $http.get('/run_tests').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});

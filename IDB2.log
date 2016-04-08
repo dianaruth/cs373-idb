@@ -1,3 +1,77 @@
+commit b9e0b960ca19421f7f1bc39a7642f0af9c98b664
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 22:16:11 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 6fa2aac01f1f337c1621ae15557689e07c28cc7e
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 22:10:52 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 521a13ab3360c80cf4db983d2355b72b999a4c45
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 21:19:41 2016 -0500
+
+    updated apiary file
+
+commit 0b22ad713370223aa5e31ea0cddc12411d7677b3
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 21:16:39 2016 -0500
+
+    updated data for about page
+
+commit abea8e8f296d57ada01fff2a64a9bb4ee59b1969
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 7 21:09:48 2016 -0500
+
+    renamed tests_web
+
+commit 23a00f18f0f6571b2f84d1a22802bf686a1c0a52
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 7 21:08:07 2016 -0500
+
+    Added test_web
+
+commit 1e06727c3cc1d4fd9f887b4953cc9757e570e17e
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 21:02:36 2016 -0500
+
+    added uml
+
+commit c397fa214f63b03faa5d03240932da65277cae28
+Merge: 331fd6d 8988c99
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 21:01:28 2016 -0500
+
+    removed old uml
+
+commit 8988c99f1f15c2eac7dc85178b08a406e85dd703
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 21:00:41 2016 -0500
+
+    changed name of uml diagram
+
+commit 6627bc75a9da8441fe3741a0da46ff3adc2c76dc
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 21:00:06 2016 -0500
+
+    updated uml
+
+commit 331fd6d11c8f1743eddd9fda21c1ed09f1f825e4
+Merge: 8c02685 b43b960
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 20:55:40 2016 -0500
+
+    merging
+
+commit b43b960963dafddfe46f35bd8a3b19f7c8feb7a9
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 7 20:51:31 2016 -0500
+
+    added log and pydoc file
+
 commit 9ab42b31b7bd1e944afc6b3b970e92c8802f8728
 Author: Diana Ruth <dianaruth40@gmail.com>
 Date:   Thu Apr 7 20:50:10 2016 -0500
@@ -171,6 +245,12 @@ Date:   Thu Apr 7 18:42:02 2016 -0500
 
     Commented out long tests.
 
+commit 8c02685662ce99412e549ac9803a8f14d5e1f2b6
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 7 18:19:36 2016 -0500
+
+    Deleted old UML
+
 commit 91f3d52210c9cb1e1f4655666199caf7315a9b61
 Merge: 872560d bd906be
 Author: Tony Serino <arserino@yahoo.com>
@@ -189,6 +269,12 @@ Author: Tony Serino <arserino@yahoo.com>
 Date:   Thu Apr 7 18:15:07 2016 -0500
 
     added slash in route
+
+commit 0d9332fd93d9dc0d26b31df28c0b2c8fbf7c6e09
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 7 18:14:37 2016 -0500
+
+    updated UML
 
 commit bd906be2f67d823c9ec9356b8264ab55b96d2a4e
 Author: Clint Ascencio <clint.ascencio@datastax.com>
@@ -569,6 +655,13 @@ Date:   Fri Apr 1 15:43:46 2016 -0500
 
     removed log and html file for the start of phase 2
 
+commit 49f0cb91ac48003561a92180a0a0797ca2502d78
+Merge: 012a3a6 ef9f8ab
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Apr 1 15:34:51 2016 -0500
+
+    Merge branch 'dev'
+
 commit cef9e4207f80cd7e5378b6bfaa1b67099d4e71c2
 Merge: c029878 ef9f8ab
 Author: Jong Hoon Lim <jhlim84@hotmail.com>
@@ -589,17 +682,38 @@ Date:   Fri Apr 1 15:33:52 2016 -0500
 
     small aesthetic changes
 
+commit 012a3a6cf7ef724f87ccb48dc41481033f4060fc
+Merge: b2efe77 f3231f1
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 19:22:44 2016 -0500
+
+    Merge branch 'dev'
+
 commit f3231f1b3e65b155a97d43e99e11c3187fbe1203
 Author: Diana Ruth <dianaruth40@gmail.com>
 Date:   Thu Mar 24 19:21:35 2016 -0500
 
     final commit for phase 1 (for real this time)
 
+commit b2efe77a3d30ebbf77f6125ccf655ef87299f46c
+Merge: 673086d f3841e2
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 19:18:49 2016 -0500
+
+    Merge branch 'dev'
+
 commit f3841e26c2135ad7dc571a89655de3e8eb015a45
 Author: Diana Ruth <dianaruth40@gmail.com>
 Date:   Thu Mar 24 19:18:34 2016 -0500
 
     final commit for phase 1
+
+commit 673086deeaeccff22da5e5dca6bece59bd66b60d
+Merge: 02a64de e656246
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 18:55:24 2016 -0500
+
+    Merge branch 'dev'
 
 commit e6562466139b541629a09c2d343b15f1ee49f607
 Author: Diana Ruth <dianaruth40@gmail.com>
@@ -793,6 +907,13 @@ Author: Clint Ascencio <clint.ascencio@datastax.com>
 Date:   Thu Mar 24 16:55:12 2016 -0500
 
     travis sucks and this is Tony
+
+commit 02a64de3cc4a54853a02d116f8cf899928af7f60
+Merge: 3eea26a 2e3fd10
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Mar 24 16:54:21 2016 -0500
+
+    Merge branch 'dev'
 
 commit 2e3fd1099964851f23f4a9f9ab901b1ef0df3f3f
 Merge: 95b3805 06e064b

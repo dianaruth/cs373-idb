@@ -419,3 +419,14 @@ class TestRESTfulAPI(TestCase):
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
+    
+"""
+Name        Stmts   Miss  Cover
+-------------------------------
+app           124     47    62%
+create_db      56      0   100%
+models         80      3    96%
+tests         204      0   100%
+-------------------------------
+TOTAL         464     50    89%
+"""

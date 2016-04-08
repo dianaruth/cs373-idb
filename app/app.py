@@ -27,11 +27,20 @@ manager = Manager(app)
 @app.route('/get_people')
 def get_people_data():
     """
-    Calls the Star Wars API (www.swapi.com) to obtain information on the following three (currently hardcoded) people:
-        - Luke Skywalker
-        - C-3P0
-        - R2-D2
-    Gets information about each person from the API and returns a JSON object
+    Returns a list of JSON objects containing every person in the database. Each person has the following attributes:
+    -id
+    -name
+    -description
+    -image
+    -birth year
+    -eye color
+    -gender
+    -hair color
+    -height
+    -homeworld
+    -mass
+    -skin color
+    -species
     """
     
     people = People.query.all()
@@ -42,11 +51,15 @@ def get_people_data():
 @app.route('/get_planets')
 def get_planets_data():
     """
-    Calls the Star Wars API (www.swapi.com) to obtain information on the following three (currently hardcoded) planets:
-        - Tatooine
-        - Alderaan
-        - Yavin IV
-    Gets information about each planet from the API and returns a JSON object
+    Returns a list of JSON objects containing every planet in the database. Each planet has the following attributes:
+    -id
+    -name
+    -description
+    -image
+    -climate
+    -gravity
+    -population
+    -terrain
     """
     
     planets = Planets.query.all()
@@ -57,11 +70,16 @@ def get_planets_data():
 @app.route('/get_species')
 def get_species_data():
     """
-    Calls the Star Wars API (www.swapi.com) to obtain information on the following three (currently hardcoded) species:
-        - Human
-        - Droid
-        - Wookiee
-    Gets information about each species from the API and returns a JSON object
+    Returns a list of JSON objects containing every species in the database. Each species has the following attributes:
+    -id
+    -name
+    -description
+    -image
+    -average height
+    -average lifespan
+    -classification
+    -homeworld
+    -language
     """
     
     speciess = Species.query.all()
@@ -72,8 +90,7 @@ def get_species_data():
 @app.route("/get_person/<path>")
 def get_person_data(path):
     """
-    Calls the Star Wars API (www.swapi.com) to obtain information on the person with id "path"
-    Returns data about the person in the form of a JSON object
+    Returns a JSON object for the person specified by personID.
     """
     
     person = People.query.get(path)
@@ -84,8 +101,7 @@ def get_person_data(path):
 @app.route('/get_planet/<path>')
 def get_planet_data(path):
     """
-    Calls the Star Wars API (www.swapi.com) to obtain information on the planet with id "path"
-    Returns data about the planet in the form of a JSON object
+    Returns a JSON object for the planet specified by planetID.
     """
     
     planet = Planets.query.get(path)
@@ -96,8 +112,7 @@ def get_planet_data(path):
 @app.route('/get_s/<path>')
 def get_s_data(path):
     """
-    Calls the Star Wars API (www.swapi.com) to obtain information on the species with id "path"
-    Returns data about the species in the form of a JSON object
+    Returns a JSON object for the species specified by speciesID.
     """
     
     species = Species.query.get(path)

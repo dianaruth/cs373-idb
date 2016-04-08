@@ -40,30 +40,48 @@ returnOfTheAPIControllers.controller('SpeciesListController', ['$scope', 'specie
         });
     }]);
 
-returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'personDetailService',
-    function($scope, $routeParams, personDetailService) {
+returnOfTheAPIControllers.controller('PersonDetailController', ['$scope', '$routeParams', 'personDetailService', 'planetForPersonService', 'speciesForPersonService',
+    function($scope, $routeParams, personDetailService, planetForPersonService, speciesForPersonService) {
         var id = parseInt($routeParams.personID);
         $scope.id = id;
         personDetailService.getPerson(id).then(function(data) {
             $scope.person = data["person"];
         });
+        planetForPersonService.getPlanetForPerson(id).then(function(data) {
+            $scope.homeworld = data["homeworld"];
+        });
+        speciesForPersonService.getSpeciesForPerson(id).then(function(data) {
+            $scope.species = data["species"];
+        });
     }]);
 
-returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetDetailService',
-    function($scope, $routeParams, planetDetailService) {
+returnOfTheAPIControllers.controller('PlanetDetailController', ['$scope', '$routeParams', 'planetDetailService', 'peopleForPlanetService', 'speciesForPlanetService',
+    function($scope, $routeParams, planetDetailService, peopleForPlanetService, speciesForPlanetService) {
         var id = parseInt($routeParams.planetID);
         $scope.id = id;
         planetDetailService.getPlanet(id).then(function(data) {
             $scope.planet = data["planet"];
         });
+        peopleForPlanetService.getPeopleForPlanet(id).then(function(data) {
+            $scope.residents = data["residents"];
+        });
+        speciesForPlanetService.getSpeciesForPlanet(id).then(function(data) {
+            $scope.native_species = data["native_species"];
+        });
     }]);
 
-returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesDetailService',
-    function($scope, $routeParams, speciesDetailService) {
+returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$routeParams', 'speciesDetailService', 'peopleForSpeciesService', 'planetForSpeciesService',
+    function($scope, $routeParams, speciesDetailService, peopleForSpeciesService, planetForSpeciesService) {
         var id = parseInt($routeParams.speciesID);
         $scope.id = id;
         speciesDetailService.getSpecies(id).then(function(data) {
             $scope.species = data["species"];
+        });
+        peopleForSpeciesService.getPeopleForSpecies(id).then(function(data) {
+            $scope.people = data["people"];
+        });
+        planetForSpeciesService.getPlanetForSpecies(id).then(function(data) {
+            $scope.native_planet = data["native_planet"];
         });
     }]);
 

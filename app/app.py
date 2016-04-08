@@ -9,7 +9,7 @@ import json
 
 time.sleep(5)
 
-SQLALCHEMY_DATABASE_URI = \
+SQLALCHEMY_DATABASE_URI =\
     '{engine}://{username}:{password}@{hostname}/{database}'.format(
         engine='mysql+pymysql',
         username=os.getenv('MYSQL_USER'),
@@ -125,7 +125,7 @@ def get_planet_for_person(path):
     return jsonify({"homeworld": json_homeworld})
 
 
-@app.route('/species/<path>/people')
+@app.route('/person/<path>/species')
 def get_species_for_person(path):
     """
     Given species ID (path) return all people where speciesID == path
@@ -150,7 +150,7 @@ def get_planet_for_species(path):
     """
 
     species = Species.query.get(path)
-    # json_species = species.serialize
+    json_species = species.serialize
 
     try:
         planet = Planets.query.filter_by(name=json_species['homeworld']).first()
@@ -159,7 +159,7 @@ def get_planet_for_species(path):
     except:
         json_planet = None
 
-    return jsonify({"planet": json_planet})
+    return jsonify({"native_planet": json_planet})
 
 @app.route('/planet/<path>/people')
 def get_people_from_planet(path):
@@ -172,7 +172,7 @@ def get_people_from_planet(path):
     except:
         json_people = None
 
-    return jsonify({"planet": json_people})
+    return jsonify({"residents": json_people})
 
 @app.route('/planet/<path>/species')
 def get_species_from_planet(path):
@@ -185,7 +185,7 @@ def get_species_from_planet(path):
     except:
         json_species = None
 
-    return jsonify({"species": json_species})
+    return jsonify({"native_species": json_species})
 
 @app.route('/species/<path>/people')
 def get_people_from_species(path):
@@ -246,10 +246,10 @@ def home():
 
 db.init_app(app)
 
-# with app.app_context():
-#     app.config['SQLALCHEMY_ECHO'] = True
-#     db.create_all()
-#     populate_tables()
+#with app.app_context():
+#    app.config['SQLALCHEMY_ECHO'] = True
+#    db.create_all()
+#    populate_tables()
 
 @manager.command
 def create_db():

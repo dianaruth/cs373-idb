@@ -4,7 +4,6 @@ FILES :=           \
     makefile       \
     apiary.apib		 \
     IDB2.log			 \
-    models.html		 \
     app/models.py			 \
     app/tests.py			 \
     UML.pdf

@@ -3,243 +3,395 @@ HOST: http://www.swewars.me
 
 # ReturnOfTheAPI
 
-ReturnOfTheAPI is a simple API used to obtain information about people, planets, and species from the Star Wars films.
+ReturnOfTheAPI is an API used to obtain information about people, planets, and species from the Star Wars films.
 
-## Phase 1: Static Content
+## Phase 2: Dynamic Content from Database
 
-For Phase 1 of the IDB project, our web application pulls data from the Star Wars API (SWAPI) and data hardcoded into API calls taken manually from Wookieepedia.
+For Phase 2 of the IDB project, our web application pulls data from our database. Our database was populated by programmatically scraping data from SWAPI (www.swapi.co/api) and manually scraping descriptions and images from Wookieepedia (www.wookieepedia.com).
 
 ## People [/get_people]
 **/get_people**
 
-Requests data on the first three people in SWAPI and adds a description pulled manually from Wookieepedia. Also includes the ID for each person's homeworld and species.
+Returns a list of JSON objects containing every person in the database. Each person has the following attributes:
+-id
+-name
+-description
+-image
+-birth year
+-eye color
+-gender
+-hair color
+-height
+-homeworld
+-mass
+-skin color
+-species
 
 ### GET People [GET]
 
 + Response 200 (application/json)
 
         {
-            'people': 
-                [
+            "people": [
                     {
-                        'height': '172',
-                        'description': 
-                            "Luke Skywalker was a Force-sensitive Human male who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order. Born in 19 BBY as the son of the fallen Jedi Knight Anakin Skywalker and the Queen and Senator of Naboo, Padmé Amidala, Luke was raised on Tatooine and hidden from Emperor Palpatine and his father, who had recently become Darth Vader, Dark Lord of the Sith. In 0 BBY, Skywalker's life changed forever. A chance purchase of two droids, R2-D2 and C-3PO, led to him to receive training in the ways of the Force from Jedi Master Obi-Wan Kenobi and to meet Han Solo, and Princess Leia Organa, who was, unbeknownst to him, his twin sister. Skywalker then destroyed the first Death Star and joined the Rebel Alliance.",
-                        'birth_year': '19BBY',
-                        'hair_color': 'blond',
-                        'name': 'Luke Skywalker',
-                        'gender': 'male',
-                        'id': 1,
-                        'homeworld': 1,
-                        'eye_color': 'blue',
-                        'species': [1]
+                      "birth_year": "19BBY",
+                      "description": "Luke Skywalker was a Force-sensitive Human male who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order. Born in 19 BBY as the son of the fallen Jedi Knight Anakin Skywalker and the Queen and Senator of Naboo, Padm\u00e9 Amidala, Luke was raised on Tatooine and hidden from Emperor Palpatine and his father, who had recently become Darth Vader, Dark Lord of the Sith. In 0 BBY, Skywalker's life changed forever. A chance purchase of two droids, R2-D2 and C-3PO, led to him to receive training in the ways of the Force from Jedi Master Obi-Wan Kenobi and to meet Han Solo, and Princess Leia Organa, who was, unbeknownst to him, his twin sister. Skywalker then destroyed the first Death Star and joined the Rebel Alliance. Over the next few years, he fought in many of the most important battles of the Galactic Civil War, helping to found Rogue Squadron and fighting Imperial forces across the galaxy. In 3 ABY, Skywalker received Jedi training from Yoda, and learned from Vader that the Sith Lord was his father. One year later, he fought in the Battle of Endor, and succeeded in turning his father back to the light. Thanks to Skywalker, Palpatine was killed, and the Empire was dealt a crippling blow. One year later, the New Republic was formed.",
+                      "eye_color": "blue",
+                      "gender": "male",
+                      "hair_color": "blond",
+                      "height": "172",
+                      "homeworld": "Tatooine",
+                      "id": 1,
+                      "image": "http://vignette1.wikia.nocookie.net/starwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest?cb=20091030151422",
+                      "mass": "77",
+                      "name": "Luke Skywalker",
+                      "skin_color": "fair",
+                      "species": "Human"
                     },
                     {
-                        'height': '167',
-                        'description':
-                            'C-3PO, sometimes spelled See-Threepio and often referred to as Threepio, was a bipedal, humanoid protocol droid designed to interact with organics, programmed primarily for etiquette and protocol. He was fluent in over six million forms of communication, and developed a fussy and worry-prone personality throughout his many decades of operation. After being destroyed and discarded on the planet Tatooine before 32 BBY, C-3PO was rebuilt; his salvaged nature gave him special qualities that distinguished him from similar droid models. Along with his counterpart, the astromech droid R2-D2, C-3PO constantly found himself directly involved in pivotal moments of galactic history, and aided in saving the galaxy on many occasions. C-3PO considered various droids and organics to be friends of his, and was very dedicated to them, as well as to any master that he served.',
-                        'birth_year': '112BBY',
-                        'hair_color': 'n/a',
-                        'name': 'C-3PO',
-                        'gender': 'n/a',
-                        'id': 2,
-                        'homeworld': 1,
-                        'eye_color': 'yellow',
-                        'species': [2]
+                      "birth_year": "112BBY",
+                      "description": "C-3PO, sometimes spelled See-Threepio and often referred to as Threepio, was a bipedal, humanoid protocol droid designed to interact with organics, programmed primarily for etiquette and protocol. He was fluent in over six million forms of communication, and developed a fussy and worry-prone personality throughout his many decades of operation. After being destroyed and discarded on the planet Tatooine before 32 BBY, C-3PO was rebuilt; his salvaged nature gave him special qualities that distinguished him from similar droid models. Along with his counterpart, the astromech droid R2-D2, C-3PO constantly found himself directly involved in pivotal moments of galactic history, and aided in saving the galaxy on many occasions. C-3PO considered various droids and organics to be friends of his, and was very dedicated to them, as well as to any master that he served.",
+                      "eye_color": "yellow",
+                      "gender": "n/a",
+                      "hair_color": "n/a",
+                      "height": "167",
+                      "homeworld": "Tatooine",
+                      "id": 2,
+                      "image": "http://vignette4.wikia.nocookie.net/starwars/images/5/51/C-3PO_EP3.png/revision/latest?cb=20131005124036",
+                      "mass": "75",
+                      "name": "C-3PO",
+                      "skin_color": "gold",
+                      "species": "Droid"
                     },
-                    {
-                        'height': '96',
-                        'description': 
-                            'R2-D2, pronounced Artoo-Detoo and often referred to as Artoo, was an R2-series astromech droid manufactured by Industrial Automaton prior to 32 BBY. Resourceful and spunky, the droid developed an adventurous personality during his many decades of operation. Inside of his cylindrical frame were many arms, sensors, and other tools that could be extended to fulfill various needs, such as slicing computers, extinguishing fires, projecting holograms, repairing starships, and flying. Along with his counterpart, the protocol droid C-3PO, R2-D2 constantly found himself directly involved in pivotal moments of galactic history. His bravery, coupled with his many gadgets, played large roles in saving the galaxy time and time again. Like other astromech droids, R2-D2 could walk on two legs or use a third leg to roll across the ground.',
-                        'birth_year': '33BBY',
-                        'hair_color': 'n/a',
-                        'name': 'R2-D2',
-                        'gender': 'n/a',
-                        'id': 3,
-                        'homeworld': 8,
-                        'eye_color': 'red',
-                        'species': [2]
-                    }
+                    ...
                 ]
         }
 
 ## Planets [/get_planets]
 **/get_planets**
 
-Requests data on the first three planets in SWAPI and adds a description pulled manually from Wookieepedia. Also includes the IDs for each planet's residents.
+Returns a list of JSON objects containing every planet in the database. Each planet has the following attributes:
+-id
+-name
+-description
+-image
+-climate
+-gravity
+-population
+-terrain
 
 ### GET Planets [GET]
 
 + Response 200 (application/json)
 
         {
-            'planets':
-                [
+            "planets": [
                     {
-                        'name': 'Tatooine',
-                        'gravity': '1 standard',
-                        'population': '200000',
-                        'residents':
-                            [1, 2, 4, 6, 7, 8, 9, 11, 43, 62],
-                        'id': 1,
-                        'description': 
-                            "Tatooine (pronounced /tætu'in/; Jawaese: Tah doo Een e[8]) was a desert world and the first planet in the binary Tatoo star system. It was part of the Arkanis sector in the Outer Rim Territories. It was inhabited by poor locals who mostly farmed moisture for a living. Other activities included used equipment retailing and scrap dealing. The planet was on the 5709-DC Shipping Lane, a spur of the Triellus Trade Route, which itself connected to the Sisar Run. The planet was not far from the Corellian Run. It had its own navigation system. However, it would still play a role in galactic events, serving as the home of Anakin Skywalker. It was here that Jedi Master Qui-Gon Jinn recognized Anakin's potential to become a Jedi and where he introduced him to Obi-Wan Kenobi, his future master and mentor. Tatooine was also the home of Anakin's son, Luke, where he lived until his early adulthood. The planet acquired a bad reputation, often being viewed as the cesspool of the galaxy due to the large number of criminals who could be found there.",
-                        'terrain': 'desert',
-                        'climate': 'arid'
+                      "climate": "arid",
+                      "description": "Tatooine was a desert planet located in the Outer Rim Territories. The planet was part of a binary star system. Due to the lack of surface water, many residents of the planet instead drew water from the atmosphere via moisture farms. Tatooine was the homeworld of Anakin Skywalker, the Chosen One, and his son Luke Skywalker. Anakin's former master, Obi-Wan Kenobi, also resided on the planet after the Clone Wars ended, going by the name Ben Kenobi. The Hutt Clan maintained a presence on Tatooine as well, with Jabba the Hutt owning a palace in the desert. Tatooine gained the notice of the Empire during the Galactic Civil War when an escape pod carrying two droids in possession of top-secret information launched from the starship Tantive IV and landed on the sandy Outer Rim world.",
+                      "gravity": "1 standard",
+                      "id": 1,
+                      "image": "http://vignette2.wikia.nocookie.net/starwars/images/b/b0/Tatooine_TPM.png/revision/latest?cb=20131019121937",
+                      "name": "Tatooine",
+                      "population": "200000",
+                      "terrain": "desert"
                     },
                     {
-                        'name': 'Alderaan',
-                        'gravity': '1 standard',
-                        'population': '2000000000',
-                        'residents': 
-                            [5, 68, 81],
-                        'id': 2,
-                        'description':
-                            "Alderaan, located in the Core Worlds, was the second planet in the Alderaan system, and the home of many famous heroes, including Leia Organa Solo, Bail Organa, and Ulic Qel-Droma. Renowned galaxy-wide for their planet's unspoiled beauty, refined culture, and commitment to peace, Alderaanians worked with and around the land to preserve as much of the natural surroundings as they could. Originally the home of the Killiks, Alderaan was later conquered by Humans. Despite a battle during the Great Galactic War and a civil war during the subsequent Cold War, Alderaan remained peaceful during much of galactic history. However, in 0 BBY, Grand Moff Tarkin and the Galactic Empire wanted to intimidate the galaxy into submission, and destroyed the unarmed and peaceful planet using the first Death Star's superlaser.",
-                        'terrain': 'grasslands, mountains',
-                        'climate': 'temperate'
+                      "climate": "temperate",
+                      "description": "Alderaan, located in the Core Worlds, was the second planet in the Alderaan system, and the home of many famous heroes, including Leia Organa Solo, Bail Organa, and Ulic Qel-Droma. Renowned galaxy-wide for their planet's unspoiled beauty, refined culture, and commitment to peace, Alderaanians worked with and around the land to preserve as much of the natural surroundings as they could. Originally the home of the Killiks, Alderaan was later conquered by Humans. Despite a battle during the Great Galactic War and a civil war during the subsequent Cold War, Alderaan remained peaceful during much of galactic history. However, in 0 BBY, Grand Moff Tarkin and the Galactic Empire wanted to intimidate the galaxy into submission, and destroyed the unarmed and peaceful planet using the first Death Star's superlaser.",
+                      "gravity": "1 standard",
+                      "id": 2,
+                      "image": "http://vignette1.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20061211013805",
+                      "name": "Alderaan",
+                      "population": "2000000000",
+                      "terrain": "grasslands, mountains"
                     },
-                    {
-                        'name': 'Yavin IV',
-                        'gravity': '1 standard',
-                        'population': '1000',
-                        'residents': 
-                            [],
-                        'id': 3,
-                        'description':
-                            'Yavin 4 was one of three habitable moons orbiting the gas giant Yavin. It was mainly covered in jungle and rainforest, and despite being remote and unheard of, it would play an important role in galactic events, including the seduction of Jedi Knight Exar Kun to the dark side and the destruction of Sith Lord Freedon Nadd during the Great Sith War, the site of the eventual final death of the maddened Jedi Revan in the waning days of the Galactic War, a ferocious duel between Jedi and Sith during the Clone Wars, and serving as the base of the Alliance to Restore the Republic during the Battle of Yavin and as a battlefield in other battles of the Galactic Civil War. An attack was launched on the Death Star from this moon. It also became the base for a Jedi Academy after the war ended.',
-                        'terrain': 'jungle, rainforests',
-                        'climate': 'temperate, tropical'
-                    }
+                    ...
                 ]
         }
 
 ## Species [/get_species]
 **/get_species**
 
-Requests data on the first three species in SWAPI and adds a description pulled manually from Wookieepedia. Also includes the IDs for each species' homeworld and people.
+Returns a list of JSON objects containing every species in the database. Each species has the following attributes:
+-id
+-name
+-description
+-image
+-average height
+-average lifespan
+-classification
+-homeworld
+-language
 
 ### GET Species [GET]
 
 + Response 200 (application/json)
 
         {
-            'species':
-                [
+            "species": [
                     {
-                        'language': 'Galactic Basic',
-                        'name': 'Human',
-                        'description':
-                            "Humans, taxonomically referred to as Homo sapiens, were the galaxy's most numerous and politically dominant sentient species with millions of major and minor colonies galaxywide. Believed to have originated on the galactic capital of Coruscant, they could be found anywhere, engaged in many different pursuits: spacers, mercenaries, smugglers, merchants, soldiers, assassins, farmers, crime lords, laborers, slaves, slavers, and many others, including Jedi and Sith. Since Humans were the most common sentient species, they were often considered to be a standard or average to which the biology, psychology, and culture of other species were compared.",
-                        'average_lifespan': '120',
-                        'classification': 'mammal',
-                        'id': 1,
-                        'homeworld': 9,
-                        'average_height': '180',
-                        'people':
-                            [1, 4, 5, 6, 7, 9, 10, 11, 12, 14, 18, 19, 21, 22, 25, 26, 28, 29, 32, 34, 35, 43, 51, 60, 61, 62, 66, 67, 68, 69, 74, 81, 84, 85, 86]
+                      "average_height": "180",
+                      "average_lifespan": "120",
+                      "classification": "mammal",
+                      "description": "Humans, taxonomically referred to as Homo sapiens, were the galaxy's most numerous and politically dominant sentient species with millions of major and minor colonies galaxywide. Believed to have originated on the galactic capital of Coruscant, they could be found anywhere, engaged in many different pursuits: spacers, mercenaries, smugglers, merchants, soldiers, assassins, farmers, crime lords, laborers, slaves, slavers, and many others, including Jedi and Sith. Since Humans were the most common sentient species, they were often considered to be a standard or average to which the biology, psychology, and culture of other species were compared.",
+                      "homeworld": "Coruscant",
+                      "id": 1,
+                      "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/5d/Humans-TESB30.jpg/revision/latest?cb=20100628191857",
+                      "language": "Galactic Basic",
+                      "name": "Human"
                     },
                     {
-                        'language': 'n/a',
-                        'classification': 'artificial',
-                        'description':
-                            'Droids, short for androids, or also called robots, were mechanical beings, often possessing artificial intelligence. They were used in a variety of roles and environments, often those considered too menial or too dangerous for humans and other species. Droids were also used in fields that required extensive specialization and knowledge, such as medical droids and astromech droids. Droids designed for combat were battle droids. Depending on the model and its corresponding purpose, droids were totally obedient, rugged, expendable, capable of vast memory recall, and mathematically precise. These characteristics made them well suited for many jobs, though the lack of independent thought in the cheaper, less advanced models limited their capability. This lack of autonomy was simultaneously a vast asset and a glaring weakness—an asset in terms of obedience and control but a massive drawback in terms of effectiveness. Designers faced a fundamental paradox—make the droids overly intelligent, and they might rebel; yet make the droids not intelligent enough and they would be ineffectual. Customarily, droid names were an arrangement of numbers and letters.',
-                        'average_lifespan': 'indefinite',
-                        'name': 'Droid',
-                        'id': 2,
-                        'average_height': 'n/a',
-                        'people': 
-                            [2, 3, 8, 23, 87]
+                      "average_height": "n/a",
+                      "average_lifespan": "indefinite",
+                      "classification": "artificial",
+                      "description": "Droids, short for androids, or also called robots, were mechanical beings, often possessing artificial intelligence. They were used in a variety of roles and environments, often those considered too menial or too dangerous for humans and other species. Droids were also used in fields that required extensive specialization and knowledge, such as medical droids and astromech droids. Droids designed for combat were battle droids. Depending on the model and its corresponding purpose, droids were totally obedient, rugged, expendable, capable of vast memory recall, and mathematically precise. These characteristics made them well suited for many jobs, though the lack of independent thought in the cheaper, less advanced models limited their capability. This lack of autonomy was simultaneously a vast asset and a glaring weakness\u2014an asset in terms of obedience and control but a massive drawback in terms of effectiveness. Designers faced a fundamental paradox\u2014make the droids overly intelligent, and they might rebel; yet make the droids not intelligent enough and they would be ineffectual. Customarily, droid names were an arrangement of numbers and letters.",
+                      "homeworld": "n/a",
+                      "id": 2,
+                      "image": "http://vignette4.wikia.nocookie.net/starwars/images/c/c8/Counterparts.jpg/revision/latest?cb=20070608122549",
+                      "language": "n/a",
+                      "name": "Droid"
                     },
-                    {
-                        'language': 'Shyriiwook',
-                        'name': 'Wookiee',
-                        'description':
-                            "The Wookiees, whose name for themselves translated to the People of the Trees, were a species of tall, hairy humanoids that were inhabitants of the planet Kashyyyk. One of the most noteworthy members of the species was Chewbacca, Han Solo's best friend and co-pilot, who played a vital role in the Galactic Civil War and afterwards. A race of arboreal mammals, the Wookiees lived in treehouses nestled in the canopy of the towering wroshyr trees. Despite their fearsome appearance, they were usually gentle, although they were prone to devastating fits of rage when provoked.",
-                        'average_lifespan': '400',
-                        'classification': 'mammal',
-                        'id': 3,
-                        'homeworld': 14,
-                        'average_height': '210',
-                        'people':
-                            [13, 80]
-                    }
+                    ...
                 ]
         }
         
 ## Single Person [/get_person/{personID}]
 **/get_person/{personID}**
 
-Requests data on a person in SWAPI described by personID and adds a description pulled manually from Wookieepedia. Also includes the ID for the person's homeworld and species.
+Returns a JSON object for the person specified by personID.
 
 ### GET Single Person [GET]
 
 + Response 200 (application/json)
 
         {
-            'person':
-                {
-                    'description':
-                        "Luke Skywalker was a Force-sensitive Human male who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order. Born in 19 BBY as the son of the fallen Jedi Knight Anakin Skywalker and the Queen and Senator of Naboo, Padmé Amidala, Luke was raised on Tatooine and hidden from Emperor Palpatine and his father, who had recently become Darth Vader, Dark Lord of the Sith. In 0 BBY, Skywalker's life changed forever. A chance purchase of two droids, R2-D2 and C-3PO, led to him to receive training in the ways of the Force from Jedi Master Obi-Wan Kenobi and to meet Han Solo, and Princess Leia Organa, who was, unbeknownst to him, his twin sister. Skywalker then destroyed the first Death Star and joined the Rebel Alliance.",
-                    'height': '172',
-                    'hair_color': 'blond',
-                    'eye_color': 'blue',
-                    'homeworld': 1,
-                    'species': [1],
-                    'name': 'Luke Skywalker',
-                    'id': 1,
-                    'gender': 'male',
-                    'birth_year': '19BBY'
-                }
+            "person": {
+                "birth_year": "19BBY",
+                "description": "Luke Skywalker was a Force-sensitive Human male who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order. Born in 19 BBY as the son of the fallen Jedi Knight Anakin Skywalker and the Queen and Senator of Naboo, Padm\u00e9 Amidala, Luke was raised on Tatooine and hidden from Emperor Palpatine and his father, who had recently become Darth Vader, Dark Lord of the Sith. In 0 BBY, Skywalker's life changed forever. A chance purchase of two droids, R2-D2 and C-3PO, led to him to receive training in the ways of the Force from Jedi Master Obi-Wan Kenobi and to meet Han Solo, and Princess Leia Organa, who was, unbeknownst to him, his twin sister. Skywalker then destroyed the first Death Star and joined the Rebel Alliance. Over the next few years, he fought in many of the most important battles of the Galactic Civil War, helping to found Rogue Squadron and fighting Imperial forces across the galaxy. In 3 ABY, Skywalker received Jedi training from Yoda, and learned from Vader that the Sith Lord was his father. One year later, he fought in the Battle of Endor, and succeeded in turning his father back to the light. Thanks to Skywalker, Palpatine was killed, and the Empire was dealt a crippling blow. One year later, the New Republic was formed.",
+                "eye_color": "blue",
+                "gender": "male",
+                "hair_color": "blond",
+                "height": "172",
+                "homeworld": "Tatooine",
+                "id": 1,
+                "image": "http://vignette1.wikia.nocookie.net/starwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest?cb=20091030151422",
+                "mass": "77",
+                "name": "Luke Skywalker",
+                "skin_color": "fair",
+                "species": "Human"
+            }
         }
         
 ## Single Planet [/get_planet/{planetID}]
 **/get_planet/{planetID}**
 
-Requests data on a planet in SWAPI described by planetID and adds a description pulled manually from Wookieepedia. Also includes the IDs for the planet's residents.
+Returns a JSON object for the planet specified by planetID.
 
 ### GET Single Planet [GET]
 
 + Response 200 (application/json)
 
         {
-            'planet':
-                {
-                    'terrain': 'desert',
-                    'description':
-                        "Tatooine (pronounced /tætu'in/; Jawaese: Tah doo Een e[8]) was a desert world and the first planet in the binary Tatoo star system. It was part of the Arkanis sector in the Outer Rim Territories. It was inhabited by poor locals who mostly farmed moisture for a living. Other activities included used equipment retailing and scrap dealing. The planet was on the 5709-DC Shipping Lane, a spur of the Triellus Trade Route, which itself connected to the Sisar Run. The planet was not far from the Corellian Run. It had its own navigation system. However, it would still play a role in galactic events, serving as the home of Anakin Skywalker. It was here that Jedi Master Qui-Gon Jinn recognized Anakin's potential to become a Jedi and where he introduced him to Obi-Wan Kenobi, his future master and mentor. Tatooine was also the home of Anakin's son, Luke, where he lived until his early adulthood. The planet acquired a bad reputation, often being viewed as the cesspool of the galaxy due to the large number of criminals who could be found there.",
-                    'name': 'Tatooine',
-                    'gravity': '1 standard',
-                    'climate': 'arid',
-                    'id': 1,
-                    'residents':
-                        [1, 2, 4, 6, 7, 8, 9, 11, 43, 62],
-                    'population': '200000'
-                }
+            "planet": {
+                "climate": "arid",
+                "description": "Tatooine was a desert planet located in the Outer Rim Territories. The planet was part of a binary star system. Due to the lack of surface water, many residents of the planet instead drew water from the atmosphere via moisture farms. Tatooine was the homeworld of Anakin Skywalker, the Chosen One, and his son Luke Skywalker. Anakin's former master, Obi-Wan Kenobi, also resided on the planet after the Clone Wars ended, going by the name Ben Kenobi. The Hutt Clan maintained a presence on Tatooine as well, with Jabba the Hutt owning a palace in the desert. Tatooine gained the notice of the Empire during the Galactic Civil War when an escape pod carrying two droids in possession of top-secret information launched from the starship Tantive IV and landed on the sandy Outer Rim world.",
+                "gravity": "1 standard",
+                "id": 1,
+                "image": "http://vignette2.wikia.nocookie.net/starwars/images/b/b0/Tatooine_TPM.png/revision/latest?cb=20131019121937",
+                "name": "Tatooine",
+                "population": "200000",
+                "terrain": "desert"
+            }
         }
         
 ## Single Species [/get_s/{speciesID}]
 **/get_s/{speciesID}**
 
-Requests data on a species in SWAPI described by speciesID and adds a description pulled manually from Wookieepedia. Also includes the IDs for each species' homeworld and people.
+Returns a JSON object for the species specified by speciesID.
 
 ### GET Single Species [GET]
 
 + Response 200 (application/json)
 
         {
-            'species':
+            "species": {
+                "average_height": "180",
+                "average_lifespan": "120",
+                "classification": "mammal",
+                "description": "Humans, taxonomically referred to as Homo sapiens, were the galaxy's most numerous and politically dominant sentient species with millions of major and minor colonies galaxywide. Believed to have originated on the galactic capital of Coruscant, they could be found anywhere, engaged in many different pursuits: spacers, mercenaries, smugglers, merchants, soldiers, assassins, farmers, crime lords, laborers, slaves, slavers, and many others, including Jedi and Sith. Since Humans were the most common sentient species, they were often considered to be a standard or average to which the biology, psychology, and culture of other species were compared.",
+                "homeworld": "Coruscant",
+                "id": 1,
+                "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/5d/Humans-TESB30.jpg/revision/latest?cb=20100628191857",
+                "language": "Galactic Basic",
+                "name": "Human"
+            }
+        }
+        
+## Planet for Person [/person/{personID}/planet]
+**/person/{personID}/planet**
+
+Returns a JSON object for the homeworld of the person given by personID. If the person is not from any planet, a null JSON object is returned.
+
++ Response 200 (application/json)
+
+        {
+            "homeworld": {
+                "climate": "arid",
+                "description": "Tatooine was a desert planet located in the Outer Rim Territories. The planet was part of a binary star system. Due to the lack of surface water, many residents of the planet instead drew water from the atmosphere via moisture farms. Tatooine was the homeworld of Anakin Skywalker, the Chosen One, and his son Luke Skywalker. Anakin's former master, Obi-Wan Kenobi, also resided on the planet after the Clone Wars ended, going by the name Ben Kenobi. The Hutt Clan maintained a presence on Tatooine as well, with Jabba the Hutt owning a palace in the desert. Tatooine gained the notice of the Empire during the Galactic Civil War when an escape pod carrying two droids in possession of top-secret information launched from the starship Tantive IV and landed on the sandy Outer Rim world.",
+                "gravity": "1 standard",
+                "id": 1,
+                "image": "http://vignette2.wikia.nocookie.net/starwars/images/b/b0/Tatooine_TPM.png/revision/latest?cb=20131019121937",
+                "name": "Tatooine",
+                "population": "200000",
+                "terrain": "desert"
+            }
+        }
+        
+## Species for Person [/person/{personID}/species]
+**/person/{personID}/species**
+
+Returns a JSON object for the species of the person given by personID. If the person does not have a species, a null JSON object is returned.
+
++ Response 200 (application/json)
+
+        {
+            "species": {
+                "average_height": "180",
+                "average_lifespan": "120",
+                "classification": "mammal",
+                "description": "Humans, taxonomically referred to as Homo sapiens, were the galaxy's most numerous and politically dominant sentient species with millions of major and minor colonies galaxywide. Believed to have originated on the galactic capital of Coruscant, they could be found anywhere, engaged in many different pursuits: spacers, mercenaries, smugglers, merchants, soldiers, assassins, farmers, crime lords, laborers, slaves, slavers, and many others, including Jedi and Sith. Since Humans were the most common sentient species, they were often considered to be a standard or average to which the biology, psychology, and culture of other species were compared.",
+                "homeworld": "Coruscant",
+                "id": 1,
+                "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/5d/Humans-TESB30.jpg/revision/latest?cb=20100628191857",
+                "language": "Galactic Basic",
+                "name": "Human"
+            }
+        }
+        
+## People for Planet [/planet/{planetID}/people]
+**/planet/{planetID}/people**
+
+Returns a list of JSON objects for the people that are from the planet given by planetID. If there are no people from the planet, a null JSON object is returned.
+
++ Response 200 (application/json)
+
+        {
+            "residents": [
+                    {
+                      "birth_year": "19BBY",
+                      "description": "Luke Skywalker was a Force-sensitive Human male who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order. Born in 19 BBY as the son of the fallen Jedi Knight Anakin Skywalker and the Queen and Senator of Naboo, Padm\u00e9 Amidala, Luke was raised on Tatooine and hidden from Emperor Palpatine and his father, who had recently become Darth Vader, Dark Lord of the Sith. In 0 BBY, Skywalker's life changed forever. A chance purchase of two droids, R2-D2 and C-3PO, led to him to receive training in the ways of the Force from Jedi Master Obi-Wan Kenobi and to meet Han Solo, and Princess Leia Organa, who was, unbeknownst to him, his twin sister. Skywalker then destroyed the first Death Star and joined the Rebel Alliance. Over the next few years, he fought in many of the most important battles of the Galactic Civil War, helping to found Rogue Squadron and fighting Imperial forces across the galaxy. In 3 ABY, Skywalker received Jedi training from Yoda, and learned from Vader that the Sith Lord was his father. One year later, he fought in the Battle of Endor, and succeeded in turning his father back to the light. Thanks to Skywalker, Palpatine was killed, and the Empire was dealt a crippling blow. One year later, the New Republic was formed.",
+                      "eye_color": "blue",
+                      "gender": "male",
+                      "hair_color": "blond",
+                      "height": "172",
+                      "homeworld": "Tatooine",
+                      "id": 1,
+                      "image": "http://vignette1.wikia.nocookie.net/starwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest?cb=20091030151422",
+                      "mass": "77",
+                      "name": "Luke Skywalker",
+                      "skin_color": "fair",
+                      "species": "Human"
+                    },
+                    {
+                      "birth_year": "112BBY",
+                      "description": "C-3PO, sometimes spelled See-Threepio and often referred to as Threepio, was a bipedal, humanoid protocol droid designed to interact with organics, programmed primarily for etiquette and protocol. He was fluent in over six million forms of communication, and developed a fussy and worry-prone personality throughout his many decades of operation. After being destroyed and discarded on the planet Tatooine before 32 BBY, C-3PO was rebuilt; his salvaged nature gave him special qualities that distinguished him from similar droid models. Along with his counterpart, the astromech droid R2-D2, C-3PO constantly found himself directly involved in pivotal moments of galactic history, and aided in saving the galaxy on many occasions. C-3PO considered various droids and organics to be friends of his, and was very dedicated to them, as well as to any master that he served.",
+                      "eye_color": "yellow",
+                      "gender": "n/a",
+                      "hair_color": "n/a",
+                      "height": "167",
+                      "homeworld": "Tatooine",
+                      "id": 2,
+                      "image": "http://vignette4.wikia.nocookie.net/starwars/images/5/51/C-3PO_EP3.png/revision/latest?cb=20131005124036",
+                      "mass": "75",
+                      "name": "C-3PO",
+                      "skin_color": "gold",
+                      "species": "Droid"
+                    },
+                    ...
+                ]
+        }
+        
+## Species for Planet [/planet/{planetID}/species]
+**/planet/{planetID}/species**
+
+Returns a JSON object for the species that is native to the planet given by planetID. If the planet does not have a native species, a null JSON object is returned.
+
++ Response 200 (application/json)
+
+        {
+            "native_species": {
+                "average_height": "210",
+                "average_lifespan": "400",
+                "classification": "mammal",
+                "description": "The Wookiees, whose name for themselves translated to the People of the Trees, were a species of tall, hairy humanoids that were inhabitants of the planet Kashyyyk. One of the most noteworthy members of the species was Chewbacca, Han Solo's best friend and co-pilot, who played a vital role in the Galactic Civil War and afterwards. A race of arboreal mammals, the Wookiees lived in treehouses nestled in the canopy of the towering wroshyr trees. Despite their fearsome appearance, they were usually gentle, although they were prone to devastating fits of rage when provoked.",
+                "homeworld": "Kashyyyk",
+                "id": 3,
+                "image": "http://vignette2.wikia.nocookie.net/starwars/images/5/57/ThreeWookieeAmigos-ROTSVD.jpg/revision/latest?cb=20061128184734",
+                "language": "Shyriiwook",
+                "name": "Wookiee"
+            }
+        }
+        
+## People for Species [/species/{speciesID}/people]
+**/species/{speciesID}/people**
+
+Returns a list of JSON objects for the people that are of the species given by speciesID. If no people are of the specified species, a null JSON object is returned.
+
++ Response 200 (application/json)
+
+        {
+            "people": [
                 {
-                    'average_lifespan': '120',
-                    'people':
-                        [1, 4, 5, 6, 7, 9, 10, 11, 12, 14, 18, 19, 21, 22, 25, 26, 28, 29, 32, 34, 35, 43, 51, 60, 61, 62, 66, 67, 68, 69, 74, 81, 84, 85, 86],
-                    'name': 'Human',
-                    'id': 1,
-                    'average_height': '180',
-                    'homeworld': 9,
-                    'description':
-                        "Humans, taxonomically referred to as Homo sapiens, were the galaxy's most numerous and politically dominant sentient species with millions of major and minor colonies galaxywide. Believed to have originated on the galactic capital of Coruscant, they could be found anywhere, engaged in many different pursuits: spacers, mercenaries, smugglers, merchants, soldiers, assassins, farmers, crime lords, laborers, slaves, slavers, and many others, including Jedi and Sith. Since Humans were the most common sentient species, they were often considered to be a standard or average to which the biology, psychology, and culture of other species were compared.",
-                    'language': 'Galactic Basic',
-                    'classification': 'mammal'
-                }
+                    "birth_year": "19BBY",
+                    "description": "Luke Skywalker was a Force-sensitive Human male who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order. Born in 19 BBY as the son of the fallen Jedi Knight Anakin Skywalker and the Queen and Senator of Naboo, Padm\u00e9 Amidala, Luke was raised on Tatooine and hidden from Emperor Palpatine and his father, who had recently become Darth Vader, Dark Lord of the Sith. In 0 BBY, Skywalker's life changed forever. A chance purchase of two droids, R2-D2 and C-3PO, led to him to receive training in the ways of the Force from Jedi Master Obi-Wan Kenobi and to meet Han Solo, and Princess Leia Organa, who was, unbeknownst to him, his twin sister. Skywalker then destroyed the first Death Star and joined the Rebel Alliance. Over the next few years, he fought in many of the most important battles of the Galactic Civil War, helping to found Rogue Squadron and fighting Imperial forces across the galaxy. In 3 ABY, Skywalker received Jedi training from Yoda, and learned from Vader that the Sith Lord was his father. One year later, he fought in the Battle of Endor, and succeeded in turning his father back to the light. Thanks to Skywalker, Palpatine was killed, and the Empire was dealt a crippling blow. One year later, the New Republic was formed.",
+                    "eye_color": "blue",
+                    "gender": "male",
+                    "hair_color": "blond",
+                    "height": "172",
+                    "homeworld": "Tatooine",
+                    "id": 1,
+                    "image": "http://vignette1.wikia.nocookie.net/starwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest?cb=20091030151422",
+                    "mass": "77",
+                    "name": "Luke Skywalker",
+                    "skin_color": "fair",
+                    "species": "Human"
+                },
+                {
+                    "birth_year": "41.9BBY",
+                    "description": "Anakin Skywalker was a Force-sensitive Human male who served the Galactic Republic as a Jedi Knight and later served the Galactic Empire as the Sith Lord Darth Vader. Born to the slave Shmi Skywalker in 41.9 BBY, Anakin was conceived by midi-chlorians, the symbiotic organisms that allowed individuals to touch the Force, and he and his mother were brought to the desert planet of Tatooine to be the slaves of Gardulla the Hutt. They soon ended up as the property of the Toydarian Watto, and Skywalker exhibited exceptional piloting skills and a reputation for being able to build and repair anything even at a young age. In 32 BBY, Skywalker encountered the Jedi Qui-Gon Jinn and Padm\u00e9 Amidala, and he helped them secure the parts they needed for their starship by winning the Boonta Eve Classic podracing event\u2014only to learn that he had also won his freedom in doing so. Reluctantly leaving his mother behind, Skywalker accompanied Jinn and his group to the Republic's capital of Coruscant and participated in the Battle of Naboo, helping to free Amidala's homeworld from the armies of the Trade Federation. While Jinn was killed during the battle, Jinn's student Obi-Wan Kenobi followed Jinn's wishes and took on Skywalker as his Padawan, and much of the Jedi Council believed that Skywalker was the Chosen One of Jedi prophecy: one who would bring balance to the Force by destroying the Sith Order. Skywalker and Kenobi had a number of adventures during the Padawan's decade of training to become a Jedi, but as the Separatist Crisis threatened to tear the Republic apart in 22 BBY, Skywalker was reunited with Amidala when he was assigned to protect her from assassins. The two grew close during the course of the assignment, though they were caught up in the Battle of Geonosis and the beginning of the Clone Wars between the Republic and the Confederacy of Independent Systems. Losing an arm during the fighting, Skywalker received a cybernetic replacement, and he and Amidala were secretly married in the days after the battle despite the Jedi Code's restrictions on romantic attachments. During the Clone Wars, which raged for the next three years, Skywalker was granted the rank of Jedi Knight and became known to the public as the 'Hero with No Fear.' Taking on the Togruta Ahsoka Tano as his apprentice, Skywalker fought alongside Kenobi and his fellow Jedi in scores of battles, and his friendship with Supreme Chancellor Palpatine deepened despite the Jedi Order's wariness of Palpatine's rapid acquisition of further powers during the Clone Wars. Throughout the Clone Wars, Skywalker's anger and sense of loss pushed him ever closer to the dark side of the Force, and his visions of Amidala dying in childbirth in 19 BBY made him desperate to find a way to save his wife. Palpatine, who was in fact the Sith Lord Darth Sidious, manipulated Skywalker into becoming his apprentice with the promise of saving Amidala, and Skywalker became the Sith Lord Darth Vader as Palpatine transformed the Republic into the Galactic Empire and eradicated the Jedi Order. Vader and Kenobi clashed on Mustafar after Vader attacked his wife in the belief that she had betrayed him, and Vader was left limbless and ravaged by fire at the end of their battle. Encased in a suit of life-sustaining black armor and believing his wife to be dead, Vader embraced his role as the Emperor's right hand and enforcer, hunting down Jedi survivors and enforcing the will of the Empire for years to come. The Sith Lord trained a number of secret apprentices and Dark Jedi, though his plans to overthrow his master had not advanced far when the Galactic Civil War erupted between the Empire and the Alliance to Restore the Republic in 2 BBY. In 0 BBY, the Death Star\u2014the Empire's greatest superweapon\u2014was destroyed by a young Rebel pilot despite Vader's efforts, and Vader became obsessed with discovering the pilot's identity, only to learn that it was Luke Skywalker: his own son, born before Amidala's death. Vader continued to pursue both Skywalker and the Alliance over the next three years, finally luring his son into a trap on the mining colony of Cloud City in 3 ABY where the two dueled. Vader revealed his identity to Skywalker, though his son refused to join him and escaped. When Darth Sidious learned of Skywalker's existence, he set in motion his own plans to recruit Skywalker and thereby replace Vader, but Skywalker surrendered himself to Imperial forces on the forest moon of Endor in 4 ABY in hopes of redeeming his father and turning him back to the light side. In a final duel on the second Death Star as the Battle of Endor raged around them, Skywalker and Vader fought each other, and Vader refused his son's attempts to redeem him, learning that Skywalker had a twin sister named Leia in the process. Skywalker defeated his father but refused to kill him, and when Sidious attempted to kill the young man, Vader\u2014moved by his son's love\u2014abandoned the dark side and sacrificed himself to destroy the Emperor, fulfilling the prophecy of the Chosen One. Mortally wounded, Anakin made peace with his son and became one with the Force, though his reputation, his legacy, and his family endured for decades afterwards.",
+                    "eye_color": "blue",
+                    "gender": "male",
+                    "hair_color": "blond",
+                    "height": "188",
+                    "homeworld": "Tatooine",
+                    "id": 4,
+                    "image": "http://vignette4.wikia.nocookie.net/starwars/images/6/6f/Anakin_Skywalker_RotS.png/revision/latest?cb=20130621175844",
+                    "mass": "84",
+                    "name": "Anakin Skywalker",
+                    "skin_color": "fair",
+                    "species": "Human"
+                },
+                ...
+            ]
+        }
+        
+## Planet for Species [/species/{speciesID}/planet]
+**/species/{speciesID}/planet**
+
+Returns a JSON object for the native planet of the species given by speciesID. If the specified species does not have a native planet, a null JSON object is returned.
+
++ Response 200 (application/json)
+
+        {
+            "native_planet": {
+                "climate": "temperate",
+                "description": "Coruscant, originally called Notron, also known as Imperial Center or the Queen of the Core, was a planet located in the Galactic Core. It was generally agreed that Coruscant was, during most of galactic history, the most politically important world in the galaxy. At various times, it was the capital of the Galactic Republic, the Galactic Empire, the New Republic, the Yuuzhan Vong empire, the Galactic Alliance, very briefly the Fel Empire, Darth Krayt's Galactic Empire, and the Galactic Federation Triumvirate. In controlling Coruscant, these governments controlled most of the galaxy in the process. Over the centuries, Coruscant had developed into an ecumenopolis, with a total of 5,127 levels of city built up from the crust by the time of the Clone Wars. The actual planet-wide metropolis of Coruscant was called Galactic City. Under the Galactic Republic, the names Republic City or the City of Spires were also used to reference the city. It was also called Imperial City under the Galactic Empire, and New Republic City under the New Republic. However, in practice, Galactic City and its other names were sometimes applied to the Senate District, the central government center and de facto capital of Coruscant. Under the Yuuzhan Vong, the city and planet were both referred to as Yuuzhan'tar.",
+                "gravity": "1 standard",
+                "id": 9,
+                "image": "http://vignette3.wikia.nocookie.net/starwars/images/1/17/Coruscant-AoTCW.jpg/revision/latest?cb=20100115192302",
+                "name": "Coruscant",
+                "population": "1000000000000",
+                "terrain": "cityscape, mountains"
+            }
         }

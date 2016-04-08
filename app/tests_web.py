@@ -257,3 +257,6 @@ class TestPlanets(TestCase):
     def test_planet_exists_3(self):
         planet = Planets.query.filter(Planets.name == "Alderaan").first()
         assert planet in db.session()
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

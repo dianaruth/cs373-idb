@@ -19,6 +19,7 @@ install:
     - pip install sqlalchemy
     - pip install gunicorn
     - pip install requests
+    - pip install Flask-Testing
     
 before_script:
     - uname -a

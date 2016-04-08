@@ -9,14 +9,13 @@ import json
 
 time.sleep(5)
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://Tony:S1m0n3tt1@localhost/testdataswe'
-# \
-#     '{engine}://{username}:{password}@{hostname}/{database}'.format(
-#         engine='mysql+pymysql',
-#         username=os.getenv('MYSQL_USER'),
-#         password=os.getenv('MYSQL_PASSWORD'),
-#         hostname=os.getenv('MYSQL_HOST'),
-#         database=os.getenv('MYSQL_DATABASE'))
+SQLALCHEMY_DATABASE_URI =\
+    '{engine}://{username}:{password}@{hostname}/{database}'.format(
+        engine='mysql+pymysql',
+        username=os.getenv('MYSQL_USER'),
+        password=os.getenv('MYSQL_PASSWORD'),
+        hostname=os.getenv('MYSQL_HOST'),
+        database=os.getenv('MYSQL_DATABASE'))
 
 app = Flask(__name__, static_url_path='')
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI

@@ -50,8 +50,7 @@ status:
 	git status
 
 test:
-	cd app
-	python3 app/tests.py
+	cd app && python3 tests.py
 	cd ..
 
 models.html: app/models.py

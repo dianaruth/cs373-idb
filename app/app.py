@@ -24,6 +24,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 manager = Manager(app)
 
+@app.route('/search/<path>')
+def get_search_results(search_string):
+    texts = search_string.split()
+    if len(texts) == 1:
+        search_people = People.query.filter(People.name.like("%" + texts[0] + "%")).all()
+    print(search_people)
+
 @app.route('/get_people')
 def get_people_data():
     """

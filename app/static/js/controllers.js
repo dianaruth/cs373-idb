@@ -85,6 +85,12 @@ returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$rou
         });
     }]);
 
+returnOfTheAPIControllers.controller('SearchResultsController', ['$scope', '$routeParams',
+    function($scope, $routeParams) {
+        var query = $routeParams.query;
+        console.log(query);
+    }]);
+
 returnOfTheAPIControllers.controller('AboutController', ['$scope',
     function($scope) {
         $scope.members = [

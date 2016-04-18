@@ -45,6 +45,10 @@ returnOfTheAPIApp.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'partials/species-detail.html',
                 controller: 'SpeciesDetailController'
             }).
+            when('/search/:query', {
+                templateUrl: 'partials/results.html',
+                controller: 'SearchResultsController'
+            }).
             otherwise({
                 redirectTo: '/'
             });

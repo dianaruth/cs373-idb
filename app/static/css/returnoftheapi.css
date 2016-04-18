@@ -117,6 +117,12 @@ pre {
     color: #ff6;
 }
 
+.title-sm {
+    font-family: "Distant Galaxy", arial, verdana, sans-serif;
+    font-size: 1em;
+    color: #ff6;
+}
+
 .about-img {
     border-radius: 50%;
     width: 50%;

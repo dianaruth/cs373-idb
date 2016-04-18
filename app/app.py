@@ -6,6 +6,7 @@ from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables
 import json
+from sqlalchemy import or_
 
 time.sleep(5)
 
@@ -26,10 +27,28 @@ manager = Manager(app)
 
 @app.route('/search/<path>')
 def get_search_results(search_string):
-    texts = search_string.split()
-    if len(texts) == 1:
-        search_people = People.query.filter(People.name.like("%" + texts[0] + "%")).all()
-    print(search_people)
+    single_word_search = People.query.filter(or_(People.name.like("%" + search_string + "%"),
+                                                 People.gender.like("%" + search_string + "%"),
+                                                 People.birth_year.like("%" + search_string + "%"),
+                                                 People.height.like("%" + search_string + "%"),
+                                                 People.mass.like("%" + search_string + "%"),
+                                                 People.hair_color.like("%" + search_string + "%"),
+                                                 People.eye_color.like("%" + search_string + "%"))).all()
+    print("\n" + str(len(single_word_search)) + "\n") # DELETE
+    single_word_search += Species.query.filter(or_(Species.name.like("%" + search_string + "%"),
+                                                  Species.classification.like("%" + search_string + "%"),
+                                                  Species.average_height.like("%" + search_string + "%"),
+                                                  Species.average_lifespan.like("%" + search_string + "%"),
+                                                  Species.language.like("%" + search_string + "%"))).all()
+    print("\n" + str(len(single_word_search)) + "\n")  # DELETE
+    single_word_search += Planets.query.filter(or_(Planets.name.like("%" + search_string + "%"),
+                                                   Planets.climate.like("%" + search_string + "%"),
+                                                   Planets.gravity.like("%" + search_string + "%"),
+                                                   Planets.terrain.like("%" + search_string + "%"),
+                                                   Planets.population.like("%" + search_string + "%"))).all()
+    print("\n" + str(len(single_word_search)) + "\n")  # DELETE
+    print(single_word_search)
+    texts = search_string.split() # split the string to run the or clause
 
 @app.route('/get_people')
 def get_people_data():

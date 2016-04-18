@@ -449,6 +449,12 @@ class TestSearch(TestCase):
     def test_search_query_1(self):
         get_search_results("luke")
 
+    def test_search_query_2(self):
+        get_search_results("blue")
+
+    def test_search_query_3(self):
+        get_search_results("Luke Skywalker")
+
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
     

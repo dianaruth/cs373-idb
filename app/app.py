@@ -258,6 +258,10 @@ def render_species():
 def render_about():
     return render_template('index.html')
 
+@app.route("/results")
+def render_results():
+    return render_template('index.html')
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):

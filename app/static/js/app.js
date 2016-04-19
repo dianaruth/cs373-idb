@@ -18,36 +18,28 @@ returnOfTheAPIApp.config(['$routeProvider', '$locationProvider',
                 templateUrl : 'partials/home.html'
             }).
             when('/people', {
-                templateUrl : 'partials/people.html',
-                controller : 'PeopleListController'
+                templateUrl : 'partials/people.html'
             }).
             when('/planets', {
-                templateUrl : 'partials/planets.html',
-                controller : 'PlanetsListController'
+                templateUrl : 'partials/planets.html'
             }).
             when('/species', {
-                templateUrl : 'partials/species.html',
-                controller : 'SpeciesListController'
+                templateUrl : 'partials/species.html'
             }).
             when('/about', {
-                templateUrl : 'partials/about.html',
-                controller : 'AboutController'
+                templateUrl : 'partials/about.html'
+            }).
+            when('/results', {
+                templateUrl: 'partials/results.html'
             }).
             when('/people/:personID', {
-                templateUrl: 'partials/person-detail.html',
-                controller: 'PersonDetailController'
+                templateUrl: 'partials/person-detail.html'
             }).
             when('/planets/:planetID', {
-                templateUrl: 'partials/planet-detail.html',
-                controller: 'PlanetDetailController'
+                templateUrl: 'partials/planet-detail.html'
             }).
             when('/species/:speciesID', {
-                templateUrl: 'partials/species-detail.html',
-                controller: 'SpeciesDetailController'
-            }).
-            when('/search/:query', {
-                templateUrl: 'partials/results.html',
-                controller: 'SearchResultsController'
+                templateUrl: 'partials/species-detail.html'
             }).
             otherwise({
                 redirectTo: '/'

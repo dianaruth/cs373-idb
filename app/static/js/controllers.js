@@ -6,7 +6,7 @@ var returnOfTheAPIControllers = angular.module('returnOfTheAPIControllers', []);
 
 returnOfTheAPIControllers.controller('PeopleListController', ['$scope', 'peopleService',
     function($scope, peopleService) {
-        $scope.people = []
+        $scope.people = [];
         peopleService.getPeople().then(function(data) {
             $scope.people = data.people;
             $scope.sortType = 'name';
@@ -18,7 +18,7 @@ returnOfTheAPIControllers.controller('PeopleListController', ['$scope', 'peopleS
 
 returnOfTheAPIControllers.controller('PlanetsListController', ['$scope', 'planetsService',
     function($scope, planetsService) {
-        $scope.planets = []
+        $scope.planets = [];
         planetsService.getPlanets().then(function(data) {
             $scope.planets = data.planets;
             $scope.sortType = 'name';
@@ -30,7 +30,7 @@ returnOfTheAPIControllers.controller('PlanetsListController', ['$scope', 'planet
 
 returnOfTheAPIControllers.controller('SpeciesListController', ['$scope', 'speciesService',
     function($scope, speciesService) {
-        $scope.species = []
+        $scope.species = [];
         speciesService.getSpecies().then(function(data) {
             $scope.species = data.species;
             $scope.sortType = 'name';
@@ -85,10 +85,18 @@ returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$rou
         });
     }]);
 
-returnOfTheAPIControllers.controller('SearchResultsController', ['$scope', '$routeParams',
-    function($scope, $routeParams) {
-        var query = $routeParams.query;
-        console.log(query);
+returnOfTheAPIControllers.controller('SearchController', ['$scope', '$location',
+    function($scope, $location) {
+        $scope.search = function() {
+            $location.path('/results');
+        }
+    }]);
+
+returnOfTheAPIControllers.controller('SearchResultsController', ['$scope',
+    function($scope) {
+        var query = $('#search-text').val();
+        $scope.query = query;
+        $('#search-text').val("");
     }]);
 
 returnOfTheAPIControllers.controller('AboutController', ['$scope',

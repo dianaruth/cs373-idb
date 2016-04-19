@@ -16,7 +16,7 @@
             <div id="titles">
                 <div id="titlecontent">
                     <p class="center">EPISODE VI<br />RETURN OF THE API</p>
-                    <p>It is a dark time for the Galactic Republic of Computer Science. Supreme Chancellor Downing has requested that each subcommittee of the Galactic Senate create a database website for a topic of their choosing. Thus, the group known as SWEWars was created to tackle the task of creating a database website for Star Wars people, planets, and species. Jedi Master Diana Ruth and Queen Jamie Barbosa volunteer to implement the front end of the application, while Darth Clint Ascencio, the renowned intergalactic smuggler Tony Serino, and Commander Jon Lim undertake work on the back end. With this powerful team in place, Supreme Chancellor Downing will not be disappointed and SWEWars will restore peace and order to the galaxy...</p>
+                    <p>It is a dark time for the Galactic Republic of Computer Science. Supreme Chancellor Downing has requested that each subcommittee of the Galactic Senate create a database website for a topic of their choosing. Thus, the group known as SWEWars was created to tackle the task of creating a database website for Star Wars people, planets, and species. Jedi Master Diana Ruth and Queen Jamie Barbosa volunteer to implement the front end of the application, while Darth Clint Ascencio, the renowned intergalactic smuggler Tony Serino, and Commander Jon Lim undertake work on the back end. This powerful team hopes to restore peace and order to the galaxy...</p>
                 </div>
             </div>
         </div>
@@ -39,11 +39,11 @@
                             <li ng-class="{ active : isActive('/species')}"><a href="/species">Species</a></li>
                             <li ng-class="{ active : isActive('/about')}"><a href="/about">About</a></li>
                         </ul>
-                        <form id="search" class="navbar-form navbar-left" role="search">
+                        <form id="search" class="navbar-form navbar-left" role="search" ng-controller="SearchController">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input type="text" class="form-control" placeholder="Search" id="search-text">
                             </div>
-                            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            <button class="btn btn-primary" ng-click="search()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                         </form>
                     </div>
                 </div>

@@ -3,8 +3,13 @@
         <div class="text-center">
             <h1 class="title-lg">Search Results</h1>
         </div>
+        <br>
+        <div>
+            <h1>You searched: {{query}}</h1>
+        </div>
+        <br>
         <div id="and-results">
-            <h1 class="title-md">AND Results for Query</h1>
+            <h1 class="title-md">"AND" Results</h1>
             <h1 class="text-center title-sm">People</h1>
             <table class="table sw-table">
                 <th>
@@ -42,6 +47,7 @@
                     <span ng-show="sortType == 'eye_color' && sortReverse" class="fa fa-caret-down"></span>
                     <span ng-show="sortType == 'eye_color' && !sortReverse" class="fa fa-caret-up"</span>
                 </th>
+<!--
                 <tr>
                     <td><a ng-href="/people/{{person.id}}">{{person.name}}</a></td>
                     <td>{{person.gender}}</td>
@@ -51,7 +57,9 @@
                     <td>{{person.hair_color}}</td>
                     <td>{{person.eye_color}}</td>
                 </tr>
+-->
             </table>
+            <br>
             <h1 class="text-center title-sm">Planets</h1>
             <table class="table sw-table">
                 <th>
@@ -79,6 +87,7 @@
                     <span ng-show="sortType == 'population' && sortReverse" class="fa fa-caret-down"></span>
                     <span ng-show="sortType == 'population' && !sortReverse" class="fa fa-caret-up"</span>
                 </th>
+<!--
                 <tr>
                     <td><a ng-href="/planets/{{planet.id}}">{{planet.name}}</a></td>
                     <td>{{planet.climate}}</td>
@@ -86,7 +95,9 @@
                     <td>{{planet.terrain}}</td>
                     <td>{{planet.population}}</td>
                 </tr>
+-->
             </table>
+            <br>
             <h1 class="text-center title-sm">Species</h1>
             <table class="table sw-table">
                 <th>
@@ -114,6 +125,7 @@
                     <span ng-show="sortType == 'language' && sortReverse" class="fa fa-caret-down"></span>
                     <span ng-show="sortType == 'language' && !sortReverse" class="fa fa-caret-up"</span>
                 </th>
+<!--
                 <tr>
                     <td><a ng-href="/species/{{s.id}}">{{s.name}}</a></td>
                     <td>{{s.classification}}</td>
@@ -121,10 +133,12 @@
                     <td>{{s.average_lifespan}}</td>
                     <td>{{s.language}}</td>
                 </tr>
+-->
             </table>
         </div>
+        <br>
         <div id="or-results">
-            <h1 class="title-md">OR Results for Query</h1>
+            <h1 class="title-md">"OR" Results</h1>
             <h1 class="text-center title-sm">People</h1>
             <table class="table sw-table">
                 <th>
@@ -162,6 +176,7 @@
                     <span ng-show="sortType == 'eye_color' && sortReverse" class="fa fa-caret-down"></span>
                     <span ng-show="sortType == 'eye_color' && !sortReverse" class="fa fa-caret-up"</span>
                 </th>
+<!--
                 <tr>
                     <td><a ng-href="/people/{{person.id}}">{{person.name}}</a></td>
                     <td>{{person.gender}}</td>
@@ -171,7 +186,9 @@
                     <td>{{person.hair_color}}</td>
                     <td>{{person.eye_color}}</td>
                 </tr>
+-->
             </table>
+            <br>
             <h1 class="text-center title-sm">Planets</h1>
             <table class="table sw-table">
                 <th>
@@ -199,6 +216,7 @@
                     <span ng-show="sortType == 'population' && sortReverse" class="fa fa-caret-down"></span>
                     <span ng-show="sortType == 'population' && !sortReverse" class="fa fa-caret-up"</span>
                 </th>
+<!--
                 <tr>
                     <td><a ng-href="/planets/{{planet.id}}">{{planet.name}}</a></td>
                     <td>{{planet.climate}}</td>
@@ -206,7 +224,9 @@
                     <td>{{planet.terrain}}</td>
                     <td>{{planet.population}}</td>
                 </tr>
+-->
             </table>
+            <br>
             <h1 class="text-center title-sm">Species</h1>
             <table class="table sw-table">
                 <th>
@@ -234,6 +254,7 @@
                     <span ng-show="sortType == 'language' && sortReverse" class="fa fa-caret-down"></span>
                     <span ng-show="sortType == 'language' && !sortReverse" class="fa fa-caret-up"</span>
                 </th>
+<!--
                 <tr>
                     <td><a ng-href="/species/{{s.id}}">{{s.name}}</a></td>
                     <td>{{s.classification}}</td>
@@ -241,7 +262,9 @@
                     <td>{{s.average_lifespan}}</td>
                     <td>{{s.language}}</td>
                 </tr>
+-->
             </table>
         </div>
+
     </div>
 </div>

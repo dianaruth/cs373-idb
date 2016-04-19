@@ -1,14 +1,16 @@
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy_fulltext import FullText
 
 db = SQLAlchemy()
 
 # ----\
 # People
 # ----
-class People(db.Model):
+class People(FullText, db.Model):
     """"People Model"""
 
     __tablename__ = 'people'
+    __fulltext_columns__ = ('name',)
 
     id = db.Column(db.Integer, primary_key=True, unique=True, index=True)
     name = db.Column(db.String(256))
@@ -87,10 +89,11 @@ class People(db.Model):
 # ----
 # Planets
 # ----
-class Planets(db.Model):
+class Planets(FullText, db.Model):
     """Planets Model"""
 
     __tablename__ = 'planets'
+    __fulltext_columns__ = ('name',)
 
     id = db.Column(db.Integer, primary_key=True, unique=True, index=True)
     name = db.Column(db.String(256))
@@ -150,10 +153,11 @@ class Planets(db.Model):
 # ----
 # Species
 # ----
-class Species(db.Model):
+class Species(FullText, db.Model):
     """Species Model"""
 
     __tablename__ = 'species'
+    __fulltext_columns__ = ('name',)
 
     id = db.Column(db.Integer, primary_key=True, unique=True, index=True)
     name = db.Column(db.String(256))

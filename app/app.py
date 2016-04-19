@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, send_file, jsonify
+from flask import Flask, render_template, send_file, jsonify, session
+from sqlalchemy_fulltext import FullTextSearch, FullText
 import os, time, subprocess
 import requests
 from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables
 import json
-from sqlalchemy import or_
 
 time.sleep(5)
 
@@ -18,7 +18,7 @@ SQLALCHEMY_DATABASE_URI =\
         hostname=os.getenv('MYSQL_HOST'),
         database=os.getenv('MYSQL_DATABASE'))
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -26,29 +26,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 manager = Manager(app)
 
 @app.route('/search/<path>')
-def get_search_results(search_string):
-    single_word_search = People.query.filter(or_(People.name.like("%" + search_string + "%"),
-                                                 People.gender.like("%" + search_string + "%"),
-                                                 People.birth_year.like("%" + search_string + "%"),
-                                                 People.height.like("%" + search_string + "%"),
-                                                 People.mass.like("%" + search_string + "%"),
-                                                 People.hair_color.like("%" + search_string + "%"),
-                                                 People.eye_color.like("%" + search_string + "%"))).all()
-    print("\n" + str(len(single_word_search)) + "\n") # DELETE
-    single_word_search += Species.query.filter(or_(Species.name.like("%" + search_string + "%"),
-                                                  Species.classification.like("%" + search_string + "%"),
-                                                  Species.average_height.like("%" + search_string + "%"),
-                                                  Species.average_lifespan.like("%" + search_string + "%"),
-                                                  Species.language.like("%" + search_string + "%"))).all()
-    print("\n" + str(len(single_word_search)) + "\n")  # DELETE
-    single_word_search += Planets.query.filter(or_(Planets.name.like("%" + search_string + "%"),
-                                                   Planets.climate.like("%" + search_string + "%"),
-                                                   Planets.gravity.like("%" + search_string + "%"),
-                                                   Planets.terrain.like("%" + search_string + "%"),
-                                                   Planets.population.like("%" + search_string + "%"))).all()
-    print("\n" + str(len(single_word_search)) + "\n")  # DELETE
-    print(single_word_search)
-    texts = search_string.split() # split the string to run the or clause
+def get_search_results(path):
+    people = session.query(People).filter(FullTextSearch('luke', People)).all()
+    # json_people = [person.serialize for person in people]
+    return jsonify({"hi": "work"})
+    # return jsonify({path: json_people})
 
 @app.route('/get_people')
 def get_people_data():
@@ -68,7 +50,7 @@ def get_people_data():
     -skin color
     -species
     """
-    
+
     people = People.query.all()
     json_people = [person.serialize for person in people]
 
@@ -87,7 +69,7 @@ def get_planets_data():
     -population
     -terrain
     """
-    
+
     planets = Planets.query.all()
     json_planet = [planet.serialize for planet in planets]
 
@@ -107,18 +89,18 @@ def get_species_data():
     -homeworld
     -language
     """
-    
+
     speciess = Species.query.all()
     json_species = [species.serialize for species in speciess]
 
     return jsonify({"species": json_species})
-    
+
 @app.route("/get_person/<path>")
 def get_person_data(path):
     """
     Returns a JSON object for the person specified by personID.
     """
-    
+
     person = People.query.get(path)
     json_person = person.serialize
 
@@ -129,7 +111,7 @@ def get_planet_data(path):
     """
     Returns a JSON object for the planet specified by planetID.
     """
-    
+
     planet = Planets.query.get(path)
     json_planet = planet.serialize
 
@@ -140,7 +122,7 @@ def get_s_data(path):
     """
     Returns a JSON object for the species specified by speciesID.
     """
-    
+
     species = Species.query.get(path)
     json_species = species.serialize
 
@@ -243,7 +225,7 @@ def get_people_from_species(path):
 
 @app.route('/person/<path>/species')
 def get_species_from_person(path):
-    
+
     person = People.query.get(path)
     json_species = Species.query.filter_by(name = person.species)
 
@@ -287,10 +269,12 @@ def home():
 
 db.init_app(app)
 
-#with app.app_context():
-#    app.config['SQLALCHEMY_ECHO'] = True
-#    db.create_all()
-#    populate_tables()
+
+# with app.app_context():
+    # app.config['SQLALCHEMY_ECHO'] = True
+    # db.create_all()
+    # populate_tables()
+
 
 @manager.command
 def create_db():

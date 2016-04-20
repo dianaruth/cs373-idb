@@ -1,12 +1,12 @@
 from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy_fulltext import FullText
+# from sqlalchemy_fulltext import FullText
 
 db = SQLAlchemy()
 
 # ----\
 # People
 # ----
-class People(FullText, db.Model):
+class People(db.Model):
     """"People Model"""
 
     __tablename__ = 'people'
@@ -89,7 +89,7 @@ class People(FullText, db.Model):
 # ----
 # Planets
 # ----
-class Planets(FullText, db.Model):
+class Planets(db.Model):
     """Planets Model"""
 
     __tablename__ = 'planets'
@@ -153,7 +153,7 @@ class Planets(FullText, db.Model):
 # ----
 # Species
 # ----
-class Species(FullText, db.Model):
+class Species(db.Model):
     """Species Model"""
 
     __tablename__ = 'species'

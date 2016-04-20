@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, send_file, jsonify, session
-from sqlalchemy_fulltext import FullTextSearch, FullText
+# from sqlalchemy_fulltext import FullTextSearch, FullText
 import os, time, subprocess
 import requests
 from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables
 import json
+from sqlalchemy import or_
 
 time.sleep(5)
 
@@ -26,11 +27,34 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 manager = Manager(app)
 
 @app.route('/search/<path>')
-def get_search_results(path):
-    people = session.query(People).filter(FullTextSearch('luke', People)).all()
-    # json_people = [person.serialize for person in people]
-    return jsonify({"hi": "work"})
-    # return jsonify({path: json_people})
+def get_search_results(search_string):
+    and_search_string = "%" + search_string + "%"
+    and_result = get_and_results(and_search_string)
+    print(and_result)
+    texts = search_string.split() # split the string to run the or clause
+
+def get_and_results(search_string):
+    and_result = People.query.filter(or_(People.name.like(search_string),
+                                                 People.gender.like(search_string),
+                                                 People.birth_year.like(search_string),
+                                                 People.height.like(search_string),
+                                                 People.mass.like(search_string),
+                                                 People.hair_color.like(search_string),
+                                                 People.eye_color.like(search_string))).all()
+    print("\n" + str(len(and_result)) + "\n")  # DELETE
+    and_result += Species.query.filter(or_(Species.name.like(search_string),
+                                                   Species.classification.like(search_string),
+                                                   Species.average_height.like(search_string),
+                                                   Species.average_lifespan.like(search_string),
+                                                   Species.language.like(search_string))).all()
+    print("\n" + str(len(and_result)) + "\n")  # DELETE
+    and_result += Planets.query.filter(or_(Planets.name.like(search_string),
+                                                   Planets.climate.like(search_string),
+                                                   Planets.gravity.like(search_string),
+                                                   Planets.terrain.like(search_string),
+                                                   Planets.population.like(search_string))).all()
+    print("\n" + str(len(and_result)) + "\n")  # DELETE
+    return and_result
 
 @app.route('/get_people')
 def get_people_data():

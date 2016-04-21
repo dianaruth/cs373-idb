@@ -1,5 +1,4 @@
 from flask.ext.sqlalchemy import SQLAlchemy
-# from sqlalchemy_fulltext import FullText
 
 db = SQLAlchemy()
 

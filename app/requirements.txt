@@ -5,4 +5,4 @@ PyMySQL~=0.6
 gunicorn~=19.3
 requests~=2.9.0
 Flask-Testing~=0.4.2
-SQLAlchemy-FullText-Search~=0.2.3
+Whoosh~=2.7.4

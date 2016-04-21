@@ -8,6 +8,7 @@ from models import *
 from create_db import populate_tables
 import json
 from sqlalchemy import or_
+from whoosh_setup import *
 
 time.sleep(5)
 
@@ -25,6 +26,21 @@ app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 manager = Manager(app)
+
+@app.route('/search/<path>')
+def ser(path):
+    create_whoosh_dir()
+    people_ix = get_people_index()
+
+    peopleSearchableFields = ["name"]
+
+    peopleDataList = []
+
+    peopleDataList = search_results(people_ix, path, peopleSearchableFields)
+    # constructRelatedModels(restDataList, locDataList, catDataList)
+
+    return jsonify({"people": str(peopleDataList)})
+
 
 @app.route('/search/<path>')
 def get_search_results(search_string):
@@ -310,12 +326,10 @@ def home():
 
 db.init_app(app)
 
-
 # with app.app_context():
-    # app.config['SQLALCHEMY_ECHO'] = True
-    # db.create_all()
-    # populate_tables()
-
+#     app.config['SQLALCHEMY_ECHO'] = True
+#     db.create_all()
+#     populate_tables()
 
 @manager.command
 def create_db():

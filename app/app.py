@@ -32,8 +32,8 @@ def search(path):
     species_ix = get_species_index()
 
     people_search_fields = ['name', 'gender', 'birth_year', 'height', 'mass', 'hair_color', 'eye_color']
-    planets_search_fields = ['name', 'climate', 'gravity', 'terrain', 'population', 'description', 'image']
-    species_search_fields = ['name', 'classification', 'average_height', 'average_lifespan', 'language', 'description', 'image', 'homeworld']
+    planets_search_fields = ['name', 'climate', 'gravity', 'terrain', 'population', 'description']
+    species_search_fields = ['name', 'classification', 'average_height', 'average_lifespan', 'language', 'description', 'homeworld']
 
     people_and_list = search_results(people_ix, path, people_search_fields, "AndGroup")
     planets_and_list = search_results(planets_ix, path, planets_search_fields, "AndGroup")

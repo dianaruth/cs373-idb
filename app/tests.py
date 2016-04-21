@@ -81,7 +81,7 @@ class TestSpecies(TestCase):
 Test the People model.
 """
 class TestPeople(TestCase):
-    
+
     """
     Initialize the app and database.
     """

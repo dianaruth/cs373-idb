@@ -47,19 +47,19 @@ def fill_people_index(ix):
     writer = ix.writer()
     people_list = People.query.all()
     for person in people_list:
-        writer.add_document(name=person.name,
-                            id=str(person.id),
-                            gender=person.gender,
-                            birth_year=person.birth_year,
-                            height=person.height,
-                            mass=person.mass,
-                            hair_color=person.hair_color,
-                            eye_color=person.eye_color,
-                            description=person.description,
-                            image=person.image,
-                            homeworld=person.homeworld,
-                            skin_color=person.skin_color,
-                            species=person.species)
+        writer.add_document(name=person.name.lower(),
+                            id=str(person.id).lower(),
+                            gender=person.gender.lower(),
+                            birth_year=person.birth_year.lower(),
+                            height=person.height.lower(),
+                            mass=person.mass.lower(),
+                            hair_color=person.hair_color.lower(),
+                            eye_color=person.eye_color.lower(),
+                            description=person.description.lower(),
+                            image=person.image.lower(),
+                            homeworld=person.homeworld.lower(),
+                            skin_color=person.skin_color.lower(),
+                            species=person.species.lower())
     writer.commit()
 
 
@@ -85,14 +85,14 @@ def fill_planets_index(ix):
     writer = ix.writer()
     planets_list = Planets.query.all()
     for planet in planets_list:
-        writer.add_document(name=planet.name,
-                            id=str(planet.id),
-                            climate=planet.climate,
-                            gravity=planet.gravity,
-                            terrain=planet.terrain,
-                            population=planet.population,
-                            description=planet.description,
-                            image=planet.image)
+        writer.add_document(name=planet.name.lower(),
+                            id=str(planet.id).lower(),
+                            climate=planet.climate.lower(),
+                            gravity=planet.gravity.lower(),
+                            terrain=planet.terrain.lower(),
+                            population=planet.population.lower(),
+                            description=planet.description.lower(),
+                            image=planet.image.lower())
     writer.commit()
 
 
@@ -119,21 +119,21 @@ def fill_species_index(ix):
     writer = ix.writer()
     species_list = Species.query.all()
     for species in species_list:
-        writer.add_document(name=species.name,
-                            id=str(species.id),
-                            classification=species.classification,
-                            average_height=species.average_height,
-                            average_lifespan=species.average_lifespan,
-                            language=species.language,
-                            description=species.description,
-                            image=species.image,
-                            homeworld=species.homeworld)
+        writer.add_document(name=species.name.lower(),
+                            id=str(species.id).lower(),
+                            classification=species.classification.lower(),
+                            average_height=species.average_height.lower(),
+                            average_lifespan=species.average_lifespan.lower(),
+                            language=species.language.lower(),
+                            description=species.description.lower(),
+                            image=species.image.lower(),
+                            homeworld=species.homeworld.lower())
     writer.commit()
 
 
 def search_results(ix, search_query, fields):
     qp = MultifieldParser(fields, schema=ix.schema, group=qparser.OrGroup)
-    q = qp.parse(search_query)
+    q = qp.parse(search_query.lower())
     data = []
     with ix.searcher() as s:
         results = s.search(q)

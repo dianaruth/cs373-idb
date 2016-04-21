@@ -96,21 +96,23 @@ returnOfTheAPIControllers.controller('SearchController', ['$scope', '$location',
 returnOfTheAPIControllers.controller('SearchResultsController', ['$scope', '$sce', 'searchService',
     function($scope, $sce, searchService) {
         $scope.highlight = function(text, search) {
-            return $sce.trustAsHtml(text.toString().replace(new RegExp(search.toString(), 'gi'), '<span class="highlighted">$&</span>'));
+            var a = search.split(" ");
+            var result = text;
+            for (var i = 0; i < a.length; i++) {
+                result = result.replace(a[i], '<span class="highlighted">' + a[i] + '</span>');
+            }
+            return $sce.trustAsHtml(result.toString());
         };
         var query = $('#search-text').val();
         if (query != "") {
             $scope.loading = true;
             $scope.query = query;
             searchService.search(query).then(function(data) {
-                console.log(data);
                 $scope.and = data["AND"];
                 $scope.or = data["OR"];
                 $scope.loading = false;
             });
-            
         }
-        
     }]);
 
 returnOfTheAPIControllers.controller('AboutController', ['$scope',

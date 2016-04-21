@@ -11,7 +11,7 @@
         <br>
         <div id="and-results" ng-if="!loading">
             <h1 class="title-md">"AND" Results</h1>
-            <div ng-if="and.people != null">
+            <div ng-if="and.people.length > 0">
                 <h1 class="text-center title-sm">People</h1>
                 <table class="table sw-table results-table">
                     <th>
@@ -46,11 +46,65 @@
                     </tr>
                 </table>
             </div>
+            <div ng-if="and.planets.length > 0">
+                <h1 class="text-center title-sm">Planets</h1>
+                <table class="table sw-table results-table">
+                    <th>
+                        <a href="">Name</a>
+                    </th>
+                    <th>
+                        <a href="">Climate</a>
+                    </th>
+                    <th>
+                        <a href="">Gravity</a>
+                    </th>
+                    <th>
+                        <a href="">Terrain</a>
+                    </th>
+                    <th>
+                        <a href="">Population</a>
+                    </th>
+                    <tr ng-repeat="planet in and.planets">
+                        <td><a ng-href="/planets/{{planet.id}}" ng-bind-html="highlight(planet.name, query) | lowercase"></a></td>
+                        <td ng-bind-html="highlight(planet.climate, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(planet.gravity, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(planet.terrain, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(planet.population, query) | lowercase"></td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-if="and.species.length > 0">
+                <h1 class="text-center title-sm">Species</h1>
+                <table class="table sw-table results-table">
+                    <th>
+                        <a href="">Name</a>
+                    </th>
+                    <th>
+                        <a href="">Classification</a>
+                    </th>
+                    <th>
+                        <a href="">Average Height</a>
+                    </th>
+                    <th>
+                        <a href="">Average Lifespan</a>
+                    </th>
+                    <th>
+                        <a href="">Language</a>
+                    </th>
+                    <tr ng-repeat="s in and.species">
+                        <td><a ng-href="/species/{{s.id}}" ng-bind-html="highlight(s.name, query) | lowercase"></a></td>
+                        <td ng-bind-html="highlight(s.classification, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(s.average_height, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(s.average_lifespan, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(s.language, query) | lowercase"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <br>
         <div id="or-results" ng-if="!loading">
             <h1 class="title-md">"OR" Results</h1>
-            <div ng-if="or.people != null">
+            <div ng-if="or.people.length > 0">
                 <h1 class="text-center title-sm">People</h1>
                 <table class="table sw-table results-table">
                     <th>
@@ -82,6 +136,60 @@
                         <td ng-bind-html="highlight(person.mass, query) | lowercase"></td>
                         <td ng-bind-html="highlight(person.hair_color, query) | lowercase"></td>
                         <td ng-bind-html="highlight(person.eye_color, query) | lowercase"></td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-if="or.planets.length > 0">
+                <h1 class="text-center title-sm">Planets</h1>
+                <table class="table sw-table results-table">
+                    <th>
+                        <a href="">Name</a>
+                    </th>
+                    <th>
+                        <a href="">Climate</a>
+                    </th>
+                    <th>
+                        <a href="">Gravity</a>
+                    </th>
+                    <th>
+                        <a href="">Terrain</a>
+                    </th>
+                    <th>
+                        <a href="">Population</a>
+                    </th>
+                    <tr ng-repeat="planet in or.planets">
+                        <td><a ng-href="/planets/{{planet.id}}" ng-bind-html="highlight(planet.name, query) | lowercase"></a></td>
+                        <td ng-bind-html="highlight(planet.climate, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(planet.gravity, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(planet.terrain, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(planet.population, query) | lowercase"></td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-if="or.species.length > 0">
+                <h1 class="text-center title-sm">Species</h1>
+                <table class="table sw-table results-table">
+                    <th>
+                        <a href="">Name</a>
+                    </th>
+                    <th>
+                        <a href="">Classification</a>
+                    </th>
+                    <th>
+                        <a href="">Average Height</a>
+                    </th>
+                    <th>
+                        <a href="">Average Lifespan</a>
+                    </th>
+                    <th>
+                        <a href="">Language</a>
+                    </th>
+                    <tr ng-repeat="s in or.species">
+                        <td><a ng-href="/species/{{s.id}}" ng-bind-html="highlight(s.name, query) | lowercase"></a></td>
+                        <td ng-bind-html="highlight(s.classification, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(s.average_height, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(s.average_lifespan, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(s.language, query) | lowercase"></td>
                     </tr>
                 </table>
             </div>

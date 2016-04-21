@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, send_file, jsonify, session
-import os, time, subprocess
+import time, subprocess, json
 from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables
-import json
-from sqlalchemy import or_
 from whoosh_setup import *
 
 time.sleep(5)
@@ -44,7 +42,6 @@ def search(path):
     people_or_list = search_results(people_ix, path, people_search_fields, "OrGroup")
     planets_or_list = search_results(planets_ix, path, planets_search_fields, "OrGroup")
     species_or_list = search_results(species_ix, path, species_search_fields, "OrGroup")
-    # constructRelatedModels(restDataList, locDataList, catDataList)
 
     return jsonify({'AND' : {'people': people_and_list, 'planets': planets_and_list, 'species': species_and_list},
                     'OR': {'people': people_or_list, 'planets': planets_or_list, 'species': species_or_list}})

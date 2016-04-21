@@ -1,16 +1,9 @@
 import os
-import logging
-import time
 
 from whoosh import index, qparser
 from whoosh.fields import SchemaClass, TEXT, KEYWORD, ID, STORED
 from whoosh.qparser import MultifieldParser
 from models import People, Species, Planets
-
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(levelname)s: %(message)s')
-logger = logging.getLogger(__name__)
 
 whoosh_index_path = "whoosh_index"
 
@@ -137,8 +130,6 @@ def search_results(ix, search_query, fields, statement):
     data = []
     with ix.searcher() as s:
         results = s.search(q)
-        logger.debug(results)
         for hit in results:
-            logger.debug(hit)
             data.append(dict(**hit))
     return data

@@ -74,6 +74,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #         assert specie == 1
 #
 #     """
+#     Test the number of rows still in species after deleting one
+#     """
+#     def test_query_species_4(self):  # test the number of people on the table
+#         people = Species.query.all()
+#         assert len(species) == 1
+#
+#     """
 #     Test clearing the Species table.
 #     """
 #     def test_clear_table(self):
@@ -150,6 +157,20 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #         assert person.gender == "n/a" and person.height == "167"
 #
 #     """
+#     Test selecting a person by their birth year.
+#     """
+#     def test_select_person_2(self):
+#         person = People.query.filter(People.birth_year == "19BBY").first()
+#         assert person.gender == "male" and person.eye_color == "blue"
+#
+#     """
+#     Test selecting a person by their birth year.
+#     """
+#     def test_select_person_2(self):
+#         person = People.query.filter(People.height == "172").first()
+#         assert person.name == "Luke Skywalker"
+#
+#     """
 #     Test whether person exists in table.
 #     """
 #     def test_person_exists_1(self):
@@ -206,8 +227,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #             gravity = "1 standard", terrain = "jungle, rainforests", population = 1000, description="YAY", image="YAY")
 #         planet2 = Planets(name = 'Tatooine', climate = "arid",
 #             gravity = "1 standard", terrain = "desert", population = 200000, description="YAY", image="YAY")
+#         planet3 = Planets(name = 'Invalid Planet', climate="unknown", gravity = "unknown", terrain = "unknown", population = "unknown", description = "unknown", image = "unknown")
 #         db.session.add(planet1)
 #         db.session.add(planet2)
+#         db.session.add(planet3)
 #         db.session.commit()
 #
 #     """
@@ -225,7 +248,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #         planets = Planets.query.all()
 #         # for planet in planets: # uncomment if you want to see all planets that will be in our database
 #         #     print(str(planet))
-#         assert len(planets) == 62 # 2 from db init and 60 from adding entire populate script
+#         assert len(planets) == 63 # 3 from db init and 60 from adding entire populate script
+#
+#     """
+#     Delete planet with unknown image
+#     """
+#     def test_select_planet_1(self):
+#         planet = Planets.query.filter(Planets.image == "unknown").delete()
+#         db.session.commit()
+#         planets = Planets.query.all()
+#         assert len(planets) == 62
 #
 #     """
 #     Test emptying our 'planets' table.
@@ -243,6 +275,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #     def test_planet_exists_1(self):
 #         planet = Planets.query.filter(Planets.name == "Tatooine").first()
 #         assert planet in db.session()
+#
+#     """
+#     Make sure deleted planet is no longer in database.
+#     """
+#     def test_planet_exists_2(self):
+#         planet = Planets.query.filter(Planets.name == "Invalid Planet").first()
+#         assert not planet in db.session()
 #
 #     # """
 #     # Takes too long...
@@ -416,6 +455,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #     def test_get_planet_for_species_3(self):
 #         output = get_planet_for_species(13)
 #         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+#
+#     def test_unit_tests(self):
+#         output = run_tests(self)
+#         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 from app import get_search_results
 
@@ -454,6 +497,9 @@ class TestSearch(TestCase):
 
     def test_search_query_3(self):
         get_search_results("Luke Skywalker")
+
+    def test_search_query_4(self):
+        get_search_results("blue")
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

@@ -32,13 +32,13 @@ def get_search_results(search_string):
     if len(search_string_list) == 1:
         single_search_string = "%" + search_string + "%"
         single_results = get_single_results(single_search_string)  # get results for all single word search
-    and_results = get_and_results(search_string_list)
+    and_results = get_or_results(search_string_list)
 
-def get_and_results(search_string_list):
-    # sum(
-    #     [session.query(Pokemon).filter(Pokemon.name.like('%' + str('%'.join(c for c in q)) + '%')).all() for q in
-    #      refined], []) if len(refined) > 1 else []
-    pass
+def get_or_results(search_string_list):
+    or_results = [People.query.filter(People.name.like('%' + word + '%')).all() for word in search_string_list]
+    print("AND RESULTS LIST: ")
+    print(or_results)
+    return or_results
 
 """
 With the string not yet split, run a like clause on all three tables.
@@ -65,7 +65,7 @@ def get_single_results(search_string):
                                                    Planets.gravity.like(search_string),
                                                    Planets.terrain.like(search_string),
                                                    Planets.population.like(search_string))).all()
-    print('LIST: ')
+    print('SINGLE LIST: ')
     print(single_result)
     return(single_result)
 

@@ -498,6 +498,33 @@ class TestSearch(TestCase):
         output = search("cwencjkweuiapdkospwqmklqiwdqw")
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
+    """
+    Test an empty search
+    """ 
+    def test_search_1(self):
+    output = search('')
+    assert output['AND']['people'] == [] and output['AND'][planets] == [] and output['AND']['species'] == []
+    
+    """
+    Test a legit search
+    """
+    def test_search_2(self):
+    output = search('Luke')
+    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
+    
+    """
+    Test an AND search
+    """
+    def test_search_3(self):
+    output = search('Luke Skywalker')
+    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
+
+    """
+    Test an OR search
+    """
+    def test_search_4(self):
+    output = search('Luke Skywalker')
+    assert output['OR']['people'][0]['name'] == 'Luke Skywalker'
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

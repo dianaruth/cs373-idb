@@ -9,6 +9,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/swewars_test.db'  # set 
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+
 """
 Test the Species model.
 """
@@ -69,13 +70,6 @@ class TestSpecies(TestCase):
         assert species == 1
 
     """
-    Test the number of rows still in species after deleting one
-    """
-    def test_query_species_4(self):  # test the number of people on the table
-        species = Species.query.all()
-        assert len(species) == 1
-
-    """
     Test clearing the Species table.
     """
     def test_clear_table(self):
@@ -87,7 +81,7 @@ class TestSpecies(TestCase):
 Test the People model.
 """
 class TestPeople(TestCase):
-
+    
     """
     Initialize the app and database.
     """
@@ -199,6 +193,7 @@ class TestPeople(TestCase):
         #     print(str(person))
         assert len(people) == 88 # there are a total of 88 rows in the People table
 
+
 """
 Test the Planets model.
 """
@@ -213,10 +208,10 @@ class TestPlanets(TestCase):
             db.create_all()
         return app
 
+
     """
     Insert data into the database.
     """
-
     def setUp(self):
         planet1 = Planets(name = "Alderaan", climate = "temperate, tropical",
             gravity = "1 standard", terrain = "jungle, rainforests", population = 1000, description="YAY", image="YAY")
@@ -227,6 +222,7 @@ class TestPlanets(TestCase):
         db.session.add(planet2)
         db.session.add(planet3)
         db.session.commit()
+
 
     """
     Destroy the database and its tables after testing is complete.
@@ -246,15 +242,6 @@ class TestPlanets(TestCase):
         assert len(planets) == 63 # 3 from db init and 60 from adding entire populate script
 
     """
-    Delete planet with unknown image
-    """
-    def test_select_planet_1(self):
-        planet = Planets.query.filter(Planets.image == "unknown").delete()
-        db.session.commit()
-        planets = Planets.query.all()
-        assert len(planets) == 62
-
-    """
     Test emptying our 'planets' table.
     The number of entries in our table should always be 0 after this execution.
     """
@@ -271,12 +258,14 @@ class TestPlanets(TestCase):
         planet = Planets.query.filter(Planets.name == "Tatooine").first()
         assert planet in db.session()
 
+
     """
     Make sure deleted planet is no longer in database.
     """
     def test_planet_exists_2(self):
         planet = Planets.query.filter(Planets.name == "Invalid Planet").first()
         assert not planet in db.session()
+
 
     # """
     # Takes too long...
@@ -295,10 +284,10 @@ class TestPlanets(TestCase):
 """
 Test our RESTful API
 """
-import json
 from app import get_people_data, get_planets_data, get_species_data, get_person_data, \
     get_planet_data, get_s_data, get_planet_for_person, get_species_for_person, \
     get_planet_for_species
+
 
 class TestRESTfulAPI(TestCase):
     """
@@ -451,9 +440,6 @@ class TestRESTfulAPI(TestCase):
         output = get_planet_for_species(13)
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
-    def test_unit_tests(self):
-        output = run_tests(self)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 # from app import get_search_results
 #

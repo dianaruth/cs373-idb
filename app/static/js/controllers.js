@@ -98,8 +98,11 @@ returnOfTheAPIControllers.controller('SearchResultsController', ['$scope', '$sce
         $scope.highlight = function(text, search) {
             var a = search.split(" ");
             var result = text;
+            var pattern, original;
             for (var i = 0; i < a.length; i++) {
-                result = result.replace(a[i], '<span class="highlighted">' + a[i] + '</span>');
+                pattern = new RegExp(a[i], 'gi');
+                original = result.match(pattern);
+                result = result.replace(pattern, '<span class="highlighted">' + original + '</span>');
             }
             return $sce.trustAsHtml(result.toString());
         };

@@ -9,7 +9,7 @@
             <h1 ng-if="!loading">You searched: {{query}}</h1>
         </div>
         <br>
-        <div id="and-results" ng-if="!loading">
+        <div id="and-results" ng-if="!loading && (and.people.length > 0 || and.planets.length > 0 || and.species.length > 0)">
             <h1 class="title-md">"AND" Results</h1>
             <div ng-if="and.people.length > 0">
                 <h1 class="text-center title-sm">People</h1>
@@ -102,7 +102,7 @@
             </div>
         </div>
         <br>
-        <div id="or-results" ng-if="!loading">
+        <div id="or-results" ng-if="!loading && (or.people.length > 0 || or.planets.length > 0 || or.species.length > 0)">
             <h1 class="title-md">"OR" Results</h1>
             <div ng-if="or.people.length > 0">
                 <h1 class="text-center title-sm">People</h1>

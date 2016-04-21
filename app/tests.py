@@ -1,4 +1,4 @@
-import unittest
+import unittest, json
 from flask.ext.testing import TestCase
 from flask import Flask
 from models import *
@@ -441,46 +441,63 @@ class TestRESTfulAPI(TestCase):
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
 
-# from app import get_search_results
-#
-# """
-# Test the search functionality
-# """
-# class TestSearch(TestCase):
-#     """
-#     Initialize the app and database.
-#     """
-#     def create_app(self):
-#         db.init_app(app)
-#         with app.app_context():
-#             db.create_all()
-#         return app
-#
-#     """
-#     Insert data into the database.
-#     Run our populate species script.
-#     """
-#     def setUp(self):
-#         populate_tables()
-#
-#     """
-#     Destroy the database and its tables after testing is complete.
-#     """
-#     def tearDown(self):
-#         db.session.remove()
-#         db.drop_all()
-#
-#     def test_search_query_1(self):
-#         get_search_results("luke")
-#
-#     def test_search_query_2(self):
-#         get_search_results("Wookiee")
-#
-#     def test_search_query_3(self):
-#         get_search_results("Luke Skywalker")
-#
-#     def test_search_query_4(self):
-#         get_search_results("blue")
+from app import search
+
+"""
+Test the search functionality
+"""
+class TestSearch(TestCase):
+    """
+    Initialize the app and database.
+    """
+    def create_app(self):
+        db.init_app(app)
+        with app.app_context():
+            db.create_all()
+        return app
+
+    """
+    Insert data into the database.
+    Run our populate species script.
+    """
+    def setUp(self):
+        populate_tables()
+
+    """
+    Destroy the database and its tables after testing is complete.
+    """
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    def test_search_query_1(self):
+        output = search("luke")
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_search_query_2(self):
+        output = search("Wookiee")
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_search_query_3(self):
+        output = search("Luke Skywalker")
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_search_query_4(self):
+        output = search("blue")
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_search_query_5(self):
+        output = search("R5-D4")
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_search_query_6(self):
+        output = search("Quermia")
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_search_query_7(self):
+        output = search("cwencjkweuiapdkospwqmklqiwdqw")
+        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

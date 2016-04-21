@@ -131,8 +131,8 @@ def fill_species_index(ix):
     writer.commit()
 
 
-def search_results(ix, search_query, fields):
-    qp = MultifieldParser(fields, schema=ix.schema, group=qparser.OrGroup)
+def search_results(ix, search_query, fields, statement):
+    qp = MultifieldParser(fields, schema=ix.schema, group=getattr(qparser, statement))
     q = qp.parse(search_query)
     data = []
     with ix.searcher() as s:

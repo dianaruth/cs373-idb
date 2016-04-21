@@ -25,6 +25,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 manager = Manager(app)
 
+
 @app.route('/search/<path>')
 def search(path):
     create_whoosh_dir()
@@ -36,42 +37,18 @@ def search(path):
     planets_search_fields = ['name', 'climate', 'gravity', 'terrain', 'population', 'description', 'image']
     species_search_fields = ['name', 'classification', 'average_height', 'average_lifespan', 'language', 'description', 'image', 'homeworld']
 
-    people_data_list = search_results(people_ix, path, people_search_fields)
-    planets_data_list = search_results(planets_ix, path, planets_search_fields)
-    species_data_list = search_results(species_ix, path, species_search_fields)
+    people_and_list = search_results(people_ix, path, people_search_fields, "AndGroup")
+    planets_and_list = search_results(planets_ix, path, planets_search_fields, "AndGroup")
+    species_and_list = search_results(species_ix, path, species_search_fields, "AndGroup")
+
+    people_or_list = search_results(people_ix, path, people_search_fields, "OrGroup")
+    planets_or_list = search_results(planets_ix, path, planets_search_fields, "OrGroup")
+    species_or_list = search_results(species_ix, path, species_search_fields, "OrGroup")
     # constructRelatedModels(restDataList, locDataList, catDataList)
 
-    return jsonify({'people': str(people_data_list), 'planets': planets_data_list, 'species': species_data_list})
+    return jsonify({'AND' : {'people': str(people_and_list), 'planets': planets_and_list, 'species': species_and_list},
+                    'OR': {'people': str(people_or_list), 'planets': planets_or_list, 'species': species_or_list}})
 
-
-"""
-With the string not yet split, run a like clause on all three tables.
-The result will return only rows that match all of the unsplit string.
-"""
-def get_single_results(search_string):
-    # search the People table
-    single_result = People.query.filter(or_(People.name.like(search_string),
-                                                 People.gender.like(search_string),
-                                                 People.birth_year.like(search_string),
-                                                 People.height.like(search_string),
-                                                 People.mass.like(search_string),
-                                                 People.hair_color.like(search_string),
-                                                 People.eye_color.like(search_string))).all()
-    # search the Species table
-    single_result += Species.query.filter(or_(Species.name.like(search_string),
-                                                   Species.classification.like(search_string),
-                                                   Species.average_height.like(search_string),
-                                                   Species.average_lifespan.like(search_string),
-                                                   Species.language.like(search_string))).all()
-    # search the Planets table
-    single_result += Planets.query.filter(or_(Planets.name.like(search_string),
-                                                   Planets.climate.like(search_string),
-                                                   Planets.gravity.like(search_string),
-                                                   Planets.terrain.like(search_string),
-                                                   Planets.population.like(search_string))).all()
-    print('SINGLE LIST: ')
-    print(single_result)
-    return(single_result)
 
 @app.route('/get_people')
 def get_people_data():

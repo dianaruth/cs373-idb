@@ -31,15 +31,19 @@ manager = Manager(app)
 def search(path):
     create_whoosh_dir()
     people_ix = get_people_index()
+    planets_ix = get_planets_index()
+    species_ix = get_species_index()
 
-    peopleSearchableFields = ["name"]
+    people_search_fields = ['name', 'gender', 'birth_year', 'height', 'mass', 'hair_color', 'eye_color']
+    planets_search_fields = ['name', 'climate', 'gravity', 'terrain', 'population', 'description', 'image']
+    species_search_fields = ['name', 'classification', 'average_height', 'average_lifespan', 'language', 'description', 'image', 'homeworld']
 
-    peopleDataList = []
-
-    peopleDataList = search_results(people_ix, path, peopleSearchableFields)
+    people_data_list = search_results(people_ix, path, people_search_fields)
+    planets_data_list = search_results(planets_ix, path, planets_search_fields)
+    species_data_list = search_results(species_ix, path, species_search_fields)
     # constructRelatedModels(restDataList, locDataList, catDataList)
 
-    return jsonify({"people": str(peopleDataList)})
+    return jsonify({'people': str(people_data_list), 'planets': planets_data_list, 'species': species_data_list})
 
 
 """

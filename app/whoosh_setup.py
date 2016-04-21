@@ -37,19 +37,16 @@ class PeopleSchema(SchemaClass):
 
 
 def get_people_index():
-    if index.exists_in(whoosh_index_path, indexname = "people_index"):
-        people_ix = index.open_dir(whoosh_index_path, indexname = "people_index")
-    else:
-        people_ix = index.create_in(whoosh_index_path, schema=PeopleSchema(),
-                                    indexname="people_index")
-        fill_people_index(people_ix)
+    people_ix = index.create_in(whoosh_index_path, schema=PeopleSchema(),
+                                indexname="people_index")
+    fill_people_index(people_ix)
     return people_ix
 
 
 def fill_people_index(ix):
     writer = ix.writer()
-    peopleList = People.query.all()
-    for person in peopleList:
+    people_list = People.query.all()
+    for person in people_list:
         writer.add_document(name=person.name,
                             id=str(person.id),
                             gender=person.gender,
@@ -63,6 +60,74 @@ def fill_people_index(ix):
                             homeworld=person.homeworld,
                             skin_color=person.skin_color,
                             species=person.species)
+    writer.commit()
+
+
+class PlanetsSchema(SchemaClass):
+    id = ID(stored=True)
+    name = KEYWORD(stored=True)
+    climate = KEYWORD(stored=True)
+    gravity = KEYWORD(stored=True)
+    terrain = KEYWORD(stored=True)
+    population = KEYWORD(stored=True)
+    description = KEYWORD(stored=True)
+    image = KEYWORD(stored=True)
+
+
+def get_planets_index():
+    planets_ix = index.create_in(whoosh_index_path, schema=PlanetsSchema(),
+                                 indexname="planets_index")
+    fill_planets_index(planets_ix)
+    return planets_ix
+
+
+def fill_planets_index(ix):
+    writer = ix.writer()
+    planets_list = Planets.query.all()
+    for planet in planets_list:
+        writer.add_document(name=planet.name,
+                            id=str(planet.id),
+                            climate=planet.climate,
+                            gravity=planet.gravity,
+                            terrain=planet.terrain,
+                            population=planet.population,
+                            description=planet.description,
+                            image=planet.image)
+    writer.commit()
+
+
+class SpeciesSchema(SchemaClass):
+    id = ID(stored=True)
+    name = KEYWORD(stored=True)
+    classification = KEYWORD(stored=True)
+    average_height = KEYWORD(stored=True)
+    average_lifespan = KEYWORD(stored=True)
+    language = KEYWORD(stored=True)
+    description = KEYWORD(stored=True)
+    image = KEYWORD(stored=True)
+    homeworld = KEYWORD(stored=True)
+
+
+def get_species_index():
+    species_ix = index.create_in(whoosh_index_path, schema=SpeciesSchema(),
+                                 indexname="species_index")
+    fill_species_index(species_ix)
+    return species_ix
+
+
+def fill_species_index(ix):
+    writer = ix.writer()
+    species_list = Species.query.all()
+    for species in species_list:
+        writer.add_document(name=species.name,
+                            id=str(species.id),
+                            classification=species.classification,
+                            average_height=species.average_height,
+                            average_lifespan=species.average_lifespan,
+                            language=species.language,
+                            description=species.description,
+                            image=species.image,
+                            homeworld=species.homeworld)
     writer.commit()
 
 

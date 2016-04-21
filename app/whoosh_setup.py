@@ -124,13 +124,13 @@ def fill_species_index(ix):
     writer.commit()
 
 class MyFuzzyTerm(FuzzyTerm):
-     def __init__(self, fieldname, text, boost=1.0, maxdist=1, prefixlength=1, constantscore=True):
+     def __init__(self, fieldname, text, boost=1.0, maxdist=1, prefixlength=3, constantscore=True):
          super(MyFuzzyTerm, self).__init__(fieldname, text, boost, maxdist, prefixlength, constantscore)
 
 def search_results(ix, search_query, fields, statement):
     qp = MultifieldParser(fields, schema=ix.schema, group=getattr(qparser, statement), termclass=MyFuzzyTerm)
     # qp = QueryParser(fields, schema=ix.schema, termclass=MyFuzzyTerm)
-    qp.add_plugin(qparser.FuzzyTermPlugin())
+    # qp.add_plugin(qparser.FuzzyTermPlugin())
     q = qp.parse(search_query)
     data = []
     with ix.searcher() as s:

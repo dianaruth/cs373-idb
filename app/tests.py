@@ -502,29 +502,29 @@ class TestSearch(TestCase):
     Test an empty search
     """ 
     def test_search_1(self):
-    output = search('')
-    assert output['AND']['people'] == [] and output['AND'][planets] == [] and output['AND']['species'] == []
+        output = search('')
+        assert str(output.getData()).__contains__('[]')
     
     """
     Test a legit search
     """
     def test_search_2(self):
-    output = search('Luke')
-    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
+        output = search('Luke')
+        assert str(output.getData()).__contains__('Luke Skywalker')
     
     """
     Test an AND search
     """
     def test_search_3(self):
-    output = search('Luke Skywalker')
-    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
+        output = search('Luke Skywalker')
+        assert str(output.getData()).__contains__('Luke Skywalker')
 
     """
     Test an OR search
     """
     def test_search_4(self):
-    output = search('Luke Skywalker')
-    assert output['OR']['people'][0]['name'] == 'Luke Skywalker'
+        output = search('Luke Skywalker')
+        assert str(output.getData()).__contains__('Luke Skywalker')
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

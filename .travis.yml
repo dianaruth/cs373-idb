@@ -20,6 +20,7 @@ install:
     - pip install gunicorn
     - pip install requests
     - pip install Flask-Testing
+    - pip install Whoosh
     
 before_script:
     - uname -a

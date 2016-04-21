@@ -71,6 +71,7 @@ def get_people_data():
 
     return jsonify({"people": json_people})
 
+
 @app.route('/get_planets')
 def get_planets_data():
     """
@@ -89,6 +90,7 @@ def get_planets_data():
     json_planet = [planet.serialize for planet in planets]
 
     return jsonify({"planets": json_planet})
+
 
 @app.route('/get_species')
 def get_species_data():
@@ -110,6 +112,7 @@ def get_species_data():
 
     return jsonify({"species": json_species})
 
+
 @app.route("/get_person/<path>")
 def get_person_data(path):
     """
@@ -121,6 +124,7 @@ def get_person_data(path):
 
     return jsonify({"person": json_person})
 
+
 @app.route('/get_planet/<path>')
 def get_planet_data(path):
     """
@@ -131,6 +135,7 @@ def get_planet_data(path):
     json_planet = planet.serialize
 
     return jsonify({"planet": json_planet})
+
 
 @app.route('/get_s/<path>')
 def get_s_data(path):
@@ -199,6 +204,7 @@ def get_planet_for_species(path):
 
     return jsonify({"native_planet": json_planet})
 
+
 @app.route('/planet/<path>/people')
 def get_people_from_planet(path):
 
@@ -225,6 +231,7 @@ def get_species_from_planet(path):
 
     return jsonify({"native_species": json_species})
 
+
 @app.route('/species/<path>/people')
 def get_people_from_species(path):
 
@@ -237,6 +244,7 @@ def get_people_from_species(path):
         json_people = None
 
     return jsonify({"people":json_people})
+
 
 @app.route('/person/<path>/species')
 def get_species_from_person(path):
@@ -257,30 +265,37 @@ def run_tests():
     output = subprocess.getoutput("python tests_web.py")
     return json.dumps({'output': str(output)})
 
+
 @app.route("/people")
 def render_people():
     return render_template('index.html')
+
 
 @app.route("/planets")
 def render_planets():
     return render_template('index.html')
 
+
 @app.route("/species")
 def render_species():
     return render_template('index.html')
+
 
 @app.route("/about")
 def render_about():
     return render_template('index.html')
 
+
 @app.route("/results")
 def render_results():
     return render_template('index.html')
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
     return render_template('index.html')
+
 
 @app.route('/')
 def home():
@@ -293,11 +308,13 @@ db.init_app(app)
 #     db.create_all()
 #     populate_tables()
 
+
 @manager.command
 def create_db():
     app.config['SQLALCHEMY_ECHO'] = True
     db.create_all()
     populate_tables()
+
 
 @manager.command
 def drop_db():

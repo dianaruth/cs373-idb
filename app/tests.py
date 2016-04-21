@@ -450,7 +450,7 @@ class TestSearch(TestCase):
         get_search_results("luke")
 
     def test_search_query_2(self):
-        get_search_results("blue")
+        get_search_results("Wookiee")
 
     def test_search_query_3(self):
         get_search_results("Luke Skywalker")

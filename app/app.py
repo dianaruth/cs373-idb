@@ -28,44 +28,46 @@ manager = Manager(app)
 
 @app.route('/search/<path>')
 def get_search_results(search_string):
-    and_search_string = "%" + search_string + "%"
-    and_results = get_and_results(and_search_string)
-    print(and_results)
     search_string_list = search_string.split() # split the string to run the or clause... list of user texts
-    or_results = get_or_results(search_string_list)
+    if len(search_string_list) == 1:
+        single_search_string = "%" + search_string + "%"
+        single_results = get_single_results(single_search_string)  # get results for all single word search
+    and_results = get_and_results(search_string_list)
+
+def get_and_results(search_string_list):
+    # sum(
+    #     [session.query(Pokemon).filter(Pokemon.name.like('%' + str('%'.join(c for c in q)) + '%')).all() for q in
+    #      refined], []) if len(refined) > 1 else []
+    pass
 
 """
 With the string not yet split, run a like clause on all three tables.
 The result will return only rows that match all of the unsplit string.
 """
-def get_and_results(search_string):
+def get_single_results(search_string):
     # search the People table
-    and_result = People.query.filter(or_(People.name.like(search_string),
+    single_result = People.query.filter(or_(People.name.like(search_string),
                                                  People.gender.like(search_string),
                                                  People.birth_year.like(search_string),
                                                  People.height.like(search_string),
                                                  People.mass.like(search_string),
                                                  People.hair_color.like(search_string),
                                                  People.eye_color.like(search_string))).all()
-    print("\n" + str(len(and_result)) + "\n")  # DELETE DEBUG
     # search the Species table
-    and_result += Species.query.filter(or_(Species.name.like(search_string),
+    single_result += Species.query.filter(or_(Species.name.like(search_string),
                                                    Species.classification.like(search_string),
                                                    Species.average_height.like(search_string),
                                                    Species.average_lifespan.like(search_string),
                                                    Species.language.like(search_string))).all()
-    print("\n" + str(len(and_result)) + "\n")  # DELETE DEBUG
     # search the Planets table
-    and_result += Planets.query.filter(or_(Planets.name.like(search_string),
+    single_result += Planets.query.filter(or_(Planets.name.like(search_string),
                                                    Planets.climate.like(search_string),
                                                    Planets.gravity.like(search_string),
                                                    Planets.terrain.like(search_string),
                                                    Planets.population.like(search_string))).all()
-    print("\n" + str(len(and_result)) + "\n")  # DELETE DEBUG
-    return and_result
-
-def get_or_results(search_string_list):
-    pass
+    print('LIST: ')
+    print(single_result)
+    return(single_result)
 
 @app.route('/get_people')
 def get_people_data():

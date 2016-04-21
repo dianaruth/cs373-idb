@@ -3,6 +3,7 @@ import os
 from whoosh import index, qparser
 from whoosh.fields import SchemaClass, TEXT, KEYWORD, ID, STORED
 from whoosh.qparser import MultifieldParser, QueryParser
+from whoosh.query import *
 from models import People, Species, Planets
 
 whoosh_index_path = "whoosh_index"
@@ -122,10 +123,14 @@ def fill_species_index(ix):
                             homeworld=species.homeworld)
     writer.commit()
 
+class MyFuzzyTerm(FuzzyTerm):
+     def __init__(self, fieldname, text, boost=1.0, maxdist=2, prefixlength=1, constantscore=True):
+         super(MyFuzzyTerm, self).__init__(fieldname, text, boost, maxdist, prefixlength, constantscore)
 
 def search_results(ix, search_query, fields, statement):
     qp = MultifieldParser(fields, schema=ix.schema, group=getattr(qparser, statement))
     qp.add_plugin(qparser.FuzzyTermPlugin())
+    qp = QueryParser("name", schema=ix.schema, termclass=MyFuzzyTerm)
     q = qp.parse(search_query)
     data = []
     with ix.searcher() as s:

@@ -46,8 +46,8 @@ def search(path):
     species_or_list = search_results(species_ix, path, species_search_fields, "OrGroup")
     # constructRelatedModels(restDataList, locDataList, catDataList)
 
-    return jsonify({'AND' : {'people': str(people_and_list), 'planets': planets_and_list, 'species': species_and_list},
-                    'OR': {'people': str(people_or_list), 'planets': planets_or_list, 'species': species_or_list}})
+    return jsonify({'AND' : {'people': people_and_list, 'planets': planets_and_list, 'species': species_and_list},
+                    'OR': {'people': people_or_list, 'planets': planets_or_list, 'species': species_or_list}})
 
 
 @app.route('/get_people')

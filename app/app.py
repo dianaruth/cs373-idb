@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, send_file, jsonify, session
-# from sqlalchemy_fulltext import FullTextSearch, FullText
 import os, time, subprocess
-import requests
 from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables

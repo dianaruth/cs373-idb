@@ -135,17 +135,10 @@ def search_results(ix, search_query, fields):
     qp = MultifieldParser(fields, schema=ix.schema, group=qparser.OrGroup)
     q = qp.parse(search_query)
     data = []
-    data_index = 0
     with ix.searcher() as s:
         results = s.search(q)
         logger.debug(results)
         for hit in results:
             logger.debug(hit)
             data.append(dict(**hit))
-            context = str()
-            for field in fields:
-                if(len(hit.highlights(field)) > 0):
-                    context += hit.highlights(field)
-            data[data_index]["context"] = context
-            data_index += 1
     return data

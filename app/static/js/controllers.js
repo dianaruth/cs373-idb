@@ -85,18 +85,32 @@ returnOfTheAPIControllers.controller('SpeciesDetailController', ['$scope', '$rou
         });
     }]);
 
-returnOfTheAPIControllers.controller('SearchController', ['$scope', '$location',
-    function($scope, $location) {
+returnOfTheAPIControllers.controller('SearchController', ['$scope', '$location', '$route',
+    function($scope, $location, $route) {
         $scope.search = function() {
+            $route.reload();
             $location.path('/results');
         }
     }]);
 
-returnOfTheAPIControllers.controller('SearchResultsController', ['$scope',
-    function($scope) {
+returnOfTheAPIControllers.controller('SearchResultsController', ['$scope', '$sce', 'searchService',
+    function($scope, $sce, searchService) {
+        $scope.highlight = function(text, search) {
+            return $sce.trustAsHtml(text.toString().replace(new RegExp(search.toString(), 'gi'), '<span class="highlighted">$&</span>'));
+        };
         var query = $('#search-text').val();
-        $scope.query = query;
-        $('#search-text').val("");
+        if (query != "") {
+            $scope.loading = true;
+            $scope.query = query;
+            searchService.search(query).then(function(data) {
+                console.log(data);
+                $scope.and = data["AND"];
+                $scope.or = data["OR"];
+                $scope.loading = false;
+            });
+            
+        }
+        
     }]);
 
 returnOfTheAPIControllers.controller('AboutController', ['$scope',

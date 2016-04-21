@@ -5,265 +5,86 @@
         </div>
         <br>
         <div>
-            <h1>You searched: {{query}}</h1>
+            <h1 class="text-center" ng-if="loading">Loading...</h1>
+            <h1 ng-if="!loading">You searched: {{query}}</h1>
         </div>
         <br>
-        <div id="and-results">
+        <div id="and-results" ng-if="!loading">
             <h1 class="title-md">"AND" Results</h1>
-            <h1 class="text-center title-sm">People</h1>
-            <table class="table sw-table">
-                <th>
-                    <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
-                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'gender' ; sortReverse = !sortReverse">Gender</a>
-                    <span ng-show="sortType == 'gender' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'gender' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'birth_year' ; sortReverse = !sortReverse">Birth Year</a>
-                    <span ng-show="sortType == 'birth_year' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'birth_year' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'height' ; sortReverse = !sortReverse">Height</a>
-                    <span ng-show="sortType == 'height' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'height' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'mass' ; sortReverse = !sortReverse">Mass</a>
-                    <span ng-show="sortType == 'mass' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'mass' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'hair_color' ; sortReverse = !sortReverse">Hair Color</a>
-                    <span ng-show="sortType == 'hair_color' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'hair_color' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'eye_color' ; sortReverse = !sortReverse">Eye Color</a>
-                    <span ng-show="sortType == 'eye_color' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'eye_color' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-<!--
-                <tr>
-                    <td><a ng-href="/people/{{person.id}}">{{person.name}}</a></td>
-                    <td>{{person.gender}}</td>
-                    <td>{{person.birth_year}}</td>
-                    <td>{{person.height}}</td>
-                    <td>{{person.mass}}</td>
-                    <td>{{person.hair_color}}</td>
-                    <td>{{person.eye_color}}</td>
-                </tr>
--->
-            </table>
-            <br>
-            <h1 class="text-center title-sm">Planets</h1>
-            <table class="table sw-table">
-                <th>
-                    <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
-                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'climate' ; sortReverse = !sortReverse">Climate</a>
-                    <span ng-show="sortType == 'climate' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'climate' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'gravity' ; sortReverse = !sortReverse">Gravity</a>
-                    <span ng-show="sortType == 'gravity' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'gravity' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'terrain' ; sortReverse = !sortReverse">Terrain</a>
-                    <span ng-show="sortType == 'terrain' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'terrain' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'population' ; sortReverse = !sortReverse">Population</a>
-                    <span ng-show="sortType == 'population' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'population' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-<!--
-                <tr>
-                    <td><a ng-href="/planets/{{planet.id}}">{{planet.name}}</a></td>
-                    <td>{{planet.climate}}</td>
-                    <td>{{planet.gravity}}</td>
-                    <td>{{planet.terrain}}</td>
-                    <td>{{planet.population}}</td>
-                </tr>
--->
-            </table>
-            <br>
-            <h1 class="text-center title-sm">Species</h1>
-            <table class="table sw-table">
-                <th>
-                    <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
-                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'classification' ; sortReverse = !sortReverse">Classification</a>
-                    <span ng-show="sortType == 'classification' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'classification' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'average_height' ; sortReverse = !sortReverse">Average Height</a>
-                    <span ng-show="sortType == 'average_height' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'average_height' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'average_lifespan' ; sortReverse = !sortReverse">Average Lifespan</a>
-                    <span ng-show="sortType == 'average_lifespan' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'average_lifespan' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'language' ; sortReverse = !sortReverse">Language</a>
-                    <span ng-show="sortType == 'language' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'language' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-<!--
-                <tr>
-                    <td><a ng-href="/species/{{s.id}}">{{s.name}}</a></td>
-                    <td>{{s.classification}}</td>
-                    <td>{{s.average_height}}</td>
-                    <td>{{s.average_lifespan}}</td>
-                    <td>{{s.language}}</td>
-                </tr>
--->
-            </table>
+            <div ng-if="and.people != null">
+                <h1 class="text-center title-sm">People</h1>
+                <table class="table sw-table results-table">
+                    <th>
+                        <a href="">Name</a>
+                    </th>
+                    <th>
+                        <a href="">Gender</a>
+                    </th>
+                    <th>
+                        <a href="">Birth Year</a>
+                    </th>
+                    <th>
+                        <a href="">Height</a>
+                    </th>
+                    <th>
+                        <a href="">Mass</a>
+                    </th>
+                    <th>
+                        <a href="">Hair Color</a>
+                    </th>
+                    <th>
+                        <a href="">Eye Color</a>
+                    </th>
+                    <tr ng-repeat="person in and.people">
+                        <td><a ng-href="/people/{{person.id}}" ng-bind-html="highlight(person.name, query) | lowercase"></a></td>
+                        <td ng-bind-html="highlight(person.gender, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.birth_year, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.height, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.mass, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.hair_color, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.eye_color, query) | lowercase"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <br>
-        <div id="or-results">
+        <div id="or-results" ng-if="!loading">
             <h1 class="title-md">"OR" Results</h1>
-            <h1 class="text-center title-sm">People</h1>
-            <table class="table sw-table">
-                <th>
-                    <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
-                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'gender' ; sortReverse = !sortReverse">Gender</a>
-                    <span ng-show="sortType == 'gender' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'gender' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'birth_year' ; sortReverse = !sortReverse">Birth Year</a>
-                    <span ng-show="sortType == 'birth_year' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'birth_year' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'height' ; sortReverse = !sortReverse">Height</a>
-                    <span ng-show="sortType == 'height' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'height' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'mass' ; sortReverse = !sortReverse">Mass</a>
-                    <span ng-show="sortType == 'mass' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'mass' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'hair_color' ; sortReverse = !sortReverse">Hair Color</a>
-                    <span ng-show="sortType == 'hair_color' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'hair_color' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'eye_color' ; sortReverse = !sortReverse">Eye Color</a>
-                    <span ng-show="sortType == 'eye_color' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'eye_color' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-<!--
-                <tr>
-                    <td><a ng-href="/people/{{person.id}}">{{person.name}}</a></td>
-                    <td>{{person.gender}}</td>
-                    <td>{{person.birth_year}}</td>
-                    <td>{{person.height}}</td>
-                    <td>{{person.mass}}</td>
-                    <td>{{person.hair_color}}</td>
-                    <td>{{person.eye_color}}</td>
-                </tr>
--->
-            </table>
-            <br>
-            <h1 class="text-center title-sm">Planets</h1>
-            <table class="table sw-table">
-                <th>
-                    <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
-                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'climate' ; sortReverse = !sortReverse">Climate</a>
-                    <span ng-show="sortType == 'climate' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'climate' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'gravity' ; sortReverse = !sortReverse">Gravity</a>
-                    <span ng-show="sortType == 'gravity' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'gravity' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'terrain' ; sortReverse = !sortReverse">Terrain</a>
-                    <span ng-show="sortType == 'terrain' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'terrain' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'population' ; sortReverse = !sortReverse">Population</a>
-                    <span ng-show="sortType == 'population' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'population' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-<!--
-                <tr>
-                    <td><a ng-href="/planets/{{planet.id}}">{{planet.name}}</a></td>
-                    <td>{{planet.climate}}</td>
-                    <td>{{planet.gravity}}</td>
-                    <td>{{planet.terrain}}</td>
-                    <td>{{planet.population}}</td>
-                </tr>
--->
-            </table>
-            <br>
-            <h1 class="text-center title-sm">Species</h1>
-            <table class="table sw-table">
-                <th>
-                    <a href="" ng-click="sortType = 'name' ; sortReverse = !sortReverse">Name</a>
-                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'classification' ; sortReverse = !sortReverse">Classification</a>
-                    <span ng-show="sortType == 'classification' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'classification' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'average_height' ; sortReverse = !sortReverse">Average Height</a>
-                    <span ng-show="sortType == 'average_height' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'average_height' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'average_lifespan' ; sortReverse = !sortReverse">Average Lifespan</a>
-                    <span ng-show="sortType == 'average_lifespan' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'average_lifespan' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-                <th>
-                    <a href="" ng-click="sortType = 'language' ; sortReverse = !sortReverse">Language</a>
-                    <span ng-show="sortType == 'language' && sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'language' && !sortReverse" class="fa fa-caret-up"</span>
-                </th>
-<!--
-                <tr>
-                    <td><a ng-href="/species/{{s.id}}">{{s.name}}</a></td>
-                    <td>{{s.classification}}</td>
-                    <td>{{s.average_height}}</td>
-                    <td>{{s.average_lifespan}}</td>
-                    <td>{{s.language}}</td>
-                </tr>
--->
-            </table>
+            <div ng-if="or.people != null">
+                <h1 class="text-center title-sm">People</h1>
+                <table class="table sw-table results-table">
+                    <th>
+                        <a href="">Name</a>
+                    </th>
+                    <th>
+                        <a href="">Gender</a>
+                    </th>
+                    <th>
+                        <a href="">Birth Year</a>
+                    </th>
+                    <th>
+                        <a href="">Height</a>
+                    </th>
+                    <th>
+                        <a href="">Mass</a>
+                    </th>
+                    <th>
+                        <a href="">Hair Color</a>
+                    </th>
+                    <th>
+                        <a href="">Eye Color</a>
+                    </th>
+                    <tr ng-repeat="person in or.people">
+                        <td><a ng-href="/people/{{person.id}}" ng-bind-html="highlight(person.name, query) | lowercase"></a></td>
+                        <td ng-bind-html="highlight(person.gender, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.birth_year, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.height, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.mass, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.hair_color, query) | lowercase"></td>
+                        <td ng-bind-html="highlight(person.eye_color, query) | lowercase"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
     </div>

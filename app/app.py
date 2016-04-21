@@ -32,13 +32,33 @@ def get_search_results(search_string):
     if len(search_string_list) == 1:
         single_search_string = "%" + search_string + "%"
         single_results = get_single_results(single_search_string)  # get results for all single word search
-    and_results = get_and_results(search_string_list)
+    and_results = get_or_results(search_string_list)
 
-def get_and_results(search_string_list):
-    # sum(
-    #     [session.query(Pokemon).filter(Pokemon.name.like('%' + str('%'.join(c for c in q)) + '%')).all() for q in
-    #      refined], []) if len(refined) > 1 else []
-    pass
+def get_or_results(search_string_list):
+    search_string_list = map(lambda word : "%" + word + "%", search_string_list)
+    # search the People table
+    or_results = [People.query.filter(or_(People.name.like(word),
+                                          People.gender.like(word),
+                                          People.birth_year.like(word),
+                                          People.height.like(word),
+                                          People.mass.like(word),
+                                          People.hair_color.like(word),
+                                          People.eye_color.like(word))).all() for word in search_string_list]
+    # search the Species table
+    or_results += [Species.query.filter(or_(Species.name.like(word),
+                                            Species.classification.like(word),
+                                            Species.average_height.like(word),
+                                            Species.average_lifespan.like(word),
+                                            Species.language.like(word))).all() for word in search_string_list]
+    # search the Planets table
+    or_results += [Planets.query.filter(or_(Planets.name.like(word),
+                                            Planets.climate.like(word),
+                                            Planets.gravity.like(word),
+                                            Planets.terrain.like(word),
+                                            Planets.population.like(word))).all() for word in search_string_list]
+    print("OR RESULTS LIST: ")
+    print(or_results)
+    return or_results
 
 """
 With the string not yet split, run a like clause on all three tables.
@@ -65,7 +85,7 @@ def get_single_results(search_string):
                                                    Planets.gravity.like(search_string),
                                                    Planets.terrain.like(search_string),
                                                    Planets.population.like(search_string))).all()
-    print('LIST: ')
+    print('SINGLE LIST: ')
     print(single_result)
     return(single_result)
 

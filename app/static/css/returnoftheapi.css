@@ -59,6 +59,18 @@ pre {
     color: white;
 }
 
+.highlighted {
+    background-color: #ff6;
+    color: black !important;
+    font-weight: bolder;
+    padding: 2px;
+}
+
+.results-table th a {
+    cursor: default;
+    text-decoration: none;
+}
+
 .sw-table {
     border: 2px solid #ff6;
     background-color: rgba(255, 255, 255, 0.1);

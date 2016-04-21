@@ -124,6 +124,16 @@ returnOfTheAPIServices.factory('planetForSpeciesService', function($http) {
     }
 });
 
+returnOfTheAPIServices.factory('searchService', function($http) {
+    return {
+        search: function(query) {
+            return $http.get('/search/' + query).then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});
+
 returnOfTheAPIServices.factory('runTestsService', function($http) {
     return {
         runTests: function() {

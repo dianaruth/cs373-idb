@@ -399,8 +399,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_planet_for_person API call.
     """
     def test_get_planet_for_person_1(self):
-        output = get_planet_for_person(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+        output = get_planet_for_person(1).get_data()
+        assert output is not None and str(output).__contains__("arid")  # should have an 'arid' climate
 
     def test_get_planet_for_person_2(self):
         output = get_planet_for_person(2)
@@ -440,6 +440,9 @@ class TestRESTfulAPI(TestCase):
         output = get_planet_for_species(13)
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
+    def test_get_planet_for_species_4(self):
+        output = get_planet_for_species(13).get_data()
+        assert output is not None and str(output).__contains__("temperate")
 
 from app import search
 
@@ -497,34 +500,6 @@ class TestSearch(TestCase):
     def test_search_query_7(self):
         output = search("cwencjkweuiapdkospwqmklqiwdqw")
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
-
-    """
-    Test an empty search
-    """ 
-    def test_search_1(self):
-    output = search('')
-    assert output['AND']['people'] == [] and output['AND'][planets] == [] and output['AND']['species'] == []
-    
-    """
-    Test a legit search
-    """
-    def test_search_2(self):
-    output = search('Luke')
-    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
-    
-    """
-    Test an AND search
-    """
-    def test_search_3(self):
-    output = search('Luke Skywalker')
-    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
-
-    """
-    Test an OR search
-    """
-    def test_search_4(self):
-    output = search('Luke Skywalker')
-    assert output['OR']['people'][0]['name'] == 'Luke Skywalker'
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

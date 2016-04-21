@@ -128,7 +128,7 @@ def search_results(ix, search_query, fields, statement):
     q = qp.parse(search_query)
     data = []
     with ix.searcher() as s:
-        results = s.search(q)
+        results = s.search(q, limit=None)
         for hit in results:
             data.append(dict(**hit))
     return data

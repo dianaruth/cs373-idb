@@ -125,52 +125,52 @@ returnOfTheAPIControllers.controller('AboutController', ['$scope',
                 "name": "Diana Ruth",
                 "photo": "diana.jpg",
                 "bio": "Fourth year student from Alpharetta, GA studying electrical engineering and computer science. Loves web development and horses. Getting ready to spend a semester down under in Melbourne, Australia.",
-                "responsibilities": ["Front-end development with AngularJS", "UI Design", "Data Scraping", "Apiary API"], 
-                "commits": 74,
-                "issues": 17,
-                "unit_tests": 0
+                "responsibilities": ["Frontend development with AngularJS", "UI Design", "Data Scraping", "Apiary API", "Frontend Search"], 
+                "commits": 86,
+                "issues": 23,
+                "unit_tests": 5
             },
             {
                 "name": "Clint Ascencio",
                 "photo": "clint.jpg",
                 "bio": "#3 in Forbe’s 'Top 20 Teen Fashion Writers Gone Tech Journalist' in 2018. Leading thought leader™ of the millennials. Avid fan of Hamilton-themed SoulCycle and Avocado Toast with pink himalayan salt. Accounting and computer science major. Year long software engineer intern and, after graduation, full-time employee at DataStax.", 
-                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker", "Database"],
-                "commits": 63,
+                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker", "Database", "Backend Search"],
+                "commits": 85,
                 "issues": 3,
-                "unit_tests": 0
+                "unit_tests": 3
             },
             {
                 "name": "Tony Serino",
                 "photo": "tony.jpg",
                 "bio": "Originally from the wastelands of Siberia. My mother lost her life fighting ninjas and ebola at the same time when I was baby, and my other mother who's life choices you should respect sacrificed herself using love magic to protect me from the evil lord Voldermort. Hobbies mostly include survival and hiding from the CIA. They aren't looking for me, but if they ever start they're gonna be in for a hell of a surprise. I am the last surviving heir to house Stark and am currently working on my next iron man suit to kill king Justin Beiber for starting the war in Westoros. HAIL HYDRA!",
-                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker", "Database"],
-                "commits": 27,
-                "issues": 0,
-                "unit_tests": 0
+                "responsibilities": ["Created models", "Initialized Flask project", "Set up Docker", "Database", "Backend Search"],
+                "commits": 32,
+                "issues": 2,
+                "unit_tests": 2
             },
             {
                 "name": "Jamie Barbosa",
                 "photo": "jamie.jpg",
                 "bio": "Senior CS student from Schertz, TX. Loves travel and adventure. Hoping to move to NYC after graduation. Puppies are the best animals.",
-                "responsibilities": ["UML Design", "GitHub Wiki"],
-                "commits": 2,
-                "issues": 10,
-                "unit_tests": 0
+                "responsibilities": ["UML Design", "GitHub Wiki", "Backend Search"],
+                "commits": 8,
+                "issues": 13,
+                "unit_tests": 4
             },
             {
                 "name": "Jon Lim",
                 "photo": "jon.jpg",
                 "bio": "A computer science student originally from Seoul, South Korea. Interests include bodybuilding and Texas hold'em. Once quadrupled his money playing poker for 15 minutes... then lost it all the next day.",
-                "responsibilities": ["GitHub Wiki", "Unit Testing", "Docker Setup", "Database"],
-                "commits": 37,
-                "issues": 3,
-                "unit_tests": 37
+                "responsibilities": ["GitHub Wiki", "Unit Testing", "Docker Setup", "Database", "Backend Search"],
+                "commits": 49,
+                "issues": 9,
+                "unit_tests": 38
             }
         ];
         $scope.teamStats = {
-            "commits": 203,
-            "issues": 33,
-            "unit_tests": 37
+            "commits": 260,
+            "issues": 50,
+            "unit_tests": 52
         };
     }]);
 

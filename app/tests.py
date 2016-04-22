@@ -443,6 +443,7 @@ class TestRESTfulAPI(TestCase):
         output = get_planet_for_species(13).get_data()
         assert output is not None and str(output).__contains__("temperate")
 
+
 from app import search
 
 """
@@ -528,6 +529,19 @@ class TestSearch(TestCase):
         output = search('Luke Skywalker')
         assert str(output.get_data()).__contains__('Luke Skywalker')
 
+    """
+    Searching for 'Wookiee' should get back row for Wookiee.
+    """
+    def test_search_5(self):
+        output = search('Wookiee')
+        assert str(output.get_data()).__contains__('Wookiee')
+
+    """
+    Searching for 'Anakin' should get back row for Anakin.
+    """
+    def test_search_6(self):
+        output = search('Anakin')
+        assert str(output.get_data()).__contains__('Anakin')
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
@@ -538,8 +552,8 @@ Name              Stmts   Miss  Cover   Missing
 app.py              140     48    66%   165-166, 183-184, 211-219, 224-232, 238-246, 252-260, 265-266, 271, 276, 281, 286, 291, 297, 302, 314-316, 321-323, 326
 create_db.py         56      0   100%
 models.py            83      3    96%   83, 149, 217
-tests.py            263      5    98%   152-153, 266-267, 535
+tests.py            269      5    98%   152-153, 266-267, 549
 whoosh_setup.py      85      1    99%   14
 -----------------------------------------------
-TOTAL               627     57    91%
+TOTAL               633     57    91%   
 """

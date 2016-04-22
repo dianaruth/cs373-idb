@@ -351,9 +351,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_person_data API call.
     """
     def test_get_person_data_1(self):
-        output = get_person_data(1)
-        # print(str(output))
-        assert output is not None and str(output).__contains__("[200 OK]") # JSON response successful
+        output = get_person_data(1).get_data()
+        assert output is not None and str(output).__contains__("19BBY") # birth year should be 19BBY
 
     def test_get_person_data_2(self):
         output = get_person_data(2)
@@ -367,8 +366,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_planet_data API call.
     """
     def test_get_planet_data_1(self):
-        output = get_planet_data(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+        output = get_planet_data(1).get_data()
+        assert output is not None and str(output).__contains__("arid")  # climate should be arid
 
     def test_get_planet_data_2(self):
         output = get_planet_data(2)
@@ -382,8 +381,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_s_data API call. (Single specie)
     """
     def test_get_s_data_1(self):
-        output = get_s_data(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+        output = get_s_data(1).get_data()
+        assert output is not None and str(output).__contains__("180")  # height should be 180
 
     def test_get_s_data_2(self):
         output = get_s_data(2)

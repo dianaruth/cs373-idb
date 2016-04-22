@@ -399,8 +399,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_planet_for_person API call.
     """
     def test_get_planet_for_person_1(self):
-        output = get_planet_for_person(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+        output = get_planet_for_person(1).get_data()
+        assert output is not None and str(output).__contains__("arid")  # should have an 'arid' climate
 
     def test_get_planet_for_person_2(self):
         output = get_planet_for_person(2)
@@ -440,6 +440,9 @@ class TestRESTfulAPI(TestCase):
         output = get_planet_for_species(13)
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
+    def test_get_planet_for_species_4(self):
+        output = get_planet_for_species(13).get_data()
+        assert output is not None and str(output).__contains__("temperate")
 
 from app import search
 
@@ -498,6 +501,7 @@ class TestSearch(TestCase):
         output = search("cwencjkweuiapdkospwqmklqiwdqw")
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
+<<<<<<< HEAD
     """
     Test an empty search
     """ 
@@ -526,6 +530,8 @@ class TestSearch(TestCase):
         output = search('Luke Skywalker')
         assert str(output.getData()).__contains__('Luke Skywalker')
 
+=======
+>>>>>>> de35e4affb34a8e6f5c2ca40383d2407fae4487f
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
     

@@ -500,7 +500,6 @@ class TestSearch(TestCase):
         output = search("cwencjkweuiapdkospwqmklqiwdqw")
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
 
-<<<<<<< HEAD
     """
     Test an empty search
     """ 
@@ -529,8 +528,7 @@ class TestSearch(TestCase):
         output = search('Luke Skywalker')
         assert str(output.getData()).__contains__('Luke Skywalker')
 
-=======
->>>>>>> de35e4affb34a8e6f5c2ca40383d2407fae4487f
+
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
     

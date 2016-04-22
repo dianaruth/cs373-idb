@@ -351,9 +351,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_person_data API call.
     """
     def test_get_person_data_1(self):
-        output = get_person_data(1)
-        # print(str(output))
-        assert output is not None and str(output).__contains__("[200 OK]") # JSON response successful
+        output = get_person_data(1).get_data()
+        assert output is not None and str(output).__contains__("19BBY") # birth year should be 19BBY
 
     def test_get_person_data_2(self):
         output = get_person_data(2)
@@ -367,8 +366,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_planet_data API call.
     """
     def test_get_planet_data_1(self):
-        output = get_planet_data(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+        output = get_planet_data(1).get_data()
+        assert output is not None and str(output).__contains__("arid")  # climate should be arid
 
     def test_get_planet_data_2(self):
         output = get_planet_data(2)
@@ -382,8 +381,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_s_data API call. (Single specie)
     """
     def test_get_s_data_1(self):
-        output = get_s_data(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+        output = get_s_data(1).get_data()
+        assert output is not None and str(output).__contains__("180")  # height should be 180
 
     def test_get_s_data_2(self):
         output = get_s_data(2)
@@ -399,8 +398,8 @@ class TestRESTfulAPI(TestCase):
     Test the get_planet_for_person API call.
     """
     def test_get_planet_for_person_1(self):
-        output = get_planet_for_person(1)
-        assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+        output = get_planet_for_person(1).get_data()
+        assert output is not None and str(output).__contains__("arid")  # should have an 'arid' climate
 
     def test_get_planet_for_person_2(self):
         output = get_planet_for_person(2)
@@ -439,6 +438,10 @@ class TestRESTfulAPI(TestCase):
     def test_get_planet_for_species_3(self):
         output = get_planet_for_species(13)
         assert output is not None and str(output).__contains__("[200 OK]")  # JSON response successful
+
+    def test_get_planet_for_species_4(self):
+        output = get_planet_for_species(13).get_data()
+        assert output is not None and str(output).__contains__("temperate")
 
 
 from app import search
@@ -502,40 +505,55 @@ class TestSearch(TestCase):
     Test an empty search
     """ 
     def test_search_1(self):
-    output = search('')
-    assert output['AND']['people'] == [] and output['AND'][planets] == [] and output['AND']['species'] == []
+        output = search('')
+        assert str(output.get_data()).__contains__('[]')
     
     """
     Test a legit search
     """
     def test_search_2(self):
-    output = search('Luke')
-    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
+        output = search('Luke')
+        assert str(output.get_data()).__contains__('Luke Skywalker')
     
     """
     Test an AND search
     """
     def test_search_3(self):
-    output = search('Luke Skywalker')
-    assert output['AND']['people'][0]['name'] == 'Luke Skywalker'
+        output = search('Luke Skywalker')
+        assert str(output.get_data()).__contains__('Luke Skywalker')
 
     """
     Test an OR search
     """
     def test_search_4(self):
-    output = search('Luke Skywalker')
-    assert output['OR']['people'][0]['name'] == 'Luke Skywalker'
+        output = search('Luke Skywalker')
+        assert str(output.get_data()).__contains__('Luke Skywalker')
+
+    """
+    Searching for 'Wookiee' should get back row for Wookiee.
+    """
+    def test_search_5(self):
+        output = search('Wookiee')
+        assert str(output.get_data()).__contains__('Wookiee')
+
+    """
+    Searching for 'Anakin' should get back row for Anakin.
+    """
+    def test_search_6(self):
+        output = search('Anakin')
+        assert str(output.get_data()).__contains__('Anakin')
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
     
 """
-Name        Stmts   Miss  Cover
--------------------------------
-app           124     47    62%
-create_db      56      0   100%
-models         80      3    96%
-tests         204      0   100%
--------------------------------
-TOTAL         464     50    89%
+Name              Stmts   Miss  Cover   Missing
+-----------------------------------------------
+app.py              140     48    66%   165-166, 183-184, 211-219, 224-232, 238-246, 252-260, 265-266, 271, 276, 281, 286, 291, 297, 302, 314-316, 321-323, 326
+create_db.py         56      0   100%
+models.py            83      3    96%   83, 149, 217
+tests.py            269      5    98%   152-153, 266-267, 549
+whoosh_setup.py      85      1    99%   14
+-----------------------------------------------
+TOTAL               633     57    91%   
 """

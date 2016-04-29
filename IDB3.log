@@ -1,3 +1,374 @@
+commit e9998ed63d8e67e29c2dd22e6adc408e60eae5d5
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 21 19:47:44 2016 -0500
+
+    final commit
+
+commit 915781a37409e0009eefedbed67b201198b494ef
+Merge: 8aeef68 fbc2b73
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Apr 21 19:38:51 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 8aeef68f7db05a6c42d30aa0181e3d216f1669f6
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Apr 21 19:38:37 2016 -0500
+
+    better implemintation of partial search
+
+commit fbc2b73ae2488e78d535db3c1b0904e82ab524f6
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Thu Apr 21 19:35:08 2016 -0500
+
+    Tony Serino's tests.
+
+commit 2ba306ec7c9ddd0b4bbf0ec354fc64b40125bc77
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Thu Apr 21 19:15:02 2016 -0500
+
+    Added coverage output to tests.py
+
+commit c9cd0eb74cb4e0ee50cf2a2d75c032335af3cb3e
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 21 19:04:42 2016 -0500
+
+    this beter work
+
+commit cfe0e394146de9e7512f9386722d2e44b1f164cc
+Merge: b1d2913 673facd
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 21 19:03:12 2016 -0500
+
+    Merge branch 'dev' of github.com:dianaruth/cs373-idb into dev
+
+commit 673facd578bb7d278f1649c31b52f812a9cdb5a9
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Thu Apr 21 19:03:34 2016 -0500
+
+    Changed tests.py to actually test data of API calls.
+
+commit b1d291307a14b0781691bf7cadd57e8ab9a9572f
+Merge: d789c8a de35e4a
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 21 19:03:03 2016 -0500
+
+    added search tests
+
+commit d789c8a4f3fc9ab0221c4c3b00b7d06699bf10d6
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 21 18:59:52 2016 -0500
+
+    added search tests
+
+commit de35e4affb34a8e6f5c2ca40383d2407fae4487f
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Thu Apr 21 18:59:28 2016 -0500
+
+    changed tests.py to actually test data
+
+commit 3d39acfce4d20caf9bb0d9eccd6333bbb049425c
+Merge: 86fe0c3 c445724
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Apr 21 18:54:10 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 86fe0c3b9f160d8534e82589d0fabdf16397f1aa
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Apr 21 18:53:48 2016 -0500
+
+    made fuzzy search less fuzzy
+
+commit c445724123e3969a6a04921199eb155c2057ee77
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 21 18:42:02 2016 -0500
+
+    added search tests
+
+commit d631a146c778e3e4244f347c1c01bda89f95267a
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Apr 21 18:36:16 2016 -0500
+
+    allowed multiple fields in parital search
+
+commit 5122dc8b44cf61bd0dc0c84ec79ea8eb2ced7a2f
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Apr 21 18:15:58 2016 -0500
+
+    partial search done cuz we badass overachievers
+
+commit 4b76884ceff85e7763d15a980af65f919aa378d6
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 17:45:48 2016 -0500
+
+    Added forgotten search fields
+
+commit c0e92aad3ae091002d59016e2623c4c635a5d537
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 17:41:31 2016 -0500
+
+    Added tests
+
+commit 766348351dd6dd2d293a75c1d35c5716ad783039
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 21 17:31:25 2016 -0500
+
+    highlighting working again
+
+commit 267452aaf55d43a18f981a2d8e0a895aa9c8ea8b
+Merge: 0271296 c5da58b
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 21 16:49:18 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 02712966a585ab017ad94ee0aadfc891ffb76947
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 21 16:49:11 2016 -0500
+
+    all of search working now
+
+commit c5da58b470ca7074f83b4958cc2986a12f5e732d
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 16:48:00 2016 -0500
+
+    Fixed search result limit
+
+commit 10430d95780bf31e01a0572897dc36f659411409
+Merge: a8b59b2 249877a
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 16:40:40 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit a8b59b2cb7fffe5a7998ae5e156d419d557fccbe
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 16:40:33 2016 -0500
+
+    Added caseinsensitive support
+
+commit 249877a0f2ad31820ce2c9fe202ec108df49f7be
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Thu Apr 21 15:58:25 2016 -0500
+
+    search results showing for people
+
+commit 2f316526929c556d633c3f3c6f1ebbce1f43464c
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 15:08:22 2016 -0500
+
+    Fixing tests
+
+commit 1f1ecee92615dcf42978cb17bd3be10e5e3b8623
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 15:00:42 2016 -0500
+
+    Fixed tests
+
+commit 15f6f26ae308d54c55f5da3c395ac0f9ad6464b1
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 14:52:57 2016 -0500
+
+    Uncommented and commented tests
+
+commit 331b3586dffe39fea624fe80e40c7c21f23f48b5
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 14:49:51 2016 -0500
+
+    Fixing travis
+
+commit d0f70265bb43540fcd62e9b9077cfdbfc0d9f8f8
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 14:22:06 2016 -0500
+
+    Cleaned up app and whoosh
+
+commit afcbd16648eb4a17537c39dd27980b918cc10adf
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 14:18:57 2016 -0500
+
+    Fixed str error
+
+commit 2f9c324270080565d83ae9debdec750f6e7a50f1
+Merge: 1272eeb c16381f
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 14:16:18 2016 -0500
+
+    Merging conflicts
+
+commit 1272eebf7c935faa53a4698d737969a55fcda2cc
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 14:13:39 2016 -0500
+
+    Added And and OR statements
+
+commit c16381f8b891964d1f2c5208d2e1408e99339d7a
+Author: Tony Serino <arserino@yahoo.com>
+Date:   Thu Apr 21 14:07:58 2016 -0500
+
+    ugly case sensitive search fix
+
+commit 8e60172c98bb0f9afeb0e5cd2aeed12faa763c97
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 13:07:53 2016 -0500
+
+    Cleaned up whoosh code up a bit
+
+commit 34fff4372c445174efd09807252e281b3127713d
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 12:19:19 2016 -0500
+
+    Added the other classes
+
+commit b4ce0b74e6a45e5011af9daf2d3dc82c071d8cb4
+Author: Jamie Barbosa <jamie.barbosa@utexas.edu>
+Date:   Thu Apr 21 11:35:32 2016 -0500
+
+    made uml prettier
+
+commit 3d64e61ade4d07e6748b87e4df28fb2f1c2f9544
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Thu Apr 21 07:24:20 2016 -0500
+
+    Added whoosh_setup.py
+
+commit 61e0c5777378fb997ee1084248bf3cc454ab659c
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Wed Apr 20 23:55:01 2016 -0500
+
+    Changed back app
+
+commit 0fd191f8a00033f9ffc763d013efc500c0e38a5a
+Merge: 7303fdc 33fb8fc
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Wed Apr 20 23:53:00 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 7303fdc8c2fcbb10ac0d8d7aa9731408faf9b72e
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Wed Apr 20 23:52:53 2016 -0500
+
+    Added Whoosh support
+
+commit 33fb8fcd2772647620edd5c96b4761803d9f3cad
+Merge: 7db1e39 385dab5
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Wed Apr 20 23:49:26 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 7db1e39f5c5029366e7c709aaf04ee25a39092af
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Wed Apr 20 23:49:16 2016 -0500
+
+    added 5 unit tests for diana, cannot yet confirm if they work
+
+commit 385dab5e6dffaf4a9a974c30375d7fec7a26de1b
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Wed Apr 20 23:26:41 2016 -0500
+
+    OR search should work now. The list does contain duplicates.
+
+commit 7186da36c251ad24ae1ae498b02ad29360fff90f
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Wed Apr 20 23:10:38 2016 -0500
+
+    OR works for people names but there are duplicates.
+
+commit b363c98afb6c1136e2acc88eb25d06bf38996d45
+Merge: 04e396f 6923445
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Wed Apr 20 22:31:21 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit 04e396f7d95811e4e13a79e038956e340519a5ed
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Wed Apr 20 22:31:19 2016 -0500
+
+    Starting add search
+
+commit 692344539b58f3d470cb3713fd4078fa13d3c9f2
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Wed Apr 20 22:30:02 2016 -0500
+
+    tony is ruining my life
+
+commit 77b26d13c51cb0ad8b9485267197ce6c38e27d94
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Wed Apr 20 00:23:53 2016 -0500
+
+    Cleaned up search code. Need to implement getting OR results.
+
+commit 7581675113e85f9159dcf201eefc21389b1412ad
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Wed Apr 20 00:16:22 2016 -0500
+
+    getting old search stuff back
+
+commit c4b3489b4cecdea6cdb0adfde161c907ab2c368a
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Tue Apr 19 17:12:53 2016 -0500
+
+    added route for search results
+
+commit c517700f7312db934ab5ae5329ce60ebb0db3b60
+Merge: c48d1af 95a49b4
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Tue Apr 19 17:09:43 2016 -0500
+
+    Merge branch 'dev' of https://github.com/dianaruth/cs373-idb into dev
+
+commit c48d1afe5db49221cd612bed9e20b13f17787253
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Tue Apr 19 17:08:53 2016 -0500
+
+    frontend ready for search results
+
+commit 95a49b4543c141f60aa372fe79116ec0377e70f7
+Author: Clint Ascencio <clint.ascencio@datastax.com>
+Date:   Tue Apr 19 16:51:44 2016 -0500
+
+    sqlalchemy searchable
+
+commit 5b92697a7b7d5d8936884587602932c6f80c4056
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Sun Apr 17 20:20:24 2016 -0500
+
+    Search should get a correct list of rows for single word searches and for AND clause of multiple word searches.
+
+commit 44746a7a80a6d97d00f5cd37d2007d08026b4b98
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Sun Apr 17 19:15:45 2016 -0500
+
+    setting up frontend for search results
+
+commit d2e6c1986348b75035ad6307c2c5052c588e56f0
+Author: JongHLim <jong.hoon.lim@utexas.edu>
+Date:   Sun Apr 17 19:10:39 2016 -0500
+
+    Started search functionality
+
+commit bc06093590036513c9a423877db7ece3585deb37
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Sun Apr 17 18:12:48 2016 -0500
+
+    added presentation file
+
+commit 05377f744c80b7188ade2326fa801f12be0f0847
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Sat Apr 16 15:12:01 2016 -0500
+
+    added labels for tables
+
+commit e8a5558187b76cdd73ecf3703daa16f585a64881
+Author: Diana Ruth <dianaruth40@gmail.com>
+Date:   Fri Apr 8 12:35:48 2016 -0500
+
+    updated coverage output
+
 commit b9e0b960ca19421f7f1bc39a7642f0af9c98b664
 Author: Diana Ruth <dianaruth40@gmail.com>
 Date:   Thu Apr 7 22:16:11 2016 -0500

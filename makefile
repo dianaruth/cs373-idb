@@ -3,7 +3,8 @@ FILES :=           \
     .travis.yml    \
     makefile       \
     apiary.apib		 \
-    IDB2.log			 \
+    IDB3.log			 \
+    models.html             \
     app/models.py			 \
     app/tests.py			 \
     UML.pdf
@@ -60,3 +61,6 @@ IDB1.log:
 
 IDB2.log:
 	git log > IDB2.log
+    
+IDB3.log:
+	git log > IDB3.log

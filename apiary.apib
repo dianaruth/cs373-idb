@@ -377,3 +377,57 @@ Returns a JSON object for the native planet of the species given by speciesID. I
                 "terrain": "cityscape, mountains"
             }
         }
+        
+## Search [/search/{query}]
+**/search/{query}**
+
+Returns a JSON object that contains AND results and OR results for people, planets, and species which have attributes that match query.
+
+### GET Search [GET]
+
++ Response 200 (application/json)
+
+        {
+            "AND": {
+                "people": [
+                    {
+                        "birth_year": "41BBY",
+                        "description": "Gial Ackbar was a male Mon Calamari who became the foremost military commander of the Alliance to Restore the Republic and its successor government the New Republic. During the Clone Wars, he was in charge of the Mon Calamari Guard and fought in the battle that had secured Prince Lee-Char's way to the throne as King of Dac. Having previously been an Imperial slave to Grand Moff Wilhuff Tarkin, he was freed by Captain Juno Eclipse and was recruited to join the Rebellion. Later, he fought alongside Renegade Squadron and was once captured by bounty hunter Boba Fett. During the Battle of Endor, later revealed to be a trap for him and the Alliance, he led Alliance naval forces against the Death Star II. He held the distinction of having been the Supreme Commander of the New Republic Defense Force for nearly two decades and defeating two Imperial Grand Admirals, Osvald Teshik and Peccati Syn, along with numerous other threats. He wrote the manual for the New Republic Fleet Academy, titled Fleet Tactics and Combat Methodology.",
+                        "eye_color": "orange",
+                        "gender": "male",
+                        "hair_color": "none",
+                        "height": "180",
+                        "homeworld": "Mon Cala",
+                        "id": "25",
+                        "image": "http://vignette1.wikia.nocookie.net/starwars/images/f/fb/Ackbar_HS.jpg/revision/latest?cb=20081118162020",
+                        "mass": "83",
+                        "name": "Gial Ackbar",
+                        "skin_color": "brown mottle",
+                        "species": "Mon Calamari"
+                    }
+                ],
+                "planets": [],
+                "species": []
+            },
+            "OR": {
+                "people": [
+                    {
+                        "birth_year": "41BBY",
+                        "description": "Gial Ackbar was a male Mon Calamari who became the foremost military commander of the Alliance to Restore the Republic and its successor government the New Republic. During the Clone Wars, he was in charge of the Mon Calamari Guard and fought in the battle that had secured Prince Lee-Char's way to the throne as King of Dac. Having previously been an Imperial slave to Grand Moff Wilhuff Tarkin, he was freed by Captain Juno Eclipse and was recruited to join the Rebellion. Later, he fought alongside Renegade Squadron and was once captured by bounty hunter Boba Fett. During the Battle of Endor, later revealed to be a trap for him and the Alliance, he led Alliance naval forces against the Death Star II. He held the distinction of having been the Supreme Commander of the New Republic Defense Force for nearly two decades and defeating two Imperial Grand Admirals, Osvald Teshik and Peccati Syn, along with numerous other threats. He wrote the manual for the New Republic Fleet Academy, titled Fleet Tactics and Combat Methodology.",
+                        "eye_color": "orange",
+                        "gender": "male",
+                        "hair_color": "none",
+                        "height": "180",
+                        "homeworld": "Mon Cala",
+                        "id": "25",
+                        "image": "http://vignette1.wikia.nocookie.net/starwars/images/f/fb/Ackbar_HS.jpg/revision/latest?cb=20081118162020",
+                        "mass": "83",
+                        "name": "Gial Ackbar",
+                        "skin_color": "brown mottle",
+                        "species": "Mon Calamari"
+                    }
+                ],
+                "planets": [],
+                "species": []
+            }
+        }

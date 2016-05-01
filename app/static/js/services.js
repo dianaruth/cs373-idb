@@ -4,6 +4,7 @@
 
 var returnOfTheAPIServices = angular.module('returnOfTheAPIServices', ['ngResource']);
 
+
 returnOfTheAPIServices.factory('peopleService', function($http) {
     return {
         getPeople: function() {

@@ -5,6 +5,7 @@ from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables
 from whoosh_setup import *
+from datetime import datetime
 
 time.sleep(5)
 
@@ -265,6 +266,18 @@ def run_tests():
     output = subprocess.getoutput("python tests_web.py")
     return json.dumps({'output': str(output)})
 
+# does this work?
+@app.route('/get_compro_data')
+def get_compro_data():
+    contests = requests.get('http://comprodb.me/api/contests')
+    c = json.dumps(contests.json())
+    r = {"2010": [], "2011": [], "2012": [], "2013": [], "2014": [], "2015": [], "2016": []}
+    for contest in c.data :
+        year = str(datetime.utcfromtimestamp(contest.date).year)
+        r[year] += contest.participants
+    for k in r :
+        r[k] = sum(r[k])
+    return r
 
 @app.route("/people")
 def render_people():

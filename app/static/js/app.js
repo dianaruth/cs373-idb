@@ -32,6 +32,9 @@ returnOfTheAPIApp.config(['$routeProvider', '$locationProvider',
             when('/results', {
                 templateUrl: 'partials/results.html'
             }).
+            when('/comprodb', {
+                templateUrl: 'partials/comprodb.html'
+            }).
             when('/people/:personID', {
                 templateUrl: 'partials/person-detail.html'
             }).

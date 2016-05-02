@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, send_file, jsonify, session
-import time, subprocess, json
+import time, subprocess, json, requests
 from flask.ext.script import Manager
 from models import *
 from create_db import populate_tables
@@ -266,18 +266,26 @@ def run_tests():
     output = subprocess.getoutput("python tests_web.py")
     return json.dumps({'output': str(output)})
 
-# does this work?
+# does this work? ofc
 @app.route('/get_compro_data')
 def get_compro_data():
-    contests = requests.get('http://comprodb.me/api/contests')
-    c = json.dumps(contests.json())
-    r = {"2010": [], "2011": [], "2012": [], "2013": [], "2014": [], "2015": [], "2016": []}
-    for contest in c.data :
-        year = str(datetime.utcfromtimestamp(contest.date).year)
-        r[year] += contest.participants
-    for k in r :
-        r[k] = sum(r[k])
-    return r
+    # r = {"2010": 0, "2011": 0, "2012": 0, "2013": 0, "2014": 0, "2015": 0, "2016": 0}
+    #
+    # for i in range(1, 660) :
+    #     if i != 179 and i != 184 and i != 210 and i != 307 and i != 310 and i != 395 and i != 410:
+    #         try:
+    #             contest = requests.get('http://comprodb.me/api/contests/' + str(i))
+    #             c = contest.json()
+    #
+    #             year = str(datetime.datetime.utcfromtimestamp(c['data']['date']).year)
+    #             r[year] += int(c['data']['participants'])
+    #             print i
+    #         except:
+    #             continue
+
+    collected_data = {'2015': 976010, '2014': 641458, '2016': 515821, '2011': 223291, '2010': 167037, '2013': 446019, '2012': 359804}
+
+    return jsonify(collected_data)
 
 @app.route("/people")
 def render_people():

@@ -199,8 +199,15 @@ returnOfTheAPIControllers.controller('ComProController', ['$scope', 'comproServi
             google.charts.load('current', {packages: ['corechart', 'bar']});
             google.charts.setOnLoadCallback(drawContestPopularityChart);
             function drawContestPopularityChart() {
-                var contests = data;
-                console.log(contests);
+                var contests = {
+                    "2010": 167037,
+                    "2011": 223291,
+                    "2012": 359804,
+                    "2013": 446019,
+                    "2014": 641458,
+                    "2015": 976010,
+                    "2016": 515821
+                }
                 var data = new google.visualization.DataTable();
                 data.addColumn('string', 'Year');
                 data.addColumn('number', 'Total Participants');

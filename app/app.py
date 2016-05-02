@@ -324,10 +324,10 @@ def home():
 
 db.init_app(app)
 
-with app.app_context():
-    app.config['SQLALCHEMY_ECHO'] = True
-    db.create_all()
-    populate_tables()
+#with app.app_context():
+#    app.config['SQLALCHEMY_ECHO'] = True
+#    db.create_all()
+#    populate_tables()
 
 
 @manager.command

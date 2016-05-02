@@ -144,3 +144,13 @@ returnOfTheAPIServices.factory('runTestsService', function($http) {
         }
     }
 });
+
+returnOfTheAPIServices.factory('comproService', function($http) {
+    return {
+        getData: function() {
+            return $http.get('/get_compro_data').then(function(r) {
+                return r.data;
+            });
+        }
+    }
+});

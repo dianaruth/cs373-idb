@@ -193,62 +193,43 @@ returnOfTheAPIControllers.controller('LinkToComProController', ['$scope', '$loca
         }
     }]);
 
-returnOfTheAPIControllers.controller('ComProController', ['$scope', '$http',
-    function($scope, $http) {
-        // get contest data here, most likely from a service
-        // data will be called contests and will have year as key followed by sum participants as value
-        google.charts.load('current', {packages: ['corechart', 'bar']});
-        google.charts.setOnLoadCallback(drawContestPopularityChart);
-        function drawContestPopularityChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('String', 'Year');
-            data.addColumn('number', 'Total Participants');
+returnOfTheAPIControllers.controller('ComProController', ['$scope', 'comproService',
+    function($scope, comproService) {
+        comproService.getData().then(function(data) {
+            google.charts.load('current', {packages: ['corechart', 'bar']});
+            google.charts.setOnLoadCallback(drawContestPopularityChart);
+            function drawContestPopularityChart() {
+                var contests = data;
+                console.log(contests);
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Year');
+                data.addColumn('number', 'Total Participants');
 
-            data.addRows([
-                ["2010", contests["2010"]],
-                ["2011", contests["2011"]],
-                ["2012", contests["2012"]],
-                ["2013", contests["2013"]],
-                ["2014", contests["2014"]],
-                ["2015", contests["2015"]],
-                ["2016", contests["2016"]],
-            ]);
+                data.addRows([
+                    ["2010", contests["2010"]],
+                    ["2011", contests["2011"]],
+                    ["2012", contests["2012"]],
+                    ["2013", contests["2013"]],
+                    ["2014", contests["2014"]],
+                    ["2015", contests["2015"]],
+                    ["2016", contests["2016"]]
+                ]);
 
-            var options = {
-                title: 'Competitive Programming Contest Participants by Year',
-                hAxis: {
-                    title: 'Year'
-                },
-                vAxis: {
-                    title: 'Total Number of Participants'
-                }
-            };
-            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-        }
-        function convertUnixToDateString(timestamp) {
-            var d = new Date(timestamp * 1000),	// Convert the passed timestamp to milliseconds
-            yyyy = d.getFullYear(),
-            mm = ('0' + (d.getMonth() + 1)).slice(-2),	// Months are zero based. Add leading 0.
-            dd = ('0' + d.getDate()).slice(-2),			// Add leading 0.
-            hh = d.getHours(),
-            h = hh,
-            min = ('0' + d.getMinutes()).slice(-2),		// Add leading 0.
-            ampm = 'AM',
-            time;
-            if (hh > 12) {
-                h = hh - 12;
-                ampm = 'PM';
-            } else if (hh === 12) {
-                h = 12;
-                ampm = 'PM';
-            } else if (hh == 0) {
-                h = 12;
+                var options = {
+                    title: 'Competitive Programming Contest Participants by Year',
+                    hAxis: {
+                        title: 'Year'
+                    },
+                    vAxis: {
+                        title: 'Total Number of Participants'
+                    },
+                    legend: "none",
+                    height: 500
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart-div'));
+                chart.draw(data, options);
             }
-            // ie: 2013-02-18, 8:35 AM	
-            time = yyyy + '-' + mm + '-' + dd + ', ' + h + ':' + min + ' ' + ampm;
-            return time;
-        }
+        });
     }]);
 
 returnOfTheAPIControllers.controller('NavController', ['$scope', '$location',

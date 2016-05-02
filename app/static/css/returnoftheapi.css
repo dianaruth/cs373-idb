@@ -432,6 +432,10 @@ p#start {
     color: #b3b300;
 }
 
+#chart-div {
+    margin-top: 100px;
+}
+
 /* Keyframes */
 
 @-webkit-keyframes intro {
